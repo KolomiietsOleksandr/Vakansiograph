@@ -1,0 +1,9 @@
+{
+  "name": "vakansiograph",
+  "lockfileVersion": 3,
+  "requires": true,
+  "packages": {},
+  "dependencies": {
+    "chart.js": "^4.5.1"
+  }
+}

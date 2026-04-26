@@ -1,0 +1,48 @@
+**/__pycache__
+*.py[cod]
+*.pyc
+
+# Virtual environments
+.venv
+venv
+env
+
+# Secrets
+.env
+.env.local
+.env.*.local
+
+# Git
+.git
+.gitignore
+.github
+
+# Docker files
+.dockerignore
+docker-compose.override.yml
+
+# Editor / OS
+.DS_Store
+.vscode
+.idea
+.claude
+Thumbs.db
+
+# Test artifacts
+.pytest_cache
+.coverage
+htmlcov
+*.log
+
+# Node
+node_modules
+npm-debug.log
+
+# Old repo remnant
+labo_refactored/
+
+# SQLite — основний файл не копіюємо в образ (430MB, в dev — монтується через override)
+app/labor_market.db
+*.db-journal
+*.db-wal
+*.db-shm

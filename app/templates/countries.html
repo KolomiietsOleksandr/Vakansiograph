@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Countries — VakansioGraph</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/shared-styles.css">
+<link rel="icon" type="image/png" href="/static/images/favicon.png">
+<script src="/static/js/chart.umd.min.js"></script>
+<style>
+main { max-width: 1400px; margin: 0 auto; padding: 2rem; }
+
+.page-header {
+  padding: 3rem 0 2rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2rem;
+}
+.page-header h1 {
+  font-size: 2.8rem;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  background: linear-gradient(120deg, var(--text), var(--accent), #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+.page-header p { color: var(--text-secondary); font-size: 1rem; }
+
+.kpi-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 1.5rem; }
+.kpi {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+}
+.kpi-val { font-size: 2rem; font-weight: 900; color: var(--accent); font-family: 'IBM Plex Mono', monospace; }
+.kpi-sub { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-secondary); margin-top: 0.25rem; }
+
+.country-selector {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.selector-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.pill {
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.pill:hover { border-color: var(--accent); color: var(--accent); background: rgba(255,100,3,0.07); }
+.pill.active { border-color: var(--accent); color: #fff; background: var(--accent); }
+.pill .pill-count { font-size: 0.7rem; opacity: 0.75; font-family: 'IBM Plex Mono', monospace; }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+.full { grid-column: 1 / -1; }
+.card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+.card-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+}
+.card-subtitle { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1.2rem; }
+
+canvas { max-height: 320px; }
+
+@media (max-width: 900px) {
+  .grid-2, .kpi-row { grid-template-columns: 1fr; }
+  .full { grid-column: 1; }
+}
+</style>
+</head>
+<body>
+
+{% include 'header.html' %}
+
+<main>
+  <div class="page-header">
+    <h1>Country Analysis</h1>
+    <p>Job market breakdown by country — top skills, hiring volume, and demand trends</p>
+  </div>
+
+  <!-- Country selector -->
+  <div class="country-selector">
+    <div class="selector-label">Select Country</div>
+    <div class="pills" id="countryPills">
+      <div style="color:var(--text-secondary); font-size:0.85rem;">Loading...</div>
+    </div>
+  </div>
+
+  <!-- KPIs -->
+  <div class="kpi-row">
+    <div class="kpi">
+      <div class="kpi-val" id="kpi-jobs">—</div>
+      <div class="kpi-sub">Total Jobs</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-val" id="kpi-orgs">—</div>
+      <div class="kpi-sub">Organizations</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-val" id="kpi-skills">—</div>
+      <div class="kpi-sub">Unique Skills</div>
+    </div>
+    <div class="kpi">
+      <div class="kpi-val" id="kpi-country">ALL</div>
+      <div class="kpi-sub">Selected Country</div>
+    </div>
+  </div>
+
+  <!-- Posting volume (full width) -->
+  <div class="card full" style="margin-bottom:1.5rem;">
+    <div class="card-title">Job Posting Volume</div>
+    <div class="card-subtitle">Monthly count of job postings for the selected country</div>
+    <canvas id="volumeChart"></canvas>
+  </div>
+
+  <!-- Top skills + category split -->
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">Top 20 In-Demand Skills</div>
+      <div class="card-subtitle">Most required skills in job postings for this country</div>
+      <canvas id="skillsChart"></canvas>
+    </div>
+    <div class="card">
+      <div class="card-title">Skill Category Distribution</div>
+      <div class="card-subtitle">Share of skill requirements by ESCO category</div>
+      <canvas id="categoryChart"></canvas>
+    </div>
+  </div>
+
+</main>
+
+{% include 'footer.html' %}
+
+<script>
+const CATEGORY_COLORS = {
+  'Management & Leadership':    '#ff6403',
+  'Healthcare & Medicine':      '#f472b6',
+  'Soft Skills & Communication':'#60a5fa',
+  'IT & Technology':            '#4ade80',
+  'Legal & Compliance':         '#facc15',
+  'Security & Public Safety':   '#c084fc',
+  'Business & Finance':         '#fb923c',
+  'HR & Workforce':             '#38bdf8',
+  'Sciences & Analytics':       '#34d399',
+  'Engineering':                '#a78bfa',
+  'Social Sciences & Policy':   '#e879f9',
+  'Other':                      '#6b7280'
+};
+
+const CHART_COLORS = [
+  '#ff6403','#ff9603','#facc15','#4ade80','#60a5fa',
+  '#c084fc','#f472b6','#34d399','#fb923c','#a78bfa',
+  '#38bdf8','#e879f9','#6b7280','#ff6403aa','#60a5faaa',
+  '#4ade80aa','#facc15aa','#c084fcaa','#f472b6aa','#fb923caa'
+];
+
+const base = {
+  responsive: true,
+  maintainAspectRatio: true,
+  plugins: {
+    legend: { labels: { color: '#b0b0b0', font: { family: 'Outfit', size: 11 } } },
+    tooltip: { backgroundColor: '#1a1a1a', titleColor: '#fff', bodyColor: '#b0b0b0', borderColor: '#2a2a2a', borderWidth: 1 }
+  },
+  scales: {
+    x: { ticks: { color: '#b0b0b0', font: { family: 'IBM Plex Mono', size: 10 } }, grid: { color: 'rgba(255,255,255,0.04)' } },
+    y: { ticks: { color: '#b0b0b0', font: { family: 'IBM Plex Mono', size: 10 } }, grid: { color: 'rgba(255,255,255,0.04)' } }
+  }
+};
+
+let activeCountry = 'ALL';
+const charts = {};
+
+function destroyChart(id) {
+  if (charts[id]) { charts[id].destroy(); delete charts[id]; }
+}
+
+const fmt = n => n >= 1000000 ? (n/1000000).toFixed(1) + 'M' : n >= 1000 ? Math.round(n/1000) + 'K' : n;
+
+// ---- Load country pills ----
+function loadCountries() {
+  fetch('/api/trends/countries')
+    .then(r => r.json())
+    .then(data => {
+      const container = document.getElementById('countryPills');
+      container.innerHTML = '';
+
+      const allBtn = document.createElement('button');
+      allBtn.className = 'pill active';
+      allBtn.dataset.code = 'ALL';
+      const total = data.reduce((s, d) => s + d.count, 0);
+      allBtn.innerHTML = `All Countries <span class="pill-count">${fmt(total)}</span>`;
+      allBtn.onclick = () => setCountry('ALL');
+      container.appendChild(allBtn);
+
+      data.forEach(d => {
+        const btn = document.createElement('button');
+        btn.className = 'pill';
+        btn.dataset.code = d.country;
+        btn.innerHTML = `${d.country} <span class="pill-count">${fmt(d.count)}</span>`;
+        btn.onclick = () => setCountry(d.country);
+        container.appendChild(btn);
+      });
+    });
+}
+
+function setCountry(code) {
+  activeCountry = code;
+  document.querySelectorAll('.pill').forEach(p => {
+    p.classList.toggle('active', p.dataset.code === code);
+  });
+  document.getElementById('kpi-country').textContent = code;
+  loadKpis(code);
+  loadVolume(code);
+  loadTopSkills(code);
+}
+
+// ---- KPIs ----
+function loadKpis(country) {
+  document.getElementById('kpi-jobs').textContent = '…';
+  document.getElementById('kpi-orgs').textContent = '…';
+  document.getElementById('kpi-skills').textContent = '…';
+  fetch(`/api/trends/country-stats?country=${encodeURIComponent(country)}`)
+    .then(r => r.json())
+    .then(d => {
+      document.getElementById('kpi-jobs').textContent = fmt(d.total_jobs);
+      document.getElementById('kpi-orgs').textContent = fmt(d.total_orgs);
+      document.getElementById('kpi-skills').textContent = fmt(d.unique_skills);
+    });
+}
+
+// ---- Posting volume ----
+function loadVolume(country) {
+  destroyChart('volume');
+  fetch(`/api/trends/posting-volume-by-country?country=${encodeURIComponent(country)}`)
+    .then(r => r.json())
+    .then(data => {
+      const filtered = data.filter(d => d.count > 0);
+      charts['volume'] = new Chart(document.getElementById('volumeChart'), {
+        type: 'line',
+        data: {
+          labels: filtered.map(d => d.month),
+          datasets: [{
+            label: 'Job Postings',
+            data: filtered.map(d => d.count),
+            borderColor: '#ff6403',
+            backgroundColor: 'rgba(255,100,3,0.08)',
+            borderWidth: 2,
+            pointRadius: 3,
+            pointBackgroundColor: '#ff6403',
+            fill: true,
+            tension: 0.3
+          }]
+        },
+        options: { ...base, plugins: { ...base.plugins, legend: { display: false } } }
+      });
+    });
+}
+
+// ---- Top skills ----
+function loadTopSkills(country) {
+  destroyChart('skills');
+  destroyChart('category');
+  const url = country === 'ALL'
+    ? '/api/skills/top?limit=20'
+    : `/api/skills/top?limit=20&country=${encodeURIComponent(country)}`;
+  fetch(url)
+    .then(r => r.json())
+    .then(skills => {
+      // Top skills bar chart
+      charts['skills'] = new Chart(document.getElementById('skillsChart'), {
+        type: 'bar',
+        data: {
+          labels: skills.map(s => s.skill.length > 28 ? s.skill.slice(0,26)+'…' : s.skill),
+          datasets: [{
+            label: 'Occurrences',
+            data: skills.map(s => s.count),
+            backgroundColor: CHART_COLORS,
+            borderRadius: 4
+          }]
+        },
+        options: {
+          ...base,
+          indexAxis: 'y',
+          plugins: { ...base.plugins, legend: { display: false } }
+        }
+      });
+
+      // Category donut from skill data
+      const catCounts = {};
+      skills.forEach(s => {
+        const cat = s.category || 'Other';
+        catCounts[cat] = (catCounts[cat] || 0) + s.count;
+      });
+      const cats = Object.entries(catCounts).sort((a,b) => b[1]-a[1]);
+      charts['category'] = new Chart(document.getElementById('categoryChart'), {
+        type: 'doughnut',
+        data: {
+          labels: cats.map(c => c[0]),
+          datasets: [{
+            data: cats.map(c => c[1]),
+            backgroundColor: cats.map(c => CATEGORY_COLORS[c[0]] || '#6b7280'),
+            borderColor: '#141414',
+            borderWidth: 2
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: true,
+          plugins: {
+            legend: { position: 'right', labels: { color: '#b0b0b0', boxWidth: 12, font: { family: 'Outfit', size: 10 } } },
+            tooltip: { backgroundColor: '#1a1a1a', titleColor: '#fff', bodyColor: '#b0b0b0' }
+          }
+        }
+      });
+    });
+}
+
+// Init
+loadCountries();
+setCountry('ALL');
+</script>
+</body>
+</html>

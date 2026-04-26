@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VakansioGraph - Labor Market Intelligence Platform</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/shared-styles.css">
+<link rel="icon" type="image/png" href="/static/images/favicon.png">
+<style>
+
+/* Main */
+main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+  main { padding: 0 1rem; }
+  nav { display: none; }
+  .header-content { flex-direction: column; gap: 1rem; }
+}
+
+/* Hero */
+.hero {
+  padding: 4rem 0;
+  text-align: center;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  letter-spacing: -2px;
+  background: linear-gradient(120deg, var(--text), var(--accent), var(--accent-tertiary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero .subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  max-width: 700px;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.9rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #000;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 12px 32px rgba(255, 115, 0, 0.4);
+  transform: translateY(-3px);
+}
+
+.btn-secondary {
+  background: var(--bg-secondary);
+  color: var(--text);
+  border: 2px solid var(--border);
+}
+
+.btn-secondary:hover {
+  border-color: var(--accent);
+  background: var(--border);
+  color: var(--accent);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  /* background: var(--bg-secondary); */
+  /* border: 1px solid var(--border); */
+  /* border-radius: 12px; */
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-num {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--accent);
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Features */
+.section {
+  padding: 4rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.section h2 {
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin-bottom: 3rem;
+  text-align: center;
+  letter-spacing: -0.5px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.feature-card {
+  padding: 2rem;
+  border-radius: 12px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  transition: all 0.3s;
+}
+
+.feature-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 12px 32px rgba(255, 115, 0, 0.4);
+  transform: translateY(-6px);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: 0.8rem;
+  letter-spacing: -0.3px;
+}
+
+.feature-card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
+
+/* Dashboards Section */
+.dashboards-section {
+  padding: 4rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.dashboards-section h2 {
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.dashboards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.dashboard-card {
+  padding: 2rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--bg-secondary), rgba(255, 115, 0, 0.141));
+  border: 1px solid var(--border);
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.dashboard-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+.dashboard-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 12px 32px rgba(255, 115, 0, 0.4);
+  transform: translateY(-6px);
+}
+
+.dashboard-title {
+  font-size: 1.3rem;
+  font-weight: 900;
+  margin-bottom: 0.8rem;
+  color: var(--accent);
+}
+
+.dashboard-desc {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.dashboard-features {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+.dashboard-features li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.dashboard-features li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.dashboard-link {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: var(--accent);
+  color: #000;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s;
+  font-size: 0.85rem;
+  margin-top: auto;
+  text-align: center;
+}
+
+.dashboard-link:hover {
+  box-shadow: 0 8px 20px rgba(255, 115, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2.2rem; }
+  .section h2 { font-size: 1.8rem; }
+  .hero { padding: 2rem 0; min-height: auto; }
+  .features-grid { grid-template-columns: 1fr; }
+  .dashboards-grid { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.feature-card, .dashboard-card {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.feature-card:nth-child(1) { animation-delay: 0.1s; }
+.feature-card:nth-child(2) { animation-delay: 0.2s; }
+.feature-card:nth-child(3) { animation-delay: 0.3s; }
+.feature-card:nth-child(4) { animation-delay: 0.4s; }
+.feature-card:nth-child(5) { animation-delay: 0.5s; }
+.feature-card:nth-child(6) { animation-delay: 0.6s; }
+.feature-card:nth-child(7) { animation-delay: 0.7s; }
+.feature-card:nth-child(8) { animation-delay: 0.8s; }
+
+.dashboard-card:nth-child(1) { animation-delay: 0.2s; }
+.dashboard-card:nth-child(2) { animation-delay: 0.4s; }
+.dashboard-card:nth-child(3) { animation-delay: 0.6s; }
+.dashboard-card:nth-child(4) { animation-delay: 0.8s; }
+</style>
+</head>
+<body>
+
+{% include 'header.html' %}
+
+<main>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Labor Market Intelligence Platform</h1>
+
+    <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+      <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 1.5rem;">
+        VakansioGraph is a labor market intelligence platform that analyzes federal job postings from the USAJOBS API. 
+        We collect, normalize, and visualize data using ESCO (European Skills/Competences, Qualifications and Occupations) 
+        classification standards.
+      </p>
+      <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-secondary);">
+        Built for career professionals, HR analysts, policy makers, and job seekers who want to understand 
+        the federal employment market in real-time.
+      </p>
+    </div>
+
+    <div class="hero-buttons">
+      <a href="/dashboard" class="btn btn-primary">Explore Dashboard</a>
+      <a href="#dashboards" class="btn btn-secondary">Learn More</a>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-num" id="stat-jobs">—</div>
+        <div class="stat-label">Job Postings</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" id="stat-skills">—</div>
+        <div class="stat-label">Unique Skills</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" id="stat-orgs">—</div>
+        <div class="stat-label">Organizations</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" id="stat-salary">—</div>
+        <div class="stat-label">Avg Salary Range</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section 
+  <section class="section" id="about">
+    <h2>About VakansioGraph</h2>
+    <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+      <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 1.5rem;">
+        VakansioGraph is a labor market intelligence platform that analyzes federal job postings from the USAJOBS API. 
+        We collect, normalize, and visualize data using ESCO (European Skills/Competences, Qualifications and Occupations) 
+        classification standards.
+      </p>
+      <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-secondary);">
+        Built for career professionals, HR analysts, policy makers, and job seekers who want to understand 
+        the federal employment market in real-time.
+      </p>
+    </div>
+  </section> -->
+
+  <!-- Features Section -->
+  <section class="section" id="features">
+    <h2>Features</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Real-Time Analytics</h3>
+        <p>Live tracking of federal job postings with automatic updates every 6 hours. Monitor market trends as they happen.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💼</div>
+        <h3>Career Intelligence</h3>
+        <p>Discover which skills are in highest demand. Compare salary ranges across grades and departments.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🗺️</div>
+        <h3>Geographic Insights</h3>
+        <p>See job distribution and remote work opportunities by state. Identify hotspots for federal employment.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎓</div>
+        <h3>ESCO Skills Mapping</h3>
+        <p>Skills classified by European Skills Classification. Understand competence vs knowledge vs skill requirements.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💰</div>
+        <h3>Salary Analysis</h3>
+        <p>Comprehensive federal pay grade breakdown from GS-5 to SES. Min/max salary by department.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📈</div>
+        <h3>Trend Forecasting</h3>
+        <p>30-day posting trends by category. Identify emerging opportunities in your field.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🤖</div>
+        <h3>Smart Job Matching</h3>
+        <p>Get personalized job recommendations based on your skills, experience, and interests. Match profiles with relevant federal openings faster.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📄</div>
+        <h3>Vacancy Change Tracking</h3>
+        <p>Track edits in job postings over time. Detect salary updates, deadline changes, and newly added requirements automatically.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dashboards Section -->
+  <section class="dashboards-section" id="dashboards">
+    <h2>Interactive Dashboards</h2>
+    <div class="dashboards-grid">
+      <div class="dashboard-card">
+        <div class="dashboard-title">Overview</div>
+        <p class="dashboard-desc">
+          Get a comprehensive snapshot of the federal job market right now.
+        </p>
+        <ul class="dashboard-features">
+          <li>Total postings & organizations</li>
+          <li>Weekly new positions</li>
+          <li>Average salary ranges</li>
+          <li>Remote work percentage</li>
+          <li>Trending job categories</li>
+        </ul>
+        <a href="/dashboard#overview" class="dashboard-link">View Overview</a>
+      </div>
+
+      <div class="dashboard-card">
+        <div class="dashboard-title">Geography</div>
+        <p class="dashboard-desc">
+          Discover job opportunities across the United States.
+        </p>
+        <ul class="dashboard-features">
+          <li>Job distribution by state</li>
+          <li>Remote work percentage by state</li>
+          <li>State-level salary analysis</li>
+          <li>Comprehensive state comparison</li>
+          <li>Regional opportunities</li>
+        </ul>
+        <a href="/dashboard#geography" class="dashboard-link">View Geography</a>
+      </div>
+
+      <div class="dashboard-card">
+        <div class="dashboard-title">Market Trends</div>
+        <p class="dashboard-desc">
+          Track how the labor market evolves — posting volumes, category shifts, and growth signals.
+        </p>
+        <ul class="dashboard-features">
+          <li>Monthly posting volume timeline</li>
+          <li>Skill category share over time</li>
+          <li>Top 20 most demanded skills</li>
+          <li>Salary × demand bubble chart</li>
+          <li>Data-driven market insights</li>
+        </ul>
+        <a href="/trends" class="dashboard-link">View Trends</a>
+      </div>
+
+      <div class="dashboard-card">
+        <div class="dashboard-title">Skills Intelligence</div>
+        <p class="dashboard-desc">
+          Understand skill demand depth, salary ROI per skill, and your personal skill gap.
+        </p>
+        <ul class="dashboard-features">
+          <li>Top skills by salary ROI</li>
+          <li>Category salary comparison</li>
+          <li>Skill gap drill-down by category</li>
+          <li>ESCO type distribution</li>
+          <li>"What to learn" signals</li>
+        </ul>
+        <a href="/skills-intelligence" class="dashboard-link">Explore Skills</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+{% include 'footer.html' %}
+
+<script>
+// Load live stats from API
+fetch('/api/overview')
+  .then(r => r.json())
+  .then(d => {
+    const fmt = n => n >= 1000 ? (n / 1000).toFixed(0) + 'K+' : n;
+    document.getElementById('stat-jobs').textContent   = fmt(d.total_jobs);
+    document.getElementById('stat-skills').textContent = d.unique_skills;
+    document.getElementById('stat-orgs').textContent   = d.total_organizations;
+    const minK = Math.round(d.avg_salary.min / 1000);
+    const maxK = Math.round(d.avg_salary.max / 1000);
+    document.getElementById('stat-salary').textContent =
+      (minK && maxK) ? `$${minK}K–$${maxK}K` : '—';
+  })
+  .catch(() => {
+    document.getElementById('stat-jobs').textContent   = '120K+';
+    document.getElementById('stat-skills').textContent = '226';
+    document.getElementById('stat-orgs').textContent   = '435';
+    document.getElementById('stat-salary').textContent = '$67K–$98K';
+  });
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+
+// Dashboard link handler
+document.querySelectorAll('a[href*="dashboard.html"]').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const href = this.getAttribute('href');
+    if (href.includes('#')) {
+      const tab = href.split('#')[1];
+      sessionStorage.setItem('activeTab', tab);
+    }
+  });
+});
+</script>
+
+</body>
+</html>
