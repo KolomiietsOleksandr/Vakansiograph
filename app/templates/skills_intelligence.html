@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="/static/css/shared-styles.css">
 <link rel="icon" type="image/png" href="/static/images/favicon.png">
 <script src="/static/js/chart.umd.min.js"></script>
+<script src="/static/js/countries.js"></script>
 <style>
 main { max-width: 1400px; margin: 0 auto; padding: 2rem; }
 
@@ -863,7 +864,7 @@ function loadSkillDetail(skillName) {
       detailCharts['country'] = new Chart(document.getElementById('detailCountryChart'), {
         type: 'bar',
         data: {
-          labels: top.map(d => d.country),
+          labels: top.map(d => countryName(d.country)),
           datasets: [{
             label: 'Jobs',
             data: top.map(d => d.count),

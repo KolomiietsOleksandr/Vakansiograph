@@ -761,6 +761,7 @@ footer {
 {% include 'footer.html' %}
 
 <script src="/static/js/chart.umd.min.js"></script>
+<script src="/static/js/countries.js"></script>
 <script src="/static/js/app.js" defer></script>
 
 
@@ -795,17 +796,11 @@ async function loadCountries() {
   try {
     const countries = await fetchAPI('/api/countries');
     const bar = document.getElementById('countrySelector');
-    const COUNTRY_NAMES = {
-      US:'🇺🇸 US', GB:'🇬🇧 UK', AU:'🇦🇺 AU', DE:'🇩🇪 DE', FR:'🇫🇷 FR',
-      CA:'🇨🇦 CA', IN:'🇮🇳 IN', BR:'🇧🇷 BR', NL:'🇳🇱 NL', PL:'🇵🇱 PL',
-      IT:'🇮🇹 IT', MX:'🇲🇽 MX', BE:'🇧🇪 BE', AT:'🇦🇹 AT', NZ:'🇳🇿 NZ',
-      SG:'🇸🇬 SG', ZA:'🇿🇦 ZA', RU:'🇷🇺 RU',
-    };
     countries.forEach(({ country }) => {
       const btn = document.createElement('button');
       btn.className = 'country-btn';
       btn.dataset.country = country;
-      btn.textContent = COUNTRY_NAMES[country] || country;
+      btn.textContent = countryLabel(country);
       btn.type = 'button';
       btn.onclick = () => window.setCountry(country);
       bar.appendChild(btn);

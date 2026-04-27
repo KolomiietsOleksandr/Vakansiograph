@@ -22,6 +22,7 @@ class SkillService:
                     COALESCE(skill_esco_label, skill_raw) as display_label,
                     skill_raw,
                     skill_esco_type,
+                    skill_category,
                     COUNT(*) as count
                 FROM job_skills
                 GROUP BY COALESCE(skill_esco_label, skill_raw)
@@ -34,6 +35,7 @@ class SkillService:
                     COALESCE(js.skill_esco_label, js.skill_raw) as display_label,
                     js.skill_raw,
                     js.skill_esco_type,
+                    js.skill_category,
                     COUNT(*) as count
                 FROM job_skills js
                 JOIN job_postings jp ON js.position_id = jp.position_id
@@ -48,6 +50,7 @@ class SkillService:
                 "skill": r["display_label"].title(),
                 "type": r["skill_esco_type"] if r["skill_esco_type"]
                         else classify_skill_type(r["skill_raw"]),
+                "category": r["skill_category"] or "Other",
                 "count": r["count"]
             }
             for r in c.fetchall()

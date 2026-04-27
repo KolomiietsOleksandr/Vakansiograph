@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="/static/css/shared-styles.css">
 <link rel="icon" type="image/png" href="/static/images/favicon.png">
 <script src="/static/js/chart.umd.min.js"></script>
+<script src="/static/js/countries.js"></script>
 <style>
 main { max-width: 1400px; margin: 0 auto; padding: 2rem; }
 
@@ -231,7 +232,7 @@ function loadCountries() {
         const btn = document.createElement('button');
         btn.className = 'pill';
         btn.dataset.code = d.country;
-        btn.innerHTML = `${d.country} <span class="pill-count">${fmt(d.count)}</span>`;
+        btn.innerHTML = `${countryFlag(d.country)} ${countryName(d.country)} <span class="pill-count">${fmt(d.count)}</span>`;
         btn.onclick = () => setCountry(d.country);
         container.appendChild(btn);
       });
@@ -243,7 +244,7 @@ function setCountry(code) {
   document.querySelectorAll('.pill').forEach(p => {
     p.classList.toggle('active', p.dataset.code === code);
   });
-  document.getElementById('kpi-country').textContent = code;
+  document.getElementById('kpi-country').textContent = countryName(code);
   loadKpis(code);
   loadVolume(code);
   loadTopSkills(code);
