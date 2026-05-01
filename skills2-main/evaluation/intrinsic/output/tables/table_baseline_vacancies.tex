@@ -1,0 +1,15 @@
+\begin{table}[htbp]
+  \centering
+  \caption{Baseline mapper comparison (vacancies).}
+  \label{tab:baseline-vac}
+  \begin{tabular}{lrrrr}
+    \toprule
+    Mapper & Unmapped & Mean conf. & ESCO URIs & Consistency \\
+    \midrule
+  Fuzzy & 75.9\% & 0.857 & 14 & \textbf{1.000} \\
+  Embedding & \textbf{4.1\%} & 0.806 & \textbf{547} & \textbf{1.000} \\
+  LLM direct & 10.3\% & \textbf{0.931} & 111 & 0.806 \\
+  LLM two-stage & 29.1\% & 0.905 & 81 & 0.927 \\
+    \bottomrule
+  \end{tabular}
+\end{table}

@@ -1,0 +1,33 @@
+{
+  "source": "resumes",
+  "documents": 3984,
+  "unmapped_rate_macro": 0.0013,
+  "confidence": {
+    "buckets": {
+      "0.0-0.5": 501,
+      "0.5-0.6": 246,
+      "0.6-0.7": 2061,
+      "0.7-0.8": 18287,
+      "0.8-0.9": 56450,
+      "0.9-1.0": 117029
+    },
+    "mean": 0.8793,
+    "median": 0.9,
+    "std": 0.0857
+  },
+  "esco_coverage_breadth": 2916,
+  "skills_per_document": {
+    "mean": 48.9061,
+    "median": 44.0,
+    "std": 28.0065
+  },
+  "mappings_per_document": {
+    "mean": 48.8389,
+    "median": 44.0,
+    "std": 27.9499
+  },
+  "graph_enrichment_yield": 0.2042,
+  "method_distribution": {
+    "llm_two_stage": 194574
+  }
+}

@@ -1,0 +1,2748 @@
+{
+  "total_unique_skills": 86093,
+  "qualifying_skills": 4769,
+  "macro_avg_consistency": 0.3298,
+  "histogram": {
+    "100%": 36,
+    "90-99%": 0,
+    "80-89%": 63,
+    "70-79%": 49,
+    "60-69%": 263,
+    "50-59%": 304,
+    "<50%": 4054
+  },
+  "polysemy_count": 1731,
+  "instability_count": 3002,
+  "top_inconsistent": [
+    {
+      "skill": "m.e.doc",
+      "consistency": 0.0625,
+      "total_occurrences": 32,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/71dde84c-0058-4c52-a556-523369333db8",
+          "label": "use office systems",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7c9cb75d-ca4a-47c0-a989-ec0ba65a4bf0",
+          "label": "use typesetting software",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6b2f8802-0cbf-436e-a37f-ca55ede41bbc",
+          "label": "operate digital hardware",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/aff205d0-b338-4020-9c19-45044b545835",
+          "label": "use digital instruments",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/f683ae1d-cb7c-4aa1-b9fe-205e1bd23535",
+          "label": "use microsoft office",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/f0393af3-bcd9-41af-a36e-0cfb83b60081",
+          "label": "manage standard enterprise resource planning system",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/5fed696b-77d6-46e1-aa57-e520928a9837",
+          "label": "use free typing techniques",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/f632251a-4078-4546-b19f-7ef528d08325",
+          "label": "use IT tools",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/cf310cff-0d28-4dbc-9dbb-cc500a3196c2",
+          "label": "office software",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/b769f524-0f25-44d7-8538-5c46710a040e",
+          "label": "manage digital documents",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6ae8306a-4f9d-4410-ac82-6406f3cbd16a",
+          "label": "manage office facility systems",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6451e645-67b5-4cc7-aafd-fab19629fa82",
+          "label": "archive documentation related to work",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/5a234b3b-63b4-482f-b481-a1ff9d95bbf8",
+          "label": "office equipment",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/5bf7f85a-b080-4b27-8ddc-9f62af4643f5",
+          "label": "use power tools",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ea1bf5e5-e7f0-4d2c-a415-1c39c00512b1",
+          "label": "document management",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/5c5dae25-f511-4bdd-bbd4-572ab3e6e962",
+          "label": "advise on medical records",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/1a4cc54f-1e53-442b-a6d2-1682dc8ef8f9",
+          "label": "creatively use digital technologies",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ecc18804-a466-40d9-98b4-fba5cd67dd4b",
+          "label": "accounting",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7a757fa5-9a6f-43ab-9e66-f8f4dba1ffcb",
+          "label": "use CAM software",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/81633a44-f1db-4a01-a940-804c6905e330",
+          "label": "use word processing software",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/08371fe9-c658-4f6a-966f-71dbb0ab683d",
+          "label": "accounting department processes",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6474fc36-67ae-436b-9d39-c14402c6a89b",
+          "label": "use ICT hardware",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7369f779-4b71-4aab-8836-48b69c676eec",
+          "label": "operate relational database management system",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7c821387-b428-4f75-b5a7-7b038aa81cfd",
+          "label": "use a warehouse management system",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ab986bc4-df92-4351-9ac1-aa75af943cf7",
+          "label": "perform clerical duties",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    },
+    {
+      "skill": "інвентаризація",
+      "consistency": 0.0686,
+      "total_occurrences": 452,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/7336bc42-d917-40c2-8791-2ac798c89067",
+          "label": "make an inventory of fixtures",
+          "count": 31
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7a6f50a7-d876-461a-8336-f85a01af4c5f",
+          "label": "oversee stock quality control",
+          "count": 27
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/bef39770-1abe-4b86-830a-7c168f69c459",
+          "label": "keep records of merchandise delivery",
+          "count": 25
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/35718973-913e-447b-a968-83e66e6c8872",
+          "label": "keep inventory of goods in production",
+          "count": 24
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/27d1012f-0ad8-42fb-b342-0e7ef12d22d1",
+          "label": "compile detailed collection inventory",
+          "count": 24
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ab6265f2-a9bf-49e8-a9a5-67cbab4de38b",
+          "label": "manage inventory",
+          "count": 23
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/cfa0114b-01e8-43ca-ad0f-eea07adc27c9",
+          "label": "monitor stock movement",
+          "count": 18
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/53815c73-d352-4d4d-92cb-fb7020cbd8e6",
+          "label": "carry out inventory control accuracy",
+          "count": 18
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d4f9906e-3b22-4c27-9b32-1c1f457ced44",
+          "label": "oversee record management",
+          "count": 14
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/1910b022-fc63-4f3d-b742-f9d62d4382b6",
+          "label": "maintain inventory of vehicle cleaning supplies",
+          "count": 13
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/f60416d5-2d98-4401-ba0d-b92b53e01d86",
+          "label": "keep stock records",
+          "count": 11
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/5d2e82cc-5943-4218-a459-a1956fad2b63",
+          "label": "manage warehouse inventory",
+          "count": 11
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/c7e8948c-e7e4-406a-957d-55daaa4cdb44",
+          "label": "ensure stock storage safety",
+          "count": 10
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/f371606f-9b45-4340-9e92-ebd91d14ab29",
+          "label": "maintain inventory of tools",
+          "count": 8
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/dd6f8901-b20a-48e9-94ac-b1829dc2cfec",
+          "label": "manage manufacturing documentation",
+          "count": 8
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7c394f22-0d20-40e9-b7f7-230b36be6494",
+          "label": "prepare inventory of properties",
+          "count": 8
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7c821387-b428-4f75-b5a7-7b038aa81cfd",
+          "label": "use a warehouse management system",
+          "count": 8
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/143d889d-3128-45af-805b-a2d5a1d501c7",
+          "label": "manage stocked company material",
+          "count": 7
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ea1bf5e5-e7f0-4d2c-a415-1c39c00512b1",
+          "label": "document management",
+          "count": 7
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/30b1f3e1-1586-4d41-aa02-e2ab021b5164",
+          "label": "handle paperwork",
+          "count": 6
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/183eb46f-24f6-4e15-8017-93f10039c0a6",
+          "label": "maintain vehicle records",
+          "count": 6
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/055ff233-6569-43db-9f95-a4b03dca97da",
+          "label": "operate warehouse record systems",
+          "count": 6
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/31c7add0-0150-4029-bf33-47872c23fcf1",
+          "label": "maintain inventory of office supplies",
+          "count": 5
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/fa7be6bf-f906-4b8e-857d-48a9a7da901c",
+          "label": "manage warehouse operations",
+          "count": 5
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/00ec5333-e570-477b-9017-2e95fea0150a",
+          "label": "maintain inventory of cleaning supplies",
+          "count": 5
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/8804d963-5a31-4609-b5df-f741b7199fb7",
+          "label": "internal auditing",
+          "count": 5
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/c39677dc-8a4f-4433-b678-1097eaec65da",
+          "label": "maintain inventory of rented items",
+          "count": 5
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/44a4f189-7414-402c-9c1d-c85743f34d0c",
+          "label": "maintain recycling records",
+          "count": 5
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/089ddb19-1c7a-43ff-ba64-070f7ce4787a",
+          "label": "warehouse operations",
+          "count": 5
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/3edfcb2b-2d0e-4673-87ce-f55c37eb5fca",
+          "label": "monitor manufacturing quality standards",
+          "count": 5
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/9a4e91f4-67a4-45d3-b717-743b2c2ab733",
+          "label": "check subjects",
+          "count": 4
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/57fb98c5-6862-4969-8bf4-a74ff14c4750",
+          "label": "handle paperwork related to warehouse stock",
+          "count": 4
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6c2857b2-4d78-4ddf-97b3-4f79cad891af",
+          "label": "follow evaluation procedures of materials at reception",
+          "count": 4
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7837ef5c-2c81-4a89-8227-b4d4f1f7331e",
+          "label": "maintain professional records",
+          "count": 4
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/3aeab77e-daa2-4851-95fc-d236c3b5718e",
+          "label": "maintain logbooks",
+          "count": 4
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/8a326ee1-169c-4c44-b38b-8f1bb20ec79b",
+          "label": "identify accounting errors",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/24814e7a-70cd-47e5-98b2-d44b46be92d2",
+          "label": "maintain transaction's reports",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/04b90037-ae21-48dc-9448-f0b3eef05b33",
+          "label": "keep food laboratory inventory",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/2832382f-fa74-439f-a85e-6ff2d03c9cd0",
+          "label": "take pharmaceutical inventory",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/5f1ebff6-98ec-411f-a1d4-0bf04bd03bdf",
+          "label": "check accounting records",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/435efc22-0dcb-487c-b9c4-d4860b6d4c52",
+          "label": "organise storage facilities",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/1c8a92d4-18b9-4279-898c-ad89233bb511",
+          "label": "monitor ingredient storage",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/f9d70f2a-c3f0-475d-ac55-dc2e2ba856e8",
+          "label": "lead inspections",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/9bcfccac-8920-4024-9aef-a06f8c035063",
+          "label": "follow reporting procedures",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/e2d0daae-2aa1-40cc-99e2-b340b02f97d3",
+          "label": "product data management",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/36e9c099-614e-44f1-ab0a-5e6fda4a0763",
+          "label": "undertake inspections",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a8fe6eae-cfc1-4580-ad12-f325e8c2b21b",
+          "label": "keep records of attendance",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/b02b38c4-d46d-44da-9479-1310060bd74d",
+          "label": "asset management",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/8ebb2c0a-0baa-43bf-95cf-094047c57427",
+          "label": "maintain professional administration",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/925cb6fb-9506-48a5-9106-400088a4a436",
+          "label": "arrange audit",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/c0156cdb-8587-4278-89e0-075d83e3140b",
+          "label": "maintain event records",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d1507009-2ca3-4744-98b7-751b927b3042",
+          "label": "decide on products to be stocked",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/fc0fbc9c-b24d-42fa-ae66-c9b4945b6bc0",
+          "label": "transfer stock",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a1388163-462a-4b76-8649-67470ea858a1",
+          "label": "search databases",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/078861f5-b901-48a5-951e-a3ad0a4fa0bd",
+          "label": "operate warehouse materials",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a5e51fb1-b3b6-49fd-8deb-f96c4d46da81",
+          "label": "check price accuracy on the shelf",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/0c8f1351-d1fe-4542-89fe-b70729679c52",
+          "label": "manage consumables stock",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6451e645-67b5-4cc7-aafd-fab19629fa82",
+          "label": "archive documentation related to work",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/953c0b65-537a-42fe-a90b-26cd36c64361",
+          "label": "manage logistics",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ccfbdaad-b91d-4bfe-bd0e-d30b33587f19",
+          "label": "keep records of work progress",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/9db00bb4-4c59-45d2-8040-bbef63361f89",
+          "label": "assemble goods",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/44f6a65f-6be7-4818-9a66-73908797283f",
+          "label": "monitor stock level",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ecc18804-a466-40d9-98b4-fba5cd67dd4b",
+          "label": "accounting",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a571ae14-3e16-4fd3-a615-5646e0b0b696",
+          "label": "inspect data",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/43b13058-68d0-40c6-8031-caf5a7b7d20c",
+          "label": "keep task records",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/54f7875e-ca4c-4ff7-992d-10ce9ef8abfe",
+          "label": "keep records of passports",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/e705db38-4fcf-4069-b01f-3fbdda894cc1",
+          "label": "manage stock rotation",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/0d6714c6-720e-4985-9791-5ab85d28da79",
+          "label": "gather data",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7c228b9e-4989-4572-a9d1-f73963631361",
+          "label": "conduct physical examinations",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d408fcbc-30c3-4758-8b9a-c1e780ead0d1",
+          "label": "monitor sports equipment",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/3b36e006-97a9-4894-b8b7-3979d309d518",
+          "label": "monitor goods movement",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/3dbb132f-fb62-4227-8277-7c89a9fe4749",
+          "label": "compile appraisal reports",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6c6da46c-c939-488c-8055-006b11d4ed1a",
+          "label": "monitor the use of resources in production",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ca55d9dd-f177-45b6-a2ee-1a4695044b76",
+          "label": "carry out stock rotation",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/909c2e48-262e-4ebe-be05-5324ab086c1d",
+          "label": "generate reconciliation reports",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/5aaf2780-04d7-4bbf-8b06-af36eafe8eba",
+          "label": "inventory management rules",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/cd6f2bb9-797e-4a0e-b55a-cd1f295935e5",
+          "label": "keep promotions records",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/1177c6f5-09c5-4c35-873c-afd22d170ad3",
+          "label": "quality assurance procedures",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/aa238394-8126-4ada-be2f-9dfe065cf314",
+          "label": "adhere to organisational guidelines",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/08371fe9-c658-4f6a-966f-71dbb0ab683d",
+          "label": "accounting department processes",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ab196e50-eca7-469b-b844-5e00d36c4372",
+          "label": "monitor proper product handling",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/435f167a-bb04-4bed-9167-94712ce01020",
+          "label": "supervise the management of an establishment",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/16594fea-3004-4730-838f-e35a432b49da",
+          "label": "perform stock valuation",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6e8c383d-ff96-46e2-9260-a33d88166c28",
+          "label": "register deeds",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/f675d28f-9e1f-4938-ae49-c1d07f902fed",
+          "label": "store products",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    },
+    {
+      "skill": "вміння працювати з дітьми",
+      "consistency": 0.069,
+      "total_occurrences": 29,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/2b2d7c6a-229a-40ba-80f3-b5b5766161a0",
+          "label": "provide specialised instruction for special needs students",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a15dab55-f1da-4f85-ae3e-2b5c5b5333ca",
+          "label": "provide high quality customer service",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d5e1e30e-44ab-4aba-abab-b8263e801b7a",
+          "label": "assist students in their learning",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a6354281-5578-46ac-a9db-d179d9962b98",
+          "label": "babysitting",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a65fb963-6faf-47b2-a3d9-c4e5e4d833c5",
+          "label": "support children's wellbeing",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/f2d63656-169c-4110-99fe-33914f902466",
+          "label": "child protection",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/b6b2e665-1085-4f4d-9973-e979721815d7",
+          "label": "assist clients with special needs",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/39dd50ae-814c-4a15-99e9-39afcc36bf9f",
+          "label": "legal requirements in the social sector",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/2eb30deb-18d0-4e9d-9c53-30069ac9a108",
+          "label": "youth work principles",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/cf6dcd52-0641-487e-960f-7f4455aff85d",
+          "label": "provide assistance to lecturer",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/e54ff029-1ce9-447d-a5b2-eb7283a23e6e",
+          "label": "train employees",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/19bf4dd0-db65-4484-aa9d-0dcbc2e5dd13",
+          "label": "work in multidisciplinary teams related to emergency care",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/87439d9b-b537-4f90-a00a-3ec3bbfec5d1",
+          "label": "coach young people",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/f8d4a24c-fb62-444e-9525-7aa5662f440d",
+          "label": "supervise children",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6b58a6d2-89cf-4ab5-bb62-eb29ae968934",
+          "label": "implement care programmes for children",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/f7940b22-764a-43f0-9642-f60f5897109b",
+          "label": "counsel students",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/0085e6bd-6829-4e8e-b302-842a7fe57ed9",
+          "label": "teach housekeeping skills",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/4b34864d-78a4-457e-8d91-0ab9296db890",
+          "label": "arrange parent teacher meeting",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/956cd4b3-6cf2-4871-b275-9a34a770c633",
+          "label": "advise on provision of social services",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/8af15e52-c743-43da-94aa-c4ea52d4f3e8",
+          "label": "conduct educational activities",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/47ac9325-b072-4e37-8e40-e6ffed03e851",
+          "label": "supervision of persons",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7e14f8f7-8907-4501-bb96-3685d399a188",
+          "label": "support the autonomy of young people",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/3b246ee4-6382-41fd-9b16-89e558abee24",
+          "label": "assist with vaccination procedures",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/995ad47c-bfc5-45fd-91ec-35cad3f7d368",
+          "label": "contribute to the safeguarding of children",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/fecf050a-4349-481c-9e8a-26a55d99dc79",
+          "label": "play therapy",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    },
+    {
+      "skill": "користувач 1с",
+      "consistency": 0.07,
+      "total_occurrences": 514,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/77e7cb08-2c6f-42ab-881b-b34b2318acbe",
+          "label": "manage administrative systems",
+          "count": 36
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/71dde84c-0058-4c52-a556-523369333db8",
+          "label": "use office systems",
+          "count": 35
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6ae8306a-4f9d-4410-ac82-6406f3cbd16a",
+          "label": "manage office facility systems",
+          "count": 32
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6474fc36-67ae-436b-9d39-c14402c6a89b",
+          "label": "use ICT hardware",
+          "count": 26
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ecc18804-a466-40d9-98b4-fba5cd67dd4b",
+          "label": "accounting",
+          "count": 25
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7369f779-4b71-4aab-8836-48b69c676eec",
+          "label": "operate relational database management system",
+          "count": 25
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/055ff233-6569-43db-9f95-a4b03dca97da",
+          "label": "operate warehouse record systems",
+          "count": 23
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/aff205d0-b338-4020-9c19-45044b545835",
+          "label": "use digital instruments",
+          "count": 18
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/f683ae1d-cb7c-4aa1-b9fe-205e1bd23535",
+          "label": "use microsoft office",
+          "count": 18
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7c821387-b428-4f75-b5a7-7b038aa81cfd",
+          "label": "use a warehouse management system",
+          "count": 18
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d4f9906e-3b22-4c27-9b32-1c1f457ced44",
+          "label": "oversee record management",
+          "count": 16
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/31d35d3d-2bf2-49aa-9c20-92566ef80277",
+          "label": "use ICT systems",
+          "count": 15
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/5c845ff8-b3f7-42b1-a846-a4238a8b404e",
+          "label": "use ICT resources to solve work related tasks",
+          "count": 14
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6b2f8802-0cbf-436e-a37f-ca55ede41bbc",
+          "label": "operate digital hardware",
+          "count": 14
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/08371fe9-c658-4f6a-966f-71dbb0ab683d",
+          "label": "accounting department processes",
+          "count": 12
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/9889b795-d755-41b2-8afd-2e3c87a65a38",
+          "label": "use customer relationship management software",
+          "count": 12
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7c3865d1-e5a9-4043-a7a4-2e9e30468c0b",
+          "label": "perform office routine activities",
+          "count": 10
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/e2d0daae-2aa1-40cc-99e2-b340b02f97d3",
+          "label": "product data management",
+          "count": 10
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/1973c966-f236-40c9-b2d4-5d71a89019be",
+          "label": "use spreadsheets software",
+          "count": 10
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/f0393af3-bcd9-41af-a36e-0cfb83b60081",
+          "label": "manage standard enterprise resource planning system",
+          "count": 10
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/4463a721-69f3-413d-8321-43e3af13a4f1",
+          "label": "use databases",
+          "count": 10
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/db36f7f1-5900-45bd-9ffb-f2b19c4362ac",
+          "label": "support ICT system users",
+          "count": 8
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/cf310cff-0d28-4dbc-9dbb-cc500a3196c2",
+          "label": "office software",
+          "count": 6
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/b769f524-0f25-44d7-8538-5c46710a040e",
+          "label": "manage digital documents",
+          "count": 5
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7c9cb75d-ca4a-47c0-a989-ec0ba65a4bf0",
+          "label": "use typesetting software",
+          "count": 5
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/648782e0-b5e5-4e59-bed0-627aa8ac29f0",
+          "label": "maintain records of financial transactions",
+          "count": 5
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a0d79341-8398-4019-ad1b-27888ec35aaa",
+          "label": "use accounting systems",
+          "count": 5
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60",
+          "label": "have computer literacy",
+          "count": 4
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/f632251a-4078-4546-b19f-7ef528d08325",
+          "label": "use IT tools",
+          "count": 4
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/bef39770-1abe-4b86-830a-7c168f69c459",
+          "label": "keep records of merchandise delivery",
+          "count": 4
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/dd6f8901-b20a-48e9-94ac-b1829dc2cfec",
+          "label": "manage manufacturing documentation",
+          "count": 4
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/30b1f3e1-1586-4d41-aa02-e2ab021b5164",
+          "label": "handle paperwork",
+          "count": 4
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/98a1dec3-8138-4f46-a596-5e2a83b884b9",
+          "label": "business analytics",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/0295b2a4-fb86-495f-9547-d479532fc4c2",
+          "label": "trace financial transactions",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/16a00c69-9c74-4c37-96d7-6301d285e5ce",
+          "label": "use e-services",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7e5147d1-60b1-4a68-804b-1f5cb0396b91",
+          "label": "problem-solving with digital tools",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/50b100ea-74fd-4706-99db-3e4ca55e51b8",
+          "label": "perform data cleansing",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/234aeb8d-56c3-4531-9193-1c5e6a8d16cb",
+          "label": "use presentation software",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/4d97e3c3-f335-47cc-a4ee-0d779fd42222",
+          "label": "manage data, information and digital content",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/25ee43a8-f9b0-4990-96cf-eabe627ff0cc",
+          "label": "use rental management software",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/3c4c3fa1-d638-42df-8e98-2a38021da6f9",
+          "label": "use software for data preservation",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6430eb0d-c6de-46b7-a7fc-3dd2e8e62a69",
+          "label": "use ICT ticketing system",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ab986bc4-df92-4351-9ac1-aa75af943cf7",
+          "label": "perform clerical duties",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ea1bf5e5-e7f0-4d2c-a415-1c39c00512b1",
+          "label": "document management",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/5a234b3b-63b4-482f-b481-a1ff9d95bbf8",
+          "label": "office equipment",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/4a460161-eaea-4fe2-bd0e-164ccc635be1",
+          "label": "financial statements",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/89bb44dc-9f4c-400b-86cd-dcd0bd599a58",
+          "label": "maintain electronic systems",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a703b581-ad64-4791-8bb3-624aea569fa5",
+          "label": "maintain contract administration",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/5c8aa481-9e7c-4f32-8197-a8b0fd7ca186",
+          "label": "demonstrate functionality of software products",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7ff2c668-0e86-418a-a962-4958262ee337",
+          "label": "use communication techniques",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/367c240d-5f34-423a-86b1-866ad27206ea",
+          "label": "digitise documents",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/f2d57f41-43b4-4f5b-8100-3df5c21eda50",
+          "label": "process data",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7a757fa5-9a6f-43ab-9e66-f8f4dba1ffcb",
+          "label": "use CAM software",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/3a815994-6a80-4210-9588-1bb23fc005b3",
+          "label": "write dock records",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/57231a22-4da7-49c8-97b8-75672feadf1e",
+          "label": "manage quantitative data",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/3ee090a1-9d1c-44ed-bd93-f6b7c9b68a97",
+          "label": "manage payroll reports",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/9ff9db9d-d14b-426e-83f3-e7449af6c79f",
+          "label": "manage data",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/9c0f93f7-2592-4d4d-9673-fd640502345f",
+          "label": "use equipment, tools or technology with precision",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/cc9b4fbb-65f1-4c92-9229-1392d03b6e20",
+          "label": "structure information",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/9d2e926f-53d9-41f5-98f3-19dfaa687f3f",
+          "label": "tools for software configuration management",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/c6e308b4-8799-4461-a9bd-560bdecb0dbb",
+          "label": "human resources department processes",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/75d2ac62-700a-41d1-b920-5cd7aaa78553",
+          "label": "operate control systems",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/1b70a55d-b8a4-49fc-96c6-15ab4cff2522",
+          "label": "use data processing techniques",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/78b1de70-0930-462f-9a7e-bf9b4135e1e2",
+          "label": "write routine reports",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/24016006-c963-4135-a2c5-b1f7740782e2",
+          "label": "maintain client debt records",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/faf8943c-72ff-4736-a587-25508695d6f0",
+          "label": "maintain financial records",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/1a165a9b-2006-49e1-90b8-c0709933b4a3",
+          "label": "use a complex communication system",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/aa238394-8126-4ada-be2f-9dfe065cf314",
+          "label": "adhere to organisational guidelines",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/e4b6f863-fa9f-4fe7-a984-f948f8c90d24",
+          "label": "handle cash flow",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/b916d60e-38e9-4241-914a-4e2144bda711",
+          "label": "operate computerised control systems",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/b34e2ba1-9080-48c9-9b42-ee9192a4d3f1",
+          "label": "use CAD software",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    },
+    {
+      "skill": "складання комерційних пропозицій",
+      "consistency": 0.0714,
+      "total_occurrences": 70,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/afbc401c-cad8-43b6-8d61-775d2c7b58d5",
+          "label": "prepare compliance documents",
+          "count": 5
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/2206af0c-3deb-48c5-a544-b9983d347da3",
+          "label": "answer requests for quotation",
+          "count": 5
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/2f573ad6-1fa6-46c5-a48d-912368fe55aa",
+          "label": "deliver a sales pitch",
+          "count": 4
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/1ba59ce0-7fec-434b-8d5c-9b275250a26c",
+          "label": "prepare presentation material",
+          "count": 4
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/49118827-3dbd-4c96-aebf-a23096e43d25",
+          "label": "maintain contractual information",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/2dd6ecdf-8a08-438b-8b4b-e0374f7b523b",
+          "label": "carry out sales analysis",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6789d5a3-34ca-4417-bb93-331319b01da3",
+          "label": "draft tender documentation",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/1279a2e8-e44f-49b6-9a7f-9241d07d2ed3",
+          "label": "conclude business agreements",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/1d7234e4-1c76-4d67-9487-71d8c529cdc9",
+          "label": "compile legal documents",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/13e2378e-0d10-450d-843a-b3592575826e",
+          "label": "implement marketing strategies",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a15dab55-f1da-4f85-ae3e-2b5c5b5333ca",
+          "label": "provide high quality customer service",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/bd7d10c9-7ab8-4ed9-b6ca-a80a63db342a",
+          "label": "draw up artistic project proposals",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/8dd2806f-6dcf-477c-a5bf-66b5d6e02637",
+          "label": "prepare correspondence for customers",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/683bc3e3-6ec1-4ad2-8d62-d0ac1fabbe76",
+          "label": "use analytics for commercial purposes",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/22c3b4ff-e2e0-4b40-8f3d-17788c0df295",
+          "label": "assist in developing marketing campaigns",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/0959a14b-9743-4d71-93ba-a1fefa56e5ae",
+          "label": "create import-export commercial documentation",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/df5e3d02-9f0f-44ee-91c2-85c62f161868",
+          "label": "promote ideas, products, services",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/f17f94f1-88cb-4815-873a-2a9639f10729",
+          "label": "draft project documentation",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/cbdce1f8-affe-4013-a519-283fa8ec1f6e",
+          "label": "set sales goals",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/183134a2-3f8e-4a38-9e81-35c2bec0272b",
+          "label": "set up pricing strategies",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/5f2efbdf-08a2-49cd-9c06-bd284e4f0fbf",
+          "label": "negotiate terms with suppliers",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/757109c4-c04b-40b6-ada8-9bdc4153387e",
+          "label": "sell software maintenance contracts",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7d092d81-d1e2-4c34-b3cb-c1c9f2e68b7d",
+          "label": "finish project within budget",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ec66b111-d8d0-4516-88ba-ee0b6fe6f695",
+          "label": "process customer orders",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/0ee94c0a-3716-494a-95a2-dcbab9e58be2",
+          "label": "business requirements techniques",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/31c83903-8fc8-4bd8-9ca4-7a98a9c31eae",
+          "label": "perform customers’ needs analysis",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/50181a4b-1cfd-4fbd-ac9a-c1a494b9c5d0",
+          "label": "implement customer follow-up",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/2db2d9a8-298d-4d1a-a194-d3282e70d6cb",
+          "label": "evaluate project plans",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/78b1de70-0930-462f-9a7e-bf9b4135e1e2",
+          "label": "write routine reports",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/146eccdc-c52a-4d61-9406-3af617caa7d6",
+          "label": "forecast sales over periods of time",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ad28c970-6bc7-4fff-9c01-0f4d67769de3",
+          "label": "develop revenue generation strategies",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ee1d5734-89b8-4519-81f1-733a6b4f8df8",
+          "label": "monitor customer service",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/32b02bd1-6bf2-497a-bb16-94aeeafaf44f",
+          "label": "quote prices",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/68ad2716-36f4-4445-a437-ebfce0e23430",
+          "label": "draw up marketing and sales plan",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7ee9fb56-91b1-4363-b51f-ea54ae1b5761",
+          "label": "negotiate price",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/1fcce318-3212-487a-ac07-4941bc85060d",
+          "label": "carry out project activities",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d207a30b-2f80-4138-9b77-f88d549b8768",
+          "label": "identify new business opportunities",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    },
+    {
+      "skill": "бажання допомагати людям",
+      "consistency": 0.0714,
+      "total_occurrences": 14,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/7edc05fe-378b-4c9e-bbb2-e5a29c5a845f",
+          "label": "perform public relations",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/3fe84b03-b2a5-450e-9210-10c124af738c",
+          "label": "client-centred counselling",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/44fb294c-440e-4c21-af34-9dec75cdf94b",
+          "label": "provide victim assistance",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/bcd2ce08-ba12-4d66-865f-f4ba36419707",
+          "label": "promote inclusion",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/524c4331-5090-4565-a0bc-0a9ae874938d",
+          "label": "demonstrate leadership in social service cases",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/996243ee-543f-4c36-a31a-e0f2403c0c5d",
+          "label": "relate empathetically",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6e4f29f5-3904-4e1e-9c5f-c158c5e197bf",
+          "label": "assist visitors",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/4bd6e2ad-bf69-4198-b3ac-3baabd9da46e",
+          "label": "support managers",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/149274a7-4c6e-436f-9607-ec7135a615b2",
+          "label": "provide charity services",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/763635b2-a9f0-4192-9656-0412a9d57488",
+          "label": "assist families in crisis situations",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/eacac7e2-4e88-4bd3-9797-1dd1922cd10a",
+          "label": "support individuals to adjust to physical disability",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/dee61e4f-2304-425b-8ff6-eb03070482da",
+          "label": "be friendly to passengers",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/3c88c371-56cf-49b8-bad7-d575eb3f07b7",
+          "label": "assist people trapped in confined spaces",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/debb8d81-ed7f-447d-853a-5d107fda6fcf",
+          "label": "provide customer follow-up services",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    },
+    {
+      "skill": "вміння працювати з відгуками клієнтів",
+      "consistency": 0.0769,
+      "total_occurrences": 26,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/7e5786f8-1174-4f75-97e3-cfecfd95d797",
+          "label": "deliver outstanding service",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/c753a3b5-d5cc-406d-adfe-3372bb267f4b",
+          "label": "maintain customer records",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/89ba58e8-a67e-4d2b-ad42-6acab25c241b",
+          "label": "measure customer feedback",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/415abd43-e8e5-4643-b5da-5f11307af57a",
+          "label": "use different communication channels",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/fcbc6daf-8207-4f9e-aadb-5bbcb3f3ccc2",
+          "label": "analyse the comments of selected audiences",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/e1e99428-b91b-45e1-8ede-ed0cbf161930",
+          "label": "establish an ICT customer support process",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/2239694b-771a-4586-8b54-2794e361a9ae",
+          "label": "maintain relationship with customers",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/dbc538a0-7d1d-4394-b2f6-8fae44a55d86",
+          "label": "provide feedback to performers",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/118efbcd-8fc5-4668-81d1-c383a0d16070",
+          "label": "handle helpdesk problems",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/089af6fe-a65e-4271-a232-b2d97ba6f43a",
+          "label": "help clients make decisions during counselling sessions",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a15dab55-f1da-4f85-ae3e-2b5c5b5333ca",
+          "label": "provide high quality customer service",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/b9bb1f03-15e2-4079-943e-7e483b21725b",
+          "label": "give constructive feedback",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/81513fdf-5ea9-4375-9bc4-67ad959ac5de",
+          "label": "contact customers",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "label": "maintain customer service",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/1279a2e8-e44f-49b6-9a7f-9241d07d2ed3",
+          "label": "conclude business agreements",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a3e7ebba-5183-4df8-9203-35b9b9b8f4fa",
+          "label": "collect customer data",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/25a7fc25-f2fc-4bfd-9999-943c03d53372",
+          "label": "protect client interests",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/50181a4b-1cfd-4fbd-ac9a-c1a494b9c5d0",
+          "label": "implement customer follow-up",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/5c7340b9-3ab5-46bc-af5e-ed737e57df6d",
+          "label": "follow up complaint reports",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/4012e28f-1826-4024-9772-7a4183d63b7f",
+          "label": "provide feedback on job performance",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/4b95c7bb-5672-4e4a-88ea-ba96c12e8ca2",
+          "label": "manage the customer experience",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6430eb0d-c6de-46b7-a7fc-3dd2e8e62a69",
+          "label": "use ICT ticketing system",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/0da516ee-e70e-4384-be13-f5ff80be8127",
+          "label": "communicate with customers",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    },
+    {
+      "skill": "оцінка ризиків",
+      "consistency": 0.0769,
+      "total_occurrences": 13,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/96550830-539b-4746-96aa-92aa4959945d",
+          "label": "apply risk management processes",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/56042303-972b-41be-9310-58467599ff7e",
+          "label": "analyse business processes",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/eb8babfb-ab91-4937-a032-6a79f82e9b7f",
+          "label": "analyse financial risk",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/afd49651-9119-4327-91fc-844a6dda1254",
+          "label": "conflict management",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/4707da90-9cfc-46ca-8de0-38a0b7bfb137",
+          "label": "think analytically",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/1a63b1a7-2cac-4372-8760-7bb6afb36949",
+          "label": "investigate security issues",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/958b8802-ec3e-4813-97f7-6c8f48610dbd",
+          "label": "identify process improvements",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/4913d0c0-133a-4c46-aac3-f5d4989a982e",
+          "label": "product usage risks analysis",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/969ebc5a-e486-41b7-9a3d-15f9aa61680d",
+          "label": "evaluate company needs",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6dc2dfac-3e21-44dd-a71c-9a1c8fe2514c",
+          "label": "make independent operating decisions",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d7b66759-c40c-44de-9f31-9418f84e10c5",
+          "label": "assess risk factors",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/96ec2d53-4f41-4172-8ef2-70742c4bb540",
+          "label": "assess supplier risks",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/b02f6cd7-4882-4796-9e2e-3f279c60d130",
+          "label": "inspect project regulations",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    },
+    {
+      "skill": "використання знижок на товари азк",
+      "consistency": 0.0769,
+      "total_occurrences": 13,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/cbdce1f8-affe-4013-a519-283fa8ec1f6e",
+          "label": "set sales goals",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/e37a6dcf-68c8-4afd-a2ca-503bbaa4a140",
+          "label": "notify customers on special offers",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/0edaab25-1b72-4531-950d-d8b9a9f4a1c8",
+          "label": "treasury management system",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/2dd6ecdf-8a08-438b-8b4b-e0374f7b523b",
+          "label": "carry out sales analysis",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/8f370faa-4123-4bdd-8dd3-304edd188076",
+          "label": "make price recommendations",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/82c1ddba-af60-4061-a572-b33fc71d1baa",
+          "label": "run errands on behalf of customers",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/cd6f2bb9-797e-4a0e-b55a-cd1f295935e5",
+          "label": "keep promotions records",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d3bbb16b-023e-40b4-a7a1-7fb30cfb78c3",
+          "label": "provide customers with price information",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/9f10e94b-a43d-4772-9f60-24e9bbbdedb7",
+          "label": "maximise sales revenues",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7c821387-b428-4f75-b5a7-7b038aa81cfd",
+          "label": "use a warehouse management system",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7ee9fb56-91b1-4363-b51f-ea54ae1b5761",
+          "label": "negotiate price",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/c09bf6d4-f8a7-40f3-aead-ef01643f2352",
+          "label": "achieve sales targets",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/0da516ee-e70e-4384-be13-f5ff80be8127",
+          "label": "communicate with customers",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    },
+    {
+      "skill": "авк",
+      "consistency": 0.0769,
+      "total_occurrences": 13,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/18becb9d-75e2-4f4e-a24c-72060c14e83e",
+          "label": "feed raw material into plant machinery",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/0337c577-f837-4518-9263-b753c24f3a21",
+          "label": "drive automatic car",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6b2f8802-0cbf-436e-a37f-ca55ede41bbc",
+          "label": "operate digital hardware",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d4f9906e-3b22-4c27-9b32-1c1f457ced44",
+          "label": "oversee record management",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/60c78287-22eb-4103-9c8c-28deaa460da0",
+          "label": "work in teams",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a3e7ebba-5183-4df8-9203-35b9b9b8f4fa",
+          "label": "collect customer data",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d1724ca5-ebd3-472a-bea9-fad9fe9004bf",
+          "label": "estimate costs of required supplies",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/c513cf4e-83bb-4edc-9ac8-2a7df04a9451",
+          "label": "results-based management",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/f9e788df-d68a-4f92-92c7-80e135fc35ff",
+          "label": "ICT networking hardware",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/c2241f73-9151-4817-96b2-b9a6aae4c9e9",
+          "label": "carry out checks of production plant equipment",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/3982571a-e9ce-442a-a4a0-fdfc97727091",
+          "label": "manage cash desk",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/75e48971-3242-4ea5-a1ba-4deec48ad41c",
+          "label": "manage teamwork",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ab6265f2-a9bf-49e8-a9a5-67cbab4de38b",
+          "label": "manage inventory",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    },
+    {
+      "skill": "вміння реалізовувати ідеї",
+      "consistency": 0.0811,
+      "total_occurrences": 37,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/4707da90-9cfc-46ca-8de0-38a0b7bfb137",
+          "label": "think analytically",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/c624c6a3-b0ba-4a31-a296-0d433fe47e41",
+          "label": "think creatively",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/8c4c49d4-9708-433f-8ca7-bf2c5211ee49",
+          "label": "develop creative ideas",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/df5e3d02-9f0f-44ee-91c2-85c62f161868",
+          "label": "promote ideas, products, services",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/fd311456-d8d2-43ca-b6be-a66bbff90302",
+          "label": "handle tasks independently",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/4134622c-c3fb-4a41-beb6-6d58ba5107db",
+          "label": "demonstrate disciplinary expertise",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/958b8802-ec3e-4813-97f7-6c8f48610dbd",
+          "label": "identify process improvements",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/001115fb-569f-4ee6-8381-c6807ef2527f",
+          "label": "show initiative",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/03b9b491-fc9b-4868-914a-bf7cd47b5041",
+          "label": "create solutions to problems",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/8a753714-9a19-4418-9b37-77e79d72c705",
+          "label": "integrate new products in manufacturing",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a4bbd0d9-a6be-4472-b05d-291e60cf6b4b",
+          "label": "develop business case",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/949ced5f-7536-4614-ac60-563ffc91a2f2",
+          "label": "strategic planning",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/11a76a95-66c1-43e0-91f0-be1cc5d05964",
+          "label": "innovate in footwear and leather goods industry",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/940a70fa-7c58-423b-8d03-34920b59f0f7",
+          "label": "manage processes",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/be20d05c-f6b4-4580-9fcf-f00f4baab562",
+          "label": "make data-driven decisions",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/2fb8480e-de3c-462b-b169-e8bbb344da68",
+          "label": "innovation processes",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/0b071b01-4b40-4936-9d6d-d8c5609481b4",
+          "label": "identify support mechanisms to develop your professional practice",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/31ca249d-5186-4256-8568-59ed2324a018",
+          "label": "liaise with buyers to plan products for the store",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ccdf3597-5c80-410f-896d-e1bdfa223de9",
+          "label": "stimulate creativity in the team",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/e86698a6-ef2b-417c-a2dc-406380e01f10",
+          "label": "contribute to practice innovation in health care",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d56e2c2f-3e01-4b76-a7bb-ecb6d430172f",
+          "label": "think holistically",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/9cfd8148-f8cb-4512-914a-cfbc0ed3dfbb",
+          "label": "meet commitments in hospitality",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/13e2378e-0d10-450d-843a-b3592575826e",
+          "label": "implement marketing strategies",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/f08e2bd6-0366-4948-a670-1f03f130126f",
+          "label": "create new concepts",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/0fdc32f8-d7f4-48c3-895a-5aefc23a44b4",
+          "label": "perform ideation activities",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/f975091a-e5a5-4472-ac17-11680e53e98f",
+          "label": "seek innovation in current practices",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/cd5efa8c-e44d-4cbc-91c6-796018dbed68",
+          "label": "perform project management",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    },
+    {
+      "skill": "google sheets",
+      "consistency": 0.082,
+      "total_occurrences": 61,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/6ae8306a-4f9d-4410-ac82-6406f3cbd16a",
+          "label": "manage office facility systems",
+          "count": 5
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/71dde84c-0058-4c52-a556-523369333db8",
+          "label": "use office systems",
+          "count": 4
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/57231a22-4da7-49c8-97b8-75672feadf1e",
+          "label": "manage quantitative data",
+          "count": 4
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/cf310cff-0d28-4dbc-9dbb-cc500a3196c2",
+          "label": "office software",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/aff205d0-b338-4020-9c19-45044b545835",
+          "label": "use digital instruments",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/e2d0daae-2aa1-40cc-99e2-b340b02f97d3",
+          "label": "product data management",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/4463a721-69f3-413d-8321-43e3af13a4f1",
+          "label": "use databases",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/3c4c3fa1-d638-42df-8e98-2a38021da6f9",
+          "label": "use software for data preservation",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/5c845ff8-b3f7-42b1-a846-a4238a8b404e",
+          "label": "use ICT resources to solve work related tasks",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/1b70a55d-b8a4-49fc-96c6-15ab4cff2522",
+          "label": "use data processing techniques",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/31d35d3d-2bf2-49aa-9c20-92566ef80277",
+          "label": "use ICT systems",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6b2f8802-0cbf-436e-a37f-ca55ede41bbc",
+          "label": "operate digital hardware",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7c9cb75d-ca4a-47c0-a989-ec0ba65a4bf0",
+          "label": "use typesetting software",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/f683ae1d-cb7c-4aa1-b9fe-205e1bd23535",
+          "label": "use microsoft office",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/f2d57f41-43b4-4f5b-8100-3df5c21eda50",
+          "label": "process data",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60",
+          "label": "have computer literacy",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/1973c966-f236-40c9-b2d4-5d71a89019be",
+          "label": "use spreadsheets software",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/629685b8-5f9e-4522-8cff-b3e2c4ec625a",
+          "label": "digital data processing",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7e5147d1-60b1-4a68-804b-1f5cb0396b91",
+          "label": "problem-solving with digital tools",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/9ff9db9d-d14b-426e-83f3-e7449af6c79f",
+          "label": "manage data",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/1bc718b6-ed90-4a9d-9fa7-8cec928a4581",
+          "label": "use creative suite software",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d4f9906e-3b22-4c27-9b32-1c1f457ced44",
+          "label": "oversee record management",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/9c0f93f7-2592-4d4d-9673-fd640502345f",
+          "label": "use equipment, tools or technology with precision",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/93e65de1-923c-437e-aa5b-e6002967ce71",
+          "label": "web based collaborative platforms",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a0d79341-8398-4019-ad1b-27888ec35aaa",
+          "label": "use accounting systems",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/9889b795-d755-41b2-8afd-2e3c87a65a38",
+          "label": "use customer relationship management software",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/47a49cd6-097d-457a-9f7b-c290c14930d5",
+          "label": "analyse big data",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/234aeb8d-56c3-4531-9193-1c5e6a8d16cb",
+          "label": "use presentation software",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/b8c01891-e3df-4a4b-948d-95b45e1788f5",
+          "label": "mobile device software frameworks",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7c3865d1-e5a9-4043-a7a4-2e9e30468c0b",
+          "label": "perform office routine activities",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6474fc36-67ae-436b-9d39-c14402c6a89b",
+          "label": "use ICT hardware",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/81633a44-f1db-4a01-a940-804c6905e330",
+          "label": "use word processing software",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/055ff233-6569-43db-9f95-a4b03dca97da",
+          "label": "operate warehouse record systems",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/bf983f2a-e941-4646-811d-cc81060cb53f",
+          "label": "build networks",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    },
+    {
+      "skill": "робота з word",
+      "consistency": 0.0833,
+      "total_occurrences": 24,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/7c9cb75d-ca4a-47c0-a989-ec0ba65a4bf0",
+          "label": "use typesetting software",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/f683ae1d-cb7c-4aa1-b9fe-205e1bd23535",
+          "label": "use microsoft office",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/9889b795-d755-41b2-8afd-2e3c87a65a38",
+          "label": "use customer relationship management software",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/234aeb8d-56c3-4531-9193-1c5e6a8d16cb",
+          "label": "use presentation software",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/81633a44-f1db-4a01-a940-804c6905e330",
+          "label": "use word processing software",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/71dde84c-0058-4c52-a556-523369333db8",
+          "label": "use office systems",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6ae8306a-4f9d-4410-ac82-6406f3cbd16a",
+          "label": "manage office facility systems",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/f9a6f35b-01a7-40c9-8b61-b6ee46f97272",
+          "label": "operating systems",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/8d49f760-3765-4612-8d40-a2bdd50738fe",
+          "label": "fill out forms",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ca49669b-1f59-4d1a-8e77-c77014ba93dc",
+          "label": "type at speed",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/cc9b4fbb-65f1-4c92-9229-1392d03b6e20",
+          "label": "structure information",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6b2f8802-0cbf-436e-a37f-ca55ede41bbc",
+          "label": "operate digital hardware",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7ff2c668-0e86-418a-a962-4958262ee337",
+          "label": "use communication techniques",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/e83ec793-3fbc-42e0-9729-d4bd92d454b3",
+          "label": "draw up professional texts",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ba45db8f-34e8-4f29-af0b-e6645e1d693f",
+          "label": "maintain electronic equipment",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ab986bc4-df92-4351-9ac1-aa75af943cf7",
+          "label": "perform clerical duties",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/367c240d-5f34-423a-86b1-866ad27206ea",
+          "label": "digitise documents",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7c3865d1-e5a9-4043-a7a4-2e9e30468c0b",
+          "label": "perform office routine activities",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6474fc36-67ae-436b-9d39-c14402c6a89b",
+          "label": "use ICT hardware",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    },
+    {
+      "skill": "ризик-менеджмент",
+      "consistency": 0.0833,
+      "total_occurrences": 12,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/009db49b-fcf5-4409-b4a5-232d059f3597",
+          "label": "apply credit risk policy",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/b04f377b-ee80-4b38-aca1-19d266a23b17",
+          "label": "analyse business requirements",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/f60c9e52-95fc-4ca1-a73c-18a491153b63",
+          "label": "make strategic business decisions",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/1af2db15-2af9-44dd-9639-bf1fc69d4c34",
+          "label": "manage relationships with stakeholders",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/eb8babfb-ab91-4937-a032-6a79f82e9b7f",
+          "label": "analyse financial risk",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/949ced5f-7536-4614-ac60-563ffc91a2f2",
+          "label": "strategic planning",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/594bd121-9614-4e87-9ecf-6ccb95507efe",
+          "label": "draw up risk assessment",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/c5a135be-218d-48e6-a422-5225a576dcd8",
+          "label": "manage project metrics",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/3ce1fe19-7f9e-4070-941d-651673a5693b",
+          "label": "decision support systems",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/75b30aeb-34c0-40f4-b77d-271d75a98b14",
+          "label": "improve business processes",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/96ec2d53-4f41-4172-8ef2-70742c4bb540",
+          "label": "assess supplier risks",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/8744f28f-59a9-45af-8ef6-6944cb5a1473",
+          "label": "risk identification",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    },
+    {
+      "skill": "користувач ппро",
+      "consistency": 0.0833,
+      "total_occurrences": 12,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/5c845ff8-b3f7-42b1-a846-a4238a8b404e",
+          "label": "use ICT resources to solve work related tasks",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60",
+          "label": "have computer literacy",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7c3865d1-e5a9-4043-a7a4-2e9e30468c0b",
+          "label": "perform office routine activities",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ba1b0441-a6b8-4e57-8ccc-871012f63e42",
+          "label": "trading software",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/77e7cb08-2c6f-42ab-881b-b34b2318acbe",
+          "label": "manage administrative systems",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7c9cb75d-ca4a-47c0-a989-ec0ba65a4bf0",
+          "label": "use typesetting software",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/db36f7f1-5900-45bd-9ffb-f2b19c4362ac",
+          "label": "support ICT system users",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/f683ae1d-cb7c-4aa1-b9fe-205e1bd23535",
+          "label": "use microsoft office",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/71dde84c-0058-4c52-a556-523369333db8",
+          "label": "use office systems",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/9889b795-d755-41b2-8afd-2e3c87a65a38",
+          "label": "use customer relationship management software",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6474fc36-67ae-436b-9d39-c14402c6a89b",
+          "label": "use ICT hardware",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/aff205d0-b338-4020-9c19-45044b545835",
+          "label": "use digital instruments",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    },
+    {
+      "skill": "психологічна підтримка",
+      "consistency": 0.0833,
+      "total_occurrences": 24,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/d5e1e30e-44ab-4aba-abab-b8263e801b7a",
+          "label": "assist students in their learning",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/44fb294c-440e-4c21-af34-9dec75cdf94b",
+          "label": "provide victim assistance",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/335c86f4-683e-410d-a708-ab1bb8985b10",
+          "label": "apply health psychological measures",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/cd990eab-c6a9-4c11-b17d-b12a98f6573b",
+          "label": "establish customer rapport",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/758e8e0c-2406-460f-b33c-36b422e018bb",
+          "label": "provide learning support in healthcare",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/414332e4-8347-4771-b947-65bd3801a620",
+          "label": "use consulting techniques",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/38788a64-6271-40ff-9e0b-5644c38322ff",
+          "label": "consultation methods",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ad649b0b-ced2-48b6-be0a-0c35e07a445f",
+          "label": "human psychological development",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/5410f054-8e2b-4950-aa10-5f48107a68e7",
+          "label": "provide clinical psychological support in crisis situations",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/996243ee-543f-4c36-a31a-e0f2403c0c5d",
+          "label": "relate empathetically",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/4c772721-9280-49cb-9988-b6ea3d36b06d",
+          "label": "maintain psychological well-being",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/5401bf12-9cb2-4c24-8293-37de2a834031",
+          "label": "help clients cope with grief",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/feb330a2-791e-460d-9e58-83559081fcc8",
+          "label": "advise on humanitarian aid",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a13566a2-4461-4dcc-82b2-8280fb5bb993",
+          "label": "provide teacher support",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/50181a4b-1cfd-4fbd-ac9a-c1a494b9c5d0",
+          "label": "implement customer follow-up",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/524c4331-5090-4565-a0bc-0a9ae874938d",
+          "label": "demonstrate leadership in social service cases",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ea28ce13-e620-4191-95c3-3e0f0f867834",
+          "label": "psychological healthcare services",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/e2d44a9b-f28c-489e-9861-b654b5ded507",
+          "label": "motivate others",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/f2da762e-868c-4dff-a936-50a7cb56e44d",
+          "label": "work with social service users in a group",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/22d363fa-45c0-46fd-a68d-e90182ae9791",
+          "label": "evaluate psychological health measures",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d93f9e29-9740-4231-8486-13d377b99f05",
+          "label": "develop a collaborative therapeutic relationship",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    },
+    {
+      "skill": "організація робочого процесу на кухні",
+      "consistency": 0.0833,
+      "total_occurrences": 12,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/0e1fe34b-f4e7-4642-8c8b-5a05ac3438e5",
+          "label": "manage schedule of tasks",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/619f7f8b-5141-4e4d-a1fa-1d5308e656da",
+          "label": "enforce sanitation procedures",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/0675eb6d-7918-4248-917b-dbce45b06901",
+          "label": "carry out products preparation",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/940a70fa-7c58-423b-8d03-34920b59f0f7",
+          "label": "manage processes",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d3eccb86-f02d-4950-bfbd-20b9510774a1",
+          "label": "apply organisational techniques",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/c747ab82-9c35-4bf6-ab90-b50b9a53d292",
+          "label": "ensure cleanliness of food preparation area",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/538b91e8-565c-4483-bf97-6ff120e207a7",
+          "label": "instruct kitchen personnel",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7d0f33ea-e724-4d77-8b75-ee4fe66bb9ba",
+          "label": "plan manufacturing processes",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/3edfcb2b-2d0e-4673-87ce-f55c37eb5fca",
+          "label": "monitor manufacturing quality standards",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a0d96ce8-aeeb-4ffb-bd78-21c0598179ff",
+          "label": "work according to recipe",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/5d34adde-0b78-42b4-9d3d-69e9388d8398",
+          "label": "oversee quality control",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/8c8da904-cdb3-47d9-bfbf-15ade747d9ec",
+          "label": "work in a hospitality team",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    },
+    {
+      "skill": "переміщення товарів",
+      "consistency": 0.0833,
+      "total_occurrences": 12,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/3a0f10bd-4c3f-4020-b29c-f03cfe6d6e5b",
+          "label": "coordinate transportation",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/048affec-04db-4bd5-b7a6-c666d16c0fef",
+          "label": "load cargo",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/c80b2f08-ab07-4632-be78-68c6ec1f3b41",
+          "label": "perform loading and unloading operations",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a16e3fc6-c77d-46e3-aa18-c691fed47fd1",
+          "label": "freight transport methods",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/dae8c541-f50e-4ff4-96d4-ce70a8e0b178",
+          "label": "determine itineraries of bulk trucks",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/4ad83664-21a9-4f96-8834-0fc8f671be9c",
+          "label": "dispatch order processing",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/fa7be6bf-f906-4b8e-857d-48a9a7da901c",
+          "label": "manage warehouse operations",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/120e54ef-b480-4d49-bf8d-591dbd3598f5",
+          "label": "shunt inbound loads",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/1b4dedad-290e-48cd-a44d-7f801f9ad423",
+          "label": "load bulk trucks",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/e843973c-23dd-416a-8a9c-9e89512542fb",
+          "label": "logistics",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a42cb3ed-f7d3-4c9c-af2e-ff4d9c9f4d48",
+          "label": "plan the dispatching of products",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/078861f5-b901-48a5-951e-a3ad0a4fa0bd",
+          "label": "operate warehouse materials",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    },
+    {
+      "skill": "вміння виконувати бойові завдання",
+      "consistency": 0.0833,
+      "total_occurrences": 12,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/51826e07-64c9-4d2c-9964-88cfbf131ad2",
+          "label": "work as a team in a hazardous environment",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/1143e53e-2933-472d-8161-f26d6936c927",
+          "label": "lead military troops",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/2d780738-9b34-40a3-adbb-590001f6ff86",
+          "label": "perform technically demanding tasks",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/87ebd3b5-f80c-4beb-8e73-75c225065290",
+          "label": "supervise the maintenance of military equipment",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a0cbe83f-dd83-44d9-8c38-bfff2c80ef04",
+          "label": "operate armoured fighting vehicles",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7fc1bae3-eb9b-4609-a374-01c2a39d827d",
+          "label": "devise military tactics",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/3b6834bd-b781-4dc6-b8c3-3fa74b865120",
+          "label": "answer emergency calls",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/74aa45cf-175f-47ef-9978-d9de437d92ba",
+          "label": "stay alert",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/b20b9df9-812c-453a-893c-e47731b4a109",
+          "label": "instruct in military duties",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/2357e4f8-4b42-4969-bd17-cfea963956c0",
+          "label": "perform military operations",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a9b00496-6115-4338-86b2-1bdf2aaff26a",
+          "label": "train military troops",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/0b2701ed-e85a-4d02-a68b-ef5c695f785a",
+          "label": "use firearms",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    },
+    {
+      "skill": "робота з crm-системами",
+      "consistency": 0.0845,
+      "total_occurrences": 71,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/71dde84c-0058-4c52-a556-523369333db8",
+          "label": "use office systems",
+          "count": 6
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6430eb0d-c6de-46b7-a7fc-3dd2e8e62a69",
+          "label": "use ICT ticketing system",
+          "count": 5
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/5c845ff8-b3f7-42b1-a846-a4238a8b404e",
+          "label": "use ICT resources to solve work related tasks",
+          "count": 4
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/77e7cb08-2c6f-42ab-881b-b34b2318acbe",
+          "label": "manage administrative systems",
+          "count": 4
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7369f779-4b71-4aab-8836-48b69c676eec",
+          "label": "operate relational database management system",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6ae8306a-4f9d-4410-ac82-6406f3cbd16a",
+          "label": "manage office facility systems",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/2aed5d29-15c3-44ba-bb5c-80750a815b3c",
+          "label": "follow up orders for customers",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a3e7ebba-5183-4df8-9203-35b9b9b8f4fa",
+          "label": "collect customer data",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/50181a4b-1cfd-4fbd-ac9a-c1a494b9c5d0",
+          "label": "implement customer follow-up",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7c821387-b428-4f75-b5a7-7b038aa81cfd",
+          "label": "use a warehouse management system",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6474fc36-67ae-436b-9d39-c14402c6a89b",
+          "label": "use ICT hardware",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60",
+          "label": "have computer literacy",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/2239694b-771a-4586-8b54-2794e361a9ae",
+          "label": "maintain relationship with customers",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/bd17a64e-a9bd-439d-9b87-01c6bb1b7e09",
+          "label": "maintain records of work with service users",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/31d35d3d-2bf2-49aa-9c20-92566ef80277",
+          "label": "use ICT systems",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6b2f8802-0cbf-436e-a37f-ca55ede41bbc",
+          "label": "operate digital hardware",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/aff205d0-b338-4020-9c19-45044b545835",
+          "label": "use digital instruments",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a12057b4-6d11-4a12-ab8e-15a028ef0a6d",
+          "label": "interact through digital technologies",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/4b95c7bb-5672-4e4a-88ea-ba96c12e8ca2",
+          "label": "manage the customer experience",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/c753a3b5-d5cc-406d-adfe-3372bb267f4b",
+          "label": "maintain customer records",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/e1e99428-b91b-45e1-8ede-ed0cbf161930",
+          "label": "establish an ICT customer support process",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/db36f7f1-5900-45bd-9ffb-f2b19c4362ac",
+          "label": "support ICT system users",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/e439742d-558d-4f52-885e-afdc740b48cf",
+          "label": "browse, search and filter data, information and digital content",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/0df2e216-68ae-4952-b9dc-3c2f2bc04fe3",
+          "label": "maintain freelance database",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/24814e7a-70cd-47e5-98b2-d44b46be92d2",
+          "label": "maintain transaction's reports",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a15dab55-f1da-4f85-ae3e-2b5c5b5333ca",
+          "label": "provide high quality customer service",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6c97d04d-7239-4dc7-90ef-3e812ba2b124",
+          "label": "perform procurement market analysis",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ba1b0441-a6b8-4e57-8ccc-871012f63e42",
+          "label": "trading software",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d4f9906e-3b22-4c27-9b32-1c1f457ced44",
+          "label": "oversee record management",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a703b581-ad64-4791-8bb3-624aea569fa5",
+          "label": "maintain contract administration",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/75dfe1ee-5935-42ce-b820-697f827825c3",
+          "label": "maintain customer service",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/97bd1c21-66b2-4b7e-ad0f-e3cda590e378",
+          "label": "data analytics",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/30b1f3e1-1586-4d41-aa02-e2ab021b5164",
+          "label": "handle paperwork",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/8096627b-c5a5-4235-b1ee-eca8be976eb2",
+          "label": "maintain records of phone calls",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+\begin{table}[htbp]
+  \centering
+  \caption{Baseline mapper comparison (resumes).}
+  \label{tab:baseline-res}
+  \begin{tabular}{lrrrr}
+    \toprule
+    Mapper & Unmapped & Mean conf. & ESCO URIs & Consistency \\
+    \midrule
+  Fuzzy & 90.0\% & 0.913 & 33 & \textbf{1.000} \\
+  Embedding & \textbf{6.4\%} & 0.808 & \textbf{731} & \textbf{1.000} \\
+  LLM direct & 27.0\% & \textbf{0.924} & 200 & 0.805 \\
+  LLM two-stage & 29.6\% & 0.893 & 95 & 0.913 \\
+    \bottomrule
+  \end{tabular}
+\end{table}

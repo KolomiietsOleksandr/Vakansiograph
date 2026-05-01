@@ -1,0 +1,124 @@
+{
+  "stage1_only": {
+    "description": "Extraction only (no mapping)",
+    "metrics": {
+      "documents": 45,
+      "skills_per_doc_mean": 33.91,
+      "skills_per_doc_median": 26.0,
+      "skills_per_doc_std": 23.77,
+      "total_skills": 1526
+    }
+  },
+  "stage12_no_graph": {
+    "description": "Mapping without graph enrichment, no rescoring",
+    "metrics": {
+      "source": "resumes",
+      "documents": 45,
+      "unmapped_rate_macro": 0.4771,
+      "confidence": {
+        "buckets": {
+          "0.0-0.5": 0,
+          "0.5-0.6": 0,
+          "0.6-0.7": 5,
+          "0.7-0.8": 60,
+          "0.8-0.9": 138,
+          "0.9-1.0": 654
+        },
+        "mean": 0.9087,
+        "median": 0.9,
+        "std": 0.0859
+      },
+      "esco_coverage_breadth": 96,
+      "skills_per_document": {
+        "mean": 33.9111,
+        "median": 26.0,
+        "std": 23.7728
+      },
+      "mappings_per_document": {
+        "mean": 19.0444,
+        "median": 14.0,
+        "std": 16.9167
+      },
+      "graph_enrichment_yield": 0.0,
+      "method_distribution": {
+        "llm_two_stage": 857
+      },
+      "consistency_rate": 1.0
+    }
+  },
+  "stage12_with_graph": {
+    "description": "Mapping with graph enrichment, no rescoring",
+    "metrics": {
+      "source": "resumes",
+      "documents": 45,
+      "unmapped_rate_macro": 0.4126,
+      "confidence": {
+        "buckets": {
+          "0.0-0.5": 0,
+          "0.5-0.6": 0,
+          "0.6-0.7": 8,
+          "0.7-0.8": 68,
+          "0.8-0.9": 168,
+          "0.9-1.0": 697
+        },
+        "mean": 0.9057,
+        "median": 0.9,
+        "std": 0.0884
+      },
+      "esco_coverage_breadth": 95,
+      "skills_per_document": {
+        "mean": 33.9111,
+        "median": 26.0,
+        "std": 23.7728
+      },
+      "mappings_per_document": {
+        "mean": 20.9111,
+        "median": 16.0,
+        "std": 17.4315
+      },
+      "graph_enrichment_yield": 0.152,
+      "method_distribution": {
+        "llm_two_stage": 941
+      },
+      "consistency_rate": 1.0
+    }
+  },
+  "full_pipeline": {
+    "description": "Full pipeline (extraction + mapping + rescoring)",
+    "metrics": {
+      "source": "resumes",
+      "documents": 45,
+      "unmapped_rate_macro": 0.3007,
+      "confidence": {
+        "buckets": {
+          "0.0-0.5": 0,
+          "0.5-0.6": 0,
+          "0.6-0.7": 5,
+          "0.7-0.8": 101,
+          "0.8-0.9": 224,
+          "0.9-1.0": 784
+        },
+        "mean": 0.8977,
+        "median": 0.9,
+        "std": 0.0898
+      },
+      "esco_coverage_breadth": 96,
+      "skills_per_document": {
+        "mean": 33.9111,
+        "median": 26.0,
+        "std": 23.7728
+      },
+      "mappings_per_document": {
+        "mean": 24.7556,
+        "median": 20.0,
+        "std": 20.1176
+      },
+      "graph_enrichment_yield": 0.1598,
+      "method_distribution": {
+        "llm_two_stage": 1114
+      },
+      "consistency_rate": 0.9195
+    }
+  }
+}
+  

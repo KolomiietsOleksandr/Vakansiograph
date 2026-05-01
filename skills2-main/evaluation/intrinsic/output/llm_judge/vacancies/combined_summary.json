@@ -1,0 +1,37 @@
+{
+  "source": "vacancies",
+  "mappers": {
+    "fuzzy": {
+      "mappings_per_doc": 0.86,
+      "unmapped_rate": 0.7586,
+      "strict_accuracy": 0.8605,
+      "lenient_accuracy": 0.907,
+      "effective_correct_per_doc": 0.74,
+      "effective_acceptable_per_doc": 0.78
+    },
+    "embedding": {
+      "mappings_per_doc": 19.9,
+      "unmapped_rate": 0.0412,
+      "strict_accuracy": 0.51,
+      "lenient_accuracy": 0.79,
+      "effective_correct_per_doc": 10.15,
+      "effective_acceptable_per_doc": 15.72
+    },
+    "llm_direct": {
+      "mappings_per_doc": 3.66,
+      "unmapped_rate": 0.1032,
+      "strict_accuracy": 0.9,
+      "lenient_accuracy": 0.99,
+      "effective_correct_per_doc": 3.29,
+      "effective_acceptable_per_doc": 3.62
+    },
+    "llm_two_stage": {
+      "mappings_per_doc": 13.28,
+      "unmapped_rate": 0.2915,
+      "strict_accuracy": 0.69,
+      "lenient_accuracy": 0.94,
+      "effective_correct_per_doc": 9.16,
+      "effective_acceptable_per_doc": 12.48
+    }
+  }
+}

@@ -5,6 +5,13 @@ gunicorn==21.2.0
 APScheduler==3.10.4
 requests==2.31.0
 
+# ESCO enrichment v2 (skills2-main integration)
+rapidfuzz>=3.0
+google-genai>=1.0
+pydantic-settings>=2.0
+tenacity>=8.2
+numpy>=1.24
+
 # Development dependencies
 pytest==7.4.3
 pytest-cov==4.1.0

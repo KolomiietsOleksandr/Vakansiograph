@@ -1,0 +1,2338 @@
+{
+  "total_unique_skills": 111027,
+  "qualifying_skills": 3455,
+  "macro_avg_consistency": 0.4428,
+  "histogram": {
+    "100%": 335,
+    "90-99%": 58,
+    "80-89%": 164,
+    "70-79%": 110,
+    "60-69%": 232,
+    "50-59%": 266,
+    "<50%": 2290
+  },
+  "polysemy_count": 1237,
+  "instability_count": 1883,
+  "top_inconsistent": [
+    {
+      "skill": "facebook business manager",
+      "consistency": 0.0625,
+      "total_occurrences": 16,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/90398aca-82b7-4f56-8e0f-814d949162b4",
+          "label": "coordinate marketing plan actions",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/f683ae1d-cb7c-4aa1-b9fe-205e1bd23535",
+          "label": "use microsoft office",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/98fb499f-9155-412d-a8a0-95ba97126fec",
+          "label": "using digital tools for collaboration and productivity",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/abe138ec-e084-47c7-abe3-e7f371f05eae",
+          "label": "interact with an audience",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/4d6a48ae-352e-4823-bc3a-3f3e9e2cae86",
+          "label": "accessing and analysing digital data",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ae6af2c6-890d-40a7-9849-326a8c21df76",
+          "label": "coordinate advertising campaigns",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/isced-f/0413",
+          "label": "management and administration",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6457122e-5eed-4817-9f67-c3edb607fef6",
+          "label": "evaluate advertising campaign",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6a609f8f-1451-4102-ad2d-62c5270e1237",
+          "label": "office administration",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d822b4b2-26c7-4bd9-970d-229c6504f615",
+          "label": "create digital content",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/isced-f/0211",
+          "label": "audio-visual techniques and media production",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/13e2378e-0d10-450d-843a-b3592575826e",
+          "label": "implement marketing strategies",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/efb60300-0d55-4b2c-8038-8409587a4727",
+          "label": "promoting products, services, or programs",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/e8f602f8-b98b-4071-b088-c65e016cdf98",
+          "label": "media planning",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/32c017fd-28ab-4051-bf68-74de952c2f77",
+          "label": "managing information",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7e5147d1-60b1-4a68-804b-1f5cb0396b91",
+          "label": "problem-solving with digital tools",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    },
+    {
+      "skill": "ведення соціальних мереж",
+      "consistency": 0.0723,
+      "total_occurrences": 83,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/e8f602f8-b98b-4071-b088-c65e016cdf98",
+          "label": "media planning",
+          "count": 6
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/5303169c-75d6-4751-9136-a4b88343388c",
+          "label": "social media management",
+          "count": 6
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/abe138ec-e084-47c7-abe3-e7f371f05eae",
+          "label": "interact with an audience",
+          "count": 5
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/08fd2839-670c-4f16-8024-97437f2035ab",
+          "label": "plan marketing strategy",
+          "count": 5
+        },
+        {
+          "uri": "http://data.europa.eu/esco/isced-f/0211",
+          "label": "audio-visual techniques and media production",
+          "count": 4
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/13e2378e-0d10-450d-843a-b3592575826e",
+          "label": "implement marketing strategies",
+          "count": 4
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/3c834f6e-523a-49ee-8ed1-e073e28ae6fe",
+          "label": "develop communications strategies",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/dc9a236c-c640-43c3-812f-269403591edb",
+          "label": "customer relationship management",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/efda73b4-5212-40a7-b2f8-d2f754ffdf2b",
+          "label": "keep up with trends",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/47ed1d37-971b-472c-86be-26f893991274",
+          "label": "coordinate with creative departments",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/84605f91-5ab4-4965-a1ad-cdc1901a820d",
+          "label": "marketing department processes",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/3b926329-d9fa-4402-b8be-684423546acc",
+          "label": "set up advertising material",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/15a33d76-4640-438d-ae64-fdc0c1d3eebc",
+          "label": "customer service",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/isced-f/0414",
+          "label": "marketing and advertising",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7fb699d9-182a-430e-b7a0-6d8ed05c284b",
+          "label": "graphic design",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/33e584f9-ff7a-4979-bfc0-5a3a374a145a",
+          "label": "social network analysis",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/cf22d572-a77f-410d-83e4-3a627cc8df77",
+          "label": "supervise sales activities",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/74cb80c4-df6b-4d79-a153-cb7b3b3b6eb0",
+          "label": "plan social media marketing campaigns",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/207f87c4-ac68-4987-990c-636ca19c2626",
+          "label": "calculate wages",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/734b6025-0d14-499d-8e95-fdf512058e77",
+          "label": "image formation",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d822b4b2-26c7-4bd9-970d-229c6504f615",
+          "label": "create digital content",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/67dbfc2a-3dd4-41a1-90bd-97035e7add60",
+          "label": "stay up to date with social media",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ac6ff889-328b-46ea-a8ee-e196443b2447",
+          "label": "counsel clients",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a15dab55-f1da-4f85-ae3e-2b5c5b5333ca",
+          "label": "provide high quality customer service",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/b0560439-14eb-41d1-aa53-1938efc24123",
+          "label": "content marketing strategy",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/3c8c9fe5-bbc6-4a0b-8cf2-a839aeef585c",
+          "label": "communicate with media",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/97b246e3-4f45-4708-9734-cd3158d868cf",
+          "label": "demonstrate motivation for sales",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6d289e8b-2cc1-4eda-ab1f-ad1090ef98f0",
+          "label": "WordPress",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d80f7a28-1e75-4247-9104-de8e5f909f0a",
+          "label": "reputation management",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6451e645-67b5-4cc7-aafd-fab19629fa82",
+          "label": "archive documentation related to work",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7800332c-a8eb-4792-8d72-50d509616154",
+          "label": "draft press releases",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/e437eba1-3e22-41f2-8703-741e94785cba",
+          "label": "human resource management",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d1815c8a-7755-4fe3-bacf-68bb0b6a0b55",
+          "label": "developing instructive or promotional materials",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/1f6eac42-e5aa-4fa7-a75d-a4eea12c618e",
+          "label": "disseminate internal communications",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7049ac98-0368-4bb2-84d4-5366d1c0f2ac",
+          "label": "conduct online competitive analysis",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ae6af2c6-890d-40a7-9849-326a8c21df76",
+          "label": "coordinate advertising campaigns",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a1bbc0e9-58d1-4bbc-bf68-de5679bef07f",
+          "label": "outdoor advertising",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/1605025e-a179-421f-8f35-5b07d182a6b2",
+          "label": "web analytics",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/aa8b0abf-7ff0-4fbb-b85e-5364badbf214",
+          "label": "create advertisements",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/3391d6dd-d584-4c8c-9af9-d2f0c45e2b4b",
+          "label": "journalism",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/3cd35f5d-ce6d-4f14-9a09-53d7a28d834c",
+          "label": "maintain relationship with suppliers",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/b1a5d83a-e02a-449f-a68b-539b34821078",
+          "label": "design materials for multimedia campaigns",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/5330b70e-16f5-43a7-a6de-18fd6a4bd063",
+          "label": "public relations",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/b17f4305-741a-4a1c-8fe8-6f11cb3d5c0a",
+          "label": "business communication",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/77526b41-a770-4d4e-975e-5a595f6544fe",
+          "label": "process loyalty schemes",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6457122e-5eed-4817-9f67-c3edb607fef6",
+          "label": "evaluate advertising campaign",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    },
+    {
+      "skill": "bitbucket",
+      "consistency": 0.0769,
+      "total_occurrences": 13,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/3a815994-6a80-4210-9588-1bb23fc005b3",
+          "label": "write dock records",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/b4548845-dc4c-43fb-a55c-b9b7c6c1defd",
+          "label": "document sharing procedures",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a8d07b5a-c1a1-42c6-9d53-db9c7a2ca996",
+          "label": "PostgreSQL",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/79e29b8b-47d1-470d-b7b1-32506bfe7d9a",
+          "label": "collect ICT data",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/4d6a48ae-352e-4823-bc3a-3f3e9e2cae86",
+          "label": "accessing and analysing digital data",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60",
+          "label": "have computer literacy",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/isced-f/0619",
+          "label": "information and communication technologies not elsewhere classified",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ab1e97ed-2319-4293-a8b7-072d2648822f",
+          "label": "database management systems",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/isced-f/0417",
+          "label": "work skills",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/isced-f/068",
+          "label": "inter-disciplinary programmes and qualifications involving information and communication technologies (icts)",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/06d09f70-6ca8-4078-be72-4c2c2a11ee61",
+          "label": "program management",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/185c56ee-098f-46a1-af87-56337085da6f",
+          "label": "protecting ict devices",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/12428071-1ec8-4d52-a0ce-3eee78e1e1be",
+          "label": "perform records management",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    },
+    {
+      "skill": "github",
+      "consistency": 0.0804,
+      "total_occurrences": 112,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60",
+          "label": "have computer literacy",
+          "count": 9
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/06d09f70-6ca8-4078-be72-4c2c2a11ee61",
+          "label": "program management",
+          "count": 8
+        },
+        {
+          "uri": "http://data.europa.eu/esco/isced-f/0613",
+          "label": "software and applications development and analysis",
+          "count": 6
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/4d6a48ae-352e-4823-bc3a-3f3e9e2cae86",
+          "label": "accessing and analysing digital data",
+          "count": 5
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/69bbd53f-fbb0-4476-b4b2-ef7844464e28",
+          "label": "web programming",
+          "count": 5
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/f0de4973-0a70-4644-8fd4-3a97080476f4",
+          "label": "DevOps",
+          "count": 5
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a71577b2-7550-4222-88ee-dcbd2d881516",
+          "label": "graphics editor software",
+          "count": 4
+        },
+        {
+          "uri": "http://data.europa.eu/esco/isced-f/0612",
+          "label": "database and network design and administration",
+          "count": 4
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/598de5b0-5b58-4ea7-8058-a4bc4d18c742",
+          "label": "SQL",
+          "count": 4
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/12428071-1ec8-4d52-a0ce-3eee78e1e1be",
+          "label": "perform records management",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/39499028-35bf-4d69-9275-fb98902ed88b",
+          "label": "working with computers",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ea1bf5e5-e7f0-4d2c-a415-1c39c00512b1",
+          "label": "document management",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/isced-f/0619",
+          "label": "information and communication technologies not elsewhere classified",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/94dd823c-148e-4614-a6e8-99249b16357d",
+          "label": "ICT project management",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ab1e97ed-2319-4293-a8b7-072d2648822f",
+          "label": "database management systems",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "label": "computer programming",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/14832d87-2f2f-4895-b290-e4760ebae42a",
+          "label": "solve technical problems",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/3cd569a2-4f88-4c1e-9995-8dce8c5e51a7",
+          "label": "JavaScript",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/isced-f/0417",
+          "label": "work skills",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a8d07b5a-c1a1-42c6-9d53-db9c7a2ca996",
+          "label": "PostgreSQL",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/9d2f77af-4307-4ac5-bc50-a9980cec7e83",
+          "label": "develop reporting software",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388",
+          "label": "project management",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/c8de8023-ab8a-402b-a828-b2b57cd3b2f7",
+          "label": "install software",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/5c98825f-146d-4d35-97cf-207b2afd9ae2",
+          "label": "create technical plans",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/625b57ee-29d4-425b-bf99-9fd54dd021fe",
+          "label": "Kali Linux",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/f2d57f41-43b4-4f5b-8100-3df5c21eda50",
+          "label": "process data",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/79e29b8b-47d1-470d-b7b1-32506bfe7d9a",
+          "label": "collect ICT data",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/5a234b3b-63b4-482f-b481-a1ff9d95bbf8",
+          "label": "office equipment",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6d289e8b-2cc1-4eda-ab1f-ad1090ef98f0",
+          "label": "WordPress",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ddfe79e2-c2e3-4ba7-9bdf-3820b4f75b54",
+          "label": "identify ICT user needs",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/83e6510b-ffeb-4aec-959c-4265fd0ff7b7",
+          "label": "attend to detail",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d0c6d77e-cb25-4770-bf77-2073fc5f7523",
+          "label": "ICT infrastructure",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7e5147d1-60b1-4a68-804b-1f5cb0396b91",
+          "label": "problem-solving with digital tools",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6fa1c2c0-a012-4ca0-9642-e01569ba322c",
+          "label": "ICT system integration",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/isced-f/068",
+          "label": "inter-disciplinary programmes and qualifications involving information and communication technologies (icts)",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/c062bab3-3ea0-4291-9220-a2d8fef4bead",
+          "label": "SQL Server",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d4f9906e-3b22-4c27-9b32-1c1f457ced44",
+          "label": "oversee record management",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/2e1888d8-97f7-4c91-8874-e2ef0e47f94f",
+          "label": "create digital files",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/8fa510d0-a8a6-4932-a361-00f8442cfe23",
+          "label": "Wireshark",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/95bf4552-6d5b-41dc-b990-53ace372f705",
+          "label": "documenting technical designs, procedures, problems or activities",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/49de9958-2aa4-4eef-a89d-fe5d5bcd28c4",
+          "label": "adapt to change",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/b02b38c4-d46d-44da-9479-1310060bd74d",
+          "label": "asset management",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/e5d1f825-60ed-4bdd-872a-e748c387f777",
+          "label": "CSS",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/5475343c-5e75-415f-b431-17f3c20a347e",
+          "label": "use production planning software",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/cf310cff-0d28-4dbc-9dbb-cc500a3196c2",
+          "label": "office software",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6ae8306a-4f9d-4410-ac82-6406f3cbd16a",
+          "label": "manage office facility systems",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/56a7f561-1d55-43c9-9cd7-36a0a9bc6c50",
+          "label": "ASP.NET",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/3a815994-6a80-4210-9588-1bb23fc005b3",
+          "label": "write dock records",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/isced-f/0413",
+          "label": "management and administration",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/89bb44dc-9f4c-400b-86cd-dcd0bd599a58",
+          "label": "maintain electronic systems",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/036afa6e-cdde-4b38-a53a-8e7910a840e1",
+          "label": "collaborating in teams and networks",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    },
+    {
+      "skill": "репетиторство",
+      "consistency": 0.0833,
+      "total_occurrences": 12,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/29ca8fd4-40c1-494c-85ea-525f1ab4aa8c",
+          "label": "construct individual learning plans",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/517f678e-001b-4985-acb4-9edc3500d74c",
+          "label": "develop training programmes",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/4c5d616e-f6d8-4fb4-8ce6-89a4b048b916",
+          "label": "create training materials",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7ee872de-db39-4ae3-8e19-75d1a2cdf697",
+          "label": "develop learning curriculum",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/3012a059-e062-4171-b37e-f9e7c7eb603e",
+          "label": "perform lectures",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/3391d6dd-d584-4c8c-9af9-d2f0c45e2b4b",
+          "label": "journalism",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/5609c548-8581-4a28-8afc-5f744868e9c7",
+          "label": "build rapport with people from different cultural backgrounds",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/90e8f54b-064f-4721-8ccc-b5f61968b227",
+          "label": "organise training",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/0898017f-4f6f-4654-807d-1bbe11df100c",
+          "label": "teach principles of literature",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/335be43a-3267-400e-b5cb-c9e234dc7544",
+          "label": "teaching academic or vocational subjects",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/e54ff029-1ce9-447d-a5b2-eb7283a23e6e",
+          "label": "train employees",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7e0b93e0-0de7-4607-b07f-27a6828d3ff0",
+          "label": "developing educational programmes",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    },
+    {
+      "skill": "bas",
+      "consistency": 0.087,
+      "total_occurrences": 23,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/0b8da079-f587-403f-a6ad-cd18b8150044",
+          "label": "gather technical information",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/940a70fa-7c58-423b-8d03-34920b59f0f7",
+          "label": "manage processes",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "label": "manage budgets",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/3a815994-6a80-4210-9588-1bb23fc005b3",
+          "label": "write dock records",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/3c834f6e-523a-49ee-8ed1-e073e28ae6fe",
+          "label": "develop communications strategies",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/0f9958d2-f700-4f62-b90b-a5873cb5ae4c",
+          "label": "systems thinking",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a71577b2-7550-4222-88ee-dcbd2d881516",
+          "label": "graphics editor software",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/isced-f/0415",
+          "label": "secretarial and office work",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ab1e97ed-2319-4293-a8b7-072d2648822f",
+          "label": "database management systems",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/4d6a48ae-352e-4823-bc3a-3f3e9e2cae86",
+          "label": "accessing and analysing digital data",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/5a234b3b-63b4-482f-b481-a1ff9d95bbf8",
+          "label": "office equipment",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/08371fe9-c658-4f6a-966f-71dbb0ab683d",
+          "label": "accounting department processes",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/39499028-35bf-4d69-9275-fb98902ed88b",
+          "label": "working with computers",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/isced-f/0412",
+          "label": "finance, banking and insurance",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/isced-f/0612",
+          "label": "database and network design and administration",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/4707da90-9cfc-46ca-8de0-38a0b7bfb137",
+          "label": "think analytically",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/f4d3a8ff-2db1-4015-aa28-d4564afef3fd",
+          "label": "keep records on sales",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/60f51172-37c0-4933-a27a-cbf55dcd7580",
+          "label": "prepare financial statements",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/isced-f/0413",
+          "label": "management and administration",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/43ae58b9-5e56-4524-b45a-b422777a0576",
+          "label": "database",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a8d07b5a-c1a1-42c6-9d53-db9c7a2ca996",
+          "label": "PostgreSQL",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    },
+    {
+      "skill": "реклама",
+      "consistency": 0.0882,
+      "total_occurrences": 34,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/6457122e-5eed-4817-9f67-c3edb607fef6",
+          "label": "evaluate advertising campaign",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/b011c8b4-76e1-4bbc-8bb9-1d205e7b618a",
+          "label": "market analysis",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/08fd2839-670c-4f16-8024-97437f2035ab",
+          "label": "plan marketing strategy",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/84605f91-5ab4-4965-a1ad-cdc1901a820d",
+          "label": "marketing department processes",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/isced-f/0414",
+          "label": "marketing and advertising",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/e8f602f8-b98b-4071-b088-c65e016cdf98",
+          "label": "media planning",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a1bbc0e9-58d1-4bbc-bf68-de5679bef07f",
+          "label": "outdoor advertising",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/13e2378e-0d10-450d-843a-b3592575826e",
+          "label": "implement marketing strategies",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/848c0306-8cbe-4693-a275-d99807c0173c",
+          "label": "liaising and networking",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ae6af2c6-890d-40a7-9849-326a8c21df76",
+          "label": "coordinate advertising campaigns",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7800332c-a8eb-4792-8d72-50d509616154",
+          "label": "draft press releases",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/9f817e84-da26-4e80-a3ea-0019045614ee",
+          "label": "publicity code",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/9c6e951f-aa88-4890-983d-e7a6ee49f5bb",
+          "label": "plan marketing campaigns",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/5303169c-75d6-4751-9136-a4b88343388c",
+          "label": "social media management",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/90398aca-82b7-4f56-8e0f-814d949162b4",
+          "label": "coordinate marketing plan actions",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/66fda9e5-f9f7-4342-b4f1-23355bcdd0b9",
+          "label": "develop promotional tools",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/e06f2d35-a160-46c2-89f1-9cae9c93c8b8",
+          "label": "selling products or services",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/c2d48b3a-1f91-4442-8f18-6c43a589737b",
+          "label": "develop media strategy",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7049ac98-0368-4bb2-84d4-5366d1c0f2ac",
+          "label": "conduct online competitive analysis",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/67f21527-ca9d-4c76-8571-3cf74e3ce979",
+          "label": "create media plan",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/37272760-957a-4c34-b4f3-780ee285334d",
+          "label": "developing financial, business or marketing plans",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6d97bf55-6fb6-4795-8282-3ef915ae0bb8",
+          "label": "prospect new customers",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/efb60300-0d55-4b2c-8038-8409587a4727",
+          "label": "promoting products, services, or programs",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    },
+    {
+      "skill": "інтерактивний метод навчання",
+      "consistency": 0.0909,
+      "total_occurrences": 11,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/abe138ec-e084-47c7-abe3-e7f371f05eae",
+          "label": "interact with an audience",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/32a9f2e2-929c-4e1a-afbd-185452ab279c",
+          "label": "conduct continuing professional development workshops",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/9525dcdf-5085-4143-bbae-544263acd63a",
+          "label": "coordinate educational programmes",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/573d3f91-c81c-407e-a56d-0f3a63272b43",
+          "label": "adapt teaching to student's capabilities",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7ee872de-db39-4ae3-8e19-75d1a2cdf697",
+          "label": "develop learning curriculum",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/796dc3f2-fadb-4de5-b9d0-39069a140caa",
+          "label": "teach history",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/088fd519-b655-4f66-a9d2-5c991a7975a0",
+          "label": "stimulate students' independence",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/4c5d616e-f6d8-4fb4-8ce6-89a4b048b916",
+          "label": "create training materials",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/517f678e-001b-4985-acb4-9edc3500d74c",
+          "label": "develop training programmes",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/335be43a-3267-400e-b5cb-c9e234dc7544",
+          "label": "teaching academic or vocational subjects",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/e54ff029-1ce9-447d-a5b2-eb7283a23e6e",
+          "label": "train employees",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    },
+    {
+      "skill": "вивчення англійської мови",
+      "consistency": 0.0909,
+      "total_occurrences": 11,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/b17f4305-741a-4a1c-8fe8-6f11cb3d5c0a",
+          "label": "business communication",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/isced-f/0232",
+          "label": "literature and linguistics",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/isced-f/003",
+          "label": "personal skills and development",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/07ba491f-2fd4-4bab-bf52-32934c6f0b9f",
+          "label": "work in an international environment",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a38e54a1-0922-4e8f-92a6-4f028d7d569f",
+          "label": "maintain updated professional knowledge",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/2abb9db5-350c-444c-8292-0e0b2ce00f9a",
+          "label": "interact verbally in German",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/f5c9eef3-0495-4747-9519-d71a58d252bd",
+          "label": "demonstrating willingness to learn",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6c80d53c-d8c9-41fe-998f-091fca208834",
+          "label": "learning management systems",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6f142deb-03a9-4cd7-94ce-e0f023ae2169",
+          "label": "communicating",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/83e6510b-ffeb-4aec-959c-4265fd0ff7b7",
+          "label": "attend to detail",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/5609c548-8581-4a28-8afc-5f744868e9c7",
+          "label": "build rapport with people from different cultural backgrounds",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    },
+    {
+      "skill": "exel",
+      "consistency": 0.0909,
+      "total_occurrences": 11,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/29dcc31e-a8d6-4a62-b3c1-2de81e966e39",
+          "label": "gathering information from physical or electronic sources",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/4d6a48ae-352e-4823-bc3a-3f3e9e2cae86",
+          "label": "accessing and analysing digital data",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60",
+          "label": "have computer literacy",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7e5147d1-60b1-4a68-804b-1f5cb0396b91",
+          "label": "problem-solving with digital tools",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/32c017fd-28ab-4051-bf68-74de952c2f77",
+          "label": "managing information",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/isced-f/0417",
+          "label": "work skills",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea",
+          "label": "manage budgets",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/isced-f/068",
+          "label": "inter-disciplinary programmes and qualifications involving information and communication technologies (icts)",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/0f9958d2-f700-4f62-b90b-a5873cb5ae4c",
+          "label": "systems thinking",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ab1e97ed-2319-4293-a8b7-072d2648822f",
+          "label": "database management systems",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/f683ae1d-cb7c-4aa1-b9fe-205e1bd23535",
+          "label": "use microsoft office",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    },
+    {
+      "skill": "контроль якості виконання робіт",
+      "consistency": 0.0909,
+      "total_occurrences": 11,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/35ebe444-9ece-4fbc-a55d-e99ea37267ae",
+          "label": "manage quality",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/3edfcb2b-2d0e-4673-87ce-f55c37eb5fca",
+          "label": "monitor manufacturing quality standards",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a571791c-50aa-40d1-ba82-b3f1f4185426",
+          "label": "monitor event activities",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/50ab7296-bc34-4cb1-9fdb-7cf7b6f80f9c",
+          "label": "maintain work standards",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/3a1c546d-914a-46e4-a7c1-47d43646fedd",
+          "label": "perform quality control of design during a run",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/54f7432d-a8b6-4ed4-a50e-9ec882320595",
+          "label": "monitoring, inspecting and testing",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/83e6510b-ffeb-4aec-959c-4265fd0ff7b7",
+          "label": "attend to detail",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/4ca91852-c534-4b98-ab1c-59a126534c88",
+          "label": "project commissioning",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/1a3660c2-011c-4e96-9b1d-529afc305428",
+          "label": "inspect quality of products",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d89f5cee-649a-44bd-9aa9-8e74bbdbd50d",
+          "label": "monitor contractor performance",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/277f489c-7a47-4791-bd87-61ca01737f96",
+          "label": "oversee production requirements",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    },
+    {
+      "skill": "складання чеклістів",
+      "consistency": 0.0909,
+      "total_occurrences": 11,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/30b1f3e1-1586-4d41-aa02-e2ab021b5164",
+          "label": "handle paperwork",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d1a2b81b-a3b5-4e4c-958f-e361254c295e",
+          "label": "develop assembly instructions",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/83e6510b-ffeb-4aec-959c-4265fd0ff7b7",
+          "label": "attend to detail",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/9bdf8a77-8524-43da-bac6-d15d22e1b7ed",
+          "label": "entering and transforming information",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/0b144726-21c2-46ed-8d13-c03d27f61604",
+          "label": "perform multiple tasks at the same time",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/906c9e66-bdee-4f8e-93d7-88d9fcf39a0a",
+          "label": "fix meetings",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6789d5a3-34ca-4417-bb93-331319b01da3",
+          "label": "draft tender documentation",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ea1bf5e5-e7f0-4d2c-a415-1c39c00512b1",
+          "label": "document management",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/cc9b4fbb-65f1-4c92-9229-1392d03b6e20",
+          "label": "structure information",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/e5e48620-8476-42e9-bfa9-ffe0282a8ab0",
+          "label": "organise performance space",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/3a815994-6a80-4210-9588-1bb23fc005b3",
+          "label": "write dock records",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    },
+    {
+      "skill": "проведення індивідуальних занять",
+      "consistency": 0.093,
+      "total_occurrences": 43,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/573d3f91-c81c-407e-a56d-0f3a63272b43",
+          "label": "adapt teaching to student's capabilities",
+          "count": 4
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/caede8f1-6658-4d78-9eb4-2ad2c7ebf09b",
+          "label": "teaching and training",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/e54ff029-1ce9-447d-a5b2-eb7283a23e6e",
+          "label": "train employees",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/335be43a-3267-400e-b5cb-c9e234dc7544",
+          "label": "teaching academic or vocational subjects",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/90e8f54b-064f-4721-8ccc-b5f61968b227",
+          "label": "organise training",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/15a33d76-4640-438d-ae64-fdc0c1d3eebc",
+          "label": "customer service",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/29ca8fd4-40c1-494c-85ea-525f1ab4aa8c",
+          "label": "construct individual learning plans",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/4c5d616e-f6d8-4fb4-8ce6-89a4b048b916",
+          "label": "create training materials",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/isced-f/0114",
+          "label": "teacher training with subject specialisation",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/428ab44b-39ef-42d6-a93d-12f4efc4cb10",
+          "label": "teach university class",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/isced-f/0923",
+          "label": "social work and counselling",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ac6ff889-328b-46ea-a8ee-e196443b2447",
+          "label": "counsel clients",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/73a023d0-888c-4d89-87e4-a03e84395da8",
+          "label": "develop therapeutic relationships",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/9fa68ebb-8522-4ade-85c8-4500f525871b",
+          "label": "observe teaching activities",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/91b0b918-942e-4661-b88c-70b9396529e5",
+          "label": "working with others",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/045f71e6-0699-4169-8a54-9c6b96f3174d",
+          "label": "advise others",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/108112e0-a3df-43bf-91ec-d9614ca4224c",
+          "label": "provide psychological support to patients",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/3012a059-e062-4171-b37e-f9e7c7eb603e",
+          "label": "perform lectures",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/517f678e-001b-4985-acb4-9edc3500d74c",
+          "label": "develop training programmes",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/56ec6990-3e5b-475f-88e4-2c209f5625b3",
+          "label": "work with different target groups",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/b17f4305-741a-4a1c-8fe8-6f11cb3d5c0a",
+          "label": "business communication",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6c4fa8c8-e9e1-49b5-897f-6b61fe649488",
+          "label": "training on operational procedures",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/699e7c26-6502-4e78-a823-3656ff5a5b8b",
+          "label": "instruct others",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a117f32c-662b-4dd9-b739-1230dd04cb60",
+          "label": "pedagogy",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/8c298a9b-e9ea-4396-897d-9aba982df6a0",
+          "label": "advising on educational or vocational matters",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    },
+    {
+      "skill": "seo.копірайтинг",
+      "consistency": 0.0952,
+      "total_occurrences": 21,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/1605025e-a179-421f-8f35-5b07d182a6b2",
+          "label": "web analytics",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7049ac98-0368-4bb2-84d4-5366d1c0f2ac",
+          "label": "conduct online competitive analysis",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/3c834f6e-523a-49ee-8ed1-e073e28ae6fe",
+          "label": "develop communications strategies",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/750f86d2-18be-4015-84b1-d4a26d9b2d88",
+          "label": "online ads campaign techniques",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/1072f444-8a7d-41c1-aa6f-d536f20d94bf",
+          "label": "artistic and creative writing",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/4c5d616e-f6d8-4fb4-8ce6-89a4b048b916",
+          "label": "create training materials",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/5303169c-75d6-4751-9136-a4b88343388c",
+          "label": "social media management",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/29154735-107a-4daa-a050-537f7707f34e",
+          "label": "conduct content quality assurance",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7800332c-a8eb-4792-8d72-50d509616154",
+          "label": "draft press releases",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/3391d6dd-d584-4c8c-9af9-d2f0c45e2b4b",
+          "label": "journalism",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6a2c391b-1fcd-4f10-8827-5d1cb4a4d9ad",
+          "label": "set brand positioning",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d1815c8a-7755-4fe3-bacf-68bb0b6a0b55",
+          "label": "developing instructive or promotional materials",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/efb60300-0d55-4b2c-8038-8409587a4727",
+          "label": "promoting products, services, or programs",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d822b4b2-26c7-4bd9-970d-229c6504f615",
+          "label": "create digital content",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/e83ec793-3fbc-42e0-9729-d4bd92d454b3",
+          "label": "draw up professional texts",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/4bf59dde-8a03-483f-976a-45764f1e6d6f",
+          "label": "search engines",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/isced-f/0414",
+          "label": "marketing and advertising",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6457122e-5eed-4817-9f67-c3edb607fef6",
+          "label": "evaluate advertising campaign",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/isced-f/0211",
+          "label": "audio-visual techniques and media production",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/b1a5d83a-e02a-449f-a68b-539b34821078",
+          "label": "design materials for multimedia campaigns",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    },
+    {
+      "skill": "ліга:закон",
+      "consistency": 0.0952,
+      "total_occurrences": 63,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/6e5b66f0-ff0b-4d18-bce5-ffcd2e7de127",
+          "label": "analyse legislation",
+          "count": 6
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/1dae8445-12e5-423a-bb26-824010e299b9",
+          "label": "ensure compliance with legal requirements",
+          "count": 6
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/8bdc520c-6293-4e99-bf6f-a44d5da3ebcb",
+          "label": "monitor legislation developments",
+          "count": 5
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ea1bf5e5-e7f0-4d2c-a415-1c39c00512b1",
+          "label": "document management",
+          "count": 4
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/b975836b-d9b9-4724-88da-9a82b856e74b",
+          "label": "recording legal information",
+          "count": 4
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/12428071-1ec8-4d52-a0ce-3eee78e1e1be",
+          "label": "perform records management",
+          "count": 4
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/1d7234e4-1c76-4d67-9487-71d8c529cdc9",
+          "label": "compile legal documents",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7726fc5e-a972-4f0a-abbe-6be3043422f9",
+          "label": "represent clients in courts",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/c68e4cc4-b842-4660-a84c-48f11c70f657",
+          "label": "legal department processes",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/9f8a0463-e34e-4af0-ae66-f9a0f3a82180",
+          "label": "ensure fulfilment of legal requirements",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/c33dd5ae-ae72-49d7-8dcf-8bc72e59fe78",
+          "label": "civil law",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/9b862976-aa05-4bde-8ed6-8f39790edd0f",
+          "label": "procurement legislation",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/isced-f/0421",
+          "label": "law",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/0d80a782-99ff-4f49-abbe-c72524c6f390",
+          "label": "negotiating and managing contracts and agreements",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6bc02a4a-66af-4b49-9bd3-d07695d52b42",
+          "label": "abide by business ethical code of conducts",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/3a815994-6a80-4210-9588-1bb23fc005b3",
+          "label": "write dock records",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/30b1f3e1-1586-4d41-aa02-e2ab021b5164",
+          "label": "handle paperwork",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/3e9b580d-811b-48df-a5d1-a7bdd26f901f",
+          "label": "prepare financial auditing reports",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d77d7685-04fb-43a4-a1ac-09a10811f646",
+          "label": "corporate law",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/f698f8df-b473-40aa-a5c9-033cd892467a",
+          "label": "keep up-to-date with regulations",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/56ab5131-93a0-4ce3-b840-6413e687c307",
+          "label": "present legal arguments",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/32c017fd-28ab-4051-bf68-74de952c2f77",
+          "label": "managing information",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/5e9de344-2bea-40dc-8410-f940121330e4",
+          "label": "maintain relationships with government agencies",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/66aad490-1c20-4e25-b189-634a218ee53e",
+          "label": "legal case management",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/83e97138-899a-4af8-9187-47823e875841",
+          "label": "follow the statutory obligations",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/35dc2a23-cdc3-4291-930f-927ba2911949",
+          "label": "ensuring compliance with legislation",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/isced-f/0413",
+          "label": "management and administration",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d669af41-756c-48d9-a286-1443253f54b1",
+          "label": "tax legislation",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/4cc2ede9-6ad7-44fa-9709-3ec4d3116e48",
+          "label": "meet the requirements of legal bodies",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/c1e2f8ab-43e1-49c7-8427-8923b90922c2",
+          "label": "advise on legal services",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    },
+    {
+      "skill": "мерчендайзинг",
+      "consistency": 0.0952,
+      "total_occurrences": 21,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/6fcf2fc7-7b74-42e5-845f-f5854fd44f37",
+          "label": "ensure correct goods labelling",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a5e51fb1-b3b6-49fd-8deb-f96c4d46da81",
+          "label": "check price accuracy on the shelf",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/cf22d572-a77f-410d-83e4-3a627cc8df77",
+          "label": "supervise sales activities",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/450de541-797a-4da0-9fe4-a81471c8047d",
+          "label": "sales activities",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/13e2378e-0d10-450d-843a-b3592575826e",
+          "label": "implement marketing strategies",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/2b69525c-731c-4813-99a7-673fa5679d32",
+          "label": "provide customer guidance on product selection",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/036afa6e-cdde-4b38-a53a-8e7910a840e1",
+          "label": "collaborating in teams and networks",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/63359272-1303-41d5-a437-f4522f5abcc2",
+          "label": "manage warehouse organisation",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d2de37c7-7233-481b-8b1a-f4dfde11ca91",
+          "label": "advise on merchandise features",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/isced-f/0416",
+          "label": "wholesale and retail sales",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ae6af2c6-890d-40a7-9849-326a8c21df76",
+          "label": "coordinate advertising campaigns",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/2dd6ecdf-8a08-438b-8b4b-e0374f7b523b",
+          "label": "carry out sales analysis",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ab6265f2-a9bf-49e8-a9a5-67cbab4de38b",
+          "label": "manage inventory",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/57c1debf-3867-4e64-baf8-ce70d84f88c9",
+          "label": "maintain store cleanliness",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/c29aa9d2-4da8-4bdd-831c-8d4a2fb51730",
+          "label": "work independently",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/15a33d76-4640-438d-ae64-fdc0c1d3eebc",
+          "label": "customer service",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/0b16ebec-1fd8-41c8-a1b9-bbe91a1cc1b8",
+          "label": "design package",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ea1bf5e5-e7f0-4d2c-a415-1c39c00512b1",
+          "label": "document management",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/5330b70e-16f5-43a7-a6de-18fd6a4bd063",
+          "label": "public relations",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    },
+    {
+      "skill": "охорона об'єктів",
+      "consistency": 0.0952,
+      "total_occurrences": 21,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/e43cb15d-b48c-43f9-a995-0dfd87b903b9",
+          "label": "assess danger in risk areas",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/35dc2a23-cdc3-4291-930f-927ba2911949",
+          "label": "ensuring compliance with legislation",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6cd29d73-e352-40b4-89c5-cdb3faff0a38",
+          "label": "manage the security team",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/435f167a-bb04-4bed-9167-94712ce01020",
+          "label": "supervise the management of an establishment",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/e9eb9c23-c1f4-4ce9-83c9-2f6a211cc536",
+          "label": "maintaining and enforcing physical security",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/3a815994-6a80-4210-9588-1bb23fc005b3",
+          "label": "write dock records",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/e95dc989-ae49-49c6-bfc4-9aef35e92f35",
+          "label": "patrol areas",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/30b1f3e1-1586-4d41-aa02-e2ab021b5164",
+          "label": "handle paperwork",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/15fa3879-ac0e-46e6-ae36-609bae9c19c3",
+          "label": "monitoring operational activities",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/47d491a9-f7c0-4b13-a10f-983d3aa0113e",
+          "label": "safety engineering",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/62b7060c-3055-4ab8-bcf2-8080fd7c01f3",
+          "label": "ensure compliance with airport security measures",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/0b41f1ca-73b1-470e-a425-ba3e9c1b6e0b",
+          "label": "maintain safety systems",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/51826e07-64c9-4d2c-9964-88cfbf131ad2",
+          "label": "work as a team in a hazardous environment",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/989dc903-5838-4d84-8e04-e5b7a2ba97c5",
+          "label": "apply safety management",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6074be26-466d-4df7-b845-4c44157a2529",
+          "label": "conduct fire safety inspections",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/0b3ee7c8-dc29-48de-a54b-2c91560161a4",
+          "label": "check shipments",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/415f816c-07ae-4ac1-9ddb-ecaa9957a249",
+          "label": "law enforcement",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a4fd17bf-6309-47c5-b7fa-ae5560673acf",
+          "label": "identify security threats",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/0a74ff59-62a8-4942-9063-10fea819e19a",
+          "label": "monitor security procedures in warehouse operations",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    },
+    {
+      "skill": "git",
+      "consistency": 0.0982,
+      "total_occurrences": 163,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/isced-f/0613",
+          "label": "software and applications development and analysis",
+          "count": 16
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/69bbd53f-fbb0-4476-b4b2-ef7844464e28",
+          "label": "web programming",
+          "count": 15
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60",
+          "label": "have computer literacy",
+          "count": 12
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/14832d87-2f2f-4895-b290-e4760ebae42a",
+          "label": "solve technical problems",
+          "count": 10
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ab1e97ed-2319-4293-a8b7-072d2648822f",
+          "label": "database management systems",
+          "count": 9
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/598de5b0-5b58-4ea7-8058-a4bc4d18c742",
+          "label": "SQL",
+          "count": 9
+        },
+        {
+          "uri": "http://data.europa.eu/esco/isced-f/0612",
+          "label": "database and network design and administration",
+          "count": 8
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/06d09f70-6ca8-4078-be72-4c2c2a11ee61",
+          "label": "program management",
+          "count": 6
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/39499028-35bf-4d69-9275-fb98902ed88b",
+          "label": "working with computers",
+          "count": 6
+        },
+        {
+          "uri": "http://data.europa.eu/esco/isced-f/0413",
+          "label": "management and administration",
+          "count": 6
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/4d6a48ae-352e-4823-bc3a-3f3e9e2cae86",
+          "label": "accessing and analysing digital data",
+          "count": 5
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/f0de4973-0a70-4644-8fd4-3a97080476f4",
+          "label": "DevOps",
+          "count": 4
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/8ff015a0-98ea-4d80-a23e-1f68110a919e",
+          "label": "software design methodologies",
+          "count": 4
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/12428071-1ec8-4d52-a0ce-3eee78e1e1be",
+          "label": "perform records management",
+          "count": 4
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/30b1f3e1-1586-4d41-aa02-e2ab021b5164",
+          "label": "handle paperwork",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/f2d57f41-43b4-4f5b-8100-3df5c21eda50",
+          "label": "process data",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/isced-f/0619",
+          "label": "information and communication technologies not elsewhere classified",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7e5147d1-60b1-4a68-804b-1f5cb0396b91",
+          "label": "problem-solving with digital tools",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/9cf681c7-89ec-470c-b651-7fe03786f586",
+          "label": "query languages",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/21d2f96d-35f7-4e3f-9745-c533d2dd6e97",
+          "label": "computer programming",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388",
+          "label": "project management",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/isced-f/068",
+          "label": "inter-disciplinary programmes and qualifications involving information and communication technologies (icts)",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/b1115b14-fa16-4c1e-be6c-91fd49a1808b",
+          "label": "using computer aided design and drawing tools",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/aff205d0-b338-4020-9c19-45044b545835",
+          "label": "use digital instruments",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/867137fb-ff1b-4ca3-99f3-cb6969aa2c68",
+          "label": "TypeScript",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/c53a55a1-8b2b-4d2c-b12d-626742a3833a",
+          "label": "using digital tools for processing sound and images",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/42cb7669-c371-4903-9c0b-13db67b2e4bb",
+          "label": "emergent technologies",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/082967d4-b94c-4305-aa13-35a6aa8c5c7c",
+          "label": "cooperate with colleagues",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/37a438f3-e28c-4e32-83c5-299f047c1dc9",
+          "label": "apply tools for content development",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/isced-f/0417",
+          "label": "work skills",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/94dd823c-148e-4614-a6e8-99249b16357d",
+          "label": "ICT project management",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d0c6d77e-cb25-4770-bf77-2073fc5f7523",
+          "label": "ICT infrastructure",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/adc6dc11-3376-467b-96c5-9b0a21edc869",
+          "label": "solve problems",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ed1d8bd4-cd2a-4c64-b665-56d70651026c",
+          "label": "Prototyping development",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/14c41899-0224-4cbc-bd8c-e946ada2da87",
+          "label": "working efficiently",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/4707da90-9cfc-46ca-8de0-38a0b7bfb137",
+          "label": "think analytically",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/fbbcb9ab-4b95-4e57-a756-30d08b7da7a5",
+          "label": "maintain ICT system",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a71577b2-7550-4222-88ee-dcbd2d881516",
+          "label": "graphics editor software",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/6fa1c2c0-a012-4ca0-9642-e01569ba322c",
+          "label": "ICT system integration",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ea1bf5e5-e7f0-4d2c-a415-1c39c00512b1",
+          "label": "document management",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/bf05da8d-772a-4423-adb2-df79672f46f7",
+          "label": "organise information",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/50597e96-9b6a-4736-ac79-dd80f36c0269",
+          "label": "Metasploit",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/95bf4552-6d5b-41dc-b990-53ace372f705",
+          "label": "documenting technical designs, procedures, problems or activities",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/334e3e49-fb02-4051-809a-f06adfdc1c40",
+          "label": "troubleshoot",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/913e7e83-b8f8-4574-b1ca-1b38f3fd974a",
+          "label": "execute software tests",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7336bc42-d917-40c2-8791-2ac798c89067",
+          "label": "make an inventory of fixtures",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/f632251a-4078-4546-b19f-7ef528d08325",
+          "label": "use IT tools",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/89bb44dc-9f4c-400b-86cd-dcd0bd599a58",
+          "label": "maintain electronic systems",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    },
+    {
+      "skill": "facebook",
+      "consistency": 0.1,
+      "total_occurrences": 30,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/b011c8b4-76e1-4bbc-8bb9-1d205e7b618a",
+          "label": "market analysis",
+          "count": 3
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/4d6a48ae-352e-4823-bc3a-3f3e9e2cae86",
+          "label": "accessing and analysing digital data",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7049ac98-0368-4bb2-84d4-5366d1c0f2ac",
+          "label": "conduct online competitive analysis",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/84605f91-5ab4-4965-a1ad-cdc1901a820d",
+          "label": "marketing department processes",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/15a33d76-4640-438d-ae64-fdc0c1d3eebc",
+          "label": "customer service",
+          "count": 2
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/74cb80c4-df6b-4d79-a153-cb7b3b3b6eb0",
+          "label": "plan social media marketing campaigns",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/207f87c4-ac68-4987-990c-636ca19c2626",
+          "label": "calculate wages",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60",
+          "label": "have computer literacy",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/5fd5c985-eaaa-47aa-8314-62359c54505a",
+          "label": "develop digital content",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/ca17f0df-59e4-4ed2-9360-fc5325bc7151",
+          "label": "supervise equipment",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/848c0306-8cbe-4693-a275-d99807c0173c",
+          "label": "liaising and networking",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/c1388df1-47bd-4fd5-8b71-dce7886ef21b",
+          "label": "sales department processes",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/90398aca-82b7-4f56-8e0f-814d949162b4",
+          "label": "coordinate marketing plan actions",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d80f7a28-1e75-4247-9104-de8e5f909f0a",
+          "label": "reputation management",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/e8f602f8-b98b-4071-b088-c65e016cdf98",
+          "label": "media planning",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/1605025e-a179-421f-8f35-5b07d182a6b2",
+          "label": "web analytics",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/98fb499f-9155-412d-a8a0-95ba97126fec",
+          "label": "using digital tools for collaboration and productivity",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/cf310cff-0d28-4dbc-9dbb-cc500a3196c2",
+          "label": "office software",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/08fd2839-670c-4f16-8024-97437f2035ab",
+          "label": "plan marketing strategy",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/1a4cc54f-1e53-442b-a6d2-1682dc8ef8f9",
+          "label": "creatively use digital technologies",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/13e2378e-0d10-450d-843a-b3592575826e",
+          "label": "implement marketing strategies",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/b17f4305-741a-4a1c-8fe8-6f11cb3d5c0a",
+          "label": "business communication",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/a1bbc0e9-58d1-4bbc-bf68-de5679bef07f",
+          "label": "outdoor advertising",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/56ec6990-3e5b-475f-88e4-2c209f5625b3",
+          "label": "work with different target groups",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    },
+    {
+      "skill": "ms teams",
+      "consistency": 0.1,
+      "total_occurrences": 10,
+      "uri_distribution": [
+        {
+          "uri": "http://data.europa.eu/esco/skill/fd9694e7-5e7a-4209-806f-51451bb63dc7",
+          "label": "present during live broadcasts",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/98fb499f-9155-412d-a8a0-95ba97126fec",
+          "label": "using digital tools for collaboration and productivity",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/06d09f70-6ca8-4078-be72-4c2c2a11ee61",
+          "label": "program management",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60",
+          "label": "have computer literacy",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/7111b95d-0ce3-441a-9d92-4c75d05c4388",
+          "label": "project management",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/cf310cff-0d28-4dbc-9dbb-cc500a3196c2",
+          "label": "office software",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/isced-f/0611",
+          "label": "computer use",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/isced-f/068",
+          "label": "inter-disciplinary programmes and qualifications involving information and communication technologies (icts)",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/0d7f2cce-245a-4d02-9b8d-2e9946cc4c5d",
+          "label": "deliver online training",
+          "count": 1
+        },
+        {
+          "uri": "http://data.europa.eu/esco/skill/f683ae1d-cb7c-4aa1-b9fe-205e1bd23535",
+          "label": "use microsoft office",
+          "count": 1
+        }
+      ],
+      "classification": "instability"
+    }
+  ]
+}

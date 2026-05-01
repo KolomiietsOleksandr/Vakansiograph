@@ -1,0 +1,719 @@
+conceptType,conceptUri,skillType,reuseLevel,preferredLabel,status,altLabels,description,broaderConceptUri,broaderConceptPT
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/01f10952-cb59-4347-9aee-d4fbc51c870a,skill/competence,transversal,писати угорською мовою,released,,"Складати тексти в письмовій формі угорською мовою.
+	",http://data.europa.eu/esco/skill/ddd3596a-43f3-402e-960a-5f79362a8609,угорська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/021c8a09-6b8d-4708-a5dd-17677e846640,knowledge,transversal,розуміти розмовну люксембурзьку мову,released,,"Розуміти усно висловлене люксембурзькою мовою.
+	",http://data.europa.eu/esco/skill/7d16f1e4-1003-4f1f-9595-5cafb25a67df,люксембурзька мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/02d68c2b-1722-4440-8e25-376650e123c8,skill/competence,transversal,розуміти письмову корейську мову,released,,"Читати та розуміти тексти в письмовій формі корейською мовою.
+	",http://data.europa.eu/esco/skill/f9bc2890-d1f2-4a83-bd7b-b150a7679c79,корейська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/037b5e5f-db3c-40cd-864e-5b9b9a3a080d,skill/competence,transversal,розуміти розмовну угорську мову,released,,"Розуміти усно висловлене угорською мовою.
+	",http://data.europa.eu/esco/skill/ddd3596a-43f3-402e-960a-5f79362a8609,угорська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/03a53283-d3ee-41c1-ab3e-eb806616440e,skill/competence,transversal,розуміти розмовну валлійську мову,released,,"Розуміти усно висловлене валлійською мовою.
+	",http://data.europa.eu/esco/skill/8dbd15c6-ecf0-468c-8ae1-f6eb360743dd,валлійська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/047218cf-3974-4148-86f8-31464253aa08,skill/competence,transversal,спілкуватися боснійською мовою,released,,"Спілкуватися усно боснійською мовою.
+	",http://data.europa.eu/esco/skill/a9fdd2c9-4295-4407-ba3c-1547cbce40a2,боснійська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/049b5d37-aab3-4b6a-a505-bf254a434b5d,skill/competence,transversal,розуміти письмову латиську мову,released,,"Читати та розуміти тексти в письмовій формі латиською мовою.
+	",http://data.europa.eu/esco/skill/5de39924-769c-4301-82a5-525358dffe50,латиська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/049de1f6-34ec-46f9-a0b1-8fc6f0199413,skill/competence,transversal,писати фінською мовою,released,,"Складати тексти в письмовій формі фінською мовою.
+	",http://data.europa.eu/esco/skill/0e3493f4-0cad-4fbc-8e02-025f169b8114,фінська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/04bd6e5b-9f81-4c3d-a81f-d7ac2c08dfd9,skill/competence,transversal,розуміти розмовну пенджабську мову,released,,"Розуміти усно висловлене пенджабською мовою.
+	",http://data.europa.eu/esco/skill/e05b9e06-d298-4646-b762-acbd485a20e9,пенджабська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/078a25a4-1ac2-4c83-b0ed-8f8573c4633a,skill/competence,transversal,спілкуватися окситанською мовою,released,,"Спілкуватися усно окситанською мовою.
+	",http://data.europa.eu/esco/skill/57cc6587-7efe-4ba5-982f-ac15ce1617ac,окситанська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/0799a646-288c-4fcd-a6fd-d97a41c1bf5b,skill/competence,transversal,спілкуватися чеською мовою,released,,"Спілкуватися усно чеською мовою.
+	",http://data.europa.eu/esco/skill/da0795a7-6866-4afc-81ed-5e3aa398f058,чеська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/07cacd8e-6aaf-4cab-abeb-28319f454606,skill/competence,transversal,розуміти письмову українську мову,released,,"Читати та розуміти тексти в письмовій формі українською мовою.
+	",http://data.europa.eu/esco/skill/354b948c-7eef-4ebc-bfd6-f60d7d5acb62,українська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/08759658-fffc-4951-bea0-1fb51d06eb89,skill/competence,transversal,розуміти письмову іспанську мову,released,,"Читати та розуміти тексти в письмовій формі іспанською мовою.
+	",http://data.europa.eu/esco/skill/14ee9f76-3524-43d5-8a1a-5ba8283f8bd7,іспанська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/08ee9a78-5eb5-426c-b34e-9ef0e0f88cc5,skill/competence,transversal,розуміти письмову вірменську мову,released,,"Читати та розуміти тексти в письмовій формі вірменською мовою.
+	",http://data.europa.eu/esco/skill/fcbcdf4c-d079-4010-ab4b-8356fbfa5096,вірменська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/0a1e6554-1c6b-42c6-970b-8d9a307cdb5e,skill/competence,transversal,писати яванською мовою,released,,"Складати тексти в письмовій формі яванською мовою.
+	",http://data.europa.eu/esco/skill/7a86907d-1fd5-4e8f-b0f1-f366a14f6f6d,яванська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/0a35de65-e51d-4862-a425-2f4dd5c4a982,skill/competence,transversal,писати боснійською мовою,released,,"Складати тексти в письмовій формі боснійською мовою.
+	",http://data.europa.eu/esco/skill/a9fdd2c9-4295-4407-ba3c-1547cbce40a2,боснійська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/0b8a3319-54be-4b35-8425-c31d1f42f186,skill/competence,transversal,писати на санскриті,released,,"Складати тексти в письмовій формі мовою санскрит.
+	",http://data.europa.eu/esco/skill/45289df8-d02d-4f08-9802-2c7deae944ad,санскрит
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/0dc4ee3d-3e51-4765-bc1c-996707beeea1,skill/competence,transversal,розуміти письмову сардинську мову,released,,"Читати та розуміти тексти в письмовій формі сардинською мовою.
+	",http://data.europa.eu/esco/skill/1627c1b9-31e1-4742-bf5c-cfec2ce33cfc,сардинська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/0e3493f4-0cad-4fbc-8e02-025f169b8114,knowledge,transversal,фінська мова,released,,"Фінська мова. Фінська мова є офіційною та робочою мовою ЄС.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/0e91219a-e74a-46e6-bcf9-9e14da031343,skill/competence,transversal,писати українською мовою,released,,"Складати тексти в письмовій формі українською мовою.
+	",http://data.europa.eu/esco/skill/354b948c-7eef-4ebc-bfd6-f60d7d5acb62,українська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/0ee9e985-0ee5-4a73-8a12-78b53b261bb2,skill/competence,transversal,спілкуватися англійською мовою,released,,"Спілкуватися усно англійською мовою.
+	",http://data.europa.eu/esco/skill/6d3edede-8951-4621-a835-e04323300fa0,англійська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/0efbd0a0-0272-445d-90a8-ebb2a9b5058b,skill/competence,transversal,розуміти розмовну боснійську мову,released,,"Розуміти усно висловлене боснійською мовою.
+	",http://data.europa.eu/esco/skill/a9fdd2c9-4295-4407-ba3c-1547cbce40a2,боснійська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/0f58a178-1382-4df2-95e8-2b3f90e80e24,skill/competence,transversal,спілкуватися іспанською мовою,released,,"Спілкуватися усно іспанською мовою.
+	",http://data.europa.eu/esco/skill/14ee9f76-3524-43d5-8a1a-5ba8283f8bd7,іспанська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/0f775d62-d543-40dd-aaaf-56195c2bfd80,skill/competence,transversal,розуміти розмовну перську мову,released,,"Розуміти усно висловлене перською мовою.
+	",http://data.europa.eu/esco/skill/58cabf75-2520-4358-a210-2cbc628f4aa2,перська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/10323914-77bf-41f2-b081-42b6e972d08d,skill/competence,transversal,розуміти письмову ісландську мову,released,,"Читати та розуміти тексти в письмовій формі ісландською мовою.
+	",http://data.europa.eu/esco/skill/a18e3090-6afb-4afb-a055-1f83bbe498e3,ісландська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/10b306ae-6a1b-4e62-b06d-8702cfc6814c,skill/competence,transversal,розуміти письмову тамільську мову,released,,"Читати та розуміти тексти в письмовій формі тамільською мовою.
+	",http://data.europa.eu/esco/skill/e9e9b625-f59f-4bda-952d-1f9831e6dfda,тамільська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/1299a59c-8b90-4838-8bef-0065cdfc8bdf,skill/competence,transversal,писати пенджабською мовою,released,,"Складати тексти в письмовій формі пенджабською мовою.
+	",http://data.europa.eu/esco/skill/e05b9e06-d298-4646-b762-acbd485a20e9,пенджабська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/13fc11d0-d35f-4a2c-9115-b0e2ed372523,skill/competence,transversal,розуміти письмову баскську мову,released,,"Читати та розуміти тексти в письмовій формі баскською мовою.
+	",http://data.europa.eu/esco/skill/a28fa5f1-be5b-4608-8376-acea8c2f8cb1,баскська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/1408a267-21e1-479e-bd40-197fa14b3024,skill/competence,transversal,розуміти розмовну естонську мову,released,,"Розуміти усно висловлене естонською мовою.
+	",http://data.europa.eu/esco/skill/1b7e6f56-bc73-4bcc-81ae-09252175d418,естонська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/1495fc80-05c1-4f5b-82ae-9abc612364cc,skill/competence,transversal,розуміти розмовну чорногорську мову,released,,"Розуміти усно висловлене чорногорською мовою.
+	",http://data.europa.eu/esco/skill/2358a146-6e8f-43cb-872f-a12ac9c57d60,чорногорська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/14ee9f76-3524-43d5-8a1a-5ba8283f8bd7,knowledge,transversal,іспанська мова,released,,"Іспанська мова. Іспанська мова є офіційною та робочою мовою ЄС.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/14fc9b06-bf35-4b35-8f07-c53856ef18bc,skill/competence,transversal,писати російською мовою,released,,"Складати тексти в письмовій формі російською мовою.
+	",http://data.europa.eu/esco/skill/6891bbce-20bf-4afc-bd5e-75bdf54c0165,російська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/1500f1a7-d348-4d9e-b0a0-5792645f6c7a,skill/competence,transversal,розуміти письмову яванську мову,released,,"Читати та розуміти тексти в письмовій формі яванською мовою.
+	",http://data.europa.eu/esco/skill/7a86907d-1fd5-4e8f-b0f1-f366a14f6f6d,яванська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/15db81bb-7ee6-4a5f-838f-0e8a731b1fb7,skill/competence,transversal,спілкуватися чорногорською мовою,released,,"Спілкуватися усно чорногорською мовою.
+	",http://data.europa.eu/esco/skill/2358a146-6e8f-43cb-872f-a12ac9c57d60,чорногорська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/15ea7b6b-1b93-4ed8-b58a-5c54777e0832,knowledge,transversal,бігарська мова,released,,"Бігарська мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/15f261e6-4379-437e-b137-b0c473ae3e74,knowledge,transversal,македонська мова,released,,"Македонська мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/1627c1b9-31e1-4742-bf5c-cfec2ce33cfc,knowledge,transversal,сардинська мова,released,,"Сардинська мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/1658c54a-05f7-4bde-a2f0-be67bfbda596,skill/competence,transversal,спілкуватися ісландською мовою,released,,"Спілкуватися усно ісландською мовою.
+	",http://data.europa.eu/esco/skill/a18e3090-6afb-4afb-a055-1f83bbe498e3,ісландська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/16af0cae-57a8-478b-9095-13d3a170c9e7,skill/competence,transversal,розуміти розмовну японську мову,released,,"Розуміти усно висловлене японською мовою.
+	",http://data.europa.eu/esco/skill/39c675c4-af13-49db-bbed-cf762102f85e,японська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/16c86dd8-00fa-4fbd-a0a9-bb59f83ebc85,skill/competence,transversal,писати чеською мовою,released,,"Складати тексти в письмовій формі чеською мовою.
+	",http://data.europa.eu/esco/skill/da0795a7-6866-4afc-81ed-5e3aa398f058,чеська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/1778faed-42eb-4aba-a41a-83989cb6bc6b,skill/competence,transversal,розуміти розмовну хорватську мову,released,,"Розуміти усно висловлене хорватською мовою.
+	",http://data.europa.eu/esco/skill/6bc58e91-1827-4dc7-a9cf-2311edcba0ec,хорватська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/185647bf-e101-4080-9a40-09173d7eefd0,skill/competence,transversal,спілкуватися валлійською мовою,released,,"Спілкуватися усно валлійською мовою.
+	",http://data.europa.eu/esco/skill/8dbd15c6-ecf0-468c-8ae1-f6eb360743dd,валлійська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/18e55722-e209-49a4-9f2c-ff0a789b3a68,skill/competence,transversal,спілкуватися тамільською мовою,released,,"Спілкуватися усно тамільською мовою.
+	",http://data.europa.eu/esco/skill/e9e9b625-f59f-4bda-952d-1f9831e6dfda,тамільська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/1988ce17-ce7a-44b9-9fce-5aaea5f811f5,skill/competence,transversal,писати вірменською мовою,released,,"Складати тексти в письмовій формі вірменською мовою.
+	",http://data.europa.eu/esco/skill/fcbcdf4c-d079-4010-ab4b-8356fbfa5096,вірменська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/19b04a30-2e1d-4893-a86c-bde277765c7f,skill/competence,transversal,писати литовською мовою,released,,"Складати тексти в письмовій формі литовською мовою.
+	",http://data.europa.eu/esco/skill/b3950b87-a980-4cd4-a795-be8a9b63661d,литовська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/1a61a520-f4a5-48fe-9087-3d0e46943d8e,skill/competence,transversal,розуміти письмову ірландську мову,released,,"Читати та розуміти тексти в письмовій формі ірландською мовою.
+	",http://data.europa.eu/esco/skill/8f4c0fe6-10c7-409e-92d6-245f46728209,ірландська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/1b7e6f56-bc73-4bcc-81ae-09252175d418,knowledge,transversal,естонська мова,released,,"Естонська мова. Естонська мова є офіційною та робочою мовою ЄС.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/1d3c5ca3-e154-4a43-883e-7496e8886cd6,skill/competence,transversal,писати румунською мовою,released,,"Складати тексти в письмовій формі румунською мовою.
+	",http://data.europa.eu/esco/skill/4b9f1ae5-0ee6-4738-8999-9b8191fba808,румунська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/1d5526b3-f17b-46fc-ba7d-f4a32d908a7e,skill/competence,transversal,розуміти розмовну німецьку мову,released,,"Розуміти усно висловлене німецькою мовою.
+	",http://data.europa.eu/esco/skill/4812a4ea-dc55-4dc6-b9b0-4a59bba2c647,німецька мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/1f90c205-f869-4dcf-a374-c4fdeded9cbc,knowledge,transversal,малайська мова,released,,"Малайська мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/1fe42b38-cd42-4fc7-ae77-14e4c9e96295,knowledge,transversal,китайська мова,released,,"Китайська мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/2080075c-0488-4fbf-a786-734dbbef31ce,knowledge,transversal,маратська мова,released,,"Мова маратхі.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/20d51474-58e1-4fb3-aec3-57bdc187c5ce,skill/competence,transversal,писати турецькою мовою,released,,"Складати тексти в письмовій формі турецькою мовою.
+	",http://data.europa.eu/esco/skill/aa66a033-8522-40e9-a5c0-ff2593e2669c,турецька мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/214da014-b85e-4bb5-961d-1198a05e6b67,skill/competence,transversal,розуміти письмову македонську мову,released,,"Читати та розуміти тексти в письмовій формі македонською мовою.
+	",http://data.europa.eu/esco/skill/15f261e6-4379-437e-b137-b0c473ae3e74,македонська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/2203ac44-f4a7-4d34-a55f-1af107415988,skill/competence,transversal,розуміти письмову пенджабську мову,released,,"Читати та розуміти тексти в письмовій формі пенджабською мовою.
+	",http://data.europa.eu/esco/skill/e05b9e06-d298-4646-b762-acbd485a20e9,пенджабська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/222bf50b-6739-48b1-a655-658306c3529f,skill/competence,transversal,писати ромською мовою,released,,"Складати тексти в письмовій формі болгарським варіантом ромської мови.
+	",http://data.europa.eu/esco/skill/8ef3eccc-a847-430e-b828-cf178803b8c1,ромська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/227accd5-5e70-4cc3-8f1c-3f7b52eb6848,skill/competence,transversal,спілкуватися арабською мовою,released,,"Спілкуватися усно арабською мовою.
+	",http://data.europa.eu/esco/skill/33859d93-987c-4caa-a0a9-6159ea7bbc2a,арабська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/2358a146-6e8f-43cb-872f-a12ac9c57d60,knowledge,transversal,чорногорська мова,released,,"Чорногорська мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/237420c1-1882-4ce0-aa48-41a8e61977e5,skill/competence,transversal,розуміти розмовну в’єтнамську мову,released,,"Розуміти усно висловлене в’єтнамською мовою.
+	",http://data.europa.eu/esco/skill/bf60009d-8afb-4306-9b0d-cfe2f66ab08f,в’єтнамська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/246980fe-6222-4852-ade8-b372f7e0fd20,knowledge,transversal,словацька мова,released,,"Словацька мова. Словацька мова є офіційною та робочою мовою ЄС.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/25fcf0ff-1615-44b8-a81a-e6e8ce9deed7,skill/competence,transversal,спілкуватися мовою гінді,released,,"Спілкуватися усно мовою гінді.
+	",http://data.europa.eu/esco/skill/d93a7370-bf56-43f5-be54-e108f8ec3107,гінді
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/2704b00a-5d70-40ad-997d-212b323fb32d,skill/competence,transversal,розуміти письмову турецьку мову,released,,"Читати та розуміти тексти в письмовій формі турецькою мовою.
+	",http://data.europa.eu/esco/skill/aa66a033-8522-40e9-a5c0-ff2593e2669c,турецька мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/273a28d6-1bd3-4d13-a906-3d75c1cfdfc1,knowledge,transversal,данська мова,released,,"Данська мова. Данська мова є офіційною та робочою мовою ЄС.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/2874065e-6ca3-430c-912a-467da3c23704,knowledge,transversal,курдська мова,released,,"Курдська мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/29c954f2-ed17-4900-bba5-4cfd294f3680,skill/competence,transversal,спілкуватися турецькою мовою,released,,"Спілкуватися усно турецькою мовою.
+	",http://data.europa.eu/esco/skill/aa66a033-8522-40e9-a5c0-ff2593e2669c,турецька мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/2abb9db5-350c-444c-8292-0e0b2ce00f9a,skill/competence,transversal,спілкуватися німецькою мовою,released,,"Спілкуватися усно німецькою мовою.
+	",http://data.europa.eu/esco/skill/4812a4ea-dc55-4dc6-b9b0-4a59bba2c647,німецька мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/2ac8e77b-6441-4337-b9a7-ba3d8e270cba,skill/competence,transversal,спілкуватися казахською мовою,released,,"Спілкуватися усно казахською мовою.
+	",http://data.europa.eu/esco/skill/f37dbb3c-dafc-4835-86d1-de9615626f9b,казахська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/2adb5796-fe66-4971-a57b-b9936a7cab68,skill/competence,transversal,розуміти розмовну малайську мову,released,,"Розуміти усно висловлене малайською мовою.
+	",http://data.europa.eu/esco/skill/1f90c205-f869-4dcf-a374-c4fdeded9cbc,малайська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/2b7b97d3-9d77-45d4-a254-bb6c3047de78,skill/competence,transversal,спілкуватися перською мовою,released,,"Спілкуватися усно перською мовою.
+	",http://data.europa.eu/esco/skill/58cabf75-2520-4358-a210-2cbc628f4aa2,перська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/2ba106ed-4b44-45cf-8626-ff9a952b24ce,skill/competence,transversal,розуміти розмовну мову телугу,released,,"Розуміти усно висловлене мовою телуґу.
+	",http://data.europa.eu/esco/skill/64fe09ac-f419-4c04-8997-d1dde2e31bfc,мова телугу
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/2ce713f2-c684-4fa3-8e56-939e4bfbf4a2,skill/competence,transversal,розуміти розмовну французьку мову,released,,"Розуміти усно висловлене французькою мовою.
+	",http://data.europa.eu/esco/skill/e747e77e-0ea1-4001-8b07-1d11946b5f1b,французька мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/2eac15c1-fe9a-4b53-9f4e-b74747d665e5,skill/competence,transversal,розуміти письмову малайську мову,released,,"Читати та розуміти тексти в письмовій формі малайською мовою.
+	",http://data.europa.eu/esco/skill/1f90c205-f869-4dcf-a374-c4fdeded9cbc,малайська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/2edc3686-dc8b-498d-a174-a1f91917f86d,skill/competence,transversal,розуміти письмову мальтійську мову,released,,"Читати та розуміти тексти в письмовій формі мальтійською мовою.
+	",http://data.europa.eu/esco/skill/cb50f9cd-3638-409b-8f93-befaf17d313e,мальтійська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/2f566fb0-89f0-4d15-bd20-e00c93adff35,skill/competence,transversal,розуміти письмову грузинську мову,released,,"Читати та розуміти тексти в письмовій формі грузинською мовою.
+	",http://data.europa.eu/esco/skill/b2c1f90a-72ce-4499-ab9a-a9a5c9355d5b,грузинська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/2f7f7a05-88ec-4c8a-937f-381dce6b00fd,skill/competence,transversal,писати корейською мовою,released,,"Складати тексти в письмовій формі корейською мовою.
+	",http://data.europa.eu/esco/skill/f9bc2890-d1f2-4a83-bd7b-b150a7679c79,корейська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/3048bf6d-27c7-4dc6-ae4b-e55094cec090,skill/competence,transversal,спілкуватися фінською мовою,released,,"Спілкуватися усно фінською мовою.
+	",http://data.europa.eu/esco/skill/0e3493f4-0cad-4fbc-8e02-025f169b8114,фінська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/33859d93-987c-4caa-a0a9-6159ea7bbc2a,knowledge,transversal,арабська мова,released,,"Арабська мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/3388229a-0bcb-4778-9fa8-d69ac2cede71,skill/competence,transversal,розуміти письмову люксембурзьку мову,released,,"Читати та розуміти тексти в письмовій формі люксембурзькою мовою.
+	",http://data.europa.eu/esco/skill/7d16f1e4-1003-4f1f-9595-5cafb25a67df,люксембурзька мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/34085657-5d64-4a68-abef-e5b7df3b3d46,skill/competence,transversal,розуміти письмову каталонську мову,released,,"Читати та розуміти тексти в письмовій формі каталонською мовою.
+	",http://data.europa.eu/esco/skill/8ee2b6f2-7017-4b9a-9de2-4dedf0711394,каталонська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/347d33a8-3698-4549-a7de-722a0216ee40,skill/competence,transversal,розуміти розмовну нідерландську мову,released,,"Розуміти усно висловлене нідерландською мовою.
+	",http://data.europa.eu/esco/skill/cad4f44b-28a8-4448-86e5-7389e5ebf3eb,голландська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/354b948c-7eef-4ebc-bfd6-f60d7d5acb62,knowledge,transversal,українська мова,released,,"Українська мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/37624859-cbb6-43cb-a523-aa450877821a,skill/competence,transversal,писати латинською мовою,released,,"Складати тексти в письмовій формі латинською мовою.
+	",http://data.europa.eu/esco/skill/96e70743-6a84-4fee-b226-fe10cddb266e,латина
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/37992d18-8d7e-4122-ad52-fa5d2d52ebde,skill/competence,transversal,розуміти письмову мову урду,released,,"Читати та розуміти тексти в письмовій формі мовою урду.
+	",http://data.europa.eu/esco/skill/bc546a09-1103-4184-b757-3508ef5f8490,мова урду
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/3993c87c-7719-4186-811b-8ddfb40e76be,skill/competence,transversal,писати англійською мовою,released,,"Складати тексти в письмовій формі англійською мовою.
+	",http://data.europa.eu/esco/skill/6d3edede-8951-4621-a835-e04323300fa0,англійська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/39a7d447-5a30-41b1-967d-bdcde3288c9e,skill/competence,transversal,писати словацькою мовою,released,,"Складати тексти в письмовій формі словацькою мовою.
+	",http://data.europa.eu/esco/skill/246980fe-6222-4852-ade8-b372f7e0fd20,словацька мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/39c675c4-af13-49db-bbed-cf762102f85e,knowledge,transversal,японська мова,released,,"Японська мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/3a0814b1-5851-43f9-b886-1e496fefcf9c,skill/competence,transversal,розуміти письмову фінську мову,released,,"Читати та розуміти тексти в письмовій формі фінською мовою.
+	",http://data.europa.eu/esco/skill/0e3493f4-0cad-4fbc-8e02-025f169b8114,фінська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/3a660148-e0d6-4b07-b107-10200ebb1b23,skill/competence,transversal,писати азербайджанською мовою,released,,"Складати тексти в письмовій формі азербайджанською мовою.
+	",http://data.europa.eu/esco/skill/5bfce8e7-6f22-4e67-9018-0e4161620f3a,азербайджанська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/3c98d1d7-52cd-44e7-8083-c02a981e3872,skill/competence,transversal,спілкуватися грузинською мовою,released,,"Спілкуватися усно грузинською мовою.
+	",http://data.europa.eu/esco/skill/b2c1f90a-72ce-4499-ab9a-a9a5c9355d5b,грузинська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/3cb08443-192d-475b-89ce-15901ed1a900,skill/competence,transversal,спілкуватися словацькою мовою,released,,"Спілкуватися усно словацькою мовою.
+	",http://data.europa.eu/esco/skill/246980fe-6222-4852-ade8-b372f7e0fd20,словацька мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/3cc1fa63-1b28-44df-a93c-d09b12389a2f,skill/competence,transversal,спілкуватися баскською мовою,released,,"Спілкуватися усно баскською мовою.
+	",http://data.europa.eu/esco/skill/a28fa5f1-be5b-4608-8376-acea8c2f8cb1,баскська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/3cccda28-82cc-4e47-9442-af0cb4d64016,skill/competence,transversal,писати сербською мовою,released,,"Складати тексти в письмовій формі сербською мовою.
+	",http://data.europa.eu/esco/skill/c5cb0cc1-c40b-4544-a21c-8472f0b5c14a,сербська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/40842478-ad09-4be9-a889-97299b013609,skill/competence,transversal,писати на івриті,released,,"Складати тексти в письмовій формі мовою іврит.
+	",http://data.europa.eu/esco/skill/8a45f04a-cd28-4ac1-8e8b-ecfd21be0b18,іврит
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/41253322-dc32-4d79-941c-3a8c230a1d85,skill/competence,transversal,писати берберською мовою,released,,"Складати тексти в письмовій формі берберською мовою.
+	",http://data.europa.eu/esco/skill/6f34bd05-1297-4913-92ff-85a604242b2f,берберська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/416ca9da-3a58-4522-89a2-5746576feddd,skill/competence,transversal,писати в’єтнамською мовою,released,,"Складати тексти в письмовій формі в’єтнамською мовою.
+	",http://data.europa.eu/esco/skill/bf60009d-8afb-4306-9b0d-cfe2f66ab08f,в’єтнамська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/421910b5-70e1-429e-8b32-0df5518b7ddd,skill/competence,transversal,розуміти письмову чеську мову,released,,"Читати та розуміти тексти в письмовій формі чеською мовою.
+	",http://data.europa.eu/esco/skill/da0795a7-6866-4afc-81ed-5e3aa398f058,чеська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/4264f3aa-037e-44f4-bb08-90d2337953ee,skill/competence,transversal,писати португальською мовою,released,,"Складати тексти в письмовій формі португальською мовою.
+	",http://data.europa.eu/esco/skill/584c13e8-fd06-4ca3-a45b-cca5b2f147a7,португальська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/42b7c03a-3ed5-4dc1-adc0-ff1fb8d4d697,skill/competence,transversal,писати данською мовою,released,,"Складати тексти в письмовій формі данською мовою.
+	",http://data.europa.eu/esco/skill/273a28d6-1bd3-4d13-a906-3d75c1cfdfc1,данська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/450e047f-bb60-4eaa-bbcf-5e7af43e7f2a,skill/competence,transversal,писати болгарською мовою,released,,"Складати тексти в письмовій формі болгарською мовою.
+	",http://data.europa.eu/esco/skill/d5fd4958-4ca6-4d06-845f-713e2c459612,болгарська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/45289df8-d02d-4f08-9802-2c7deae944ad,knowledge,cross-sector,санскрит,released,,"Мова санскрит.
+	",http://data.europa.eu/esco/skill/e434e71a-f068-44ed-8059-d1af9eb592d7,класичні мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/45ab3524-935d-4bc0-a7f3-1cf3be7e5987,skill/competence,transversal,писати грузинською мовою,released,,"Складати тексти в письмовій формі грузинською мовою.
+	",http://data.europa.eu/esco/skill/b2c1f90a-72ce-4499-ab9a-a9a5c9355d5b,грузинська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/46d20520-381c-40c9-9de5-f635d0755923,skill/competence,transversal,розуміти письмову болгарську мову,released,,"Читати та розуміти тексти в письмовій формі болгарською мовою.
+	",http://data.europa.eu/esco/skill/d5fd4958-4ca6-4d06-845f-713e2c459612,болгарська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/4812a4ea-dc55-4dc6-b9b0-4a59bba2c647,knowledge,transversal,німецька мова,released,,"Німецька мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/486e4f39-e968-41f4-955e-56e9eba96ef5,skill/competence,transversal,розуміти письмову німецьку мову,released,,"Читати та розуміти тексти в письмовій формі німецькою мовою.
+	",http://data.europa.eu/esco/skill/4812a4ea-dc55-4dc6-b9b0-4a59bba2c647,німецька мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/49edb5ac-b80c-4c02-8509-d0e05889031e,skill/competence,transversal,розуміти розмовну курдську мову,released,,"Розуміти усно висловлене курдською мовою.
+	",http://data.europa.eu/esco/skill/2874065e-6ca3-430c-912a-467da3c23704,курдська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/4aaa3e87-2b29-4a83-bdff-cbe51db03fc5,skill/competence,transversal,писати чорногорською мовою,released,,"Складати тексти в письмовій формі чорногорською мовою.
+	",http://data.europa.eu/esco/skill/2358a146-6e8f-43cb-872f-a12ac9c57d60,чорногорська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/4b873879-6d5e-46b6-80e2-1ef313b4e0ac,skill/competence,transversal,писати японською мовою,released,,"Складати тексти в письмовій формі японською мовою.
+	",http://data.europa.eu/esco/skill/39c675c4-af13-49db-bbed-cf762102f85e,японська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/4b9f1ae5-0ee6-4738-8999-9b8191fba808,knowledge,transversal,румунська мова,released,,"Румунська мова. Румунська мова є офіційною та робочою мовою ЄС.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/4c5a2793-c18d-40b9-832d-af8e07f0f171,skill/competence,transversal,писати ісландською мовою,released,,"Складати тексти в письмовій формі ісландською мовою.
+	",http://data.europa.eu/esco/skill/a18e3090-6afb-4afb-a055-1f83bbe498e3,ісландська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/4c6fe11c-f912-4c81-b74c-2e72943abeb6,skill/competence,transversal,розуміти письмову литовську мову,released,,"Читати та розуміти тексти в письмовій формі литовською мовою.
+	",http://data.europa.eu/esco/skill/b3950b87-a980-4cd4-a795-be8a9b63661d,литовська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/4c92020a-110b-4daf-b1ec-c4e17c3b9b2c,skill/competence,transversal,розуміти розмовну китайську мову,released,,"Розуміти усно висловлене китайською мовою.
+	",http://data.europa.eu/esco/skill/1fe42b38-cd42-4fc7-ae77-14e4c9e96295,китайська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/4ddf697a-b1e9-4ae6-931e-920de761f9df,skill/competence,transversal,спілкуватися валлонською мовою,released,,"Спілкуватися усно валлонською мовою.
+	",http://data.europa.eu/esco/skill/d54d7c00-87c4-4f78-af8d-e84577372974,валлонська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/4dfda994-f9a2-4cbd-b224-0ab036e69d6e,skill/competence,transversal,спілкуватися румунською мовою,released,,"Спілкуватися усно румунською мовою.
+	",http://data.europa.eu/esco/skill/4b9f1ae5-0ee6-4738-8999-9b8191fba808,румунська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/4ff6df71-6988-4300-8966-9fabb2b59186,skill/competence,transversal,розуміти письмову французьку мову,released,,"Читати та розуміти тексти в письмовій формі французькою мовою.
+	",http://data.europa.eu/esco/skill/e747e77e-0ea1-4001-8b07-1d11946b5f1b,французька мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/50d8a1ff-659a-4671-be48-369242b2a3be,skill/competence,transversal,писати мовою бігарі,released,,"Складати тексти в письмовій формі мовою бігарі.
+	",http://data.europa.eu/esco/skill/15ea7b6b-1b93-4ed8-b58a-5c54777e0832,бігарська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/520b5278-eb9a-4c7d-a80d-a129ffb103da,skill/competence,transversal,спілкуватися угорською мовою,released,,"Спілкуватися усно угорською мовою.
+	",http://data.europa.eu/esco/skill/ddd3596a-43f3-402e-960a-5f79362a8609,угорська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/52894650-9077-40f0-96d6-6f07d1a6cafa,skill/competence,transversal,писати німецькою мовою,released,,"Складати тексти в письмовій формі німецькою мовою.
+	",http://data.europa.eu/esco/skill/4812a4ea-dc55-4dc6-b9b0-4a59bba2c647,німецька мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/529d9a4f-5b96-4952-b9e6-114213366565,skill/competence,transversal,розуміти розмовну грузинську мову,released,,"Розуміти усно висловлене грузинською мовою.
+	",http://data.europa.eu/esco/skill/b2c1f90a-72ce-4499-ab9a-a9a5c9355d5b,грузинська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/562c4f04-4f58-4c28-bcc4-49307786067b,skill/competence,transversal,спілкуватися данською мовою,released,,"Спілкуватися усно данською мовою.
+	",http://data.europa.eu/esco/skill/273a28d6-1bd3-4d13-a906-3d75c1cfdfc1,данська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/57cc6587-7efe-4ba5-982f-ac15ce1617ac,knowledge,transversal,окситанська мова,released,,"Окситанська мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/584c13e8-fd06-4ca3-a45b-cca5b2f147a7,knowledge,transversal,португальська мова,released,,"Португальська мова. Португальська мова є офіційною та робочою мовою ЄС.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/585824c4-ef01-49fd-9b14-be00162a2387,skill/competence,transversal,розуміти письмову перську мову,released,,"Читати та розуміти тексти в письмовій формі перською мовою.
+	",http://data.europa.eu/esco/skill/58cabf75-2520-4358-a210-2cbc628f4aa2,перська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/5885fe45-0fd8-4eea-ac55-f46d46a44e6c,skill/competence,transversal,спілкуватися албанською мовою,released,,"Спілкуватися усно албанською мовою.
+	",http://data.europa.eu/esco/skill/f1a08ec9-32d2-4e52-ba4a-66e049019be8,албанська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/58cabf75-2520-4358-a210-2cbc628f4aa2,knowledge,transversal,перська мова,released,,"Перська мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/59ac89d7-12bb-470d-818b-222963d1c357,skill/competence,transversal,спілкуватися мовою гуджараті,released,,"Спілкуватися усно гуджаратською мовою.
+	",http://data.europa.eu/esco/skill/9b0baaa7-fed3-41b7-b74e-9d459f11acfe,гуджаратська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/5a6ac2a6-6aa3-4b68-b2ef-b2491fb146c1,skill/competence,transversal,писати валлійською мовою,released,,"Складати тексти в письмовій формі валлійською мовою.
+	",http://data.europa.eu/esco/skill/8dbd15c6-ecf0-468c-8ae1-f6eb360743dd,валлійська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/5b9694a6-58b0-4179-a1bd-4bcda0352ca1,skill/competence,transversal,писати македонською мовою,released,,"Складати тексти в письмовій формі македонською мовою.
+	",http://data.europa.eu/esco/skill/15f261e6-4379-437e-b137-b0c473ae3e74,македонська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/5bfce8e7-6f22-4e67-9018-0e4161620f3a,knowledge,transversal,азербайджанська мова,released,,"Азербайджанська мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/5de39924-769c-4301-82a5-525358dffe50,knowledge,transversal,латиська мова,released,,"Латиська мова. Латиська мова є офіційною та робочою мовою ЄС.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/5dfc81aa-c395-4e88-a0e0-a2fbb681ecc0,skill/competence,transversal,писати французькою мовою,released,,"Складати тексти в письмовій формі французькою мовою.
+	",http://data.europa.eu/esco/skill/e747e77e-0ea1-4001-8b07-1d11946b5f1b,французька мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/5ec5c4f7-1b6d-4642-8470-567e666952a8,skill/competence,transversal,писати галісійською мовою,released,,"Складати тексти в письмовій формі галісійською мовою.
+	",http://data.europa.eu/esco/skill/66212ff2-34b9-4812-be58-f53a0b751863,галісійська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/5f1e9642-588c-4882-8c90-20c33cc78bc1,skill/competence,transversal,розуміти розмовну італійську мову,released,,"Розуміти усно висловлене італійською мовою.
+	",http://data.europa.eu/esco/skill/87219dfe-a21c-4160-8cc8-1eabf9b16b44,італійська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/5f81f163-7c84-4254-962f-69257cfa9ef5,skill/competence,transversal,розуміти письмову мову гуджараті,released,,"Читати та розуміти тексти в письмовій формі гуджаратською мова.
+	",http://data.europa.eu/esco/skill/9b0baaa7-fed3-41b7-b74e-9d459f11acfe,гуджаратська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/5fd4e27b-49de-4609-ae44-91e47ee3d168,skill/competence,transversal,писати мовою телугу,released,,"Складати тексти в письмовій формі мовою телуґу.
+	",http://data.europa.eu/esco/skill/64fe09ac-f419-4c04-8997-d1dde2e31bfc,мова телугу
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/60bb7483-e0a1-4016-a6f3-6b95261ab615,skill/competence,transversal,розуміти розмовну азербайджанську мову,released,,"Розуміти усно висловлене азербайджанською мовою.
+	",http://data.europa.eu/esco/skill/5bfce8e7-6f22-4e67-9018-0e4161620f3a,азербайджанська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/614dcf69-dc56-4cab-bcb1-5bed1b389516,skill/competence,transversal,розуміти розмовну вірменську мову,released,,"Розуміти усно висловлене вірменською мовою.
+	",http://data.europa.eu/esco/skill/fcbcdf4c-d079-4010-ab4b-8356fbfa5096,вірменська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/61809be5-6787-46f0-9583-ac3287e17bd6,skill/competence,transversal,спілкуватися мовою маратхі,released,,"Спілкуватися усно мовою маратхі.
+	",http://data.europa.eu/esco/skill/2080075c-0488-4fbf-a786-734dbbef31ce,маратська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/61c14f06-9edf-44c3-96af-dcecda598853,skill/competence,transversal,писати латиською мовою,released,,"Складати тексти в письмовій формі латиською мовою.
+	",http://data.europa.eu/esco/skill/5de39924-769c-4301-82a5-525358dffe50,латиська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/61ea50d7-db19-4160-8da4-1d7bec68bec3,skill/competence,transversal,писати словенською мовою,released,,"Складати тексти в письмовій формі словенською мовою.
+	",http://data.europa.eu/esco/skill/9ace3aae-aeae-4ed6-b625-26bc58345554,словенська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/633b72c4-1da1-45ae-b989-4d1a5bcab1a7,skill/competence,transversal,розуміти розмовну каталонську мову,released,,"Розуміти усно висловлене каталонською мовою.
+	",http://data.europa.eu/esco/skill/8ee2b6f2-7017-4b9a-9de2-4dedf0711394,каталонська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/64fe09ac-f419-4c04-8997-d1dde2e31bfc,knowledge,transversal,мова телугу,released,,"Мова телуґу.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/64ff8d5f-58a8-4efb-af5a-e161854b3e9a,skill/competence,transversal,розуміти розмовну англійську мову,released,,"Розуміти усно висловлене англійською мовою.
+	",http://data.europa.eu/esco/skill/6d3edede-8951-4621-a835-e04323300fa0,англійська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/65a24ec1-e173-4bd6-b160-270346e0f4bf,skill/competence,transversal,писати ірландською мовою,released,,"Складати тексти в письмовій формі ірландською мовою.
+	",http://data.europa.eu/esco/skill/8f4c0fe6-10c7-409e-92d6-245f46728209,ірландська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/65d796ba-2cac-41b0-abfb-1f2f980a4893,skill/competence,transversal,спілкуватися люксембурзькою мовою,released,,"Спілкуватися усно люксембурзькою мовою.
+	",http://data.europa.eu/esco/skill/7d16f1e4-1003-4f1f-9595-5cafb25a67df,люксембурзька мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/66120d64-6f0f-4b89-8c4f-cd271f8cb7ca,skill/competence,transversal,розуміти розмовну ромську мову,released,,"Розуміти усно висловлене ромською мовою.
+	",http://data.europa.eu/esco/skill/8ef3eccc-a847-430e-b828-cf178803b8c1,ромська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/66212ff2-34b9-4812-be58-f53a0b751863,knowledge,transversal,галісійська мова,released,,"Галісійська мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/67e9583d-621a-42bd-8381-4e85c9e0923a,skill/competence,transversal,спілкуватися норвезькою мовою,released,,"Спілкуватися усно норвезькою мовою.
+	",http://data.europa.eu/esco/skill/829f6eb5-0b26-4152-8eb3-82dd32b2b6f2,норвезька мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/6891bbce-20bf-4afc-bd5e-75bdf54c0165,knowledge,transversal,російська мова,released,,"Російська мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/69eb9999-814b-4293-8d6c-633e49f64de4,skill/competence,transversal,писати шведською мовою,released,,"Складати тексти в письмовій формі шведською мовою.
+	",http://data.europa.eu/esco/skill/7ee51257-8947-4b69-9bdf-322baf0a6398,шведська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/6b7968ae-34fc-44cf-bbe4-28bded032004,skill/competence,transversal,розуміти розмовну португальську мову,released,,"Розуміти усно висловлене португальською мовою.
+	",http://data.europa.eu/esco/skill/584c13e8-fd06-4ca3-a45b-cca5b2f147a7,португальська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/6b99d4ad-f0aa-44bb-a75e-a65c32fc5d2f,skill/competence,transversal,розуміти письмову ромську мову,released,,"Читати та розуміти тексти в письмовій формі ромською мовою.
+	",http://data.europa.eu/esco/skill/8ef3eccc-a847-430e-b828-cf178803b8c1,ромська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/6bc58e91-1827-4dc7-a9cf-2311edcba0ec,knowledge,transversal,хорватська мова,released,,"Хорватська мова. Хорватська мова є офіційною та робочою мовою ЄС.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/6be5f174-9b46-4b76-9aa1-177f3845b615,skill/competence,transversal,спілкуватися латиською мовою,released,,"Спілкуватися усно латиською мовою.
+	",http://data.europa.eu/esco/skill/5de39924-769c-4301-82a5-525358dffe50,латиська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/6c619869-46b6-4a52-8889-1fc737546b36,skill/competence,transversal,розуміти письмову давньогрецьку мову,released,,"Читати та розуміти тексти в письмовій формі давньогрецькою мовою.
+	",http://data.europa.eu/esco/skill/896b0b7f-e793-4b3f-a7a6-4ab1d237f695,давньогрецька мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/6d3edede-8951-4621-a835-e04323300fa0,knowledge,transversal,англійська мова,released,,"Англійська мова. Англійська мова є офіційною та робочою мовою ЄС.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/6d4feb44-401c-480d-a05b-02ca8b38d7cd,skill/competence,transversal,писати малайською мовою,released,,"Складати тексти в письмовій формі малайською мовою.
+	",http://data.europa.eu/esco/skill/1f90c205-f869-4dcf-a374-c4fdeded9cbc,малайська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/6f34bd05-1297-4913-92ff-85a604242b2f,knowledge,transversal,берберська мова,released,,"Мовна сім’я берберських мов.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/6f55e44d-4494-4079-9b8d-01ac6912529e,knowledge,transversal,білоруська мова,released,,"Білоруська мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/702d3840-308a-4d4a-ab61-f40f87d47fff,skill/competence,transversal,спілкуватися китайською мовою,released,,"Спілкуватися усно китайською мовою.
+	",http://data.europa.eu/esco/skill/1fe42b38-cd42-4fc7-ae77-14e4c9e96295,китайська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/7077db13-08c2-4482-918c-e6291e04f82b,skill/competence,transversal,розуміти письмову японську мову,released,,"Читати та розуміти тексти в письмовій формі японською мовою.
+	",http://data.europa.eu/esco/skill/39c675c4-af13-49db-bbed-cf762102f85e,японська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/741ef95e-f1cf-4cf4-a021-b293e25eb005,skill/competence,transversal,спілкуватися мальтійською мовою,released,,"Спілкуватися усно мальтійською мовою.
+	",http://data.europa.eu/esco/skill/cb50f9cd-3638-409b-8f93-befaf17d313e,мальтійська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/74e261bb-9a84-438b-9c6c-42e2a46613dc,skill/competence,transversal,спілкуватися болгарською мовою,released,,"Спілкуватися усно болгарською мовою.
+	",http://data.europa.eu/esco/skill/d5fd4958-4ca6-4d06-845f-713e2c459612,болгарська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/7629db63-5922-42fa-8c80-9575526f7326,skill/competence,transversal,писати грецькою мовою,released,,"Складати тексти в письмовій формі грецькою мовою.
+	",http://data.europa.eu/esco/skill/ea4ebfa1-e17a-4416-ac54-955f33e6ade7,грецька мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/76506870-aeac-4bc2-96b2-cbc6702601ea,skill/competence,transversal,писати норвезькою мовою,released,,"Складати тексти в письмовій формі норвезькою мовою.
+	",http://data.europa.eu/esco/skill/829f6eb5-0b26-4152-8eb3-82dd32b2b6f2,норвезька мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/767f8edf-372a-490b-9346-54de0ba8c654,skill/competence,transversal,розуміти розмовну словенську мову,released,,"Розуміти усно висловлене словенською мовою.
+	",http://data.europa.eu/esco/skill/9ace3aae-aeae-4ed6-b625-26bc58345554,словенська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/768e19df-be76-4e55-9120-8d1b07306293,skill/competence,transversal,розуміти письмову мову телугу,released,,"Читати та розуміти тексти в письмовій формі мовою телуґу.
+	",http://data.europa.eu/esco/skill/64fe09ac-f419-4c04-8997-d1dde2e31bfc,мова телугу
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/78001945-0117-4dc7-ae8e-6c6800f1ffd8,skill/competence,transversal,розуміти письмову берберську мову,released,,"Читати та розуміти тексти в письмовій формі берберською мовою.
+	",http://data.europa.eu/esco/skill/6f34bd05-1297-4913-92ff-85a604242b2f,берберська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/7866045d-4d36-45e6-aa60-a8107f43e5b1,skill/competence,transversal,спілкуватися ірландською мовою,released,,"Спілкуватися усно ірландською мовою.
+	",http://data.europa.eu/esco/skill/8f4c0fe6-10c7-409e-92d6-245f46728209,ірландська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/790a0f2a-5250-4b6b-a013-c23160fcea65,skill/competence,transversal,спілкуватися пенджабською мовою,released,,"Спілкуватися усно пенджабською мовою.
+	",http://data.europa.eu/esco/skill/e05b9e06-d298-4646-b762-acbd485a20e9,пенджабська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/79444b07-be9c-4cf9-ac91-04e52b2ac1a0,skill/competence,transversal,розуміти розмовну словацьку мову,released,,"Розуміти усно висловлене словацькою мовою.
+	",http://data.europa.eu/esco/skill/246980fe-6222-4852-ade8-b372f7e0fd20,словацька мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/7a86907d-1fd5-4e8f-b0f1-f366a14f6f6d,knowledge,transversal,яванська мова,released,,"Яванська мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/7bd84008-afc2-4f72-8b49-a1dc4723d479,skill/competence,transversal,розуміти розмовну фінську мову,released,,"Розуміти усно висловлене фінською мовою.
+	",http://data.europa.eu/esco/skill/0e3493f4-0cad-4fbc-8e02-025f169b8114,фінська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/7c16e933-2a3f-40e8-855c-f9e5c5a56199,skill/competence,transversal,розуміти письмову валлонську мову,released,,"Читати та розуміти тексти в письмовій формі валлонською мовою.
+	",http://data.europa.eu/esco/skill/d54d7c00-87c4-4f78-af8d-e84577372974,валлонська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/7c2e97a5-ac3d-4c01-9a3b-2e395f45d34a,skill/competence,transversal,писати хорватською мовою,released,,"Складати тексти в письмовій формі хорватською мовою.
+	",http://data.europa.eu/esco/skill/6bc58e91-1827-4dc7-a9cf-2311edcba0ec,хорватська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/7c946ebd-21de-4b08-af66-dff0356b5ad1,skill/competence,transversal,розуміти письмову білоруську мову,released,,"Читати та розуміти тексти в письмовій формі білоруською мова.
+	",http://data.europa.eu/esco/skill/6f55e44d-4494-4079-9b8d-01ac6912529e,білоруська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/7d16f1e4-1003-4f1f-9595-5cafb25a67df,knowledge,transversal,люксембурзька мова,released,,"Люксембурзька мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/7da256db-ea36-43e3-ba4c-286b598628d5,skill/competence,transversal,спілкуватися білоруською мовою,released,,"Спілкуватися усно білоруською мовою.
+	",http://data.europa.eu/esco/skill/6f55e44d-4494-4079-9b8d-01ac6912529e,білоруська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/7e2c0de4-240d-4c6f-9336-56c0ac349212,skill/competence,transversal,розуміти письмову польську мову,released,,"Читати та розуміти тексти в письмовій формі польською мовою.
+	",http://data.europa.eu/esco/skill/f3e9b964-0c2d-46c4-a895-8b3583054d69,польська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/7ed08054-550c-4206-a991-1718dcb68658,skill/competence,transversal,розуміти письмову мову бігарі,released,,"Читати та розуміти тексти в письмовій формі мовою бігарі.
+	",http://data.europa.eu/esco/skill/15ea7b6b-1b93-4ed8-b58a-5c54777e0832,бігарська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/7ee20fe2-facd-4cc5-837b-927429e0e7ac,skill/competence,transversal,розуміти письмову англійську мову,released,,"Читати та розуміти тексти в письмовій формі англійською мовою.
+	",http://data.europa.eu/esco/skill/6d3edede-8951-4621-a835-e04323300fa0,англійська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/7ee51257-8947-4b69-9bdf-322baf0a6398,knowledge,transversal,шведська мова,released,,"Шведська мова. Шведська мова є офіційною та робочою мовою ЄС.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/7f030a50-030e-429e-8f50-02186b27f7ea,skill/competence,transversal,розуміти письмову чорногорську мову,released,,"Читати та розуміти тексти в письмовій формі чорногорською мовою.
+	",http://data.europa.eu/esco/skill/2358a146-6e8f-43cb-872f-a12ac9c57d60,чорногорська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/8024130b-1359-485d-b40f-9b31e25d7c17,skill/competence,transversal,розуміти розмовну бенгальську мову,released,,"Розуміти усно висловлене бенгальською мовою.
+	",http://data.europa.eu/esco/skill/ede98e07-f07d-41bc-99b0-f88bf0dad438,бенгальська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/81192ed1-cabc-48c5-bbc3-9ff06d3f2958,skill/competence,transversal,розуміти розмовну корейську мову,released,,"Розуміти усно висловлене корейською мовою.
+	",http://data.europa.eu/esco/skill/f9bc2890-d1f2-4a83-bd7b-b150a7679c79,корейська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/829f6eb5-0b26-4152-8eb3-82dd32b2b6f2,knowledge,transversal,норвезька мова,released,,"Норвезька мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/84e1df68-529a-4dbf-9557-5c50de5b27c3,skill/competence,transversal,розуміти письмову мову гінді,released,,"Читати та розуміти тексти в письмовій формі мовою гінді.
+	",http://data.europa.eu/esco/skill/d93a7370-bf56-43f5-be54-e108f8ec3107,гінді
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/87087740-89b7-4d0c-a3a1-99c573c81b62,skill/competence,transversal,розуміти розмовну мову маратхі,released,,"Розуміти усно висловлене мовою маратхі.
+	",http://data.europa.eu/esco/skill/2080075c-0488-4fbf-a786-734dbbef31ce,маратська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/87219dfe-a21c-4160-8cc8-1eabf9b16b44,knowledge,transversal,італійська мова,released,,"Італійська мова. Італійська мова є офіційною мовою ЄС.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/877057bc-7be8-4d40-9bab-cda10eb4b999,skill/competence,transversal,писати давньогрецькою мовою,released,,"Складати тексти в письмовій формі давньогрецькою мовою.
+	",http://data.europa.eu/esco/skill/896b0b7f-e793-4b3f-a7a6-4ab1d237f695,давньогрецька мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/88778b48-d8dd-4c7e-8154-6f45fab4b0e9,skill/competence,transversal,розуміти розмовну мальтійську мову,released,,"Розуміти усно висловлене мальтійською мовою.
+	",http://data.europa.eu/esco/skill/cb50f9cd-3638-409b-8f93-befaf17d313e,мальтійська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/894f3286-ae58-4a13-a8ed-9aa7c5c77c18,skill/competence,transversal,спілкуватися ромською мовою,released,,"Спілкуватися усно ромською мовою.
+	",http://data.europa.eu/esco/skill/8ef3eccc-a847-430e-b828-cf178803b8c1,ромська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/895b3eab-d1e7-443d-8ba3-745f67462207,skill/competence,transversal,спілкуватися російською мовою,released,,"Спілкуватися усно російською мовою.
+	",http://data.europa.eu/esco/skill/6891bbce-20bf-4afc-bd5e-75bdf54c0165,російська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/896b0b7f-e793-4b3f-a7a6-4ab1d237f695,knowledge,cross-sector,давньогрецька мова,released,,"Давньогрецька мова.
+	",http://data.europa.eu/esco/skill/e434e71a-f068-44ed-8059-d1af9eb592d7,класичні мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/8a45f04a-cd28-4ac1-8e8b-ecfd21be0b18,knowledge,transversal,іврит,released,,"Староєврейська мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/8d09f7c2-d10c-4818-a91d-d2f1b8ec7973,skill/competence,transversal,писати на мові гуджараті,released,,"Складати тексти в письмовій формі гуджаратською мовою.
+	",http://data.europa.eu/esco/skill/9b0baaa7-fed3-41b7-b74e-9d459f11acfe,гуджаратська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/8dbd15c6-ecf0-468c-8ae1-f6eb360743dd,knowledge,transversal,валлійська мова,released,,"Валлійська мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/8e12171c-d2b4-4a79-a3ff-ebe18913cc9f,skill/competence,transversal,розуміти письмову казахську мову,released,,"Читати та розуміти тексти в письмовій формі казахською мовою.
+	",http://data.europa.eu/esco/skill/f37dbb3c-dafc-4835-86d1-de9615626f9b,казахська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/8e46288c-025c-4d28-8316-13a21f25f964,skill/competence,transversal,розуміти розмовну сербську мову,released,,"Розуміти усно висловлене сербською мовою.
+	",http://data.europa.eu/esco/skill/c5cb0cc1-c40b-4544-a21c-8472f0b5c14a,сербська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/8ee2b6f2-7017-4b9a-9de2-4dedf0711394,knowledge,transversal,каталонська мова,released,,"Каталонська мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/8ef3eccc-a847-430e-b828-cf178803b8c1,knowledge,transversal,ромська мова,released,,"Мовна сім’я ромських мов.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/8f1efe4e-5f92-43b0-a329-3c17c1460a37,skill/competence,transversal,розуміти письмову азербайджанську мову,released,,"Читати та розуміти тексти в письмовій формі азербайджанською мовою.
+	",http://data.europa.eu/esco/skill/5bfce8e7-6f22-4e67-9018-0e4161620f3a,азербайджанська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/8f4c0fe6-10c7-409e-92d6-245f46728209,knowledge,transversal,ірландська мова,released,,"Ірландська мова. Ірландська мова є офіційною та робочою мовою ЄС.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/8ff32017-9a19-400c-8de5-8a93198864be,skill/competence,transversal,писати мальтійською мовою,released,,"Складати тексти в письмовій формі мальтійською мовою.
+	",http://data.europa.eu/esco/skill/cb50f9cd-3638-409b-8f93-befaf17d313e,мальтійська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/91161335-8adf-4567-8fa5-62fb37948664,skill/competence,transversal,писати валлонською мовою,released,,"Складати тексти в письмовій формі валлонською мовою.
+	",http://data.europa.eu/esco/skill/d54d7c00-87c4-4f78-af8d-e84577372974,валлонська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/9273eec7-e9ce-4860-88fb-9f30faeea34d,skill/competence,transversal,розуміти письмову сербську мову,released,,"Читати та розуміти тексти в письмовій формі сербською мовою.
+	",http://data.europa.eu/esco/skill/c5cb0cc1-c40b-4544-a21c-8472f0b5c14a,сербська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/92ca09cb-e827-4c49-b318-8f540de4debb,skill/competence,transversal,розуміти розмовний іврит,released,,"Розуміти усно висловлене мовою іврит.
+	",http://data.europa.eu/esco/skill/8a45f04a-cd28-4ac1-8e8b-ecfd21be0b18,іврит
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/93c6c3ac-e344-460b-888f-662f6dcc7685,skill/competence,transversal,розуміти письмову латинську мову,released,,"Читати та розуміти тексти в письмовій формі латинською мовою.
+	",http://data.europa.eu/esco/skill/96e70743-6a84-4fee-b226-fe10cddb266e,латина
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/943fe908-c465-4e91-944c-20e2242fd03a,skill/competence,transversal,розуміти розмовну болгарську мову,released,,"Розуміти усно висловлене болгарською мовою.
+	",http://data.europa.eu/esco/skill/d5fd4958-4ca6-4d06-845f-713e2c459612,болгарська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/96ab25a3-c89b-43ea-833b-26b637c3b6ed,skill/competence,transversal,розуміти письмову нідерландську мову,released,,"Читати та розуміти тексти в письмовій формі нідерландською мовою.
+	",http://data.europa.eu/esco/skill/cad4f44b-28a8-4448-86e5-7389e5ebf3eb,голландська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/96e70743-6a84-4fee-b226-fe10cddb266e,knowledge,cross-sector,латина,released,,"Латинська мова.
+	",http://data.europa.eu/esco/skill/e434e71a-f068-44ed-8059-d1af9eb592d7,класичні мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/97ca0f19-c53f-4c38-b983-398345cba227,skill/competence,transversal,писати албанською мовою,released,,"Складати тексти в письмовій формі албанською мовою.
+	",http://data.europa.eu/esco/skill/f1a08ec9-32d2-4e52-ba4a-66e049019be8,албанська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/98d31888-bb47-4f54-b339-bd0b9c289048,skill/competence,transversal,спілкуватися словенською мовою,released,,"Спілкуватися усно словенською мовою.
+	",http://data.europa.eu/esco/skill/9ace3aae-aeae-4ed6-b625-26bc58345554,словенська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/99933cd7-7868-4f83-8bb3-d747433159d3,skill/competence,transversal,розуміти розмовну литовську мову,released,,"Розуміти усно висловлене литовською мовою.
+	",http://data.europa.eu/esco/skill/b3950b87-a980-4cd4-a795-be8a9b63661d,литовська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/9996836f-788c-4f04-a792-c831b2e94e2f,skill/competence,transversal,розуміти письмову мову маратхі,released,,"Читати та розуміти тексти в письмовій формі мовою маратхі.
+	",http://data.europa.eu/esco/skill/2080075c-0488-4fbf-a786-734dbbef31ce,маратська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/99b3532b-2f47-47f5-b194-708957acf0a8,skill/competence,transversal,розуміти розмовну баскську мову,released,,"Розуміти усно висловлене баскською мовою.
+	",http://data.europa.eu/esco/skill/a28fa5f1-be5b-4608-8376-acea8c2f8cb1,баскська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/9a42bdc6-8496-4874-b9f5-b48207a85282,skill/competence,transversal,спілкуватися грецькою мовою,released,,"Спілкуватися усно грецькою мовою.
+	",http://data.europa.eu/esco/skill/ea4ebfa1-e17a-4416-ac54-955f33e6ade7,грецька мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/9ace3aae-aeae-4ed6-b625-26bc58345554,knowledge,transversal,словенська мова,released,,"Словенська мова. Словенська є офіційною та робочою мовою ЄС.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/9b0baaa7-fed3-41b7-b74e-9d459f11acfe,knowledge,transversal,гуджаратська мова,released,,"Гуджаратська мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/9bccf172-587b-489b-84b7-5e1c8cc91520,skill/competence,transversal,розуміти письмову шведську мову,released,,"Читати та розуміти тексти в письмовій формі шведською мовою.
+	",http://data.europa.eu/esco/skill/7ee51257-8947-4b69-9bdf-322baf0a6398,шведська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/9ce34147-6618-4f1b-bbe3-f46e9aa17211,skill/competence,transversal,спілкуватися лімбурзькою мовою,released,,"Спілкуватися усно лімбурзькою мовою.
+	",http://data.europa.eu/esco/skill/cf5b3ca0-a844-42b9-b9cd-bd15465b9cac,лімбурзька мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/9ef06b7c-991c-46a5-9dbc-82506031e8f9,skill/competence,transversal,розуміти письмову португальську мову,released,,"Читати та розуміти тексти в письмовій формі португальською мовою.
+	",http://data.europa.eu/esco/skill/584c13e8-fd06-4ca3-a45b-cca5b2f147a7,португальська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/9f3e3f27-1f27-4b77-9bc8-4ec33e33b8b1,skill/competence,transversal,писати бенгальською мовою,released,,"Складати тексти в письмовій формі бенгальською мовою.
+	",http://data.europa.eu/esco/skill/ede98e07-f07d-41bc-99b0-f88bf0dad438,бенгальська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/a0ccc96f-edec-4641-b053-12159ebe5b13,skill/competence,transversal,розуміти розмовну іспанську мову,released,,"Розуміти усно висловлене іспанською мовою.
+	",http://data.europa.eu/esco/skill/14ee9f76-3524-43d5-8a1a-5ba8283f8bd7,іспанська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/a18e3090-6afb-4afb-a055-1f83bbe498e3,knowledge,transversal,ісландська мова,released,,"Ісландська мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/a2358129-ba05-49bb-914f-03420a8be102,skill/competence,transversal,розуміти письмовий іврит,released,,"Читати та розуміти тексти в письмовій формі мовою іврит.
+	",http://data.europa.eu/esco/skill/8a45f04a-cd28-4ac1-8e8b-ecfd21be0b18,іврит
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/a28c2024-0fa6-43fd-a848-1a7ec7fe28b0,skill/competence,transversal,розуміти письмову албанську мову,released,,"Читати та розуміти тексти в письмовій формі албанською мовою.
+	",http://data.europa.eu/esco/skill/f1a08ec9-32d2-4e52-ba4a-66e049019be8,албанська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/a28fa5f1-be5b-4608-8376-acea8c2f8cb1,knowledge,transversal,баскська мова,released,,"Баскська мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/a3e0c23e-db44-43f5-af4b-7e1b60deb6d8,skill/competence,transversal,розуміти розмовну галісійську мову,released,,"Розуміти усно висловлене галісійською мовою.
+	",http://data.europa.eu/esco/skill/66212ff2-34b9-4812-be58-f53a0b751863,галісійська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/a61e9686-7e8f-44ec-967b-d6445f90230b,skill/competence,transversal,розуміти письмову галісійську мову,released,,"Читати та розуміти тексти в письмовій формі галісійською мова.
+	",http://data.europa.eu/esco/skill/66212ff2-34b9-4812-be58-f53a0b751863,галісійська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/a6aa3c44-b4d7-4db6-9a84-329e5ca9c64d,skill/competence,transversal,розуміти розмовну албанську мову,released,,"Розуміти усно висловлене албанською мовою.
+	",http://data.europa.eu/esco/skill/f1a08ec9-32d2-4e52-ba4a-66e049019be8,албанська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/a7e1201f-bc9c-4dd9-aa82-271273f94595,skill/competence,transversal,розуміти письмовий ідиш,released,,"Читати та розуміти тексти в письмовій формі мовою ідиш.
+	",http://data.europa.eu/esco/skill/d59ef10f-ad20-4791-957d-b315196ecdc2,ідиш
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/a88e4c9e-5a40-4da7-acf1-02e4a9e46da2,skill/competence,transversal,розуміти письмову угорську мову,released,,"Читати та розуміти тексти в письмовій формі угорською мовою.
+	",http://data.europa.eu/esco/skill/ddd3596a-43f3-402e-960a-5f79362a8609,угорська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/a9170bca-28d9-4bb5-b950-0d0f712d1cd2,skill/competence,transversal,розуміти розмовну данську мову,released,,"Розуміти усно висловлене данською мовою.
+	",http://data.europa.eu/esco/skill/273a28d6-1bd3-4d13-a906-3d75c1cfdfc1,данська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/a9fdd2c9-4295-4407-ba3c-1547cbce40a2,knowledge,transversal,боснійська мова,released,,"Боснійська мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/aa66a033-8522-40e9-a5c0-ff2593e2669c,knowledge,transversal,турецька мова,released,,"Турецька мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/aaf57e19-0d41-4361-8de9-bcd858e3f10d,skill/competence,transversal,писати каталонською мовою,released,,"Складати тексти в письмовій формі каталонською мовою.
+	",http://data.europa.eu/esco/skill/8ee2b6f2-7017-4b9a-9de2-4dedf0711394,каталонська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/abadaacb-5751-4f52-96b7-c9bbc070f9de,skill/competence,transversal,писати естонською мовою,released,,"Складати тексти в письмовій формі естонською мовою.
+	",http://data.europa.eu/esco/skill/1b7e6f56-bc73-4bcc-81ae-09252175d418,естонська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/ad3711f4-f4d9-41e0-b26d-030247cecde4,skill/competence,transversal,спілкуватися азербайджанською мовою,released,,"Спілкуватися усно азербайджанською мовою.
+	",http://data.europa.eu/esco/skill/5bfce8e7-6f22-4e67-9018-0e4161620f3a,азербайджанська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/ae5d27b1-7298-4dce-836c-3bb26c2fafda,skill/competence,transversal,спілкуватися литовською мовою,released,,"Спілкуватися усно литовською мовою.
+	",http://data.europa.eu/esco/skill/b3950b87-a980-4cd4-a795-be8a9b63661d,литовська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/ae72f370-469d-44fa-9f09-408b1c994d2e,skill/competence,transversal,розуміти письмову румунську мову,released,,"Читати та розуміти тексти в письмовій формі румунською мовою.
+	",http://data.europa.eu/esco/skill/4b9f1ae5-0ee6-4738-8999-9b8191fba808,румунська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/b0964159-d7b2-4f1e-a0d1-5d100445fcdb,skill/competence,transversal,розуміти письмову арабську мову,released,,"Читати та розуміти тексти в письмовій формі арабською мова.
+	",http://data.europa.eu/esco/skill/33859d93-987c-4caa-a0a9-6159ea7bbc2a,арабська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/b22ab5e7-11e1-435e-bdab-0f8decd6a6f4,skill/competence,transversal,розуміти розмовну арабську мову,released,,"Розуміти усно висловлене арабською мовою.
+	",http://data.europa.eu/esco/skill/33859d93-987c-4caa-a0a9-6159ea7bbc2a,арабська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/b2c1f90a-72ce-4499-ab9a-a9a5c9355d5b,knowledge,transversal,грузинська мова,released,,"Грузинська мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/b2cd801d-803d-41bc-bef3-dea4ddd94bbc,skill/competence,transversal,писати мовою гінді,released,,"Складати тексти в письмовій формі мовою гінді.
+	",http://data.europa.eu/esco/skill/d93a7370-bf56-43f5-be54-e108f8ec3107,гінді
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/b3950b87-a980-4cd4-a795-be8a9b63661d,knowledge,transversal,литовська мова,released,,"Литовська мова. Литовська мова є офіційною та робочою мовою ЄС.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/b45f87e9-66ce-4212-82eb-3a55765bc512,skill/competence,transversal,спілкуватися італійською мовою,released,,"Спілкуватися усно італійською мовою.
+	",http://data.europa.eu/esco/skill/87219dfe-a21c-4160-8cc8-1eabf9b16b44,італійська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/b4a5d258-4fe7-4fa5-b58f-d2f8769eb15b,skill/competence,transversal,писати сардинською мовою,released,,"Складати тексти в письмовій формі сардинською мовою.
+	",http://data.europa.eu/esco/skill/1627c1b9-31e1-4742-bf5c-cfec2ce33cfc,сардинська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/b4d8c494-4318-42e4-ba6e-0039390a2d7a,skill/competence,transversal,спілкуватися мовою бігарі,released,,"Спілкуватися усно мовою бігарі.
+	",http://data.europa.eu/esco/skill/15ea7b6b-1b93-4ed8-b58a-5c54777e0832,бігарська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/b5ff2ded-a91d-468b-afed-f9737f929e86,skill/competence,transversal,писати китайською мовою,released,,"Складати тексти в письмовій формі китайською мовою.
+	",http://data.europa.eu/esco/skill/1fe42b38-cd42-4fc7-ae77-14e4c9e96295,китайська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/b6422189-45f6-4e87-8a9e-7e4aabddf069,skill/competence,transversal,писати мовою урду,released,,"Складати тексти в письмовій формі мовою урду.
+	",http://data.europa.eu/esco/skill/bc546a09-1103-4184-b757-3508ef5f8490,мова урду
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/b694bab7-6ece-48a8-8a65-2f6d8fd62df2,skill/competence,transversal,розуміти письмову норвезьку мову,released,,"Читати та розуміти тексти в письмовій формі норвезькою мова.
+	",http://data.europa.eu/esco/skill/829f6eb5-0b26-4152-8eb3-82dd32b2b6f2,норвезька мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/b6c39ec1-7da2-46dc-9cec-2f7204066cf3,skill/competence,transversal,розуміти розмовну ірландську мову,released,,"Розуміти усно висловлене ірландською мовою.
+	",http://data.europa.eu/esco/skill/8f4c0fe6-10c7-409e-92d6-245f46728209,ірландська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/b7385197-5481-4b91-9628-56dadb648f69,skill/competence,transversal,розуміти розмовну гуджаратську мову,released,,"Розуміти усно висловлене гуджаратською мовою.
+	",http://data.europa.eu/esco/skill/9b0baaa7-fed3-41b7-b74e-9d459f11acfe,гуджаратська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/b895feef-e869-48ac-a853-6c31a636721f,skill/competence,transversal,розуміти розмовну яванську мову,released,,"Розуміти усно висловлене яванською мовою.
+	",http://data.europa.eu/esco/skill/7a86907d-1fd5-4e8f-b0f1-f366a14f6f6d,яванська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/ba002311-da5a-4795-933b-1c7d1f0f2f25,skill/competence,transversal,розуміти розмовну казахську мову,released,,"Розуміти усно висловлене казахською мовою.
+	",http://data.europa.eu/esco/skill/f37dbb3c-dafc-4835-86d1-de9615626f9b,казахська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/ba98bef0-9c49-478f-b9db-14a4189d7c76,skill/competence,transversal,розуміти письмовий санскрит,released,,"Читати та розуміти тексти в письмовій формі мовою санскрит.
+	",http://data.europa.eu/esco/skill/45289df8-d02d-4f08-9802-2c7deae944ad,санскрит
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/bad8da46-ec16-48da-b717-e9b9616e3c91,skill/competence,transversal,розуміти розмовну македонську мову,released,,"Розуміти усно висловлене македонською мовою.
+	",http://data.europa.eu/esco/skill/15f261e6-4379-437e-b137-b0c473ae3e74,македонська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/bb691baa-c7c2-41c3-af69-4dc901d22d2f,skill/competence,transversal,розуміти письмову італійську мову,released,,"Читати та розуміти тексти в письмовій формі італійською мовою.
+	",http://data.europa.eu/esco/skill/87219dfe-a21c-4160-8cc8-1eabf9b16b44,італійська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/bbe65f99-72a8-43a2-b227-9ce1457a8a20,skill/competence,transversal,спілкуватися каталонською мовою,released,,"Спілкуватися усно каталонською мовою.
+	",http://data.europa.eu/esco/skill/8ee2b6f2-7017-4b9a-9de2-4dedf0711394,каталонська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/bc112354-758e-40eb-930e-9ebdbd5a2f34,skill/competence,transversal,розуміти розмовну грецьку мову,released,,"Розуміти усно висловлене грецькою мовою.
+	",http://data.europa.eu/esco/skill/ea4ebfa1-e17a-4416-ac54-955f33e6ade7,грецька мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/bc546a09-1103-4184-b757-3508ef5f8490,knowledge,transversal,мова урду,released,,"Мова урду.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/bc65ec0c-cdf0-4af3-b79e-c9bfa5abd758,skill/competence,transversal,розуміти розмовну латиську мову,released,,"Розуміти усно висловлене латиською мовою.
+	",http://data.europa.eu/esco/skill/5de39924-769c-4301-82a5-525358dffe50,латиська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/bdf14dfe-437d-4fb6-95f4-72da1a593384,skill/competence,transversal,спілкуватися шведською мовою,released,,"Спілкуватися усно шведською мовою.
+	",http://data.europa.eu/esco/skill/7ee51257-8947-4b69-9bdf-322baf0a6398,шведська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/be5c6fb4-d257-4c98-b5e2-d3866fd0f2c2,skill/competence,transversal,спілкуватися корейською мовою,released,,"Спілкуватися усно корейською мовою.
+	",http://data.europa.eu/esco/skill/f9bc2890-d1f2-4a83-bd7b-b150a7679c79,корейська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/befd434f-bb74-4144-8aa6-28b903b792a0,skill/competence,transversal,спілкуватися португальською мовою,released,,"Спілкуватися усно португальською мовою.
+	",http://data.europa.eu/esco/skill/584c13e8-fd06-4ca3-a45b-cca5b2f147a7,португальська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/bf60009d-8afb-4306-9b0d-cfe2f66ab08f,knowledge,transversal,в’єтнамська мова,released,,"В’єтнамська мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/bfb5f0b8-0ea0-4e44-a48d-7d876f966758,skill/competence,transversal,спілкуватися французькою мовою,released,,"Спілкуватися усно французькою мовою.
+	",http://data.europa.eu/esco/skill/e747e77e-0ea1-4001-8b07-1d11946b5f1b,французька мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/c0d6eb4a-636c-43d8-9bec-69f6586c415a,skill/competence,transversal,спілкуватися естонською мовою,released,,"Спілкуватися усно естонською мовою.
+	",http://data.europa.eu/esco/skill/1b7e6f56-bc73-4bcc-81ae-09252175d418,естонська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/c2cc1a0a-356e-4634-bfd8-94c5d84324ba,skill/competence,transversal,спілкуватися берберською мовою,released,,"Спілкуватися усно берберською мовою.
+	",http://data.europa.eu/esco/skill/6f34bd05-1297-4913-92ff-85a604242b2f,берберська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/c34a8faa-b543-45eb-b088-39baf21c5146,skill/competence,transversal,спілкуватися мовою урду,released,,"Спілкуватися усно мовою урду.
+	",http://data.europa.eu/esco/skill/bc546a09-1103-4184-b757-3508ef5f8490,мова урду
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/c445a2f0-9f97-432d-a1be-f2b54a53576e,skill/competence,transversal,розуміти розмовну берберську мову,released,,"Розуміти усно висловлене берберською мовою.
+	",http://data.europa.eu/esco/skill/6f34bd05-1297-4913-92ff-85a604242b2f,берберська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/c44b765b-76fb-4a16-be7e-9925beee072c,skill/competence,transversal,спілкуватися нідерландською мовою,released,,"Спілкуватися усно нідерландською мовою.
+	",http://data.europa.eu/esco/skill/cad4f44b-28a8-4448-86e5-7389e5ebf3eb,голландська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/c551614f-5542-460e-9a86-bfcdf160e230,skill/competence,transversal,спілкуватися мовою телугу,released,,"Спілкуватися усно мовою телуґу.
+	",http://data.europa.eu/esco/skill/64fe09ac-f419-4c04-8997-d1dde2e31bfc,мова телугу
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/c5cb0cc1-c40b-4544-a21c-8472f0b5c14a,knowledge,transversal,сербська мова,released,,"Сербська мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/c5ef5813-ef1d-4a22-8fce-16b1dcf93ea1,skill/competence,transversal,писати білоруською мовою,released,,"Складати тексти в письмовій формі білоруською мовою.
+	",http://data.europa.eu/esco/skill/6f55e44d-4494-4079-9b8d-01ac6912529e,білоруська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/c6b70785-fce7-4089-8250-21c97ca0ad8f,skill/competence,transversal,розуміти письмову естонську мову,released,,"Читати та розуміти тексти в письмовій формі естонською мовою.
+	",http://data.europa.eu/esco/skill/1b7e6f56-bc73-4bcc-81ae-09252175d418,естонська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/c73e355b-89c8-4831-968e-f146f2ae970c,skill/competence,transversal,писати мовою маратхі,released,,"Складати тексти в письмовій формі мовою маратхі.
+	",http://data.europa.eu/esco/skill/2080075c-0488-4fbf-a786-734dbbef31ce,маратська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/c8c283af-3d77-4212-93ab-1b3de6a79e96,skill/competence,transversal,розуміти розмовну румунську мову,released,,"Розуміти усно висловлене румунською мовою.
+	",http://data.europa.eu/esco/skill/4b9f1ae5-0ee6-4738-8999-9b8191fba808,румунська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/c8d2416e-7db3-4f63-bce3-075f1fea66ea,skill/competence,transversal,розуміти розмовну ісландську мову,released,,"Розуміти усно висловлене ісландською мовою.
+	",http://data.europa.eu/esco/skill/a18e3090-6afb-4afb-a055-1f83bbe498e3,ісландська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/c98c8578-6654-4d76-8391-ecfe59abce22,skill/competence,transversal,розуміти письмову данську мову,released,,"Читати та розуміти тексти в письмовій формі данською мовою.
+	",http://data.europa.eu/esco/skill/273a28d6-1bd3-4d13-a906-3d75c1cfdfc1,данська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/c9ba0570-f751-4023-9851-5a0826e722cc,skill/competence,transversal,спілкуватися яванською мовою,released,,"Спілкуватися усно яванською мовою.
+	",http://data.europa.eu/esco/skill/7a86907d-1fd5-4e8f-b0f1-f366a14f6f6d,яванська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/ca58a2d3-b901-42b2-b85f-b2b83aeadbea,skill/competence,transversal,розуміти письмову російську мову,released,,"Читати та розуміти тексти в письмовій формі російською мовою.
+	",http://data.europa.eu/esco/skill/6891bbce-20bf-4afc-bd5e-75bdf54c0165,російська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/ca81a475-f76c-4318-bdd7-4f1f3605e798,skill/competence,transversal,писати італійською мовою,released,,"Складати тексти в письмовій формі італійською мовою.
+	",http://data.europa.eu/esco/skill/87219dfe-a21c-4160-8cc8-1eabf9b16b44,італійська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/caac02b1-ab96-477e-a7a7-295c9d9e037f,skill/competence,transversal,спілкуватися мовою ідиш,released,,"Спілкуватися усно мовою ідиш.
+	",http://data.europa.eu/esco/skill/d59ef10f-ad20-4791-957d-b315196ecdc2,ідиш
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/cad4f44b-28a8-4448-86e5-7389e5ebf3eb,knowledge,transversal,голландська мова,released,,"Нідерландська мова. Нідерландська мова є офіційною та робочою мовою ЄС.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/cb50f9cd-3638-409b-8f93-befaf17d313e,knowledge,transversal,мальтійська мова,released,,"Мальтійська мова. Мальтійська є офіційною та робочою мовою ЄС.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/cba8e108-dd50-43ab-8100-13690408a69c,skill/competence,transversal,розуміти письмову окситанську мову,released,,"Читати та розуміти тексти в письмовій формі окситанською мовою.
+	",http://data.europa.eu/esco/skill/57cc6587-7efe-4ba5-982f-ac15ce1617ac,окситанська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/cd6484a2-bfa2-4371-8e2f-1ffa2a22dac4,skill/competence,transversal,розуміти розмовну шведську мову,released,,"Розуміти усно висловлене шведською мовою.
+	",http://data.europa.eu/esco/skill/7ee51257-8947-4b69-9bdf-322baf0a6398,шведська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/cda53197-9c99-404a-ac8a-d8c8550ca98d,skill/competence,transversal,спілкуватися українською мовою,released,,"Спілкуватися усно українською мовою.
+	",http://data.europa.eu/esco/skill/354b948c-7eef-4ebc-bfd6-f60d7d5acb62,українська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/cec6cd92-d709-42cc-9a6e-6a7dd48b9e08,skill/competence,transversal,писати іспанською мовою,released,,"Складати тексти в письмовій формі іспанською мовою.
+	",http://data.europa.eu/esco/skill/14ee9f76-3524-43d5-8a1a-5ba8283f8bd7,іспанська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/cf5b3ca0-a844-42b9-b9cd-bd15465b9cac,knowledge,transversal,лімбурзька мова,released,,"Лімбурзька мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/cf9e867f-08d7-48a8-8d11-c63bd8a65f89,skill/competence,transversal,писати арабською мовою,released,,"Складати тексти в письмовій формі арабською мовою.
+	",http://data.europa.eu/esco/skill/33859d93-987c-4caa-a0a9-6159ea7bbc2a,арабська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/d0898934-7335-480f-a986-b9b05b54c718,skill/competence,transversal,розуміти розмовну російську мову,released,,"Розуміти усно висловлене російською мовою.
+	",http://data.europa.eu/esco/skill/6891bbce-20bf-4afc-bd5e-75bdf54c0165,російська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/d10fe458-ceb5-4a40-83f4-b8ef318bf566,skill/competence,transversal,писати мовою ідиш,released,,"Складати тексти в письмовій формі мовою ідиш.
+	",http://data.europa.eu/esco/skill/d59ef10f-ad20-4791-957d-b315196ecdc2,ідиш
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/d16bc537-ede5-440e-a921-7e9c5e995633,skill/competence,transversal,розуміти письмову китайську мову,released,,"Читати та розуміти тексти в письмовій формі китайською мовою.
+	",http://data.europa.eu/esco/skill/1fe42b38-cd42-4fc7-ae77-14e4c9e96295,китайська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/d21bcba8-ecf5-4ac3-9a6c-25a5afa42ea2,skill/competence,transversal,писати баскською мовою,released,,"Складати тексти в письмовій формі баскською мовою.
+	",http://data.europa.eu/esco/skill/a28fa5f1-be5b-4608-8376-acea8c2f8cb1,баскська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/d3b2faa1-e54f-40e0-b641-977a4703aaf8,skill/competence,transversal,писати люксембурзькою мовою,released,,"Складати тексти в письмовій формі люксембурзькою мовою.
+	",http://data.europa.eu/esco/skill/7d16f1e4-1003-4f1f-9595-5cafb25a67df,люксембурзька мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/d4956f26-d8e3-4cca-9114-a3098f4fafbf,skill/competence,transversal,розуміти письмову в’єтнамську мову,released,,"Читати та розуміти тексти в письмовій формі в’єтнамською мовою.
+	",http://data.europa.eu/esco/skill/bf60009d-8afb-4306-9b0d-cfe2f66ab08f,в’єтнамська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/d54d7c00-87c4-4f78-af8d-e84577372974,knowledge,transversal,валлонська мова,released,,"Валлонська мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/d59ef10f-ad20-4791-957d-b315196ecdc2,knowledge,transversal,ідиш,released,,"Мова ідиш.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/d5fd4958-4ca6-4d06-845f-713e2c459612,knowledge,transversal,болгарська мова,released,,"Болгарська мова. Болгарська мова є офіційною та робочою мовою ЄС.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/d687187f-9f8f-4c3f-b0a0-230595b7f3af,skill/competence,transversal,розуміти письмову курдську мову,released,,"Читати та розуміти тексти в письмовій формі курдською мовою.
+	",http://data.europa.eu/esco/skill/2874065e-6ca3-430c-912a-467da3c23704,курдська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/d6dbc6ea-9bb6-4a8f-9bc2-e9299d74fff9,skill/competence,transversal,спілкуватися в’єтнамською мовою,released,,"Спілкуватися усно в’єтнамською мовою.
+	",http://data.europa.eu/esco/skill/bf60009d-8afb-4306-9b0d-cfe2f66ab08f,в’єтнамська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/d88d546f-c06d-40f0-9810-3a914abb5444,skill/competence,transversal,розуміти письмову боснійську мову,released,,"Читати та розуміти тексти в письмовій формі боснійською мовою.
+	",http://data.europa.eu/esco/skill/a9fdd2c9-4295-4407-ba3c-1547cbce40a2,боснійська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/d937b5aa-8337-4d47-8281-6a67c905569a,skill/competence,transversal,розуміти розмовну мову ідиш,released,,"Розуміти усно висловлене мовою ідиш.
+	",http://data.europa.eu/esco/skill/d59ef10f-ad20-4791-957d-b315196ecdc2,ідиш
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/d93a7370-bf56-43f5-be54-e108f8ec3107,knowledge,transversal,гінді,released,,"Мова гінді.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/d974d81a-a8db-430d-a3fe-b064bd6a374f,skill/competence,transversal,розуміти розмовну турецьку мову,released,,"Розуміти усно висловлене турецькою мовою.
+	",http://data.europa.eu/esco/skill/aa66a033-8522-40e9-a5c0-ff2593e2669c,турецька мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/d9916072-47e1-4466-9908-e7d8f654adc9,skill/competence,transversal,розуміти розмовну українську мову,released,,"Розуміти усно висловлене українською мовою.
+	",http://data.europa.eu/esco/skill/354b948c-7eef-4ebc-bfd6-f60d7d5acb62,українська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/da0795a7-6866-4afc-81ed-5e3aa398f058,knowledge,transversal,чеська мова,released,,"Чеська мова. Чеська мова є офіційною та робочою мовою ЄС.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/da4fed26-1991-45bd-b7e0-4eded5dcee10,skill/competence,transversal,розуміти письмову словенську мову,released,,"Читати та розуміти тексти в письмовій формі словенською мовою.
+	",http://data.europa.eu/esco/skill/9ace3aae-aeae-4ed6-b625-26bc58345554,словенська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/db751c12-2062-477b-b2b2-6be80daa1ff8,skill/competence,transversal,спілкуватися курдською мовою,released,,"Спілкуватися усно курдською мовою.
+	",http://data.europa.eu/esco/skill/2874065e-6ca3-430c-912a-467da3c23704,курдська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/dc052a4f-fb8e-4edb-a575-3a63ddd5b94b,skill/competence,transversal,спілкуватися польською мовою,released,,"Спілкуватися усно польською мовою.
+	",http://data.europa.eu/esco/skill/f3e9b964-0c2d-46c4-a895-8b3583054d69,польська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/dcdff38c-01b1-4e44-bc2f-f69b889d45bb,skill/competence,transversal,спілкуватися македонською мовою,released,,"Спілкуватися усно македонською мовою.
+	",http://data.europa.eu/esco/skill/15f261e6-4379-437e-b137-b0c473ae3e74,македонська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/dd5cb6ea-3818-4734-816d-821a67a3684e,skill/competence,transversal,спілкуватися японською мовою,released,,"Спілкуватися усно японською мовою.
+	",http://data.europa.eu/esco/skill/39c675c4-af13-49db-bbed-cf762102f85e,японська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/ddd3596a-43f3-402e-960a-5f79362a8609,knowledge,transversal,угорська мова,released,,"Угорська мова. Угорська мова є офіційною робочою мовою ЄС.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/df794a74-0392-4178-918b-e38e68487325,skill/competence,transversal,розуміти розмовну тамільську мову,released,,"Розуміти усно висловлене тамільською мовою.
+	",http://data.europa.eu/esco/skill/e9e9b625-f59f-4bda-952d-1f9831e6dfda,тамільська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/e05b9e06-d298-4646-b762-acbd485a20e9,knowledge,transversal,пенджабська мова,released,,"Пенджабська мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/e0f20875-de6a-4795-9788-6a32be41512f,skill/competence,transversal,розуміти письмову хорватську мову,released,,"Читати та розуміти тексти в письмовій формі хорватською мовою.
+	",http://data.europa.eu/esco/skill/6bc58e91-1827-4dc7-a9cf-2311edcba0ec,хорватська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/e18ee06c-7a0f-47d5-8143-345b8a6f4739,skill/competence,transversal,розуміти розмовну окситанську мову,released,,"Розуміти усно висловлене окситанською мовою.
+	",http://data.europa.eu/esco/skill/57cc6587-7efe-4ba5-982f-ac15ce1617ac,окситанська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/e1ebf53c-8800-402c-9e61-e19ac072c52d,skill/competence,transversal,розуміти розмовну мову гінді,released,,"Розуміти усно висловлене мовою гінді.
+	",http://data.europa.eu/esco/skill/d93a7370-bf56-43f5-be54-e108f8ec3107,гінді
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/e29c14e1-60c7-444c-b3d0-43d6bee04340,skill/competence,transversal,писати лімбурзькою мовою,released,,"Складати тексти в письмовій формі лімбурзькою мовою.
+	",http://data.europa.eu/esco/skill/cf5b3ca0-a844-42b9-b9cd-bd15465b9cac,лімбурзька мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/e3332a83-c688-4838-bd19-e66f6da2201e,skill/competence,transversal,розуміти розмовну мову бігарі,released,,"Розуміти усно висловлене мовою бігарі.
+	",http://data.europa.eu/esco/skill/15ea7b6b-1b93-4ed8-b58a-5c54777e0832,бігарська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/e35cfb6e-ea8e-4aef-aab9-3cbc7d79647b,skill/competence,transversal,писати нідерландською мовою,released,,"Складати тексти в письмовій формі нідерландською мовою.
+	",http://data.europa.eu/esco/skill/cad4f44b-28a8-4448-86e5-7389e5ebf3eb,голландська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/e396053a-7820-4c4d-9ba9-20d66753f50e,skill/competence,transversal,розуміти розмовну сардинську мову,released,,"Розуміти усно висловлене сардинською мовою.
+	",http://data.europa.eu/esco/skill/1627c1b9-31e1-4742-bf5c-cfec2ce33cfc,сардинська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/e39c8636-6bbc-44c3-88ba-de059ac2396c,skill/competence,transversal,спілкуватися сербською мовою,released,,"Спілкуватися усно сербською мовою.
+	",http://data.europa.eu/esco/skill/c5cb0cc1-c40b-4544-a21c-8472f0b5c14a,сербська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/e3a22d2c-2b2e-4eda-b756-2a1908be79b7,skill/competence,transversal,розуміти розмовну лімбурзьку мову,released,,"Розуміти усно висловлене лімбурзькою мовою.
+	",http://data.europa.eu/esco/skill/cf5b3ca0-a844-42b9-b9cd-bd15465b9cac,лімбурзька мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/e58ea17c-1442-4b34-8ec6-0587a5fb55a6,skill/competence,transversal,розуміти письмову грецьку мову,released,,"Читати та розуміти тексти в письмовій формі грецькою мовою.
+	",http://data.europa.eu/esco/skill/ea4ebfa1-e17a-4416-ac54-955f33e6ade7,грецька мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/e5dbcfcf-3139-40e2-87ed-f7154a0a70a4,skill/competence,transversal,розуміти письмову бенгальську мову,released,,"Читати та розуміти тексти в письмовій формі бенгальською мовою.
+	",http://data.europa.eu/esco/skill/ede98e07-f07d-41bc-99b0-f88bf0dad438,бенгальська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/e747e77e-0ea1-4001-8b07-1d11946b5f1b,knowledge,transversal,французька мова,released,,"Французька мова. Французька мова є офіційною та робочою мовою ЄС.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/e832f8d8-d627-4b0d-b1a5-b52f3917bb63,skill/competence,transversal,розуміти письмову словацьку мову,released,,"Читати та розуміти тексти в письмовій формі словацькою мовою.
+	",http://data.europa.eu/esco/skill/246980fe-6222-4852-ade8-b372f7e0fd20,словацька мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/e9e9b625-f59f-4bda-952d-1f9831e6dfda,knowledge,transversal,тамільська мова,released,,"Тамільська мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/ea4d26de-df11-464f-940f-d63f0f5848f1,skill/competence,transversal,спілкуватися сардинською мовою,released,,"Спілкуватися усно сардинською мовою.
+	",http://data.europa.eu/esco/skill/1627c1b9-31e1-4742-bf5c-cfec2ce33cfc,сардинська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/ea4ebfa1-e17a-4416-ac54-955f33e6ade7,knowledge,transversal,грецька мова,released,,"Грецька мова. Грецька мова є офіційною та робочою мовою ЄС.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/eb19f00b-62c1-493b-bd75-1e90718ac04a,skill/competence,transversal,спілкуватися бенгальською мовою,released,,"Спілкуватися усно бенгальською мовою.
+	",http://data.europa.eu/esco/skill/ede98e07-f07d-41bc-99b0-f88bf0dad438,бенгальська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/ec4855b5-84a5-4c59-812e-8e4319d7bf8d,skill/competence,transversal,писати перською мовою,released,,"Складати тексти в письмовій формі перською мовою.
+	",http://data.europa.eu/esco/skill/58cabf75-2520-4358-a210-2cbc628f4aa2,перська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/ecb6d4ea-5693-453b-8c9a-d6c68589319a,skill/competence,transversal,розуміти розмовну чеську мову,released,,"Розуміти усно висловлене чеською мовою.
+	",http://data.europa.eu/esco/skill/da0795a7-6866-4afc-81ed-5e3aa398f058,чеська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/ed1614dd-5a66-4a95-968f-a0d46ecdce92,skill/competence,transversal,писати тамільською мовою,released,,"Складати тексти в письмовій формі тамільською мовою.
+	",http://data.europa.eu/esco/skill/e9e9b625-f59f-4bda-952d-1f9831e6dfda,тамільська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/edd82d34-0ab5-45cb-9997-360e177ced27,skill/competence,transversal,спілкуватися вірменською мовою,released,,"Спілкуватися усно вірменською мовою.
+	",http://data.europa.eu/esco/skill/fcbcdf4c-d079-4010-ab4b-8356fbfa5096,вірменська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/ede98e07-f07d-41bc-99b0-f88bf0dad438,knowledge,transversal,бенгальська мова,released,,"Бенгальська мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/efa7943e-28b8-4657-bccb-f04e86ba058b,skill/competence,transversal,писати курдською мовою,released,,"Складати тексти в письмовій формі курдською мовою.
+	",http://data.europa.eu/esco/skill/2874065e-6ca3-430c-912a-467da3c23704,курдська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/f018c29a-e837-4c4e-ac7c-aea212e0fc48,skill/competence,transversal,розуміти розмовну мову урду,released,,"Розуміти усно висловлене мовою урду.
+	",http://data.europa.eu/esco/skill/bc546a09-1103-4184-b757-3508ef5f8490,мова урду
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/f16e242e-a0e1-4d3a-b8bc-0fc6eca50354,skill/competence,transversal,писати казахською мовою,released,,"Складати тексти в письмовій формі казахською мовою.
+	",http://data.europa.eu/esco/skill/f37dbb3c-dafc-4835-86d1-de9615626f9b,казахська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/f1a08ec9-32d2-4e52-ba4a-66e049019be8,knowledge,transversal,албанська мова,released,,"Албанська мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/f2d14962-e378-4df4-87ce-f1786df2b015,skill/competence,transversal,розуміти розмовну білоруську мову,released,,"Розуміти усно висловлене білоруською мова.
+	",http://data.europa.eu/esco/skill/6f55e44d-4494-4079-9b8d-01ac6912529e,білоруська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/f37dbb3c-dafc-4835-86d1-de9615626f9b,knowledge,transversal,казахська мова,released,,"Казахська мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/f3e9b964-0c2d-46c4-a895-8b3583054d69,knowledge,transversal,польська мова,released,,"Польська мова. Польська мова є офіційною та робочою мовою ЄС.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/f58e2088-08c5-4680-83a1-18ba01299d4c,skill/competence,transversal,спілкуватися мовою іврит,released,,"Спілкуватися усно мовою іврит.
+	",http://data.europa.eu/esco/skill/8a45f04a-cd28-4ac1-8e8b-ecfd21be0b18,іврит
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/f5e51369-45c6-42b1-8ccc-d1826112e555,skill/competence,transversal,розуміти розмовну польську мову,released,,"Розуміти усно висловлене польською мовою.
+	",http://data.europa.eu/esco/skill/f3e9b964-0c2d-46c4-a895-8b3583054d69,польська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/f61a0a31-5b6b-4129-b5c2-99e10a5d7794,skill/competence,transversal,розуміти письмову валлійську мову,released,,"Читати та розуміти тексти в письмовій формі валлійською мовою.
+	",http://data.europa.eu/esco/skill/8dbd15c6-ecf0-468c-8ae1-f6eb360743dd,валлійська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/f739ca36-437c-4f87-83bb-7a1933768d26,skill/competence,transversal,розуміти письмову лімбурзьку мову,released,,"Читати та розуміти тексти в письмовій формі лімбурзькою мовою.
+	",http://data.europa.eu/esco/skill/cf5b3ca0-a844-42b9-b9cd-bd15465b9cac,лімбурзька мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/f7d66f52-6ea4-4ed4-a5b1-318c8eff6f47,skill/competence,transversal,спілкуватися галісійською мовою,released,,"Спілкуватися усно галісійською мовою.
+	",http://data.europa.eu/esco/skill/66212ff2-34b9-4812-be58-f53a0b751863,галісійська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/f9bc2890-d1f2-4a83-bd7b-b150a7679c79,knowledge,transversal,корейська мова,released,,"Корейська мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/fa8ee260-64dc-42db-a5c7-9d3b232767df,skill/competence,transversal,писати польською мовою,released,,"Складати тексти в письмовій формі польською мовою.
+	",http://data.europa.eu/esco/skill/f3e9b964-0c2d-46c4-a895-8b3583054d69,польська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/fb299aca-b999-4829-9a40-f8379ac006f4,skill/competence,transversal,спілкуватися малайською мовою,released,,"Спілкуватися усно малайською мовою.
+	",http://data.europa.eu/esco/skill/1f90c205-f869-4dcf-a374-c4fdeded9cbc,малайська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/fbe75fa4-4f78-459b-858a-a30b29e7591e,skill/competence,transversal,розуміти розмовну валлонську мову,released,,"Розуміти усно висловлене валлонською мова.
+	",http://data.europa.eu/esco/skill/d54d7c00-87c4-4f78-af8d-e84577372974,валлонська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/fcbcdf4c-d079-4010-ab4b-8356fbfa5096,knowledge,transversal,вірменська мова,released,,"Вірменська мова.
+	",http://data.europa.eu/esco/skill/9adca63b-9c75-4804-8dab-d62872540a10 | http://data.europa.eu/esco/skill/43f425aa-f45d-4bb4-a200-6f82fa211b66,оволодіння мовами | мови
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/fcd4892f-486f-4e86-b78b-146a95c546a1,skill/competence,transversal,спілкуватися хорватською мовою,released,,"Спілкуватися усно хорватською мовою.
+	",http://data.europa.eu/esco/skill/6bc58e91-1827-4dc7-a9cf-2311edcba0ec,хорватська мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/ff52e69a-8873-4827-b140-958dee5a62bb,skill/competence,transversal,розуміти розмовну норвезьку мову,released,,"Розуміти усно висловлене норвезькою мова.
+	",http://data.europa.eu/esco/skill/829f6eb5-0b26-4152-8eb3-82dd32b2b6f2,норвезька мова
+KnowledgeSkillCompetence,http://data.europa.eu/esco/skill/ff7f57d7-084b-4ec2-8e2d-2637b1ab3931,skill/competence,transversal,писати окситанською мовою,released,,"Складати тексти в письмовій формі окситанською мовою.
+	",http://data.europa.eu/esco/skill/57cc6587-7efe-4ba5-982f-ac15ce1617ac,окситанська мова

@@ -1,0 +1,150 @@
+count_total,raw_skill,esco_uri,esco_label,match_1,match_2
+34,робота з підрядниками,http://data.europa.eu/esco/skill/0520d8ba-3c24-4f75-a8b0-f883ddeed82d,перевіряти підрядників,Acceptable,Correct
+71,працелюбність,http://data.europa.eu/esco/skill/a0cad388-3c4c-4786-b238-fc39f8c495af,наполегливість,Correct,Correct
+93,приймання товару,http://data.europa.eu/esco/skill/2cae39d6-78c2-4ce3-bee8-628504371463,приймати товар,Correct,Correct
+31,гнучкість у роботі,http://data.europa.eu/esco/skill/5592ab32-4e7a-4cda-8e64-ca36d5de8a10,адаптуватися до змін ситуації,Correct,Correct
+54,Розробка контент.плану,http://data.europa.eu/esco/skill/cfd5ab8f-ef8a-4877-8243-ddf17ac74604,планування заходів і програм,Acceptable,Correct
+56,дотримання технологічних процесів,http://data.europa.eu/esco/skill/9c0f93f7-2592-4d4d-9673-fd640502345f,"точно використовувати обладнання, інструменти й технології",Correct,Correct
+58,Google,http://data.europa.eu/esco/skill/7e5147d1-60b1-4a68-804b-1f5cb0396b91,вирішувати проблеми за допомогою цифрових інструментів,Correct,Acceptable
+68,здатність швидко навчатися,http://data.europa.eu/esco/skill/9bf266a6-188b-4d17-a22f-2f266d76832b,демонструвати готовність до навчання,Correct,Correct
+31,Перша медична допомога,http://data.europa.eu/esco/skill/1d21f6ad-340f-45da-a0a3-4e83867f47a6,надавати першу допомогу,Correct,Correct
+74,керування командою,http://data.europa.eu/esco/skill/339ac029-066a-4985-9f9d-b3d7c8fea0bb,керувати персоналом,Acceptable,Correct
+33,Юридичний супровід,http://data.europa.eu/esco/skill/83e97138-899a-4af8-9187-47823e875841,дотримуватися юридичних зобов’язань,Incorrect,Incorrect
+31,професійна відповідальність,http://data.europa.eu/esco/skill/59ad10b1-6f71-4dd4-ad1f-a1fdf68bc2fb,професійна відповідальність,Correct,Correct
+37,вміння аналізувати та оптимізувати процеси,http://data.europa.eu/esco/skill/10026df1-670d-4c75-b3d5-ee0037f9d59b,проводити оптимізацію процесу,Correct,Correct
+76,навчання та саморозвиток,http://data.europa.eu/esco/skill/468135b7-5757-48c3-9509-fde0e13ec5be,керувати особистим розвитком,Correct,Correct
+36,підтримка корпоративної культури,http://data.europa.eu/esco/skill/a8f2a095-9d03-43f0-980d-2b9fcc59a994,формувати корпоративну культуру,Correct,Correct
+42,швидке прийняття рішень,http://data.europa.eu/esco/skill/875217fb-fe22-4c2c-adf4-b57f2052626a,ухвалювати рішення в умовах дефіциту часу,Correct,Correct
+91,підтримка колег,http://data.europa.eu/esco/skill/9f0b8355-7529-42bb-b876-087e3eea732f,взаємодіяти з колегами-акторами,Incorrect,Acceptable
+92,виконання планів продажів,http://data.europa.eu/esco/skill/c09bf6d4-f8a7-40f3-aead-ef01643f2352,досягати цілей продажів,Correct,Correct
+75,монтаж відео,http://data.europa.eu/esco/skill/5ce80f97-b385-4a41-9339-a6593d0709c1,здійснювати відеомонтаж,Correct,Correct
+59,фотозйомка,http://data.europa.eu/esco/skill/38509fa4-7c06-4a4b-9622-f521f03c37b8,фотографія,Correct,Correct
+57,робота з клієнтською базою,http://data.europa.eu/esco/skill/debb8d81-ed7f-447d-853a-5d107fda6fcf,надавати послуги супроводу клієнтів,Correct,Acceptable
+39,військово-технічна підготовка,http://data.europa.eu/esco/skill/72a74f69-5cf1-43c5-99b9-62a444578919,інженерні процеси,Incorrect,Incorrect
+35,Скрупульозність,http://data.europa.eu/esco/skill/83e6510b-ffeb-4aec-959c-4265fd0ff7b7,приділяти увагу деталям,Correct,Correct
+93,взаємодія з колегами,http://data.europa.eu/esco/skill/082967d4-b94c-4305-aa13-35a6aa8c5c7c,співпрацювати з колегами,Correct,Correct
+37,збільшення обсягів продажів,http://data.europa.eu/esco/skill/c09bf6d4-f8a7-40f3-aead-ef01643f2352,досягати цілей продажів,Correct,Acceptable
+62,економічний аналіз,http://data.europa.eu/esco/skill/99571e68-801f-49af-a897-5f75996642e1,фінансовий аналіз,Correct,Correct
+32,Ведення військового обліку,http://data.europa.eu/esco/skill/54f7875e-ca4c-4ff7-992d-10ce9ef8abfe,вести облік паспортів,Acceptable,Incorrect
+134,розширення клієнтської бази,http://data.europa.eu/esco/skill/5bbaa0e6-0fd7-4df2-9db7-34f78b40dc34,управління маркетингом,Acceptable,Acceptable
+32,вміння працювати в умовах високого темпу,http://data.europa.eu/esco/skill/1677a5fe-a0f9-4a3f-862d-91c0a2ff1983,здійснювати роботу в умовах коротких виробничих кінцевих строків,Correct,Correct
+30,Адміністрування сайту,http://data.europa.eu/esco/skill/89bb44dc-9f4c-400b-86cd-dcd0bd599a58,обслуговувати електронні системи,Acceptable,Acceptable
+42,військова служба,http://data.europa.eu/esco/skill/1143e53e-2933-472d-8161-f26d6936c927,керувати військовими підрозділами,Acceptable,Acceptable
+59,нарахування зарплати,http://data.europa.eu/esco/skill/207f87c4-ac68-4987-990c-636ca19c2626,розраховувати заробітну плату,Correct,Correct
+41,вміння працювати в стресових ситуаціях,http://data.europa.eu/esco/skill/a8460be3-f4ba-44a0-a961-0389069a3614,справлятися зі стресовими ситуаціями на робочому місці,Correct,Correct
+36,Оформлення вітрини,http://data.europa.eu/esco/skill/1e35e9c9-260c-4ad0-baa6-5c92da9f048f,готувати програми виставок,Acceptable,Acceptable
+54,Контроль кредиторської заборгованості,http://data.europa.eu/esco/skill/ecc18804-a466-40d9-98b4-fba5cd67dd4b,бухгалтерський облік,Acceptable,Incorrect
+97,Емпатійність,http://data.europa.eu/esco/skill/77b636e8-fab3-41a8-8022-1e0a354059dc,проявляти емпатію,Correct,Correct
+31,брендинг,http://data.europa.eu/esco/skill/66fda9e5-f9f7-4342-b4f1-23355bcdd0b9,розробляти рекламні інструменти,Correct,Correct
+66,ЛІГА:ЗАКОН,http://data.europa.eu/esco/skill/0d80a782-99ff-4f49-abbe-c72524c6f390,ведення переговорів і управління контрактами й угодами,Correct,Incorrect
+32,оптимізація процесів,http://data.europa.eu/esco/skill/10026df1-670d-4c75-b3d5-ee0037f9d59b,проводити оптимізацію процесу,Correct,Correct
+30,Збір замовлень,http://data.europa.eu/esco/skill/4ad83664-21a9-4f96-8834-0fc8f671be9c,обробляти замовлення на відправку,Correct,Correct
+48,вміння знаходити спільну мову з людьми,http://data.europa.eu/esco/skill/15d76317-c71a-4fa2-aadc-2ecc34e627b7,спілкування,Correct,Correct
+30,навички ведення звітності,http://data.europa.eu/esco/skill/d0f2f8a7-d935-4a6d-8e54-dcc3e5e2cbeb,складати звіти,Correct,Correct
+66,Docker,http://data.europa.eu/esco/skill/42cb7669-c371-4903-9c0b-13db67b2e4bb,новітні технології,Acceptable,Acceptable
+59,робота з технічною документацією,http://data.europa.eu/esco/skill/cffc3e97-e942-4b13-a2f3-0bf4910c06d3,використовувати технічну документацію,Correct,Correct
+48,Розробка контент-плану,http://data.europa.eu/esco/skill/b0560439-14eb-41d1-aa53-1938efc24123,стратегія контент-маркетингу,Correct,Correct
+30,Публічні виступи,http://data.europa.eu/esco/skill/fd446407-b08e-49da-b8e3-7e7c79618c3f,проводити публічні презентації,Correct,Correct
+75,командна робота,http://data.europa.eu/esco/skill/082967d4-b94c-4305-aa13-35a6aa8c5c7c,співпрацювати з колегами,Correct,Correct
+45,претензійно-позовна робота,http://data.europa.eu/esco/skill/7726fc5e-a972-4f0a-abbe-6be3043422f9,представляти інтереси клієнтів у судах,Correct,Correct
+74,вміння виконувати завдання в обмежений час,http://data.europa.eu/esco/skill/1677a5fe-a0f9-4a3f-862d-91c0a2ff1983,виконувати завдання в обмежений час,Correct,Correct
+47,Ведення касової книги,http://data.europa.eu/esco/skill/ecc18804-a466-40d9-98b4-fba5cd67dd4b,бухгалтерський облік,Correct,Correct
+48,результативність,http://data.europa.eu/esco/skill/c513cf4e-83bb-4edc-9ac8-2a7df04a9451,"управління, орієнтоване на результат",Correct,Correct
+35,водіння автомобілів категорії В,http://data.europa.eu/esco/skill/2a82241a-216e-44d8-bb50-6b9a0ef82084,керувати транспортними засобами,Correct,Correct
+54,вміння виконувати завдання за інструкціями,http://data.europa.eu/esco/skill/e3211ab2-18b5-49b4-90de-d395f3be2378,виконувати робочі інструкції,Correct,Correct
+87,медична освіта,http://data.europa.eu/esco/skill/38cd93b5-af8a-4528-a0f0-f8439ccb4b09,відповідати на запитання пацієнтів,Acceptable,Incorrect
+31,Безаварійне водіння,http://data.europa.eu/esco/skill/20a7df5e-f388-4073-b3e2-4bf7a4c46f28,гарантувати дотримання правил безпечного водіння,Correct,Correct
+40,відповідальність за якість сервісу,http://data.europa.eu/esco/skill/a15dab55-f1da-4f85-ae3e-2b5c5b5333ca,забезпечувати високу якість обслуговування клієнтів,Correct,Correct
+70,Створення відеоконтенту,http://data.europa.eu/esco/isced-f/0211,аудіовізуальні технології  та медіапродукція,Acceptable,Correct
+45,Робота з оргтехнікою,http://data.europa.eu/esco/skill/5a234b3b-63b4-482f-b481-a1ff9d95bbf8,офісне обладнання,Correct,Correct
+79,продаж товарів,http://data.europa.eu/esco/skill/c1388df1-47bd-4fd5-8b71-dce7886ef21b,робота відділу продажів,Acceptable,Correct
+37,комунікація з колегами,http://data.europa.eu/esco/skill/15d76317-c71a-4fa2-aadc-2ecc34e627b7,спілкування,Correct,Acceptable
+52,відповідальність за результати роботи,http://data.europa.eu/esco/skill/199f7919-5114-41b6-b6a5-41e0e4896ec1,нести відповідальність,Correct,Correct
+34,вміння виконувати роботу з дотриманням термінів,http://data.europa.eu/esco/skill/91abe492-18be-4cce-93c7-0dca07072363,дотримуватися термінів,Correct,Correct
+35,психологічна підтримка,http://data.europa.eu/esco/skill/ea28ce13-e620-4191-95c3-3e0f0f867834,послуги психологічної допомоги,Correct,Correct
+46,вміння вчитися новому,http://data.europa.eu/esco/skill/9bf266a6-188b-4d17-a22f-2f266d76832b,демонструвати готовність до навчання,Correct,Correct
+36,вміння розвиватися професійно,http://data.europa.eu/esco/skill/a8d24a95-47b3-4f88-92e7-06600bcd3612,керувати особистим професійним розвитком,Correct,Correct
+63,Виконавчість,http://data.europa.eu/esco/skill/25e16679-a7d0-464d-916c-63210001bbab,діяти надійно,Correct,Acceptable
+32,вміння отримувати та використовувати зворотний зв’язок,http://data.europa.eu/esco/skill/08e2ff26-88ff-47b5-9d37-d19ace01b075,підтримувати зворотний зв’язок,Correct,Correct
+80,проведення інвентаризації,http://data.europa.eu/esco/skill/35718973-913e-447b-a968-83e66e6c8872,проводити інвентаризацію товарів на виробництві,Correct,Correct
+86,бажання працювати,http://data.europa.eu/esco/skill/9bf266a6-188b-4d17-a22f-2f266d76832b,демонструвати готовність до навчання,Correct,Acceptable
+33,прийом товарів,http://data.europa.eu/esco/skill/2cae39d6-78c2-4ce3-bee8-628504371463,приймати товар,Correct,Correct
+58,Photoshop,http://data.europa.eu/esco/skill/14ced458-5f4b-495f-bd3d-9c240614bda0,Adobe Photoshop,Correct,Correct
+52,виконання планових показників,http://data.europa.eu/esco/skill/db9463b7-5c24-46d2-8419-002e03bae1dc,досягати цільових показників продуктивності,Correct,Correct
+78,Налаштування таргетованої реклами,http://data.europa.eu/esco/skill/e8f602f8-b98b-4071-b088-c65e016cdf98,медіапланування,Acceptable,Correct
+30,Уміння розставляти пріоритети,http://data.europa.eu/esco/skill/f642d7ed-e8d7-4355-a747-b85094d4e2e3,визначати пріоритетність запитів,Correct,Correct
+74,Амбіційність,http://data.europa.eu/esco/skill/272fddbb-917a-4720-8903-85ce51e1cbe5,впроваджувати далекосяжні прагнення в управління бізнесом,Correct,Acceptable
+31,вміння працювати з асортиментом товарів,http://data.europa.eu/esco/skill/d2de37c7-7233-481b-8b1a-f4dfde11ca91,консультувати щодо особливостей товарів,Acceptable,Correct
+31,володіння російською мовою,http://data.europa.eu/esco/skill/895b3eab-d1e7-443d-8ba3-745f67462207,спілкуватися російською мовою,Correct,Correct
+41,Digital.маркетинг,http://data.europa.eu/esco/skill/e8f602f8-b98b-4071-b088-c65e016cdf98,медіапланування,Acceptable,Correct
+34,вміння працювати в умовах змін,http://data.europa.eu/esco/skill/5592ab32-4e7a-4cda-8e64-ca36d5de8a10,адаптуватися до змін ситуації,Correct,Correct
+46,Управління підприємством,http://data.europa.eu/esco/isced-f/0413,управління й адміністрування,Correct,Correct
+65,SolidWorks,http://data.europa.eu/esco/skill/a2b5dcf3-5b6a-453d-876c-cff540c0faf1,програмне забезпечення для автоматизованого проєктування,Correct,Correct
+46,Scrum,http://data.europa.eu/esco/skill/8ff015a0-98ea-4d80-a23e-1f68110a919e,методології розробки програмного забезпечення,Correct,Correct
+47,обслуговування гостей,http://data.europa.eu/esco/skill/a15dab55-f1da-4f85-ae3e-2b5c5b5333ca,забезпечувати високу якість обслуговування клієнтів,Acceptable,Correct
+60,Водіння навантажувача,http://data.europa.eu/esco/skill/4c476f5c-6ece-41e4-a97c-62d4244057e8,керувати телескопічним навантажувачем,Acceptable,Correct
+33,виконання інструкцій,http://data.europa.eu/esco/skill/aa238394-8126-4ada-be2f-9dfe065cf314,дотримуватися організаційних інструкцій,Correct,Correct
+54,оптимізм,http://data.europa.eu/esco/isced-f/0031,особисті навички та розвиток,Incorrect,Incorrect
+30,інвентаризація товарів,http://data.europa.eu/esco/skill/35718973-913e-447b-a968-83e66e6c8872,вести інвентаризацію товарів на виробництві,Correct,Correct
+33,висока мотивація,http://data.europa.eu/esco/skill/001115fb-569f-4ee6-8381-c6807ef2527f,проявляти ініціативу,Acceptable,Correct
+34,самоосвіта,http://data.europa.eu/esco/skill/9bf266a6-188b-4d17-a22f-2f266d76832b,демонструвати готовність до навчання,Correct,Correct
+80,вільне володіння українською мовою,http://data.europa.eu/esco/skill/354b948c-7eef-4ebc-bfd6-f60d7d5acb62,українська мова,Correct,Correct
+35,відкритість до зворотного зв’язку,http://data.europa.eu/esco/skill/dbc538a0-7d1d-4394-b2f6-8fae44a55d86,надавати зворотний зв’язок виконавцям,Incorrect,Correct
+32,Стрільба,http://data.europa.eu/esco/skill/0b2701ed-e85a-4d02-a68b-ef5c695f785a,користуватися вогнепальною зброєю,Correct,Correct
+65,охайний зовнішній вигляд,http://data.europa.eu/esco/skill/0e21e183-e787-4f23-a240-93b416c088c2,дотримуватися стандартів особистої гігієни,Correct,Acceptable
+38,Знання принципів ООП,http://data.europa.eu/esco/isced-f/0613,розроблення й аналіз програмного забезпечення та прикладних програм,Acceptable,Correct
+30,Исполнительность,http://data.europa.eu/esco/skill/91abe492-18be-4cce-93c7-0dca07072363,дотримуватися термінів,Correct,Acceptable
+65,водіння автомобіля,http://data.europa.eu/esco/skill/dbbbe31a-9b8c-4459-a830-84363648f52c,водіння легкових автомобілів,Correct,Acceptable
+40,відкритість до спілкування,http://data.europa.eu/esco/skill/797b8d0a-e708-4df4-a67b-590956f82522,налагоджувати ефективні робочі відносини з іншими гравцями,Incorrect,Acceptable
+45,розміщення цінників,http://data.europa.eu/esco/skill/6ffdcb09-16bc-4480-9ac8-40fdbf915712,наклеювати цінники,Correct,Correct
+54,Зйомка stories,http://data.europa.eu/esco/skill/64e09849-a7db-4d6b-a932-66264420eb97,застосовувати маркетинг у соціальних мережах,Correct,Correct
+116,Знання технік продажу,http://data.europa.eu/esco/skill/df5e3d02-9f0f-44ee-91c2-85c62f161868,"просувати ідеї, продукти, послуги",Correct,Incorrect
+116,Складання фінансової звітності,http://data.europa.eu/esco/skill/60f51172-37c0-4933-a27a-cbf55dcd7580,складати фінансову звітність,Correct,Correct
+115,касова дисципліна,http://data.europa.eu/esco/skill/e4b6f863-fa9f-4fe7-a984-f948f8c90d24,обробляти грошові потоки,Correct,Correct
+115,CorelDRAW,http://data.europa.eu/esco/skill/a71577b2-7550-4222-88ee-dcbd2d881516,програмне забезпечення графічного редактора,Correct,Correct
+114,робота з касою,http://data.europa.eu/esco/skill/0cb013af-6dd9-4fb2-b34e-63dda1a5cf82,працювати з касовим апаратом,Correct,Correct
+114,GitHub,http://data.europa.eu/esco/skill/12428071-1ec8-4d52-a0ce-3eee78e1e1be,здійснювати управління документацією,Incorrect,Acceptable
+114,вміння працювати в офісі,http://data.europa.eu/esco/skill/7c3865d1-e5a9-4043-a7a4-2e9e30468c0b,виконувати звичайну офісну роботу,Correct,Correct
+114,навчання та розвиток,http://data.europa.eu/esco/skill/a38e54a1-0922-4e8f-92a6-4f028d7d569f,підтримувати актуальність професійних знань,Correct,Correct
+113,Google Sheets,http://data.europa.eu/esco/skill/cf310cff-0d28-4dbc-9dbb-cc500a3196c2,офісне програмне забезпечення,Correct,Correct
+113,Робота з базою даних,http://data.europa.eu/esco/skill/7369f779-4b71-4aab-8836-48b69c676eec,працювати з реляційною системою управління базами даних,Correct,Correct
+113,креативне мислення,http://data.europa.eu/esco/skill/c624c6a3-b0ba-4a31-a296-0d433fe47e41,мислити творчо,Correct,Correct
+113,Google Ads,http://data.europa.eu/esco/skill/750f86d2-18be-4015-84b1-d4a26d9b2d88,методи рекламних кампаній в інтернеті,Correct,Correct
+113,аналітичний склад розуму,http://data.europa.eu/esco/skill/4707da90-9cfc-46ca-8de0-38a0b7bfb137,аналітично мислити,Correct,Correct
+112,робота з постачальниками,http://data.europa.eu/esco/skill/fe1ec582-d63b-466c-9149-e7fc4fe93e22,управління постачальниками,Correct,Correct
+112,виконання завдань у встановлені терміни,http://data.europa.eu/esco/skill/91abe492-18be-4cce-93c7-0dca07072363,дотримуватися термінів,Correct,Correct
+112,відповідальність за виконання завдань,http://data.europa.eu/esco/skill/f90d4810-8bac-4e5e-b870-3e35a4138ff7,брати на себе відповідальність,Correct,Correct
+112,вміння працювати з людьми,http://data.europa.eu/esco/skill/15d76317-c71a-4fa2-aadc-2ecc34e627b7,спілкування,Acceptable,Correct
+111,робота з CRM-системами,http://data.europa.eu/esco/skill/a3e7ebba-5183-4df8-9203-35b9b9b8f4fa,збирати дані про клієнтів,Correct,Acceptable
+111,Jira,http://data.europa.eu/esco/skill/6430eb0d-c6de-46b7-a7fc-3dd2e8e62a69,використовувати тікет-системи,Correct,Correct
+110,володіння ПК,http://data.europa.eu/esco/skill/d15ce60f-ddab-41ce-ba56-398451b77b60,мати навички роботи на комп’ютері,Correct,Correct
+110,грамотна мова,http://data.europa.eu/esco/skill/15d76317-c71a-4fa2-aadc-2ecc34e627b7,спілкування,Correct,Correct
+109,прибирання приміщень,http://data.europa.eu/esco/skill/7bb01a18-4637-4535-ba18-258f48f705b8,прибирати приміщення,Correct,Correct
+109,навчання,http://data.europa.eu/esco/skill/81ad8286-cc55-4a08-92a6-38474c35c893,навчальні стратегії,Acceptable,Acceptable
+108,проведення співбесід,http://data.europa.eu/esco/skill/324f0243-1a21-4f5c-9f71-52eebc2596ed,техніка інтерв’ювання,Correct,Correct
+108,ведення соціальних мереж,http://data.europa.eu/esco/skill/64e09849-a7db-4d6b-a932-66264420eb97,застосовувати маркетинг у соціальних мережах,Correct,Correct
+108,кар'єрний ріст,http://data.europa.eu/esco/skill/468135b7-5757-48c3-9509-fde0e13ec5be,керувати особистим розвитком,Acceptable,Correct
+108,дистанційна робота,http://data.europa.eu/esco/skill/31d35d3d-2bf2-49aa-9c20-92566ef80277,використовувати системи ІКТ,Acceptable,Incorrect
+106,Прийом вхідних дзвінків,http://data.europa.eu/esco/skill/5a0bffcf-4ff6-49cf-a7db-4142e63f5f04,відповідати на вхідні телефонні дзвінки,Correct,Correct
+106,розвиток професійних навичок,http://data.europa.eu/esco/skill/a8d24a95-47b3-4f88-92e7-06600bcd3612,керувати особистим професійним розвитком,Correct,Correct
+106,робота з документами,http://data.europa.eu/esco/skill/ea1bf5e5-e7f0-4d2c-a415-1c39c00512b1,документообіг,Correct,Correct
+105,Бюджетування,http://data.europa.eu/esco/skill/21c5790c-0930-4d74-b3b0-84caf5af12ea,керувати бюджетами,Correct,Correct
+105,CRM,http://data.europa.eu/esco/skill/dc9a236c-c640-43c3-812f-269403591edb,управління відносинами з клієнтами,Correct,Acceptable
+105,сумлінність,http://data.europa.eu/esco/skill/59ad10b1-6f71-4dd4-ad1f-a1fdf68bc2fb,проявляти професійну відповідальність,Correct,Correct
+105,Ведення технічної документації,http://data.europa.eu/esco/skill/dd6f8901-b20a-48e9-94ac-b1829dc2cfec,вести виробничу документацію,Correct,Correct
+104,Клієнт-Банк,http://data.europa.eu/esco/skill/a15dab55-f1da-4f85-ae3e-2b5c5b5333ca,забезпечувати високу якість обслуговування клієнтів,Incorrect,Incorrect
+104,управління продажами,http://data.europa.eu/esco/skill/0bfb44c7-c412-49ed-aab4-e33d0dd3b265,керувати відділами продажів,Acceptable,Correct
+103,планування продажів,http://data.europa.eu/esco/skill/f31615c9-a654-4713-b64e-872b2004d82b,мотивувати персонал на досягнення цілей продажів,Incorrect,Correct
+103,кар'єрний розвиток,http://data.europa.eu/esco/skill/a8d24a95-47b3-4f88-92e7-06600bcd3612,керувати особистим професійним розвитком,Correct,Correct
+103,вміння навчатися новому,http://data.europa.eu/esco/skill/9bf266a6-188b-4d17-a22f-2f266d76832b,підтримувати готовність до навчання,Correct,Correct
+102,презентація продукції,http://data.europa.eu/esco/skill/fd446407-b08e-49da-b8e3-7e7c79618c3f,проводити публічні презентації,Correct,Correct
+102,Урегулювання конфліктів,http://data.europa.eu/esco/skill/0ee94af1-b445-4973-9c3f-459fab250342,врегульовувати конфліктні ситуації,Correct,Correct
+102,логічне мислення,http://data.europa.eu/esco/skill/4707da90-9cfc-46ca-8de0-38a0b7bfb137,аналітично мислити,Correct,Correct
+102,Вантажоперевезення,http://data.europa.eu/esco/skill/932c9ed1-3197-4b13-a558-bf147313fe88,вантажні перевезення,Correct,Correct
+102,адаптивність до змін,http://data.europa.eu/esco/skill/5592ab32-4e7a-4cda-8e64-ca36d5de8a10,адаптуватися до змін ситуації,Correct,Correct
+102,Вантажні роботи,http://data.europa.eu/esco/skill/c80b2f08-ab07-4632-be78-68c6ec1f3b41,виконувати вантажно-розвантажувальні роботи,Correct,Correct
+101,професійний ріст,http://data.europa.eu/esco/skill/a8d24a95-47b3-4f88-92e7-06600bcd3612,керувати особистим професійним розвитком,Correct,Correct
+101,Організація роботи персоналу,http://data.europa.eu/esco/skill/e437eba1-3e22-41f2-8703-741e94785cba,управління персоналом,Correct,Correct
+100,підтримка клієнтів,http://data.europa.eu/esco/skill/a15dab55-f1da-4f85-ae3e-2b5c5b5333ca,забезпечувати високу якість обслуговування клієнтів,Correct,Correct
+100,фінансове планування,http://data.europa.eu/esco/skill/37272760-957a-4c34-b4f3-780ee285334d,"розробляти фінансові, бізнес- або маркетингові плани",Correct,Correct
+100,Email,http://data.europa.eu/esco/skill/76f22707-8d30-453f-9eb7-3376e2960311,працювати з кореспонденцією,Correct,Correct
