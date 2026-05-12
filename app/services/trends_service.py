@@ -1,7 +1,3 @@
-"""
-Trends and intelligence services — emerging skills, skill-salary ROI, category trends
-"""
-
 from app.utils.database import get_db_connection
 
 
@@ -9,7 +5,6 @@ class TrendsService:
 
     @staticmethod
     def get_skill_salary_roi(limit: int = 20):
-        """Skills ranked by avg salary of jobs that require them — ROI signal"""
         conn = get_db_connection()
         c = conn.cursor()
         c.execute("""
@@ -36,7 +31,6 @@ class TrendsService:
 
     @staticmethod
     def get_category_salary():
-        """Average salary range per skill category"""
         conn = get_db_connection()
         c = conn.cursor()
         c.execute("""
@@ -59,7 +53,6 @@ class TrendsService:
 
     @staticmethod
     def get_skill_demand_by_category():
-        """Top 5 skills per category — for gap analysis"""
         conn = get_db_connection()
         c = conn.cursor()
         c.execute("""
@@ -76,7 +69,6 @@ class TrendsService:
         rows = c.fetchall()
         conn.close()
 
-        # Group top-5 per category
         from collections import defaultdict
         grouped = defaultdict(list)
         counts = defaultdict(int)
@@ -93,7 +85,6 @@ class TrendsService:
 
     @staticmethod
     def get_posting_volume_by_month():
-        """Monthly job posting counts — trend line"""
         conn = get_db_connection()
         c = conn.cursor()
         c.execute("""
@@ -109,12 +100,10 @@ class TrendsService:
         """)
         rows = c.fetchall()
         conn.close()
-        # Return chronological order
         return [{"month": r["month"], "count": r["count"]} for r in reversed(rows)]
 
     @staticmethod
     def get_available_countries():
-        """Countries present in the DB with job counts"""
         conn = get_db_connection()
         c = conn.cursor()
         c.execute("""
@@ -130,7 +119,6 @@ class TrendsService:
 
     @staticmethod
     def get_skill_timeline(skill: str, country: str = "ALL"):
-        """Monthly demand for a skill — count of distinct jobs requiring it"""
         conn = get_db_connection()
         c = conn.cursor()
         if country == "ALL":
@@ -166,7 +154,6 @@ class TrendsService:
 
     @staticmethod
     def get_country_stats(country: str = "ALL"):
-        """KPIs for a country: total jobs, orgs, unique skills"""
         conn = get_db_connection()
         c = conn.cursor()
         if country == "ALL":
@@ -209,7 +196,6 @@ class TrendsService:
 
     @staticmethod
     def get_posting_volume_by_country(country: str = "ALL"):
-        """Monthly job posting counts filtered by country"""
         conn = get_db_connection()
         c = conn.cursor()
         if country == "ALL":
@@ -233,7 +219,6 @@ class TrendsService:
 
     @staticmethod
     def get_skill_country_breakdown(skill: str):
-        """Which countries have most jobs requiring this skill"""
         conn = get_db_connection()
         c = conn.cursor()
         c.execute("""
@@ -253,7 +238,6 @@ class TrendsService:
 
     @staticmethod
     def get_skill_detail(skill: str):
-        """Full details + related skills for one skill"""
         conn = get_db_connection()
         c = conn.cursor()
         c.execute("""
@@ -306,7 +290,6 @@ class TrendsService:
 
     @staticmethod
     def get_top_skills_by_category(category: str, limit: int = 10):
-        """Top skills for a specific category (for skill-gap drill-down)"""
         conn = get_db_connection()
         c = conn.cursor()
         c.execute("""

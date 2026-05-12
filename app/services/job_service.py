@@ -1,16 +1,10 @@
-"""
-Job-related database services
-"""
-
-from app.utils.database import get_db_connection, execute_query, execute_single
+from app.utils.database import get_db_connection
 
 
 class JobService:
-    """Service for job-related queries"""
 
     @staticmethod
     def get_overview():
-        """Get overview statistics"""
         conn = get_db_connection()
         c = conn.cursor()
 
@@ -49,7 +43,6 @@ class JobService:
 
     @staticmethod
     def get_recent_jobs(limit: int = 20, keyword: str = ""):
-        """Get recent job postings"""
         conn = get_db_connection()
         c = conn.cursor()
 

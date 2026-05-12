@@ -1,8 +1,3 @@
-"""
-Data processing and classification utilities
-"""
-
-# OPM Series Code to Name mapping
 OPM_SERIES_NAMES = {
     # 0000s — Miscellaneous Occupations
     "0006": "Correctional Officer",
@@ -411,9 +406,6 @@ OPM_SERIES_NAMES = {
 
 
 def classify_skill_type(skill: str) -> str:
-    """
-    Classify skill into: knowledge, competence, or skill
-    """
     knowledge = {
         # Programming & Software
         "python", "java", "javascript", "typescript", "sql", "c++", "c#", "r programming",
@@ -462,13 +454,9 @@ def classify_skill_type(skill: str) -> str:
 
 
 def get_series_name(series_code: str) -> str:
-    """Get human-readable name for OPM series code"""
     return OPM_SERIES_NAMES.get(series_code, series_code)
 
 
-# ─── Skill Category Mapping ──────────────────────────────────────────────────
-
-# ESCO top-level group label → our category
 ESCO_GROUP_TO_CATEGORY: dict[str, str] = {
     "information and communication technologies (icts)": "IT & Technology",
     "digital skills":                                    "IT & Technology",
@@ -504,7 +492,6 @@ ESCO_GROUP_TO_CATEGORY: dict[str, str] = {
     "skills":                                            "Other",
 }
 
-# Direct label → category (for manual mappings and common US terms)
 LABEL_TO_CATEGORY: dict[str, str] = {
     # Management & Leadership
     "train employees":                              "Management & Leadership",
@@ -672,7 +659,6 @@ LABEL_TO_CATEGORY: dict[str, str] = {
     "network security":                             "IT & Technology",
 }
 
-# Keyword fallback for chains not in ESCO_GROUP_TO_CATEGORY
 _CHAIN_KEYWORDS: list[tuple[list[str], str]] = [
     (["ict", "digital", "computing", "software", "data", "technology"],  "IT & Technology"),
     (["health", "medical", "nursing", "care", "welfare"],                "Healthcare & Medicine"),
@@ -689,23 +675,16 @@ _CHAIN_KEYWORDS: list[tuple[list[str], str]] = [
 
 def get_skill_category(label: str, esco_uri: str | None = None,
                        esco_chain: list[str] | None = None) -> str:
-    """
-    Визначає категорію скілу.
-    Пріоритет: label mapping → ESCO group chain → keyword fallback → 'Other'
-    """
     key = label.lower().strip()
 
-    # 1. Точний label маппінг
     if key in LABEL_TO_CATEGORY:
         return LABEL_TO_CATEGORY[key]
 
-    # 2. ESCO ієрархія (chain батьківських груп)
     if esco_chain:
         for step in esco_chain:
             cat = ESCO_GROUP_TO_CATEGORY.get(step.lower())
             if cat:
                 return cat
-        # Keyword fallback на рядок chain
         chain_str = " ".join(esco_chain).lower()
         for keywords, cat in _CHAIN_KEYWORDS:
             if any(kw in chain_str for kw in keywords):

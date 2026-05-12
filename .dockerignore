@@ -20,6 +20,7 @@ env
 # Docker files
 .dockerignore
 docker-compose.override.yml
+docker-compose.prod.yml
 
 # Editor / OS
 .DS_Store
@@ -33,16 +34,29 @@ Thumbs.db
 .coverage
 htmlcov
 *.log
+tests/
 
 # Node
 node_modules
 npm-debug.log
 
-# Old repo remnant
-labo_refactored/
-
-# SQLite — основний файл не копіюємо в образ (430MB, в dev — монтується через override)
+# SQLite
 app/labor_market.db
 *.db-journal
 *.db-wal
 *.db-shm
+
+# skills2-main — only esco_pipeline code is needed, not evaluation/research artifacts
+skills2-main/evaluation/
+skills2-main/tests/
+skills2-main/profile.out
+skills2-main/profile_report.txt
+skills2-main/paper.tex
+skills2-main/weight_analysis.md
+skills2-main/.claude/
+skills2-main/.env*
+
+# Root-level data exports (not needed in image)
+db_dump.json
+skills_categorized.csv
+skills_export.csv

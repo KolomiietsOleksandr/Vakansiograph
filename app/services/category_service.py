@@ -1,17 +1,11 @@
-"""
-Category-related database services
-"""
-
 from app.utils.database import get_db_connection
 from app.utils.classifiers import get_series_name
 
 
 class CategoryService:
-    """Service for job category-related queries"""
 
     @staticmethod
     def get_categories_summary():
-        """Get summary of job categories"""
         conn = get_db_connection()
         c = conn.cursor()
 
@@ -47,7 +41,6 @@ class CategoryService:
 
     @staticmethod
     def get_collection_status():
-        """Get status of data collection"""
         conn = get_db_connection()
         c = conn.cursor()
 

@@ -1,0 +1,68 @@
+version: '3.8'
+
+services:
+
+  web:
+    image: ghcr.io/KolomiietsOleksandr/vakansiograph:latest
+    container_name: labo-web
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - FLASK_ENV=production
+      - DATABASE_PATH=/data/labor_market.db
+    volumes:
+      - db_data:/data
+    networks:
+      - labo-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5001/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+    command: >
+      gunicorn
+      --bind 0.0.0.0:5001
+      --workers 2
+      --threads 2
+      --timeout 120
+      --access-logfile -
+      --error-logfile -
+      wsgi:app
+
+  worker:
+    image: ghcr.io/KolomiietsOleksandr/vakansiograph:latest
+    container_name: labo-worker
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - DATABASE_PATH=/data/labor_market.db
+    volumes:
+      - db_data:/data
+    networks:
+      - labo-network
+    depends_on:
+      web:
+        condition: service_healthy
+    command: python -m app.services.scheduler
+
+  nginx:
+    image: nginx:alpine
+    container_name: labo-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - web
+    networks:
+      - labo-network
+
+volumes:
+  db_data:
+    driver: local
+
+networks:
+  labo-network:
+    driver: bridge

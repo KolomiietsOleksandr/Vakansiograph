@@ -1,15 +1,3 @@
-"""
-Labor Market Monitor — Scheduler
-==================================
-Запускається як окремий процес (worker контейнер в Docker).
-Flask сервер про нього нічого не знає — вони шарять тільки БД через volume.
-
-Розклад:
-  • Кожні 6 годин   → collect_jobs()   (USAJOBS API → job_postings)
-  • Щоденно о 03:00 → enrich_skills()  (ESCO нормалізація → job_skills)
-  • Щотижня нд 02:00 → cleanup()       (видалення записів старіших за 90 днів)
-"""
-
 import os
 import logging
 from datetime import datetime, timedelta, timezone
@@ -30,7 +18,6 @@ DB_PATH = os.environ.get("DATABASE_PATH", os.environ.get("DB_PATH", "app/labor_m
 
 
 def collect_jobs():
-    """Збір нових вакансій з USAJOBS API."""
     logger.info("=== [COLLECT] Starting USAJOBS data collection ===")
     if not API_KEY:
         logger.error("[COLLECT] USAJOBS_API_KEY not set — skipping")
@@ -46,7 +33,6 @@ def collect_jobs():
 
 
 def collect_adzuna():
-    """Збір нових вакансій з Adzuna API."""
     logger.info("=== [ADZUNA] Starting Adzuna data collection ===")
     adzuna_id  = os.environ.get("ADZUNA_APP_ID", "")
     adzuna_key = os.environ.get("ADZUNA_APP_KEY", "")
@@ -62,7 +48,6 @@ def collect_adzuna():
 
 
 def enrich_skills():
-    """ESCO нормалізація нових скілів через skills2-main pipeline."""
     logger.info("=== [ENRICH] Starting ESCO skill enrichment ===")
     try:
         import sqlite3
@@ -111,7 +96,6 @@ def enrich_skills():
 
 
 def cleanup():
-    """Видалення вакансій старіших 90 днів."""
     logger.info("=== [CLEANUP] Starting weekly cleanup ===")
     try:
         import sqlite3
@@ -132,7 +116,6 @@ def cleanup():
 
 
 def start_scheduler():
-    """Запускає APScheduler (blocking — для окремого процесу/контейнера)."""
     scheduler = BlockingScheduler(timezone="UTC")
 
     scheduler.add_job(

@@ -1,16 +1,10 @@
-"""
-Location-related database services
-"""
-
 from app.utils.database import get_db_connection
 
 
 class LocationService:
-    """Service for location-related queries"""
 
     @staticmethod
     def get_locations():
-        """Get job statistics by location"""
         conn = get_db_connection()
         c = conn.cursor()
 

@@ -1,20 +1,11 @@
-"""
-Salary-related database services
-"""
-
 from app.utils.database import get_db_connection
 from app.utils.classifiers import get_series_name
 
 
 class SalaryService:
-    """Service for salary-related queries"""
 
     @staticmethod
     def get_salaries(group_by: str = "department"):
-        """
-        Get salary statistics grouped by specified field.
-        group_by options: department, series, state, grade
-        """
         conn = get_db_connection()
         c = conn.cursor()
 

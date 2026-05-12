@@ -1,18 +1,11 @@
-"""
-Skills-related database services
-"""
-
 from app.utils.database import get_db_connection
 from app.utils.classifiers import classify_skill_type
 
 
 class SkillService:
-    """Service for skills-related queries"""
 
     @staticmethod
     def get_top_skills(limit: int = 20, country: str = "ALL"):
-        """Get most frequent skills, preferring ESCO labels and types when available.
-        Optionally filter by location_country (2-letter code or 'ALL')."""
         conn = get_db_connection()
         c = conn.cursor()
 

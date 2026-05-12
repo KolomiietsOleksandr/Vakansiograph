@@ -1,10 +1,3 @@
-"""
-ESCO Skill Normalizer — Local Dataset Edition
-===============================================
-Нормалізує навички з вакансій до стандартної таксономії ESCO
-використовуючи локальний датасет ESCO v1.2.1 (без API запитів).
-"""
-
 import csv
 import re
 import sqlite3
@@ -35,8 +28,6 @@ class ESCOSkill:
     matched_label: str
 
 
-# Ручні маппінги для загальних US-ринкових термінів, яких немає в ESCO як exact match.
-# Формат: raw_term → (esco_uri, esco_preferred_label, skill_type)
 MANUAL_MAPPINGS: dict[str, tuple[str, str, str]] = {
     "leadership":        ("http://data.europa.eu/esco/skill/75d8e5d9-bef3-418b-9011-01bff9f27207", "lead others", "skill/competence"),
     "recruitment":       ("http://data.europa.eu/esco/skill/50a4a9a5-9bbb-4eb3-9a69-bba53d85c12a", "recruit employees", "skill/competence"),
@@ -104,11 +95,6 @@ MANUAL_MAPPINGS: dict[str, tuple[str, str, str]] = {
 
 
 class ESCOLocalIndex:
-    """
-    Локальний індекс ESCO скілів побудований з CSV датасету.
-    Завантажується один раз у пам'ять, підтримує точний і fuzzy пошук,
-    та визначення категорії через ESCO ієрархію.
-    """
 
     def __init__(self):
         self._exact: dict[str, ESCOSkill] = {}
@@ -177,11 +163,9 @@ class ESCOLocalIndex:
         return re.sub(r"\s+", " ", term.lower().strip())
 
     def lookup(self, raw_skill: str) -> Optional[ESCOSkill]:
-        """Точний пошук терміну в ESCO індексі."""
         return self._exact.get(self._normalize_term(raw_skill))
 
     def fuzzy_lookup(self, raw_skill: str, threshold: float = 0.82) -> Optional[ESCOSkill]:
-        """Fuzzy пошук — перебирає short_terms і повертає найкращий збіг."""
         key = self._normalize_term(raw_skill)
         best_score = 0.0
         best_skill: Optional[ESCOSkill] = None
@@ -195,13 +179,11 @@ class ESCOLocalIndex:
         return None
 
     def get_category(self, uri: str, label: str) -> str:
-        """Повертає категорію скілу через ESCO ієрархію або label маппінг."""
         from app.utils.classifiers import get_skill_category
         chain = self._hierarchy.get(uri, [])
         return get_skill_category(label, esco_uri=uri, esco_chain=chain)
 
     def normalize(self, raw_skill: str) -> Optional[ESCOSkill]:
-        """Manual mappings → точний → fuzzy пошук."""
         key = self._normalize_term(raw_skill)
         if key in MANUAL_MAPPINGS:
             uri, label, stype = MANUAL_MAPPINGS[key]
@@ -213,17 +195,11 @@ class ESCOLocalIndex:
         return self.fuzzy_lookup(raw_skill)
 
     def extract_from_text(self, text: str) -> list[ESCOSkill]:
-        """
-        Витягує ESCO скіли що згадуються в тексті.
-        - Одно-слівні терміни допускаються якщо довжина >= 4 символів (уникаємо "c", "r" тощо)
-        - Word-boundary matching через regex
-        Повертає унікальний список за URI.
-        """
+        # single-word terms require length >= 4 to avoid false positives ("c", "r", etc.)
         text_lower = self._normalize_term(text)
         found: dict[str, ESCOSkill] = {}
         for term, skill in self._short_terms:
             words = term.split()
-            # Skip very short single-word terms (risk of false positives)
             if len(words) == 1 and len(term) < 4:
                 continue
             if skill.uri in found:
@@ -243,20 +219,13 @@ def get_esco_index() -> ESCOLocalIndex:
     return _index
 
 
-# ─── Database Enrichment ────────────────────────────────────────────────────────
-
 class SkillEnricher:
-    """
-    Збагачує job_skills ESCO-даними та повторно витягує скіли
-    з текстів вакансій через локальний ESCO індекс.
-    """
 
     def __init__(self, db_path: str = "labor_market.db"):
         self.db_path = db_path
         self.index = get_esco_index()
 
     def _ensure_columns(self, conn: sqlite3.Connection):
-        """Додає ESCO-колонки в job_skills якщо їх ще немає."""
         cur = conn.cursor()
         cur.execute("PRAGMA table_info(job_skills)")
         existing = {row[1] for row in cur.fetchall()}
@@ -270,10 +239,6 @@ class SkillEnricher:
         conn.commit()
 
     def normalize_existing_skills(self):
-        """
-        Нормалізує унікальні raw skills що вже є в job_skills
-        до ESCO URI/label/type.
-        """
         conn = sqlite3.connect(self.db_path, timeout=60)
         conn.execute("PRAGMA journal_mode=WAL")
         conn.execute("PRAGMA synchronous=NORMAL")
@@ -305,12 +270,6 @@ class SkillEnricher:
         return {"total": len(raw_skills), "matched": matched}
 
     def extract_and_enrich_all_jobs(self, batch_size: int = 500):
-        """
-        Для кожної вакансії що має текст (qualification_summary / major_duties):
-        1. Витягує скіли через ESCO індекс
-        2. Зберігає нові записи в job_skills з ESCO URI/type
-        Пропускає вакансії, що вже мають записи в job_skills.
-        """
         conn = sqlite3.connect(self.db_path, timeout=60)
         conn.execute("PRAGMA journal_mode=WAL")
         conn.execute("PRAGMA synchronous=NORMAL")
@@ -364,7 +323,6 @@ class SkillEnricher:
         return {"jobs_processed": processed, "skills_added": new_skills_total}
 
     def run_full_enrichment(self):
-        """Запускає повне збагачення: нормалізація + витяг скілів з усіх вакансій."""
         logger.info("=== Step 1: Normalize existing skills ===")
         step1 = self.normalize_existing_skills()
 

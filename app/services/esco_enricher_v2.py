@@ -1,11 +1,3 @@
-"""
-ESCO Enricher v2 — skills2-main integration
-Replaces the old difflib-based normalizer with a 3-stage pipeline:
-  1. FuzzyMapper    — RapidFuzz token_sort_ratio (fast, no API)
-  2. EmbeddingMapper — Gemini embeddings + cosine similarity (batch)
-  3. LLMMapper(two_stage) — fuzzy+embedding+graph candidates → Gemini re-ranks
-"""
-
 import logging
 import os
 import sys
@@ -13,13 +5,11 @@ from pathlib import Path
 
 logger = logging.getLogger(__name__)
 
-# ── Path setup ────────────────────────────────────────────────────────────────
 _BASE_DIR = Path(__file__).resolve().parent.parent.parent
 _SKILLS2_DIR = _BASE_DIR / "skills2-main"
 if str(_SKILLS2_DIR) not in sys.path:
     sys.path.insert(0, str(_SKILLS2_DIR))
 
-# ── Lazy singletons ───────────────────────────────────────────────────────────
 _esco_index = None
 _fuzzy_mapper = None
 _embedding_mapper = None
@@ -43,7 +33,6 @@ def _init():
     gemini_key = os.getenv("GEMINI_API_KEY", "")
 
     # _env_file=None prevents pydantic-settings from reading our .env
-    # (which contains extra keys that Settings doesn't define)
     _settings = Settings(
         _env_file=None,
         gemini_api_key=gemini_key,
@@ -56,9 +45,6 @@ def _init():
         cache_dir=str(_BASE_DIR / ".cache" / "esco"),
     )
 
-    # Pass gemini_api_key only if embeddings are already cached —
-    # pre-computation requires paid tier (free tier is too slow: ~2 RPM).
-    # Once .embeddings_cache_en.npz exists, full pipeline unlocks automatically.
     emb_cache = _BASE_DIR / ".embeddings_cache_en.npz"
     active_key = gemini_key if emb_cache.exists() else ""
     if not active_key and gemini_key:
@@ -89,8 +75,6 @@ def _init():
     )
 
 
-# ── Public helpers ────────────────────────────────────────────────────────────
-
 def _esco_chain(uri: str) -> list[str]:
     """Walk parent hierarchy and return list of preferred labels (root first)."""
     _init()
@@ -106,11 +90,7 @@ def _esco_chain(uri: str) -> list[str]:
 
 
 def map_skills(skill_raws: list[str]) -> dict[str, dict | None]:
-    """
-    Map raw skill strings to ESCO using a 3-stage pipeline.
-    Returns {skill_raw: {"esco_uri", "esco_label", "esco_type", "skill_category",
-                         "confidence", "method"} | None}
-    """
+    """Map raw skill strings to ESCO using a 3-stage pipeline (fuzzy → embedding → LLM)."""
     from app.utils.classifiers import get_skill_category
 
     _init()
@@ -121,12 +101,11 @@ def map_skills(skill_raws: list[str]) -> dict[str, dict | None]:
     results: dict[str, dict | None] = {}
     remaining = list(skill_raws)
 
-    # ── Stage 1: Fuzzy ────────────────────────────────────────────────────────
     fuzzy_results = _fuzzy_mapper.map_skills(remaining)
     still_unmapped = []
     for skill in remaining:
         m = fuzzy_results.get(skill)
-        if m and m.confidence >= 0.85:        # only keep high-confidence fuzzy hits
+        if m and m.confidence >= 0.85:
             skill_obj = _esco_index.get_skill(m.esco_uri)
             esco_type = skill_obj.skill_type if skill_obj else ""
             chain = _esco_chain(m.esco_uri)
@@ -146,7 +125,6 @@ def map_skills(skill_raws: list[str]) -> dict[str, dict | None]:
     if not still_unmapped:
         return results
 
-    # ── Stage 2: Embedding ────────────────────────────────────────────────────
     emb_results = _embedding_mapper.map_skills(still_unmapped)
     after_embedding = []
     for skill in still_unmapped:
@@ -172,7 +150,6 @@ def map_skills(skill_raws: list[str]) -> dict[str, dict | None]:
     if not after_embedding:
         return results
 
-    # ── Stage 3: LLM two-stage ────────────────────────────────────────────────
     llm_results = _llm_mapper.map_skills(after_embedding)
     for skill in after_embedding:
         m = llm_results.get(skill)
