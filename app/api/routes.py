@@ -5,6 +5,7 @@ from app.services.salary_service import SalaryService
 from app.services.location_service import LocationService
 from app.services.category_service import CategoryService
 from app.services.trends_service import TrendsService
+from app import cache
 
 jobs_bp = Blueprint('jobs', __name__, url_prefix='/api/jobs')
 skills_bp = Blueprint('skills', __name__, url_prefix='/api/skills')
@@ -21,6 +22,7 @@ def health_check():
 
 
 @health_bp.route('/overview', methods=['GET'])
+@cache.cached(timeout=600)
 def overview():
     try:
         data = JobService.get_overview()
@@ -41,6 +43,7 @@ def recent_jobs():
 
 
 @skills_bp.route('/top', methods=['GET'])
+@cache.cached(timeout=600, query_string=True)
 def top_skills():
     try:
         limit = request.args.get('limit', 20, type=int)
@@ -52,6 +55,7 @@ def top_skills():
 
 
 @salaries_bp.route('', methods=['GET'])
+@cache.cached(timeout=600, query_string=True)
 def salaries():
     try:
         group_by = request.args.get('group_by', 'department')
@@ -62,6 +66,7 @@ def salaries():
 
 
 @locations_bp.route('', methods=['GET'])
+@cache.cached(timeout=600)
 def locations():
     try:
         data = LocationService.get_locations()
@@ -71,6 +76,7 @@ def locations():
 
 
 @categories_bp.route('/summary', methods=['GET'])
+@cache.cached(timeout=600)
 def categories_summary():
     try:
         data = CategoryService.get_categories_summary()
@@ -89,6 +95,7 @@ def collection_status():
 
 
 @trends_bp.route('/skill-roi', methods=['GET'])
+@cache.cached(timeout=600, query_string=True)
 def skill_roi():
     try:
         limit = request.args.get('limit', 20, type=int)
@@ -99,6 +106,7 @@ def skill_roi():
 
 
 @trends_bp.route('/category-salary', methods=['GET'])
+@cache.cached(timeout=600)
 def category_salary():
     try:
         data = TrendsService.get_category_salary()
@@ -108,6 +116,7 @@ def category_salary():
 
 
 @trends_bp.route('/skill-demand', methods=['GET'])
+@cache.cached(timeout=600)
 def skill_demand():
     try:
         data = TrendsService.get_skill_demand_by_category()
@@ -117,6 +126,7 @@ def skill_demand():
 
 
 @trends_bp.route('/posting-volume', methods=['GET'])
+@cache.cached(timeout=600, query_string=True)
 def posting_volume():
     try:
         data = TrendsService.get_posting_volume_by_month()
@@ -126,6 +136,7 @@ def posting_volume():
 
 
 @trends_bp.route('/skills-by-category', methods=['GET'])
+@cache.cached(timeout=600, query_string=True)
 def skills_by_category():
     try:
         category = request.args.get('category', '')
@@ -139,6 +150,7 @@ def skills_by_category():
 
 
 @trends_bp.route('/countries', methods=['GET'])
+@cache.cached(timeout=600)
 def countries():
     try:
         data = TrendsService.get_available_countries()
@@ -148,6 +160,7 @@ def countries():
 
 
 @trends_bp.route('/country-stats', methods=['GET'])
+@cache.cached(timeout=600, query_string=True)
 def country_stats():
     try:
         country = request.args.get('country', 'ALL').upper()
@@ -158,6 +171,7 @@ def country_stats():
 
 
 @trends_bp.route('/posting-volume-by-country', methods=['GET'])
+@cache.cached(timeout=600, query_string=True)
 def posting_volume_by_country():
     try:
         country = request.args.get('country', 'ALL').upper()

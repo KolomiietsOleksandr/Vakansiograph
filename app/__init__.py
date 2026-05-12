@@ -1,10 +1,13 @@
 from flask import Flask, render_template
 from flask_cors import CORS
+from flask_caching import Cache
 from app.config import DevelopmentConfig, ProductionConfig
 import logging
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+cache = Cache()
 
 
 def create_app(config_name: str = "development"):
@@ -14,6 +17,10 @@ def create_app(config_name: str = "development"):
         app.config.from_object(ProductionConfig)
     else:
         app.config.from_object(DevelopmentConfig)
+
+    app.config["CACHE_TYPE"] = "SimpleCache"
+    app.config["CACHE_DEFAULT_TIMEOUT"] = 600
+    cache.init_app(app)
 
     CORS(app, resources={r"/api/*": {"origins": "*"}})
 
@@ -25,6 +32,14 @@ def create_app(config_name: str = "development"):
     app.register_blueprint(categories_bp)
     app.register_blueprint(trends_bp)
     app.register_blueprint(health_bp)
+
+    if config_name != "testing":
+        from app.utils.database import ensure_indexes
+        with app.app_context():
+            try:
+                ensure_indexes()
+            except Exception:
+                pass
 
     @app.route('/')
     def index():
