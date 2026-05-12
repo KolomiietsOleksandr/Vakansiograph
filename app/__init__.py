@@ -33,13 +33,6 @@ def create_app(config_name: str = "development"):
     app.register_blueprint(trends_bp)
     app.register_blueprint(health_bp)
 
-    if config_name != "testing":
-        from app.utils.database import ensure_indexes
-        with app.app_context():
-            try:
-                ensure_indexes()
-            except Exception:
-                pass
 
     @app.route('/')
     def index():
