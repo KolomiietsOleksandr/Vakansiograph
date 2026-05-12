@@ -1,11 +1,18 @@
 from app.utils.database import get_db_connection
 from app.utils.classifiers import classify_skill_type
+from app.config import Config
 
 
 class SkillService:
 
     @staticmethod
     def get_top_skills(limit: int = 20, country: str = "ALL"):
+        if country == "ALL" and limit == 20:
+            from app.services.analytics_builder import get_cached
+            cached = get_cached(Config.DATABASE_PATH, 'top_skills_20')
+            if cached is not None:
+                return cached
+
         conn = get_db_connection()
         c = conn.cursor()
 

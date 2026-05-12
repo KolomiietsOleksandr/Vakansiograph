@@ -95,6 +95,15 @@ def enrich_skills():
         logger.exception("[ENRICH] Failed")
 
 
+def build_analytics():
+    logger.info("=== [ANALYTICS] Building analytics cache ===")
+    try:
+        from app.services.analytics_builder import refresh
+        refresh(DB_PATH)
+    except Exception:
+        logger.exception("[ANALYTICS] Failed")
+
+
 def cleanup():
     logger.info("=== [CLEANUP] Starting weekly cleanup ===")
     try:
@@ -118,6 +127,15 @@ def cleanup():
 def start_scheduler():
     scheduler = BlockingScheduler(timezone="UTC")
 
+    scheduler.add_job(
+        build_analytics,
+        trigger=IntervalTrigger(hours=6),
+        id="build_analytics",
+        name="Analytics Cache Build (every 6h)",
+        next_run_time=datetime.now(timezone.utc),
+        max_instances=1,
+        coalesce=True,
+    )
     scheduler.add_job(
         collect_jobs,
         trigger=IntervalTrigger(hours=6),

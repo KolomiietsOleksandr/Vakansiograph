@@ -1,10 +1,17 @@
 from app.utils.database import get_db_connection
+from app.config import Config
 
 
 class TrendsService:
 
     @staticmethod
     def get_skill_salary_roi(limit: int = 20):
+        if limit == 20:
+            from app.services.analytics_builder import get_cached
+            cached = get_cached(Config.DATABASE_PATH, 'skill_roi_20')
+            if cached is not None:
+                return cached
+
         conn = get_db_connection()
         c = conn.cursor()
         c.execute("""
@@ -31,6 +38,11 @@ class TrendsService:
 
     @staticmethod
     def get_category_salary():
+        from app.services.analytics_builder import get_cached
+        cached = get_cached(Config.DATABASE_PATH, 'category_salary')
+        if cached is not None:
+            return cached
+
         conn = get_db_connection()
         c = conn.cursor()
         c.execute("""
@@ -53,6 +65,11 @@ class TrendsService:
 
     @staticmethod
     def get_skill_demand_by_category():
+        from app.services.analytics_builder import get_cached
+        cached = get_cached(Config.DATABASE_PATH, 'skill_demand')
+        if cached is not None:
+            return cached
+
         conn = get_db_connection()
         c = conn.cursor()
         c.execute("""
