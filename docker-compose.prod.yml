@@ -3,7 +3,7 @@ version: '3.8'
 services:
 
   web:
-    image: ghcr.io/KolomiietsOleksandr/vakansiograph:latest
+    image: ghcr.io/kolomiietsoleksandr/vakansiograph:latest
     container_name: labo-web
     restart: unless-stopped
     env_file: .env
@@ -31,7 +31,7 @@ services:
       wsgi:app
 
   worker:
-    image: ghcr.io/KolomiietsOleksandr/vakansiograph:latest
+    image: ghcr.io/kolomiietsoleksandr/vakansiograph:latest
     container_name: labo-worker
     restart: unless-stopped
     env_file: .env
