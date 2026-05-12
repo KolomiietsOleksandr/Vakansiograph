@@ -85,3 +85,5 @@ skills_export.csv
 
 # ── Old repo remnant ──────────────────────────────────────────────────────────
 labo_refactored/
+*.npz
+*.embeddings_cache*
