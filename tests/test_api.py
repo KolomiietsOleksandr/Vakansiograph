@@ -4,20 +4,6 @@ Run with: pytest
 """
 
 import pytest
-from app import create_app
-
-
-@pytest.fixture
-def app():
-    """Create app for testing"""
-    app = create_app(config_name="testing")
-    return app
-
-
-@pytest.fixture
-def client(app):
-    """Create test client"""
-    return app.test_client()
 
 
 class TestHealth:
