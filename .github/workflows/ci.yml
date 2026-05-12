@@ -6,9 +6,6 @@ on:
   pull_request:
     branches: [main]
 
-env:
-  IMAGE: ghcr.io/${{ github.repository }}
-
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -48,14 +45,11 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          file: docker/Dockerfile
-          push: true
-          tags: |
-            ${{ env.IMAGE }}:latest
-            ${{ env.IMAGE }}:${{ github.sha }}
+        run: |
+          IMAGE="ghcr.io/$(echo '${{ github.repository }}' | tr '[:upper:]' '[:lower:]')"
+          docker build -f docker/Dockerfile -t "${IMAGE}:latest" -t "${IMAGE}:${{ github.sha }}" .
+          docker push "${IMAGE}:latest"
+          docker push "${IMAGE}:${{ github.sha }}"
 
   deploy:
     needs: build-push
