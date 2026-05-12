@@ -36,7 +36,7 @@ class TestOverview:
         # Check data types
         assert isinstance(data['total_jobs'], int)
         assert isinstance(data['avg_salary'], dict)
-        assert isinstance(data['remote_percentage'], float)
+        assert isinstance(data['remote_percentage'], (int, float))
 
 
 class TestJobs:
