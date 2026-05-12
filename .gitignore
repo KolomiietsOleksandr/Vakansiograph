@@ -87,3 +87,5 @@ skills_export.csv
 labo_refactored/
 *.npz
 *.embeddings_cache*
+*.npz
+.embeddings_cache*
