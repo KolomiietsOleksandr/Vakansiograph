@@ -3,6 +3,7 @@ from flask_cors import CORS
 from flask_caching import Cache
 from app.config import DevelopmentConfig, ProductionConfig
 import logging
+import threading
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -57,6 +58,29 @@ def create_app(config_name: str = "development"):
     @app.route('/skills-intelligence.html')
     def skills_intelligence():
         return render_template('skills_intelligence.html')
+
+    if config_name == "production":
+        def _warm():
+            import time
+            from urllib.request import urlopen
+            time.sleep(15)
+            endpoints = [
+                '/api/overview',
+                '/api/skills/top?limit=20',
+                '/api/salaries',
+                '/api/locations',
+                '/api/trends/category-salary',
+                '/api/trends/skill-demand',
+                '/api/trends/posting-volume',
+                '/api/categories/summary',
+            ]
+            for ep in endpoints:
+                try:
+                    urlopen(f'http://localhost:5001{ep}', timeout=300)
+                    logger.info(f"Cache warmed: {ep}")
+                except Exception as e:
+                    logger.warning(f"Warm-up failed {ep}: {e}")
+        threading.Thread(target=_warm, daemon=True).start()
 
     logger.info(f"Flask app created with config: {config_name}")
     return app
