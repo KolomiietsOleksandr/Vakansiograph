@@ -57,6 +57,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v4
+
+      - name: Copy compose file to VM
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.GCP_HOST }}
+          username: ${{ secrets.GCP_USER }}
+          key: ${{ secrets.GCP_SSH_KEY }}
+          source: "docker-compose.prod.yml,nginx.conf"
+          target: "/opt/vakansiograph/"
+
       - name: Deploy to GCP VM
         uses: appleboy/ssh-action@v1.0.3
         with:
