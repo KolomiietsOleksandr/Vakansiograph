@@ -15,7 +15,8 @@ def ensure_indexes():
     conn.executescript("""
         CREATE INDEX IF NOT EXISTS idx_skills_esco_label ON job_skills(skill_esco_label);
         CREATE INDEX IF NOT EXISTS idx_skills_esco_type  ON job_skills(skill_esco_type);
-        CREATE INDEX IF NOT EXISTS idx_skills_country    ON job_skills(position_id);
+        CREATE INDEX IF NOT EXISTS idx_skills_position   ON job_skills(position_id);
+        CREATE INDEX IF NOT EXISTS idx_skills_category   ON job_skills(skill_category);
         CREATE INDEX IF NOT EXISTS idx_jobs_salary       ON job_postings(min_salary, max_salary);
         CREATE INDEX IF NOT EXISTS idx_jobs_series       ON job_postings(series_code);
         CREATE INDEX IF NOT EXISTS idx_jobs_department   ON job_postings(department);

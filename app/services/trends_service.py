@@ -56,32 +56,41 @@ class TrendsService:
         conn = get_db_connection()
         c = conn.cursor()
         c.execute("""
-            SELECT
-                skill_category,
-                COALESCE(skill_esco_label, skill_raw) AS skill,
-                skill_esco_type                       AS type,
-                COUNT(*)                              AS count
-            FROM job_skills
-            WHERE skill_category IS NOT NULL
-            GROUP BY skill_category, COALESCE(skill_esco_label, skill_raw)
-            ORDER BY skill_category, count DESC
+            SELECT skill_category, total_occurrences
+            FROM (
+                SELECT skill_category, SUM(cnt) AS total_occurrences
+                FROM (
+                    SELECT skill_category, COUNT(*) AS cnt
+                    FROM job_skills
+                    WHERE skill_category IS NOT NULL
+                    GROUP BY skill_category
+                )
+                GROUP BY skill_category
+            )
+            ORDER BY total_occurrences DESC
         """)
-        rows = c.fetchall()
+        categories = {r["skill_category"]: r["total_occurrences"] for r in c.fetchall()}
+
+        result = []
+        for cat, total in categories.items():
+            c.execute("""
+                SELECT COALESCE(skill_esco_label, skill_raw) AS skill,
+                       skill_esco_type AS type,
+                       COUNT(*) AS count
+                FROM job_skills
+                WHERE skill_category = ?
+                GROUP BY COALESCE(skill_esco_label, skill_raw)
+                ORDER BY count DESC
+                LIMIT 5
+            """, (cat,))
+            result.append({
+                "category": cat,
+                "total_occurrences": total,
+                "top_skills": [dict(r) for r in c.fetchall()]
+            })
+
         conn.close()
-
-        from collections import defaultdict
-        grouped = defaultdict(list)
-        counts = defaultdict(int)
-        for r in rows:
-            cat = r["skill_category"]
-            counts[cat] += r["count"]
-            if len(grouped[cat]) < 5:
-                grouped[cat].append({"skill": r["skill"], "type": r["type"], "count": r["count"]})
-
-        return [
-            {"category": cat, "total_occurrences": counts[cat], "top_skills": skills}
-            for cat, skills in sorted(grouped.items(), key=lambda x: -counts[x[0]])
-        ]
+        return sorted(result, key=lambda x: -x["total_occurrences"])
 
     @staticmethod
     def get_posting_volume_by_month():
