@@ -39,11 +39,6 @@ def create_app(config_name: str = "development"):
     def index():
         return render_template('index.html')
 
-    @app.route('/dashboard')
-    @app.route('/dashboard.html')
-    def dashboard():
-        return render_template('dashboard.html')
-
     @app.route('/countries')
     @app.route('/countries.html')
     def countries_page():
