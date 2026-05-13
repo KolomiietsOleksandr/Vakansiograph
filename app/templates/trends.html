@@ -4,48 +4,131 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Market Trends — VakansioGraph</title>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/static/css/shared-styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/design-system.css">
 <link rel="icon" type="image/png" href="/static/images/favicon.png">
 <script src="/static/js/chart.umd.min.js"></script>
 <style>
-/* ── Page-specific layout ─────────────────────── */
 canvas { display: block; width: 100% !important; }
+.volume-canvas { max-height: 260px; }
+.chart-canvas  { max-height: 320px; }
+.bubble-canvas { max-height: 360px; }
 
-.volume-canvas  { max-height: 240px; }
-.chart-canvas   { max-height: 300px; }
-.bubble-canvas  { max-height: 340px; }
-
-/* ── Row with mb ─────────────────────────────── */
-.mb { margin-bottom: 1rem; }
-
-/* ── Insight body accent ──────────────────────── */
-.insight-num {
-  font-size: 1.6rem;
-  font-weight: 900;
-  font-family: var(--mono);
-  color: var(--accent);
-  line-height: 1;
-  margin-bottom: 0.3rem;
-  letter-spacing: -1px;
+/* Page-specific header decoration */
+.page-header {
+  padding: 4rem 0 3rem;
+  border-radius: var(--radius-xl);
+  margin-bottom: 3rem;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.page-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 50% 60% at 100% 50%, var(--accent-dim) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 50% at 0% 100%, rgba(79,133,246,0.10) 0%, transparent 65%);
+  z-index: -1;
 }
 
-.insight-label {
-  font-size: 0.72rem;
-  font-weight: 600;
+/* Big stat in header */
+.page-header-row {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  gap: 3rem;
+  align-items: end;
+}
+
+.header-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.header-stat {
+  text-align: right;
+}
+.header-stat-val {
+  font-family: var(--mono);
+  font-size: 2rem;
+  font-weight: 700;
+  background: var(--grad-fire);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+.header-stat-lbl {
+  font-family: var(--mono);
+  font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: 0.8px;
   color: var(--text-2);
-  margin-bottom: 0.6rem;
+  margin-top: 0.4rem;
+  font-weight: 600;
 }
 
-.insight-note {
-  font-size: 0.82rem;
-  color: var(--text-2);
-  line-height: 1.55;
+@media (max-width: 768px) {
+  .page-header-row { grid-template-columns: 1fr; gap: 2rem; }
+  .header-stat { text-align: left; }
 }
 
-.insight-note strong { color: var(--text); }
+/* Card grid wrapping */
+.chart-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 1.25rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.chart-card-header .left { flex: 1; min-width: 200px; }
+
+.chart-meta {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.chart-meta .live-dot {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--green);
+}
+.chart-meta .live-dot::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 8px var(--green);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Insight numbers */
+.insight-num {
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: var(--mono);
+  background: var(--grad-fire);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  letter-spacing: -1px;
+}
 
 @media (max-width: 768px) {
   .bubble-canvas { max-height: 280px; }
@@ -57,64 +140,105 @@ canvas { display: block; width: 100% !important; }
 {% include 'header.html' %}
 
 <main>
-  <!-- ── Page header ───────────────────────────── -->
-  <div class="page-header">
-    <div class="page-header-eyebrow">
-      <span class="ph-dot"></span>
-      Live Intelligence
+
+  <!-- ════════ Page header ════════ -->
+  <div class="page-header reveal">
+    <div class="page-header-row">
+      <div>
+        <div class="page-header-eyebrow">
+          <span class="ph-dot"></span>
+          Live Intelligence
+        </div>
+        <h1>Market <span class="word-grad">trends.</span></h1>
+        <p>Posting volume, demand shifts, category growth. Refreshed every 2 hours from federal sources.</p>
+      </div>
+      <div class="header-stats">
+        <div class="header-stat">
+          <div class="header-stat-val" id="hdr-total">—</div>
+          <div class="header-stat-lbl">Total postings</div>
+        </div>
+        <div class="header-stat">
+          <div class="header-stat-val" id="hdr-cats">12</div>
+          <div class="header-stat-lbl">ESCO categories</div>
+        </div>
+      </div>
     </div>
-    <h1>Market Trends</h1>
-    <p>Job posting volume, skill demand shifts, category growth — refreshed every 2 hours.</p>
   </div>
 
-  <!-- ── KPI strip ─────────────────────────────── -->
-  <div class="kpi-row">
+  <!-- ════════ KPIs ════════ -->
+  <div class="kpi-row reveal">
     <div class="kpi">
       <div class="kpi-val" id="kpi-total">—</div>
       <div class="kpi-sub">Total Postings Tracked</div>
     </div>
-    <div class="kpi">
+    <div class="kpi kpi-blue">
       <div class="kpi-val" id="kpi-orgs">—</div>
       <div class="kpi-sub">Organizations</div>
     </div>
-    <div class="kpi">
+    <div class="kpi kpi-purple">
       <div class="kpi-val" id="kpi-top-cat">—</div>
       <div class="kpi-sub">Top Skill Category</div>
     </div>
-    <div class="kpi">
+    <div class="kpi kpi-green">
       <div class="kpi-val" id="kpi-skill-count">—</div>
       <div class="kpi-sub">Unique Skills Mapped</div>
     </div>
   </div>
 
-  <!-- ── Insight row ────────────────────────────── -->
-  <div class="insight-grid mb" id="insightRow"></div>
+  <!-- ════════ Insights ════════ -->
+  <div class="insight-grid mb reveal" id="insightRow"></div>
 
-  <!-- ── Volume chart (full width) ─────────────── -->
-  <div class="card full mb">
-    <div class="card-title">Job Posting Volume</div>
-    <div class="card-subtitle">Monthly count of postings collected in the database</div>
+  <!-- ════════ Volume chart ════════ -->
+  <div class="card full mb reveal">
+    <div class="chart-card-header">
+      <div class="left">
+        <div class="card-title">Job Posting Volume</div>
+        <div class="card-subtitle">Monthly count of postings collected in the database</div>
+      </div>
+      <div class="chart-meta">
+        <span class="live-dot">Live</span>
+        <span>25 months tracked</span>
+      </div>
+    </div>
     <canvas id="volumeChart" class="volume-canvas"></canvas>
   </div>
 
-  <!-- ── Two-column charts ─────────────────────── -->
+  <!-- ════════ Two-up charts ════════ -->
   <div class="grid-2 mb">
-    <div class="card">
-      <div class="card-title">Skill Category Share</div>
-      <div class="card-subtitle">Distribution of job requirements by ESCO skill category</div>
+    <div class="card reveal-left">
+      <div class="chart-card-header">
+        <div class="left">
+          <div class="card-title">Skill Category Share</div>
+          <div class="card-subtitle">ESCO skill category distribution</div>
+        </div>
+        <div class="chart-meta"><span>doughnut</span></div>
+      </div>
       <canvas id="categoryShareChart" class="chart-canvas"></canvas>
     </div>
-    <div class="card">
-      <div class="card-title">Top 20 In-Demand Skills</div>
-      <div class="card-subtitle">Most frequently required skills across all postings</div>
+    <div class="card reveal-right">
+      <div class="chart-card-header">
+        <div class="left">
+          <div class="card-title">Top 20 In-Demand Skills</div>
+          <div class="card-subtitle">Most frequently required across all postings</div>
+        </div>
+        <div class="chart-meta"><span>by occurrences</span></div>
+      </div>
       <canvas id="topSkillsChart" class="chart-canvas"></canvas>
     </div>
   </div>
 
-  <!-- ── Bubble chart (full width) ─────────────── -->
-  <div class="card full mb">
-    <div class="card-title">Category × Salary Intelligence</div>
-    <div class="card-subtitle">Avg min salary vs job volume per skill category — bubble size reflects number of jobs</div>
+  <!-- ════════ Bubble chart ════════ -->
+  <div class="card full mb reveal">
+    <div class="chart-card-header">
+      <div class="left">
+        <div class="card-title">Category × Salary Intelligence</div>
+        <div class="card-subtitle">Avg min salary vs job volume per skill category — bubble size = job count</div>
+      </div>
+      <div class="chart-meta">
+        <span class="live-dot">Live</span>
+        <span>12 categories</span>
+      </div>
+    </div>
     <canvas id="bubbleChart" class="bubble-canvas"></canvas>
   </div>
 
@@ -122,8 +246,10 @@ canvas { display: block; width: 100% !important; }
 
 {% include 'footer.html' %}
 
+<script src="/static/js/site-utils.js"></script>
+
 <script>
-/* ── Category colours (shared across all charts) ── */
+/* ── Category colours ── */
 const CAT = {
   'Management & Leadership':    '#ff6403',
   'Healthcare & Medicine':      '#f472b6',
@@ -139,28 +265,21 @@ const CAT = {
   'Other':                      '#4a4a7a'
 };
 
-/* ── Base chart options ──────────────────────────── */
 const TIP = {
-  backgroundColor: 'rgba(10,10,30,0.96)',
-  titleColor:  '#e2e2f2',
-  bodyColor:   '#6868a8',
-  borderColor: '#252550',
-  borderWidth: 1,
-  padding:     10,
-  cornerRadius: 8,
-  titleFont:  { family: 'Outfit', weight: '700' },
-  bodyFont:   { family: 'Outfit' }
+  backgroundColor: 'rgba(8,8,24,0.96)',
+  titleColor: '#e8e8fb', bodyColor: '#7a7ab8',
+  borderColor: '#29295a', borderWidth: 1,
+  padding: 12, cornerRadius: 10,
+  titleFont: { family: 'Outfit', weight: '700' },
+  bodyFont: { family: 'Outfit' }
 };
-
 const GRID = { color: 'rgba(255,255,255,0.03)' };
-
-const TICK = { color: '#4a4a7a', font: { family: 'IBM Plex Mono', size: 10 } };
+const TICK = { color: '#5a5a8a', font: { family: 'JetBrains Mono', size: 10 } };
 
 const base = {
-  responsive: true,
-  maintainAspectRatio: true,
+  responsive: true, maintainAspectRatio: true,
   plugins: {
-    legend: { labels: { color: '#6868a8', font: { family: 'Outfit', size: 11 }, boxWidth: 10, padding: 14 } },
+    legend: { labels: { color: '#7a7ab8', font: { family: 'Outfit', size: 11 }, boxWidth: 10, padding: 14 } },
     tooltip: TIP
   },
   scales: {
@@ -169,52 +288,54 @@ const base = {
   }
 };
 
-/* ── Gradient helper ────────────────────────────── */
-function makeGradient(ctx, color) {
-  var g = ctx.createLinearGradient(0, 0, 0, ctx.canvas.height);
-  g.addColorStop(0,   color.replace(')', ', 0.18)').replace('rgb', 'rgba'));
-  g.addColorStop(1,   color.replace(')', ', 0.00)').replace('rgb', 'rgba'));
-  return g;
-}
-
-/* ── KPIs ───────────────────────────────────────── */
+/* ── KPIs + header stats ── */
 fetch('/api/overview').then(r => r.json()).then(d => {
-  const fmt = n => n >= 1000 ? Math.round(n / 1000) + 'K' : n;
+  const fmt = n => n >= 1000 ? Math.round(n/1000) + 'K' : n;
   document.getElementById('kpi-total').textContent       = fmt(d.total_jobs) + '+';
   document.getElementById('kpi-orgs').textContent        = fmt(d.total_organizations);
   document.getElementById('kpi-skill-count').textContent = d.unique_skills;
+  document.getElementById('hdr-total').textContent       = fmt(d.total_jobs) + '+';
 });
 
-/* ── Volume chart ───────────────────────────────── */
+/* ── Volume chart ── */
 fetch('/api/trends/posting-volume').then(r => r.json()).then(raw => {
   const data = raw.filter(d => d.count > 10);
-  const ctx  = document.getElementById('volumeChart').getContext('2d');
+  const ctx = document.getElementById('volumeChart').getContext('2d');
+  const grad = ctx.createLinearGradient(0, 0, 0, 260);
+  grad.addColorStop(0, 'rgba(255, 100, 3, 0.30)');
+  grad.addColorStop(1, 'rgba(255, 100, 3, 0)');
+
   new Chart(ctx, {
     type: 'line',
     data: {
       labels: data.map(d => d.month),
       datasets: [{
         data: data.map(d => d.count),
-        borderColor: '#ff6403',
-        backgroundColor: 'rgba(255,100,3,0.10)',
-        borderWidth: 2,
-        pointRadius: 0,
-        pointHoverRadius: 5,
+        borderColor: '#ff9a00',
+        backgroundColor: grad,
+        borderWidth: 2.5,
+        pointRadius: 0, pointHoverRadius: 6,
         pointHoverBackgroundColor: '#ff6403',
-        fill: true,
-        tension: 0.4
+        pointHoverBorderColor: '#fff', pointHoverBorderWidth: 2,
+        fill: true, tension: 0.4
       }]
     },
-    options: { ...base, plugins: { ...base.plugins, legend: { display: false } } }
+    options: {
+      ...base,
+      plugins: { ...base.plugins, legend: { display: false } },
+      scales: {
+        x: { ...base.scales.x },
+        y: { ...base.scales.y, ticks: { ...TICK, callback: v => v >= 1000 ? (v/1000).toFixed(1) + 'K' : v } }
+      }
+    }
   });
 });
 
-/* ── Category share + insights + top-cat KPI ────── */
+/* ── Category share + insights ── */
 fetch('/api/trends/skill-demand').then(r => r.json()).then(data => {
   const top = data[0];
   document.getElementById('kpi-top-cat').textContent = top ? top.category.split(' ')[0] : '—';
 
-  /* Doughnut */
   new Chart(document.getElementById('categoryShareChart'), {
     type: 'doughnut',
     data: {
@@ -223,28 +344,28 @@ fetch('/api/trends/skill-demand').then(r => r.json()).then(data => {
         data: data.map(d => d.total_occurrences),
         backgroundColor: data.map(d => CAT[d.category] || '#4a4a7a'),
         borderColor: '#101030',
-        borderWidth: 2,
-        hoverBorderWidth: 0
+        borderWidth: 3,
+        hoverBorderWidth: 0,
+        hoverOffset: 8
       }]
     },
     options: {
-      responsive: true, maintainAspectRatio: true, cutout: '60%',
+      responsive: true, maintainAspectRatio: true, cutout: '64%',
       plugins: {
-        legend: { position: 'right', labels: { color: '#6868a8', boxWidth: 10, font: { family: 'Outfit', size: 10 }, padding: 10 } },
+        legend: { position: 'right', labels: { color: '#7a7ab8', boxWidth: 10, font: { family: 'Outfit', size: 10 }, padding: 10 } },
         tooltip: TIP
       }
     }
   });
 
-  /* Insights */
   const total = data.reduce((s, d) => s + d.total_occurrences, 0);
-  const pct   = d => Math.round(d.total_occurrences * 100 / total);
+  const pct = d => Math.round(d.total_occurrences * 100 / total);
   const itTech = data.find(d => d.category === 'IT & Technology');
 
   document.getElementById('insightRow').innerHTML = [
-    { num: pct(data[0]) + '%',  label: 'Dominant Category',
+    { num: pct(data[0]) + '%', label: 'Dominant Category',
       note: `<strong>${data[0]?.category}</strong> leads skill requirements — driven by federal management and administrative roles.` },
-    { num: data.length + '',    label: 'Skill Categories',
+    { num: data.length + '', label: 'Skill Categories',
       note: `${data.length} distinct ESCO skill categories mapped across all federal job postings in the database.` },
     { num: (itTech ? pct(itTech) : 0) + '%', label: 'IT & Tech Share',
       note: `Technology skills represent a relatively small share — signalling a gap in tech-adjacent federal role requirements.` }
@@ -256,7 +377,7 @@ fetch('/api/trends/skill-demand').then(r => r.json()).then(data => {
     </div>`).join('');
 });
 
-/* ── Top-20 skills bar ──────────────────────────── */
+/* ── Top skills bar ── */
 fetch('/api/skills/top?limit=20').then(r => r.json()).then(skills => {
   new Chart(document.getElementById('topSkillsChart'), {
     type: 'bar',
@@ -265,8 +386,9 @@ fetch('/api/skills/top?limit=20').then(r => r.json()).then(skills => {
       datasets: [{
         data: skills.map(s => s.count),
         backgroundColor: skills.map(s => CAT[s.category] || '#ff6403'),
-        borderRadius: 5,
-        borderSkipped: false
+        borderRadius: 6,
+        borderSkipped: false,
+        barPercentage: 0.85
       }]
     },
     options: {
@@ -274,30 +396,30 @@ fetch('/api/skills/top?limit=20').then(r => r.json()).then(skills => {
       indexAxis: 'y',
       plugins: { ...base.plugins, legend: { display: false } },
       scales: {
-        x: { ...base.scales.x },
+        x: { ...base.scales.x, ticks: { ...TICK, callback: v => v >= 1000 ? (v/1000).toFixed(1) + 'K' : v } },
         y: { ...base.scales.y, ticks: { ...TICK, font: { family: 'Outfit', size: 10 } } }
       }
     }
   });
 });
 
-/* ── Bubble chart ───────────────────────────────── */
+/* ── Bubble chart ── */
 fetch('/api/trends/category-salary').then(r => r.json()).then(data => {
   new Chart(document.getElementById('bubbleChart'), {
     type: 'bubble',
     data: {
       datasets: data.map(d => ({
         label: d.category,
-        data: [{ x: d.job_count, y: d.avg_min_salary, r: Math.max(6, Math.sqrt(d.job_count) * 0.55) }],
-        backgroundColor: (CAT[d.category] || '#4a4a7a') + 'bb',
-        borderColor:     (CAT[d.category] || '#4a4a7a'),
-        borderWidth: 1
+        data: [{ x: d.job_count, y: d.avg_min_salary, r: Math.max(8, Math.sqrt(d.job_count) * 0.6) }],
+        backgroundColor: (CAT[d.category] || '#4a4a7a') + 'cc',
+        borderColor: (CAT[d.category] || '#4a4a7a'),
+        borderWidth: 1.5
       }))
     },
     options: {
       responsive: true, maintainAspectRatio: true,
       plugins: {
-        legend: { labels: { color: '#6868a8', font: { family: 'Outfit', size: 10 }, boxWidth: 10, padding: 12 } },
+        legend: { position: 'top', align: 'start', labels: { color: '#7a7ab8', font: { family: 'Outfit', size: 10 }, boxWidth: 10, padding: 12 } },
         tooltip: {
           ...TIP,
           callbacks: {
@@ -307,11 +429,11 @@ fetch('/api/trends/category-salary').then(r => r.json()).then(data => {
       },
       scales: {
         x: {
-          title: { display: true, text: 'Number of Jobs', color: '#4a4a7a', font: { family: 'Outfit', size: 11 } },
+          title: { display: true, text: 'Number of Jobs', color: '#5a5a8a', font: { family: 'JetBrains Mono', size: 10 } },
           ticks: TICK, grid: GRID, border: { color: 'transparent' }
         },
         y: {
-          title: { display: true, text: 'Avg Min Salary ($)', color: '#4a4a7a', font: { family: 'Outfit', size: 11 } },
+          title: { display: true, text: 'Avg Min Salary ($)', color: '#5a5a8a', font: { family: 'JetBrains Mono', size: 10 } },
           ticks: { ...TICK, callback: v => '$' + Math.round(v / 1000) + 'K' },
           grid: GRID, border: { color: 'transparent' }
         }

@@ -2,12 +2,12 @@
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="/" class="logo" style="margin-bottom:0.9rem; display:inline-flex;">
+        <a href="/" class="logo" style="margin-bottom:1rem; display:inline-flex;">
           <span class="logo-mark">
-            <svg viewBox="0 0 16 16" fill="none">
-              <rect x="1" y="9"  width="3" height="6" rx="1" fill="#000"/>
-              <rect x="6" y="5"  width="3" height="10" rx="1" fill="#000"/>
-              <rect x="11" y="2" width="3" height="13" rx="1" fill="#000"/>
+            <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <rect x="1" y="9"  width="3" height="6"  rx="1" fill="#1a0a00"/>
+              <rect x="6" y="5"  width="3" height="10" rx="1" fill="#1a0a00"/>
+              <rect x="11" y="2" width="3" height="13" rx="1" fill="#1a0a00"/>
             </svg>
           </span>
           <span class="logo-name">VakansioGraph</span>
@@ -15,25 +15,26 @@
         <p class="footer-tagline">
           Labor market intelligence powered by USAJOBS, Adzuna, and ESCO skill classification.
         </p>
+        <div class="footer-status">Systems operational · Updated every 2h</div>
       </div>
       <div class="footer-section">
-        <h4>Platform</h4>
+        <h4>// Platform</h4>
         <a href="/">Home</a>
         <a href="/trends">Market Trends</a>
         <a href="/countries">Geography</a>
         <a href="/skills-intelligence">Skills Intelligence</a>
       </div>
       <div class="footer-section">
-        <h4>Data Sources</h4>
-        <a href="https://www.usajobs.gov/api" target="_blank" rel="noopener">USAJOBS API</a>
-        <a href="https://ec.europa.eu/esco" target="_blank" rel="noopener">ESCO Skills</a>
-        <a href="https://developer.adzuna.com" target="_blank" rel="noopener">Adzuna API</a>
+        <h4>// Sources</h4>
+        <a href="https://www.usajobs.gov/api" target="_blank" rel="noopener">USAJOBS API ↗</a>
+        <a href="https://ec.europa.eu/esco" target="_blank" rel="noopener">ESCO Skills ↗</a>
+        <a href="https://developer.adzuna.com" target="_blank" rel="noopener">Adzuna API ↗</a>
       </div>
       <div class="footer-section">
-        <h4>Connect</h4>
-        <a href="https://github.com/KolomiietsOleksandr/Vakansiograph" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/okolomiietskolomiiets/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="mailto:alexcrimson0818@gmail.com">Email</a>
+        <h4>// Connect</h4>
+        <a href="https://github.com/KolomiietsOleksandr/Vakansiograph" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/okolomiietskolomiiets/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="mailto:alexcrimson0818@gmail.com">Email ↗</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -45,6 +46,7 @@
         <span class="footer-badge">SQLite</span>
       </div>
     </div>
+    <div class="footer-bigword" aria-hidden="true">VAKANSIO</div>
   </div>
 </footer>
 
@@ -74,9 +76,19 @@
   var path = window.location.pathname;
   document.querySelectorAll('#main-nav a').forEach(function (a) {
     var href = a.getAttribute('href');
-    if (href === path || (href !== '/' && path.startsWith(href))) {
-      a.classList.add('active');
+    if (href && href !== '/trends' || !a.classList.contains('cta-mini')) {
+      if (href === path || (href !== '/' && path.startsWith(href) && !a.classList.contains('cta-mini'))) {
+        a.classList.add('active');
+      }
     }
   });
+
+  /* ── Scrolled header state ── */
+  var header = document.getElementById('main-header');
+  if (header) {
+    var onScroll = function () { header.classList.toggle('scrolled', window.scrollY > 6); };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
 }());
 </script>

@@ -4,129 +4,151 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Skills Intelligence — VakansioGraph</title>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/static/css/shared-styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/design-system.css">
 <link rel="icon" type="image/png" href="/static/images/favicon.png">
 <script src="/static/js/chart.umd.min.js"></script>
 <script src="/static/js/countries.js"></script>
 <style>
 canvas { display: block; width: 100% !important; }
-.chart-canvas { max-height: 300px; }
-.mb { margin-bottom: 1rem; }
+.chart-canvas { max-height: 320px; }
 
-/* ── Tab bar ─────────────────────────────────────── */
+/* ── Page header ── */
+.page-header {
+  padding: 4rem 0 3rem;
+  border-radius: var(--radius-xl);
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.page-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 50% 60% at 100% 50%, rgba(155,110,243,0.12) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 50% at 0% 100%, var(--accent-dim) 0%, transparent 65%);
+  z-index: -1;
+}
+
+/* ── Tab bar ── */
 .tab-bar {
   display: flex;
   gap: 0.25rem;
   margin-bottom: 2rem;
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 0.35rem;
+  border-radius: 100px;
+  padding: 0.4rem;
   width: fit-content;
 }
 
 .tab-btn {
-  padding: 0.55rem 1.25rem;
+  padding: 0.65rem 1.4rem;
   background: none;
   border: none;
-  border-radius: 10px;
+  border-radius: 100px;
   color: var(--text-2);
-  font-size: 0.875rem;
+  font-size: 0.88rem;
   font-weight: 600;
   cursor: pointer;
-  font-family: 'Outfit', sans-serif;
-  transition: color 0.15s, background 0.15s;
+  font-family: var(--body);
+  transition: color 0.2s, background 0.2s;
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.45rem;
+  white-space: nowrap;
 }
 
-.tab-btn svg {
-  width: 14px;
-  height: 14px;
-  stroke: currentColor;
-  fill: none;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
+.tab-btn svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .tab-btn:hover { color: var(--text); }
 
 .tab-btn.active {
-  background: var(--accent-dim);
-  color: var(--accent);
+  background: var(--grad-fire);
+  color: #1a0a00;
+  box-shadow: 0 4px 16px rgba(255, 100, 3, 0.35);
 }
 
 .tab-panel { display: none; }
 .tab-panel.active { display: block; }
 
-/* ── Skill gap panel ─────────────────────────────── */
+/* ── Gap panel ── */
 .gap-panel {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.75rem;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
   margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
 }
 
-.gap-panel-header {
-  display: flex;
-  align-items: baseline;
-  gap: 0.75rem;
-  margin-bottom: 0.4rem;
-  flex-wrap: wrap;
+.gap-panel::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--purple), var(--accent), transparent);
 }
 
 .gap-panel-title {
-  font-size: 1rem;
-  font-weight: 800;
+  font-family: var(--display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.4px;
   color: var(--text);
+  margin-bottom: 0.4rem;
 }
 
 .gap-hint {
-  font-size: 0.8rem;
+  font-size: 0.88rem;
   color: var(--text-2);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
   line-height: 1.55;
 }
 
-.category-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-bottom: 1.5rem;
-}
+.category-tabs { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.75rem; }
 
 .cat-btn {
-  padding: 0.35rem 0.85rem;
+  padding: 0.4rem 0.95rem;
   border-radius: 100px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-2);
   background: transparent;
   color: var(--text-2);
   font-size: 0.78rem;
   font-weight: 600;
   cursor: pointer;
-  font-family: 'Outfit', sans-serif;
-  transition: color 0.15s, border-color 0.15s, background 0.15s;
+  font-family: var(--body);
+  transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.15s;
 }
 
-.cat-btn:hover { border-color: var(--border-2); color: var(--text); }
-.cat-btn.active { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+.cat-btn:hover { border-color: var(--accent); color: var(--text); transform: translateY(-1px); }
+.cat-btn.active {
+  border-color: var(--accent);
+  color: #1a0a00;
+  background: var(--grad-fire);
+  box-shadow: 0 4px 14px rgba(255, 100, 3, 0.3);
+}
 
-/* ── Skill bar list ──────────────────────────────── */
+/* ── Skill list ── */
 .skill-list { display: flex; flex-direction: column; gap: 0.7rem; }
 
 .skill-row {
   display: grid;
-  grid-template-columns: 200px 1fr 56px 70px;
+  grid-template-columns: 220px 1fr 70px 80px;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.85rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
 }
 
+.skill-row:last-child { border-bottom: none; }
+
 .skill-name {
-  font-size: 0.83rem;
+  font-size: 0.86rem;
   font-weight: 600;
   white-space: nowrap;
   overflow: hidden;
@@ -137,20 +159,21 @@ canvas { display: block; width: 100% !important; }
 .skill-bar-track {
   flex: 1;
   background: rgba(255,255,255,0.04);
-  border-radius: 4px;
-  height: 6px;
+  border-radius: 100px;
+  height: 8px;
   overflow: hidden;
 }
 
 .skill-bar-fill {
-  height: 6px;
-  border-radius: 4px;
-  background: linear-gradient(90deg, var(--accent), var(--accent-2));
-  transition: width 0.6s cubic-bezier(.4,0,.2,1);
+  height: 8px;
+  border-radius: 100px;
+  background: var(--grad-fire);
+  box-shadow: 0 0 12px rgba(255, 100, 3, 0.35);
+  transition: width 0.8s cubic-bezier(.4,0,.2,1);
 }
 
 .skill-count {
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   color: var(--text-2);
   font-family: var(--mono);
   text-align: right;
@@ -158,79 +181,97 @@ canvas { display: block; width: 100% !important; }
 
 .skill-type-badge {
   font-size: 0.65rem;
-  padding: 0.15rem 0.5rem;
+  padding: 0.2rem 0.6rem;
   border-radius: 100px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.4px;
   text-align: center;
+  font-family: var(--mono);
 }
 
-.badge-knowledge  { background: rgba(79,133,246,0.15); color: #4f85f6; }
-.badge-competence { background: rgba(34,211,160,0.15); color: #22d3a0; }
-.badge-skill      { background: rgba(155,110,243,0.15); color: #9b6ef3; }
+.badge-knowledge  { background: rgba(79,133,246,0.15); color: #4f85f6; border: 1px solid rgba(79,133,246,0.25); }
+.badge-competence { background: rgba(34,211,160,0.15); color: #22d3a0; border: 1px solid rgba(34,211,160,0.25); }
+.badge-skill      { background: rgba(155,110,243,0.15); color: #9b6ef3; border: 1px solid rgba(155,110,243,0.25); }
 
-/* ── Skill explorer ──────────────────────────────── */
+/* ── Search panel ── */
 .search-panel {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.75rem;
+  background: linear-gradient(135deg, rgba(255,100,3,0.06) 0%, rgba(155,110,243,0.04) 100%), var(--bg-card);
+  border: 1px solid var(--border-2);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
   margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.search-panel::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
 }
 
 .search-label {
-  font-size: 0.68rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1.2px;
+  letter-spacing: 1.4px;
   color: var(--accent);
-  margin-bottom: 0.9rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.search-label::before {
+  content: '';
+  width: 18px; height: 1px;
+  background: var(--accent);
 }
 
 .search-row {
   display: flex;
   gap: 0.75rem;
   align-items: center;
-  max-width: 860px;
+  max-width: 900px;
 }
 
 .skill-input {
   flex: 1;
   background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 0.7rem 1rem;
+  border: 1px solid var(--border-2);
+  border-radius: 100px;
+  padding: 0.85rem 1.25rem;
   color: var(--text);
   font-size: 0.95rem;
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--body);
   outline: none;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .skill-input::placeholder { color: var(--text-2); }
-.skill-input:focus { border-color: var(--border-2); }
+.skill-input:focus { border-color: var(--accent); box-shadow: 0 0 0 4px rgba(255, 100, 3, 0.15); }
 
 .search-btn {
-  padding: 0.7rem 1.5rem;
-  background: var(--accent);
+  padding: 0.85rem 1.75rem;
+  background: var(--grad-fire);
   border: none;
-  border-radius: var(--radius-sm);
-  color: #000;
+  border-radius: 100px;
+  color: #1a0a00;
   font-size: 0.9rem;
   font-weight: 800;
   cursor: pointer;
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--body);
   transition: box-shadow 0.2s, transform 0.2s;
   white-space: nowrap;
+  box-shadow: 0 4px 18px rgba(255, 100, 3, 0.35);
 }
 
-.search-btn:hover {
-  box-shadow: 0 4px 16px var(--accent-glow);
-  transform: translateY(-1px);
-}
+.search-btn:hover { box-shadow: 0 8px 24px rgba(255, 100, 3, 0.5); transform: translateY(-1px); }
 
-/* ── Autocomplete ────────────────────────────────── */
+/* ── Autocomplete ── */
 .ac-wrap { position: relative; flex: 1; }
 
 .ac-dropdown {
@@ -240,9 +281,9 @@ canvas { display: block; width: 100% !important; }
   left: 0; right: 0;
   background: var(--bg-2);
   border: 1px solid var(--border-2);
-  border-radius: 12px;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.6);
-  max-height: 280px;
+  border-radius: 14px;
+  box-shadow: 0 16px 50px rgba(0,0,0,0.7);
+  max-height: 300px;
   overflow-y: auto;
   z-index: 150;
 }
@@ -250,49 +291,55 @@ canvas { display: block; width: 100% !important; }
 .ac-dropdown.open { display: block; }
 
 .ac-item {
-  padding: 0.6rem 1rem;
+  padding: 0.7rem 1.1rem;
   font-size: 0.875rem;
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--body);
   color: var(--text-2);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 0.6rem;
-  transition: background 0.12s, color 0.12s;
+  transition: background 0.15s, color 0.15s;
 }
 
-.ac-item:first-child { border-radius: 12px 12px 0 0; }
-.ac-item:last-child  { border-radius: 0 0 12px 12px; }
-.ac-item:only-child  { border-radius: 12px; }
-
-.ac-item:hover, .ac-item.selected { background: var(--accent-dim); color: var(--text); }
-
+.ac-item:hover, .ac-item.selected { background: rgba(255, 100, 3, 0.12); color: var(--text); }
 .ac-skill { font-weight: 600; }
-.ac-count { font-size: 0.72rem; font-family: var(--mono); color: var(--text-2); white-space: nowrap; }
-.ac-cat   { font-size: 0.72rem; color: var(--accent); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 140px; }
-.ac-none  { padding: 0.8rem 1rem; font-size: 0.85rem; color: var(--text-2); text-align: center; }
+.ac-count { font-size: 0.72rem; font-family: var(--mono); color: var(--text-3); white-space: nowrap; }
+.ac-cat   { font-size: 0.72rem; color: var(--accent); }
+.ac-none  { padding: 1rem; font-size: 0.85rem; color: var(--text-2); text-align: center; }
 
-/* ── Skill detail panel ──────────────────────────── */
+/* ── Detail header ── */
 .skill-detail { display: none; }
 .skill-detail.visible { display: block; }
 
 .detail-header {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.75rem;
+  background: linear-gradient(135deg, rgba(255,100,3,0.08), rgba(155,110,243,0.04)), var(--bg-card);
+  border: 1px solid var(--border-2);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
   margin-bottom: 1rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.detail-header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
 }
 
 .detail-name {
-  font-size: 1.75rem;
-  font-weight: 900;
-  letter-spacing: -0.5px;
+  font-family: var(--display);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -1px;
   color: var(--text);
   flex: 1;
   min-width: 200px;
@@ -301,50 +348,51 @@ canvas { display: block; width: 100% !important; }
 .detail-badges { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 
 .meta-badge {
-  padding: 0.3rem 0.8rem;
+  padding: 0.35rem 0.85rem;
   border-radius: 100px;
   font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  font-family: var(--mono);
 }
 
-.badge-type-knowledge  { background: rgba(79,133,246,0.15); color: #4f85f6; }
-.badge-type-competence { background: rgba(34,211,160,0.15); color: #22d3a0; }
-.badge-type-skill      { background: rgba(155,110,243,0.15); color: #9b6ef3; }
-.badge-category        { background: var(--accent-dim); color: var(--accent); }
+.badge-type-knowledge  { background: rgba(79,133,246,0.15); color: #4f85f6; border: 1px solid rgba(79,133,246,0.25); }
+.badge-type-competence { background: rgba(34,211,160,0.15); color: #22d3a0; border: 1px solid rgba(34,211,160,0.25); }
+.badge-type-skill      { background: rgba(155,110,243,0.15); color: #9b6ef3; border: 1px solid rgba(155,110,243,0.25); }
+.badge-category        { background: var(--accent-dim); color: var(--accent); border: 1px solid rgba(255,100,3,0.25); }
 
-.detail-kpi-row {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-/* ── Related tags ────────────────────────────────── */
+/* ── Related tags ── */
 .related-list { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.25rem; }
 
 .related-tag {
-  padding: 0.3rem 0.75rem;
+  padding: 0.35rem 0.85rem;
   border-radius: 100px;
-  border: 1px solid var(--border);
-  font-size: 0.78rem;
+  border: 1px solid var(--border-2);
+  font-size: 0.8rem;
   color: var(--text-2);
   cursor: pointer;
-  transition: color 0.15s, border-color 0.15s;
-  font-family: 'Outfit', sans-serif;
+  transition: color 0.15s, border-color 0.15s, transform 0.15s;
+  font-family: var(--body);
 }
 
-.related-tag:hover { border-color: var(--accent); color: var(--accent); }
+.related-tag:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
 
-.count-small { opacity: 0.45; font-size: 0.72rem; }
-.text-dim { color: var(--text-2); font-size: 0.875rem; }
+.count-small { opacity: 0.55; font-size: 0.72rem; }
 
-/* ── Responsive ──────────────────────────────────── */
+/* ── Chart card header ── */
+.chart-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 1.25rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
 @media (max-width: 900px) {
   .skill-row { grid-template-columns: 1fr 1fr; }
   .skill-bar-track { display: none; }
-  .detail-kpi-row { grid-template-columns: 1fr 1fr; }
   .search-row { flex-direction: column; align-items: stretch; }
   .tab-bar { width: 100%; }
 }
@@ -360,18 +408,19 @@ canvas { display: block; width: 100% !important; }
 {% include 'header.html' %}
 
 <main>
-  <!-- ── Page header ───────────────────────────── -->
-  <div class="page-header">
+
+  <!-- ════════ Page header ════════ -->
+  <div class="page-header reveal">
     <div class="page-header-eyebrow">
       <span class="ph-dot"></span>
       ESCO-Powered Analysis
     </div>
-    <h1>Skills Intelligence</h1>
-    <p>Skill demand, salary ROI, and gap analysis — classified by ESCO standard.</p>
+    <h1>Skills <span class="word-grad">intelligence.</span></h1>
+    <p>Skill demand, salary ROI, gap analysis — every requirement classified by the ESCO standard.</p>
   </div>
 
-  <!-- ── Tab bar ───────────────────────────────── -->
-  <div class="tab-bar">
+  <!-- ════════ Tab bar ════════ -->
+  <div class="tab-bar reveal">
     <button type="button" class="tab-btn active" id="tab-btn-overview" onclick="switchTab('overview')">
       <svg viewBox="0 0 24 24"><rect x="3" y="12" width="4" height="8"/><rect x="10" y="8" width="4" height="12"/><rect x="17" y="4" width="4" height="16"/></svg>
       Overview
@@ -382,59 +431,73 @@ canvas { display: block; width: 100% !important; }
     </button>
   </div>
 
-  <!-- ════════════════ TAB: OVERVIEW ════════════════ -->
+  <!-- ════════ Overview ════════ -->
   <div class="tab-panel active" id="tab-overview">
 
-    <div class="kpi-row mb">
+    <div class="kpi-row mb reveal">
       <div class="kpi">
         <div class="kpi-val" id="kpi-skills">—</div>
         <div class="kpi-label">Unique ESCO Skills</div>
       </div>
-      <div class="kpi">
+      <div class="kpi kpi-blue">
         <div class="kpi-val" id="kpi-categories">12</div>
         <div class="kpi-label">Skill Categories</div>
       </div>
-      <div class="kpi">
+      <div class="kpi kpi-purple">
         <div class="kpi-val" id="kpi-top-salary">—</div>
         <div class="kpi-label">Top Skill Avg Salary</div>
       </div>
-      <div class="kpi">
+      <div class="kpi kpi-green">
         <div class="kpi-val" id="kpi-top-category">—</div>
         <div class="kpi-label">Highest-Paid Category</div>
       </div>
     </div>
 
     <div class="grid-2 mb">
-      <div class="card">
-        <div class="card-title">Salary ROI by Skill</div>
-        <div class="card-subtitle">Top 15 skills ranked by avg min salary of jobs requiring them</div>
+      <div class="card reveal-left">
+        <div class="chart-card-header">
+          <div>
+            <div class="card-title">Salary ROI by Skill</div>
+            <div class="card-subtitle">Top 15 skills by avg min salary</div>
+          </div>
+        </div>
         <canvas id="roiChart" class="chart-canvas"></canvas>
       </div>
-      <div class="card">
-        <div class="card-title">Category Salary Comparison</div>
-        <div class="card-subtitle">Average min/max salary range per skill category</div>
+      <div class="card reveal-right">
+        <div class="chart-card-header">
+          <div>
+            <div class="card-title">Category Salary Comparison</div>
+            <div class="card-subtitle">Avg min/max salary per category</div>
+          </div>
+        </div>
         <canvas id="catSalaryChart" class="chart-canvas"></canvas>
       </div>
     </div>
 
     <div class="grid-2 mb">
-      <div class="card">
-        <div class="card-title">Skill Type Distribution</div>
-        <div class="card-subtitle">Knowledge / Competence / Skill split across all requirements</div>
+      <div class="card reveal-left">
+        <div class="chart-card-header">
+          <div>
+            <div class="card-title">Skill Type Distribution</div>
+            <div class="card-subtitle">Knowledge / Competence / Skill split</div>
+          </div>
+        </div>
         <canvas id="typeChart" class="chart-canvas"></canvas>
       </div>
-      <div class="card">
-        <div class="card-title">Top Categories by Demand</div>
-        <div class="card-subtitle">Total skill occurrences per ESCO category</div>
+      <div class="card reveal-right">
+        <div class="chart-card-header">
+          <div>
+            <div class="card-title">Top Categories by Demand</div>
+            <div class="card-subtitle">Total skill occurrences per category</div>
+          </div>
+        </div>
         <canvas id="demandChart" class="chart-canvas"></canvas>
       </div>
     </div>
 
-    <!-- ── Skill gap drill-down ──────────────────── -->
-    <div class="gap-panel">
-      <div class="gap-panel-header">
-        <div class="gap-panel-title">Skill Gap Drill-Down</div>
-      </div>
+    <!-- Skill gap drill-down -->
+    <div class="gap-panel reveal">
+      <div class="gap-panel-title">Skill gap drill-down</div>
       <p class="gap-hint">Select a career category to see the most demanded skills — use this to identify what to learn for your target field.</p>
       <div class="category-tabs" id="catTabs"></div>
       <div class="skill-list" id="skillList">
@@ -444,10 +507,10 @@ canvas { display: block; width: 100% !important; }
 
   </div>
 
-  <!-- ════════════════ TAB: EXPLORER ════════════════ -->
+  <!-- ════════ Skill explorer ════════ -->
   <div class="tab-panel" id="tab-explorer">
 
-    <div class="search-panel">
+    <div class="search-panel reveal">
       <div class="search-label">Search a skill to see detailed analytics</div>
       <div class="search-row">
         <div class="ac-wrap">
@@ -460,7 +523,6 @@ canvas { display: block; width: 100% !important; }
       </div>
     </div>
 
-    <!-- ── Skill detail (hidden until search) ────── -->
     <div class="skill-detail" id="skillDetail">
 
       <div class="detail-header">
@@ -468,20 +530,20 @@ canvas { display: block; width: 100% !important; }
         <div class="detail-badges" id="detailBadges"></div>
       </div>
 
-      <div class="detail-kpi-row mb">
+      <div class="kpi-row mb">
         <div class="kpi">
           <div class="kpi-val" id="d-kpi-jobs">—</div>
           <div class="kpi-label">Jobs Requiring Skill</div>
         </div>
-        <div class="kpi">
+        <div class="kpi kpi-blue">
           <div class="kpi-val" id="d-kpi-occ">—</div>
           <div class="kpi-label">Total Occurrences</div>
         </div>
-        <div class="kpi">
+        <div class="kpi kpi-purple">
           <div class="kpi-val" id="d-kpi-salary-min">—</div>
           <div class="kpi-label">Avg Min Salary</div>
         </div>
-        <div class="kpi">
+        <div class="kpi kpi-green">
           <div class="kpi-val" id="d-kpi-salary-max">—</div>
           <div class="kpi-label">Avg Max Salary</div>
         </div>
@@ -514,6 +576,8 @@ canvas { display: block; width: 100% !important; }
 
 {% include 'footer.html' %}
 
+<script src="/static/js/site-utils.js"></script>
+
 <script>
 function switchTab(name) {
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
@@ -522,7 +586,6 @@ function switchTab(name) {
   document.getElementById('tab-btn-' + name).classList.add('active');
 }
 
-/* ── Shared chart config ─────────────────────────── */
 const CAT = {
   'Management & Leadership':    '#ff6403',
   'Healthcare & Medicine':      '#f472b6',
@@ -545,20 +608,20 @@ const COLORS = [
 ];
 
 const TIP = {
-  backgroundColor: 'rgba(10,10,30,0.96)',
-  titleColor: '#e2e2f2', bodyColor: '#6868a8',
-  borderColor: '#252550', borderWidth: 1,
-  padding: 10, cornerRadius: 8,
+  backgroundColor: 'rgba(8,8,24,0.96)',
+  titleColor: '#e8e8fb', bodyColor: '#7a7ab8',
+  borderColor: '#29295a', borderWidth: 1,
+  padding: 12, cornerRadius: 10,
   titleFont: { family: 'Outfit', weight: '700' },
-  bodyFont:  { family: 'Outfit' }
+  bodyFont: { family: 'Outfit' }
 };
 const GRID = { color: 'rgba(255,255,255,0.03)' };
-const TICK = { color: '#4a4a7a', font: { family: 'IBM Plex Mono', size: 10 } };
+const TICK = { color: '#5a5a8a', font: { family: 'JetBrains Mono', size: 10 } };
 
 const chartDef = {
   responsive: true, maintainAspectRatio: true,
   plugins: {
-    legend: { labels: { color: '#6868a8', font: { family: 'Outfit', size: 11 }, boxWidth: 10, padding: 14 } },
+    legend: { labels: { color: '#7a7ab8', font: { family: 'Outfit', size: 11 }, boxWidth: 10, padding: 14 } },
     tooltip: TIP
   },
   scales: {
@@ -567,7 +630,7 @@ const chartDef = {
   }
 };
 
-/* ── Salary ROI chart ────────────────────────────── */
+/* ── Salary ROI chart ── */
 fetch('/api/trends/skill-roi?limit=15').then(r => r.json()).then(data => {
   if (!data.length) return;
   document.getElementById('kpi-top-salary').textContent = '$' + Math.round(data[0].avg_min_salary / 1000) + 'K';
@@ -578,12 +641,11 @@ fetch('/api/trends/skill-roi?limit=15').then(r => r.json()).then(data => {
       datasets: [{
         data: data.map(d => d.avg_min_salary),
         backgroundColor: data.map((_, i) => COLORS[i % COLORS.length]),
-        borderRadius: 5, borderSkipped: false
+        borderRadius: 6, borderSkipped: false, barPercentage: 0.85
       }]
     },
     options: {
-      ...chartDef,
-      indexAxis: 'y',
+      ...chartDef, indexAxis: 'y',
       plugins: { ...chartDef.plugins, legend: { display: false } },
       scales: {
         x: { ...chartDef.scales.x, ticks: { ...TICK, callback: v => '$' + Math.round(v/1000) + 'K' } },
@@ -593,7 +655,7 @@ fetch('/api/trends/skill-roi?limit=15').then(r => r.json()).then(data => {
   });
 });
 
-/* ── Category salary chart ───────────────────────── */
+/* ── Category salary ── */
 fetch('/api/trends/category-salary').then(r => r.json()).then(data => {
   if (!data.length) return;
   document.getElementById('kpi-top-category').textContent = data[0].category.split(' ')[0];
@@ -606,19 +668,18 @@ fetch('/api/trends/category-salary').then(r => r.json()).then(data => {
           label: 'Avg Min ($)',
           data: data.map(d => d.avg_min_salary),
           backgroundColor: data.map(d => CAT[d.category] || '#4a4a7a'),
-          borderRadius: 5, borderSkipped: false
+          borderRadius: 6, borderSkipped: false
         },
         {
           label: 'Avg Max ($)',
           data: data.map(d => d.avg_max_salary),
           backgroundColor: data.map(d => (CAT[d.category] || '#4a4a7a') + '44'),
-          borderRadius: 5, borderSkipped: false
+          borderRadius: 6, borderSkipped: false
         }
       ]
     },
     options: {
-      ...chartDef,
-      indexAxis: 'y',
+      ...chartDef, indexAxis: 'y',
       scales: {
         x: { ...chartDef.scales.x, ticks: { ...TICK, callback: v => '$' + Math.round(v/1000) + 'K' } },
         y: { ...chartDef.scales.y, ticks: { ...TICK, font: { family: 'Outfit', size: 10 } } }
@@ -627,9 +688,8 @@ fetch('/api/trends/category-salary').then(r => r.json()).then(data => {
   });
 });
 
-/* ── Skill demand + type distribution + category tabs */
+/* ── Skill demand + cat tabs ── */
 fetch('/api/trends/skill-demand').then(r => r.json()).then(data => {
-  /* Demand bar */
   new Chart(document.getElementById('demandChart'), {
     type: 'bar',
     data: {
@@ -637,17 +697,15 @@ fetch('/api/trends/skill-demand').then(r => r.json()).then(data => {
       datasets: [{
         data: data.map(d => d.total_occurrences),
         backgroundColor: data.map(d => CAT[d.category] || '#4a4a7a'),
-        borderRadius: 5, borderSkipped: false
+        borderRadius: 6, borderSkipped: false, barPercentage: 0.85
       }]
     },
     options: {
-      ...chartDef,
-      indexAxis: 'y',
+      ...chartDef, indexAxis: 'y',
       plugins: { ...chartDef.plugins, legend: { display: false } }
     }
   });
 
-  /* Category tabs */
   const tabs = document.getElementById('catTabs');
   data.forEach((cat, i) => {
     const btn = document.createElement('button');
@@ -665,7 +723,7 @@ fetch('/api/trends/skill-demand').then(r => r.json()).then(data => {
   if (data.length) loadSkillGap(data[0].category);
 });
 
-/* ── Type distribution (doughnut) ───────────────── */
+/* ── Type distribution (doughnut) ── */
 fetch('/api/skills/top?limit=100').then(r => r.json()).then(skills => {
   document.getElementById('kpi-skills').textContent = skills.length;
   const counts = { knowledge: 0, competence: 0, skill: 0, other: 0 };
@@ -684,20 +742,20 @@ fetch('/api/skills/top?limit=100').then(r => r.json()).then(skills => {
         data: [counts.knowledge, counts.competence, counts.skill, counts.other],
         backgroundColor: ['#4f85f6','#22d3a0','#9b6ef3','#3a3a5a'],
         borderColor: '#101030',
-        borderWidth: 2, hoverBorderWidth: 0
+        borderWidth: 3, hoverBorderWidth: 0, hoverOffset: 8
       }]
     },
     options: {
-      responsive: true, maintainAspectRatio: true, cutout: '60%',
+      responsive: true, maintainAspectRatio: true, cutout: '64%',
       plugins: {
-        legend: { position: 'bottom', labels: { color: '#6868a8', padding: 16, font: { family: 'Outfit', size: 11 }, boxWidth: 10 } },
+        legend: { position: 'bottom', labels: { color: '#7a7ab8', padding: 16, font: { family: 'Outfit', size: 11 }, boxWidth: 10 } },
         tooltip: TIP
       }
     }
   });
 });
 
-/* ── Skill gap drill-down ────────────────────────── */
+/* ── Skill gap drill-down ── */
 function loadSkillGap(category) {
   fetch(`/api/trends/skills-by-category?category=${encodeURIComponent(category)}&limit=12`)
     .then(r => r.json())
@@ -706,8 +764,8 @@ function loadSkillGap(category) {
       if (!skills.length) { list.innerHTML = '<p class="text-dim">No data available.</p>'; return; }
       const max = skills[0].count;
       list.innerHTML = skills.map(s => {
-        const pct  = Math.round((s.count / max) * 100);
-        const t    = (s.type || '').toLowerCase();
+        const pct = Math.round((s.count / max) * 100);
+        const t = (s.type || '').toLowerCase();
         const cls  = t.includes('knowledge') ? 'badge-knowledge'
                    : t.includes('competence') ? 'badge-competence'
                    : t.includes('skill') ? 'badge-skill' : '';
@@ -725,13 +783,12 @@ function loadSkillGap(category) {
     });
 }
 
-/* ════════ SKILL EXPLORER ════════ */
+/* ════════ Skill Explorer ════════ */
 const detailCharts = {};
 function killChart(id) { if (detailCharts[id]) { detailCharts[id].destroy(); delete detailCharts[id]; } }
 const fmtSal = v => v ? '$' + Math.round(v / 1000) + 'K' : 'N/A';
 const fmtNum = n => n >= 1000 ? Math.round(n / 1000) + 'K' : String(n);
 
-/* ── Autocomplete ────────────────────────────────── */
 let allSkills = [], acIdx = -1;
 fetch('/api/skills/top?limit=300').then(r => r.json()).then(s => { allSkills = s; });
 
@@ -776,10 +833,9 @@ function searchSkill() { const v = skillInput.value.trim(); if (v) { closeAC(); 
 function hl(text, q) {
   const i = text.toLowerCase().indexOf(q);
   if (i < 0) return text;
-  return text.slice(0,i) + '<strong style="color:#e2e2f2">' + text.slice(i, i+q.length) + '</strong>' + text.slice(i+q.length);
+  return text.slice(0,i) + '<strong style="color:var(--text)">' + text.slice(i, i+q.length) + '</strong>' + text.slice(i+q.length);
 }
 
-/* ── Skill detail loader ─────────────────────────── */
 function loadSkillDetail(skillName) {
   document.getElementById('skillDetail').classList.add('visible');
   document.getElementById('detailName').textContent = skillName;
@@ -824,16 +880,22 @@ function loadSkillDetail(skillName) {
     .then(r => r.json())
     .then(data => {
       if (!data.length) return;
-      detailCharts['timeline'] = new Chart(document.getElementById('detailTimelineChart'), {
+      const ctx = document.getElementById('detailTimelineChart').getContext('2d');
+      const grad = ctx.createLinearGradient(0, 0, 0, 320);
+      grad.addColorStop(0, 'rgba(255, 100, 3, 0.30)');
+      grad.addColorStop(1, 'rgba(255, 100, 3, 0)');
+      detailCharts['timeline'] = new Chart(ctx, {
         type: 'line',
         data: {
           labels: data.map(d => d.month),
           datasets: [{
             data: data.map(d => d.count),
-            borderColor: '#ff6403',
-            backgroundColor: 'rgba(255,100,3,0.10)',
-            borderWidth: 2, pointRadius: 0, pointHoverRadius: 5,
+            borderColor: '#ff9a00',
+            backgroundColor: grad,
+            borderWidth: 2.5,
+            pointRadius: 0, pointHoverRadius: 6,
             pointHoverBackgroundColor: '#ff6403',
+            pointHoverBorderColor: '#fff', pointHoverBorderWidth: 2,
             fill: true, tension: 0.4
           }]
         },
@@ -853,7 +915,7 @@ function loadSkillDetail(skillName) {
           datasets: [{
             data: top.map(d => d.count),
             backgroundColor: COLORS,
-            borderRadius: 5, borderSkipped: false
+            borderRadius: 6, borderSkipped: false, barPercentage: 0.85
           }]
         },
         options: { ...chartDef, indexAxis: 'y', plugins: { ...chartDef.plugins, legend: { display: false } } }
@@ -867,5 +929,6 @@ function pickRelated(name) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 </script>
+
 </body>
 </html>

@@ -4,33 +4,72 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Geography — VakansioGraph</title>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/static/css/shared-styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/design-system.css">
 <link rel="icon" type="image/png" href="/static/images/favicon.png">
 <script src="/static/js/chart.umd.min.js"></script>
 <script src="/static/js/countries.js"></script>
 <style>
 canvas { display: block; width: 100% !important; }
-.chart-canvas  { max-height: 320px; }
-.volume-canvas { max-height: 220px; }
-.mb { margin-bottom: 1rem; }
+.chart-canvas { max-height: 340px; }
+.volume-canvas { max-height: 240px; }
 
-/* ── Country filter panel ───────────────────────── */
+/* ── Page header ── */
+.page-header {
+  padding: 4rem 0 3rem;
+  border-radius: var(--radius-xl);
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.page-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 50% 60% at 100% 50%, rgba(79,133,246,0.14) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 50% at 0% 100%, var(--accent-dim) 0%, transparent 65%);
+  z-index: -1;
+}
+
+/* ── Country filter ── */
 .filter-panel {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 1.5rem;
+  padding: 1.5rem 1.75rem;
   margin-bottom: 1.25rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.filter-panel::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
 }
 
 .filter-label {
+  font-family: var(--mono);
   font-size: 0.68rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1.2px;
-  color: var(--text-2);
+  letter-spacing: 1.4px;
+  color: var(--accent);
   margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.filter-label::before {
+  content: '';
+  width: 16px; height: 1px;
+  background: var(--accent);
 }
 
 .pills {
@@ -40,65 +79,65 @@ canvas { display: block; width: 100% !important; }
 }
 
 .pill {
-  padding: 0.35rem 0.9rem;
+  padding: 0.45rem 1rem;
   border-radius: 100px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-2);
   background: transparent;
   color: var(--text-2);
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-weight: 600;
   cursor: pointer;
-  font-family: 'Outfit', sans-serif;
-  transition: color 0.15s, border-color 0.15s, background 0.15s;
+  font-family: var(--body);
+  transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.15s;
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.4rem;
   line-height: 1;
+  white-space: nowrap;
 }
 
 .pill:hover {
-  border-color: var(--border-2);
+  border-color: var(--accent);
   color: var(--text);
-  background: var(--border);
+  transform: translateY(-1px);
 }
 
 .pill.active {
   border-color: var(--accent);
-  color: var(--accent);
-  background: var(--accent-dim);
+  color: #1a0a00;
+  background: var(--grad-fire);
+  box-shadow: 0 4px 16px rgba(255, 100, 3, 0.35);
 }
+.pill.active .pill-count { color: rgba(26, 10, 0, 0.65); }
 
 .pill-count {
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   font-family: var(--mono);
-  opacity: 0.7;
-}
-
-/* ── Selected country label ─────────────────────── */
-.country-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--text-2);
-  margin-bottom: 1rem;
-}
-
-.country-label strong {
-  color: var(--accent);
-  font-family: var(--mono);
-}
-
-.kpi-region .kpi-val {
-  color: var(--blue);
-  font-size: 1.3rem;
-  letter-spacing: -0.5px;
+  color: var(--text-3);
 }
 
 .loading-hint {
   color: var(--text-2);
   font-size: 0.85rem;
+  padding: 0.5rem 0;
+}
+
+/* ── Chart card header ── */
+.chart-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 1.25rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.chart-meta {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
 }
 
 @media (max-width: 768px) {
@@ -111,61 +150,75 @@ canvas { display: block; width: 100% !important; }
 {% include 'header.html' %}
 
 <main>
-  <!-- ── Page header ───────────────────────────── -->
-  <div class="page-header">
+
+  <!-- ════════ Page header ════════ -->
+  <div class="page-header reveal">
     <div class="page-header-eyebrow">
       <span class="ph-dot"></span>
       Geographic Intelligence
     </div>
-    <h1>Country Analysis</h1>
-    <p>Job market breakdown by country — top skills, hiring volume, and demand trends per region.</p>
+    <h1>Country <span class="word-grad">analysis.</span></h1>
+    <p>Job market breakdown by country — top skills, hiring volume, demand trends per region.</p>
   </div>
 
-  <!-- ── Country filter ────────────────────────── -->
-  <div class="filter-panel mb">
-    <div class="filter-label">Filter by Country</div>
+  <!-- ════════ Country filter ════════ -->
+  <div class="filter-panel reveal">
+    <div class="filter-label">Filter by country</div>
     <div class="pills" id="countryPills">
       <span class="loading-hint">Loading countries…</span>
     </div>
   </div>
 
-  <!-- ── KPI strip ─────────────────────────────── -->
-  <div class="kpi-row mb">
+  <!-- ════════ KPIs ════════ -->
+  <div class="kpi-row mb reveal">
     <div class="kpi">
       <div class="kpi-val" id="kpi-jobs">—</div>
       <div class="kpi-sub">Total Jobs</div>
     </div>
-    <div class="kpi">
+    <div class="kpi kpi-blue">
       <div class="kpi-val" id="kpi-orgs">—</div>
       <div class="kpi-sub">Organizations</div>
     </div>
-    <div class="kpi">
+    <div class="kpi kpi-purple">
       <div class="kpi-val" id="kpi-skills">—</div>
       <div class="kpi-sub">Unique Skills</div>
     </div>
-    <div class="kpi kpi-region">
+    <div class="kpi kpi-green">
       <div class="kpi-val" id="kpi-country">ALL</div>
       <div class="kpi-sub">Selected Region</div>
     </div>
   </div>
 
-  <!-- ── Volume chart full width ───────────────── -->
-  <div class="card full mb">
-    <div class="card-title">Job Posting Volume</div>
-    <div class="card-subtitle">Monthly posting count for the selected country</div>
+  <!-- ════════ Volume chart ════════ -->
+  <div class="card full mb reveal">
+    <div class="chart-card-header">
+      <div>
+        <div class="card-title">Job Posting Volume</div>
+        <div class="card-subtitle">Monthly posting count for the selected country</div>
+      </div>
+      <div class="chart-meta" id="volume-meta">live · 25 months</div>
+    </div>
     <canvas id="volumeChart" class="volume-canvas"></canvas>
   </div>
 
-  <!-- ── Two charts ────────────────────────────── -->
-  <div class="grid-2">
-    <div class="card">
-      <div class="card-title">Top 20 In-Demand Skills</div>
-      <div class="card-subtitle">Most required skills for the selected country</div>
+  <!-- ════════ Two-up ════════ -->
+  <div class="grid-2 mb">
+    <div class="card reveal-left">
+      <div class="chart-card-header">
+        <div>
+          <div class="card-title">Top 20 In-Demand Skills</div>
+          <div class="card-subtitle">Most required for the selected country</div>
+        </div>
+      </div>
       <canvas id="skillsChart" class="chart-canvas"></canvas>
     </div>
-    <div class="card">
-      <div class="card-title">Skill Category Distribution</div>
-      <div class="card-subtitle">Share of skill requirements by ESCO category</div>
+    <div class="card reveal-right">
+      <div class="chart-card-header">
+        <div>
+          <div class="card-title">Skill Category Distribution</div>
+          <div class="card-subtitle">Share by ESCO category</div>
+        </div>
+      </div>
       <canvas id="categoryChart" class="chart-canvas"></canvas>
     </div>
   </div>
@@ -173,6 +226,8 @@ canvas { display: block; width: 100% !important; }
 </main>
 
 {% include 'footer.html' %}
+
+<script src="/static/js/site-utils.js"></script>
 
 <script>
 const CAT = {
@@ -198,20 +253,20 @@ const CHART_COLORS = [
 ];
 
 const TIP = {
-  backgroundColor: 'rgba(10,10,30,0.96)',
-  titleColor: '#e2e2f2', bodyColor: '#6868a8',
-  borderColor: '#252550', borderWidth: 1,
-  padding: 10, cornerRadius: 8,
+  backgroundColor: 'rgba(8,8,24,0.96)',
+  titleColor: '#e8e8fb', bodyColor: '#7a7ab8',
+  borderColor: '#29295a', borderWidth: 1,
+  padding: 12, cornerRadius: 10,
   titleFont: { family: 'Outfit', weight: '700' },
-  bodyFont:  { family: 'Outfit' }
+  bodyFont: { family: 'Outfit' }
 };
 const GRID = { color: 'rgba(255,255,255,0.03)' };
-const TICK = { color: '#4a4a7a', font: { family: 'IBM Plex Mono', size: 10 } };
+const TICK = { color: '#5a5a8a', font: { family: 'JetBrains Mono', size: 10 } };
 
 const base = {
   responsive: true, maintainAspectRatio: true,
   plugins: {
-    legend: { labels: { color: '#6868a8', font: { family: 'Outfit', size: 11 }, boxWidth: 10, padding: 14 } },
+    legend: { labels: { color: '#7a7ab8', font: { family: 'Outfit', size: 11 }, boxWidth: 10, padding: 14 } },
     tooltip: TIP
   },
   scales: {
@@ -229,7 +284,7 @@ function destroyChart(id) {
 
 const fmt = n => n >= 1000000 ? (n/1000000).toFixed(1) + 'M' : n >= 1000 ? Math.round(n/1000) + 'K' : String(n);
 
-/* ── Country pills ──────────────────────────────── */
+/* ── Country pills ── */
 function loadCountries() {
   fetch('/api/trends/countries').then(r => r.json()).then(data => {
     const container = document.getElementById('countryPills');
@@ -259,14 +314,13 @@ function loadCountries() {
 function setCountry(code) {
   activeCountry = code;
   document.querySelectorAll('.pill').forEach(p => p.classList.toggle('active', p.dataset.code === code));
-  const label = document.getElementById('kpi-country');
-  label.textContent = code === 'ALL' ? 'ALL' : countryName(code);
+  document.getElementById('kpi-country').textContent = code === 'ALL' ? 'ALL' : countryName(code);
   loadKpis(code);
   loadVolume(code);
   loadTopSkills(code);
 }
 
-/* ── KPIs ───────────────────────────────────────── */
+/* ── KPIs ── */
 function loadKpis(country) {
   ['kpi-jobs','kpi-orgs','kpi-skills'].forEach(id => {
     document.getElementById(id).textContent = '…';
@@ -280,32 +334,45 @@ function loadKpis(country) {
     });
 }
 
-/* ── Volume ─────────────────────────────────────── */
+/* ── Volume ── */
 function loadVolume(country) {
   destroyChart('volume');
   fetch(`/api/trends/posting-volume-by-country?country=${encodeURIComponent(country)}`)
     .then(r => r.json())
     .then(data => {
       const filtered = data.filter(d => d.count > 0);
-      charts['volume'] = new Chart(document.getElementById('volumeChart'), {
+      const ctx = document.getElementById('volumeChart').getContext('2d');
+      const grad = ctx.createLinearGradient(0, 0, 0, 240);
+      grad.addColorStop(0, 'rgba(255, 100, 3, 0.30)');
+      grad.addColorStop(1, 'rgba(255, 100, 3, 0)');
+      charts['volume'] = new Chart(ctx, {
         type: 'line',
         data: {
           labels: filtered.map(d => d.month),
           datasets: [{
             data: filtered.map(d => d.count),
-            borderColor: '#ff6403',
-            backgroundColor: 'rgba(255,100,3,0.10)',
-            borderWidth: 2, pointRadius: 0, pointHoverRadius: 5,
+            borderColor: '#ff9a00',
+            backgroundColor: grad,
+            borderWidth: 2.5,
+            pointRadius: 0, pointHoverRadius: 6,
             pointHoverBackgroundColor: '#ff6403',
+            pointHoverBorderColor: '#fff', pointHoverBorderWidth: 2,
             fill: true, tension: 0.4
           }]
         },
-        options: { ...base, plugins: { ...base.plugins, legend: { display: false } } }
+        options: {
+          ...base,
+          plugins: { ...base.plugins, legend: { display: false } },
+          scales: {
+            x: { ...base.scales.x },
+            y: { ...base.scales.y, ticks: { ...TICK, callback: v => v >= 1000 ? (v/1000).toFixed(1) + 'K' : v } }
+          }
+        }
       });
     });
 }
 
-/* ── Top skills + category donut ────────────────── */
+/* ── Top skills + category donut ── */
 function loadTopSkills(country) {
   destroyChart('skills');
   destroyChart('category');
@@ -321,19 +388,24 @@ function loadTopSkills(country) {
         datasets: [{
           data: skills.map(s => s.count),
           backgroundColor: CHART_COLORS,
-          borderRadius: 5,
-          borderSkipped: false
+          borderRadius: 6,
+          borderSkipped: false,
+          barPercentage: 0.85
         }]
       },
-      options: { ...base, indexAxis: 'y', plugins: { ...base.plugins, legend: { display: false } } }
+      options: {
+        ...base, indexAxis: 'y',
+        plugins: { ...base.plugins, legend: { display: false } },
+        scales: {
+          x: { ...base.scales.x, ticks: { ...TICK, callback: v => v >= 1000 ? (v/1000).toFixed(1) + 'K' : v } },
+          y: { ...base.scales.y, ticks: { ...TICK, font: { family: 'Outfit', size: 10 } } }
+        }
+      }
     });
 
     const catCounts = {};
-    skills.forEach(s => {
-      const cat = s.category || 'Other';
-      catCounts[cat] = (catCounts[cat] || 0) + s.count;
-    });
-    const cats = Object.entries(catCounts).sort((a,b) => b[1]-a[1]);
+    skills.forEach(s => { const c = s.category || 'Other'; catCounts[c] = (catCounts[c] || 0) + s.count; });
+    const cats = Object.entries(catCounts).sort((a, b) => b[1] - a[1]);
 
     charts['category'] = new Chart(document.getElementById('categoryChart'), {
       type: 'doughnut',
@@ -343,13 +415,13 @@ function loadTopSkills(country) {
           data: cats.map(c => c[1]),
           backgroundColor: cats.map(c => CAT[c[0]] || '#4a4a7a'),
           borderColor: '#101030',
-          borderWidth: 2, hoverBorderWidth: 0
+          borderWidth: 3, hoverBorderWidth: 0, hoverOffset: 8
         }]
       },
       options: {
-        responsive: true, maintainAspectRatio: true, cutout: '58%',
+        responsive: true, maintainAspectRatio: true, cutout: '62%',
         plugins: {
-          legend: { position: 'right', labels: { color: '#6868a8', boxWidth: 10, font: { family: 'Outfit', size: 10 }, padding: 10 } },
+          legend: { position: 'right', labels: { color: '#7a7ab8', boxWidth: 10, font: { family: 'Outfit', size: 10 }, padding: 10 } },
           tooltip: TIP
         }
       }
@@ -360,5 +432,6 @@ function loadTopSkills(country) {
 loadCountries();
 setCountry('ALL');
 </script>
+
 </body>
 </html>

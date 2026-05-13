@@ -4,535 +4,519 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VakansioGraph — Labor Market Intelligence</title>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/static/css/shared-styles.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/design-system.css">
 <link rel="icon" type="image/png" href="/static/images/favicon.png">
 <style>
 
-main {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 2rem;
+/* ════════ INDEX-SPECIFIC LAYOUT ════════════════════════════════ */
+
+/* ─── HERO ───────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: calc(100vh - 68px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 0 4rem;
+  overflow: hidden;
 }
 
-/* ── Hero ──────────────────────────────────────── */
-.hero {
-  padding: 5rem 0 4rem;
+#heroCanvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.85;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% 50%, transparent 0%, var(--bg) 75%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  position: relative;
+  max-width: 920px;
+  padding: 0 2rem;
 }
 
 .hero-badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  background: rgba(255, 100, 3, 0.1);
-  border: 1px solid rgba(255, 100, 3, 0.3);
+  gap: 0.5rem;
+  padding: 0.45rem 1rem 0.45rem 0.7rem;
+  border: 1px solid rgba(255,100,3,0.3);
   border-radius: 100px;
-  padding: 0.35rem 1rem;
-  font-size: 0.78rem;
+  background: rgba(255,100,3,0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  font-family: var(--mono);
+  font-size: 0.72rem;
   font-weight: 600;
-  color: var(--accent);
   text-transform: uppercase;
-  letter-spacing: 0.8px;
+  letter-spacing: 1.2px;
+  color: var(--accent);
   margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
 }
+
+.hero-badge::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,154,0,0.2), transparent);
+  transform: translateX(-100%);
+  animation: badgeShine 3.5s ease-in-out infinite;
+}
+@keyframes badgeShine { to { transform: translateX(100%); } }
 
 .hero-badge-dot {
-  width: 6px;
-  height: 6px;
+  width: 6px; height: 6px;
   background: var(--accent);
   border-radius: 50%;
+  box-shadow: 0 0 10px var(--accent);
   animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(0.8); }
+  z-index: 1;
 }
 
 .hero h1 {
-  font-size: clamp(2.4rem, 5vw, 4rem);
-  font-weight: 900;
-  line-height: 1.05;
-  letter-spacing: -2px;
+  font-family: var(--display);
+  font-size: clamp(2.6rem, 6.5vw, 5.5rem);
+  font-weight: 700;
+  letter-spacing: -3.5px;
+  line-height: 0.96;
   margin-bottom: 1.5rem;
-  background: linear-gradient(120deg, var(--text) 0%, var(--accent) 50%, var(--accent-2) 100%);
+  color: var(--text);
+}
+
+.hero h1 .grad {
+  background: var(--grad-fire);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  max-width: 800px;
+  font-style: italic;
+  font-weight: 700;
 }
 
 .hero-sub {
   font-size: 1.05rem;
   color: var(--text-2);
-  max-width: 620px;
-  line-height: 1.75;
-  margin-bottom: 2.5rem;
-  font-weight: 300;
+  max-width: 580px;
+  line-height: 1.7;
+  margin-bottom: 2.25rem;
+  font-weight: 400;
 }
 
 .hero-buttons {
   display: flex;
-  gap: 1rem;
-  justify-content: center;
+  gap: 0.8rem;
   flex-wrap: wrap;
-  margin-bottom: 4rem;
+  justify-content: center;
+  margin-bottom: 0.5rem;
 }
 
-.btn {
-  padding: 0.85rem 1.8rem;
-  border: none;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
-  text-decoration: none;
-  display: inline-flex;
+/* ── Floating stat callouts ─────────────────────────────────── */
+.hero .ticker { width: 100%; max-width: 580px; }
+
+.float-stat {
+  position: absolute;
+  z-index: 2;
+  background: rgba(10, 10, 30, 0.7);
+  border: 1px solid var(--border-2);
+  border-radius: 14px;
+  padding: 0.7rem 1rem;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  font-family: var(--mono);
+  display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-family: 'Outfit', sans-serif;
+  gap: 0.7rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  animation: floatStat 6s ease-in-out infinite;
+  opacity: 0;
 }
 
-.btn-primary {
-  background: var(--accent);
-  color: #000;
+.float-stat-icon {
+  width: 30px; height: 30px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(255, 100, 3, 0.4);
+.float-stat-val { font-size: 1.1rem; font-weight: 700; color: var(--text); line-height: 1; margin-bottom: 0.2rem; }
+.float-stat-lbl { font-size: 0.65rem; color: var(--text-2); text-transform: uppercase; letter-spacing: 0.5px; }
+
+.fs-1 { top: 15%; left: 5%;  animation-delay: 1.2s; }
+.fs-2 { top: 28%; right: 6%; animation-delay: 1.5s; }
+.fs-3 { bottom: 22%; left: 8%; animation-delay: 1.8s; }
+.fs-4 { bottom: 16%; right: 4%; animation-delay: 2.1s; }
+
+@keyframes floatStat {
+  0%   { opacity: 0; transform: translateY(20px); }
+  10%  { opacity: 1; transform: translateY(0); }
+  50%  { transform: translateY(-6px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
-.btn-secondary {
-  background: var(--bg-card);
-  color: var(--text);
-  border: 1px solid var(--border);
-}
+@media (max-width: 900px) { .float-stat { display: none; } }
 
-.btn-secondary:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  transform: translateY(-2px);
-}
-
-/* ── Stats ─────────────────────────────────────── */
+/* ════════ STATS STRIP ══════════════════════════════════════════ */
 .stats-strip {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 0;
-  border: 1px solid var(--border);
-  border-radius: 16px;
+  background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg-card-2) 100%);
+  border: 1px solid var(--border-2);
+  border-radius: var(--radius-lg);
   overflow: hidden;
-  background: var(--bg-card);
-  width: 100%;
-  max-width: 860px;
+  position: relative;
+  margin: 0 0 5rem;
+  box-shadow: var(--shadow-2), inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.stats-strip::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), var(--purple), transparent);
 }
 
 .stat-item {
-  padding: 1.5rem 1.2rem;
+  padding: 2rem 1.5rem;
   text-align: center;
   position: relative;
+  transition: background 0.3s;
 }
+
+.stat-item:hover { background: rgba(255,255,255,0.02); }
 
 .stat-item:not(:last-child)::after {
   content: '';
   position: absolute;
-  right: 0;
-  top: 20%;
-  height: 60%;
+  right: 0; top: 25%; height: 50%;
   width: 1px;
   background: var(--border);
 }
 
 .stat-num {
-  font-size: 1.8rem;
-  font-weight: 900;
-  color: var(--accent);
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--mono);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
   line-height: 1;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: -1px;
+  background: var(--grad-fire);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
+
+.stat-item:nth-child(2) .stat-num { background: var(--grad-night); -webkit-background-clip: text; background-clip: text; }
+.stat-item:nth-child(3) .stat-num { background: linear-gradient(135deg, var(--purple), var(--purple-2)); -webkit-background-clip: text; background-clip: text; }
+.stat-item:nth-child(4) .stat-num { background: linear-gradient(135deg, var(--green), #5ce4b8); -webkit-background-clip: text; background-clip: text; }
 
 .stat-label {
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   color: var(--text-2);
   text-transform: uppercase;
-  letter-spacing: 0.6px;
-  font-weight: 500;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-family: var(--mono);
 }
 
-/* ── Section Base ───────────────────────────────── */
-.section {
-  padding: 5rem 0;
-  border-top: 1px solid var(--border);
-}
+/* ════════ Marquee ══════════════════════════════════════════════ */
+.marquee-section { margin: 0 -2rem 5rem; }
 
-.section-label {
-  font-size: 0.72rem;
+/* ════════ SECTION header ═══════════════════════════════════════ */
+.section { padding: 5rem 0; position: relative; }
+
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   color: var(--accent);
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
+.section-eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--accent); box-shadow: 0 0 8px var(--accent); }
 
 .section-title {
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
-  font-weight: 900;
-  letter-spacing: -0.5px;
-  margin-bottom: 0.75rem;
-  line-height: 1.15;
+  font-family: var(--display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: -2px;
+  line-height: 1.02;
+  margin-bottom: 1rem;
+  max-width: 18ch;
 }
 
-.section-desc {
-  color: var(--text-2);
-  font-size: 0.95rem;
-  line-height: 1.7;
-  max-width: 520px;
+.section-title .grad {
+  background: var(--grad-fire);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-style: italic;
 }
+
+.section-desc { color: var(--text-2); font-size: 1rem; line-height: 1.7; max-width: 560px; }
 
 .section-header {
-  margin-bottom: 3rem;
-}
-
-/* ── Features ───────────────────────────────────── */
-.features-grid {
+  margin-bottom: 3.5rem;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 3rem;
+  align-items: end;
 }
 
-.feature-card {
-  padding: 1.75rem;
-  border-radius: 12px;
-  background: var(--bg-card);
+.section-header-side {
+  text-align: right;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--text-3);
+}
+.section-header-side span { display: block; color: var(--text-2); margin-bottom: 0.3rem; }
+
+@media (max-width: 768px) {
+  .section-header { grid-template-columns: 1fr; }
+  .section-header-side { text-align: left; }
+}
+
+/* ════════ BENTO GRID ═══════════════════════════════════════════ */
+.bento {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: minmax(220px, auto);
+  gap: 1rem;
+}
+
+.bento-cell {
+  background: linear-gradient(160deg, var(--bg-card) 0%, var(--bg-card-2) 100%);
   border: 1px solid var(--border);
-  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
-}
-
-.feature-card:hover {
-  border-color: rgba(255, 100, 3, 0.5);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-}
-
-.feature-icon {
-  width: 40px;
-  height: 40px;
-  background: rgba(255, 100, 3, 0.1);
-  border-radius: 10px;
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.25s, transform 0.25s;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-  color: var(--accent);
+  flex-direction: column;
+  isolation: isolate;
 }
 
-.feature-icon svg {
-  width: 20px;
-  height: 20px;
-  stroke: currentColor;
-  fill: none;
-  stroke-width: 1.75;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.feature-card h3 {
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  letter-spacing: -0.2px;
-}
-
-.feature-card p {
-  color: var(--text-2);
-  font-size: 0.875rem;
-  line-height: 1.65;
-}
-
-/* ── How It Works ───────────────────────────────── */
-.how-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-  position: relative;
-}
-
-.how-step {
-  text-align: center;
-  padding: 1.5rem 1rem;
-  position: relative;
-}
-
-.how-step:not(:last-child)::after {
+.bento-cell::before {
   content: '';
   position: absolute;
-  right: -0.75rem;
-  top: 2.2rem;
-  width: 1.5rem;
-  height: 1px;
-  background: var(--border);
+  inset: 0;
+  background: radial-gradient(ellipse 90% 70% at 100% 0%, var(--accent-dim), transparent 65%);
+  opacity: 0;
+  transition: opacity 0.35s;
+  z-index: -1;
 }
 
-.step-num {
-  width: 44px;
-  height: 44px;
-  background: rgba(255, 100, 3, 0.12);
-  border: 1px solid rgba(255, 100, 3, 0.3);
-  border-radius: 50%;
+.bento-cell:hover { border-color: var(--border-2); transform: translateY(-4px); }
+.bento-cell:hover::before { opacity: 1; }
+
+.bento-cell .icon {
+  width: 42px; height: 42px;
+  border-radius: 12px;
+  background: var(--accent-dim);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 900;
-  font-size: 0.85rem;
   color: var(--accent);
-  margin: 0 auto 1rem;
-  font-family: 'IBM Plex Mono', monospace;
+  margin-bottom: 1.2rem;
+  flex-shrink: 0;
+  position: relative;
 }
 
-.how-step h4 {
-  font-size: 0.9rem;
-  font-weight: 700;
-  margin-bottom: 0.4rem;
-}
-
-.how-step p {
-  font-size: 0.8rem;
-  color: var(--text-2);
-  line-height: 1.6;
-}
-
-/* ── Dashboards ─────────────────────────────────── */
-.dashboards-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-}
-
-.dashboard-card {
-  padding: 2rem;
+.bento-cell .icon::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
   border-radius: 14px;
+  background: var(--grad-fire);
+  z-index: -1;
+  filter: blur(10px);
+  opacity: 0.3;
+}
+
+.bento-cell .icon svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+.bento-cell h3 { font-family: var(--display); font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.4px; color: var(--text); }
+.bento-cell p { color: var(--text-2); font-size: 0.9rem; line-height: 1.6; }
+
+.bento-cell .meta {
+  margin-top: auto;
+  padding-top: 1rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--text-3);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.b-wide { grid-column: span 3; }
+.b-tall { grid-row: span 2; grid-column: span 3; }
+.b-1    { grid-column: span 2; }
+.b-full { grid-column: span 6; }
+.b-half { grid-column: span 3; }
+
+.bento-feature {
+  background: linear-gradient(135deg, rgba(255,100,3,0.12) 0%, rgba(155,110,243,0.08) 100%), var(--bg-card);
+  border-color: rgba(255,100,3,0.25);
+}
+.bento-feature .icon { background: var(--grad-fire); color: #1a0a00; box-shadow: 0 6px 24px rgba(255,100,3,0.4); }
+.bento-feature .icon::after { display: none; }
+
+.bento-blue .icon   { background: rgba(79,133,246,0.12); color: var(--blue); }
+.bento-blue .icon::after { background: var(--grad-night); }
+
+.bento-purple .icon { background: rgba(155,110,243,0.12); color: var(--purple); }
+.bento-purple .icon::after { background: linear-gradient(135deg, var(--purple), var(--blue)); }
+
+.bento-green .icon  { background: rgba(34,211,160,0.12); color: var(--green); }
+.bento-green .icon::after { background: linear-gradient(135deg, var(--green), #5ce4b8); }
+
+/* ── Mini live chart ─────────────────────────────────── */
+.mini-chart { height: 70px; margin: 0.5rem 0 1.25rem; position: relative; }
+.mini-chart svg { width: 100%; height: 100%; overflow: visible; }
+.mini-chart .line { fill: none; stroke: url(#fireGrad); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 6px rgba(255,100,3,0.5)); }
+.mini-chart .area { fill: url(#fireFill); }
+.mini-chart .dot { fill: var(--accent); filter: drop-shadow(0 0 6px var(--accent)); animation: dotPulse 2.5s ease-in-out infinite; }
+@keyframes dotPulse { 0%,100% { opacity: 1; r: 4; } 50% { opacity: 0.7; r: 5; } }
+
+/* ── Mini bars ─────────────────────────────────────── */
+.mini-bars { display: flex; align-items: flex-end; gap: 4px; height: 80px; margin-bottom: 1rem; }
+.mini-bars .bar { flex: 1; background: var(--grad-fire); border-radius: 3px 3px 0 0; min-height: 8px; opacity: 0.85; transition: opacity 0.3s; animation: barRise 1.2s cubic-bezier(.34,1.56,.64,1) both; }
+.mini-bars .bar:hover { opacity: 1; }
+@keyframes barRise { from { transform: scaleY(0); transform-origin: bottom; } to { transform: scaleY(1); transform-origin: bottom; } }
+
+/* ── Mini world map ─────────────────────────────────── */
+.mini-map { position: relative; height: 200px; margin-top: auto; display: flex; align-items: center; justify-content: center; }
+.mini-map svg { width: 100%; height: 100%; }
+
+/* ── Type breakdown chips ───────────────────────────── */
+.type-viz { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem; margin: 0.75rem 0 1rem; }
+.type-chip { text-align: center; padding: 0.85rem 0.5rem; border-radius: 12px; border: 1px solid var(--border-2); background: var(--bg); }
+.type-chip .pct { font-family: var(--mono); font-size: 1.4rem; font-weight: 700; line-height: 1; margin-bottom: 0.3rem; }
+.type-chip .lbl { font-size: 0.65rem; color: var(--text-2); text-transform: uppercase; letter-spacing: 0.5px; font-family: var(--mono); font-weight: 600; }
+.type-chip.knowledge .pct  { color: #4f85f6; }
+.type-chip.competence .pct { color: #22d3a0; }
+.type-chip.skill .pct      { color: #9b6ef3; }
+
+/* ── Big number callout ─────────────────────────────── */
+.bento-callout .big-num { font-family: var(--mono); font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 700; line-height: 0.9; letter-spacing: -3px; background: var(--grad-fire); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.4rem; }
+.bento-callout .sub { font-size: 0.85rem; color: var(--text-2); max-width: 200px; line-height: 1.5; }
+
+@media (max-width: 1024px) {
+  .bento { grid-template-columns: repeat(4, 1fr); }
+  .b-wide { grid-column: span 4; }
+  .b-tall { grid-column: span 4; grid-row: span 1; }
+  .b-1, .b-half { grid-column: span 2; }
+  .b-full { grid-column: span 4; }
+}
+@media (max-width: 600px) {
+  .bento { grid-template-columns: 1fr; }
+  .b-wide, .b-tall, .b-1, .b-half, .b-full { grid-column: span 1; }
+}
+
+/* ════════ HOW IT WORKS ═════════════════════════════════════════ */
+.how { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+.how-track { position: absolute; top: 30px; left: 8%; right: 8%; height: 1px; background: var(--border); z-index: 0; }
+.how-track::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, var(--accent), var(--purple), var(--blue)); box-shadow: 0 0 10px var(--accent-glow); transform-origin: left; animation: howFill 3.5s ease-out forwards; }
+@keyframes howFill { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+.how-step { text-align: center; position: relative; z-index: 1; padding: 0 0.5rem; }
+.step-num { width: 60px; height: 60px; background: var(--bg-card); border: 1px solid var(--border-2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-weight: 700; font-size: 1.1rem; color: var(--accent); margin: 0 auto 1.5rem; position: relative; box-shadow: 0 0 0 6px var(--bg); transition: transform 0.3s, border-color 0.3s; }
+.how-step:nth-child(2) .step-num { color: var(--accent-2); }
+.how-step:nth-child(3) .step-num { color: var(--purple); }
+.how-step:nth-child(4) .step-num { color: var(--blue); }
+.how-step:hover .step-num { transform: scale(1.06); border-color: var(--accent); }
+.step-num::after { content: ''; position: absolute; inset: -8px; border-radius: 50%; border: 1px solid var(--accent); opacity: 0; animation: stepRipple 3s ease-out infinite; animation-delay: var(--delay, 0s); }
+@keyframes stepRipple { 0% { opacity: 0.6; transform: scale(0.85); } 100% { opacity: 0; transform: scale(1.4); } }
+.how-step h4 { font-family: var(--display); font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.3px; }
+.how-step p { font-size: 0.85rem; color: var(--text-2); line-height: 1.55; }
+
+@media (max-width: 768px) { .how { grid-template-columns: 1fr 1fr; gap: 2rem 1rem; } .how-track { display: none; } }
+@media (max-width: 480px) { .how { grid-template-columns: 1fr; } }
+
+/* ════════ DASHBOARDS GRID ══════════════════════════════════════ */
+.dash-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+
+.dash-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
-  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
   display: flex;
   flex-direction: column;
   position: relative;
   overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s;
 }
 
-.dashboard-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--accent), transparent);
-  opacity: 0;
-  transition: opacity 0.2s;
-}
+.dash-card::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 100% 60% at 50% 0%, var(--accent-dim) 0%, transparent 60%); opacity: 0; transition: opacity 0.4s; pointer-events: none; }
+.dash-card:hover { border-color: var(--border-2); transform: translateY(-5px); }
+.dash-card:hover::before { opacity: 1; }
 
-.dashboard-card:hover {
-  border-color: rgba(255, 100, 3, 0.4);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
-}
+.dash-preview { height: 140px; border-radius: 12px; background: var(--bg); border: 1px solid var(--border); margin-bottom: 1.5rem; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.dash-preview svg { width: 100%; height: 100%; }
 
-.dashboard-card:hover::before {
-  opacity: 1;
-}
+.dash-card h3 { font-family: var(--display); font-size: 1.3rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.4px; }
+.dash-card .dash-desc { color: var(--text-2); font-size: 0.9rem; line-height: 1.55; margin-bottom: 1.25rem; flex: 1; }
 
-.dashboard-card-icon {
-  width: 48px;
-  height: 48px;
-  background: rgba(255, 100, 3, 0.1);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--accent);
-  margin-bottom: 1.25rem;
-}
+.dash-feats { list-style: none; margin-bottom: 1.5rem; }
+.dash-feats li { padding: 0.3rem 0 0.3rem 1.3rem; position: relative; font-size: 0.82rem; color: var(--text-2); }
+.dash-feats li::before { content: '+'; position: absolute; left: 0; top: 0.35rem; color: var(--accent); font-family: var(--mono); font-weight: 700; font-size: 0.85rem; }
 
-.dashboard-card-icon svg {
-  width: 24px;
-  height: 24px;
-  stroke: currentColor;
-  fill: none;
-  stroke-width: 1.75;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
+.dash-link { display: inline-flex; align-items: center; justify-content: space-between; padding: 0.8rem 1.25rem; background: rgba(255,100,3,0.08); border: 1px solid rgba(255,100,3,0.25); color: var(--accent); border-radius: 100px; text-decoration: none; font-weight: 700; font-size: 0.85rem; transition: background 0.2s, transform 0.2s; font-family: var(--body); }
+.dash-link:hover { background: var(--accent); color: #000; transform: translateY(-1px); }
+.dash-link svg { width: 14px; height: 14px; transition: transform 0.2s; }
+.dash-link:hover svg { transform: translateX(3px); }
 
-.dashboard-title {
-  font-size: 1.15rem;
-  font-weight: 800;
-  margin-bottom: 0.6rem;
-  letter-spacing: -0.3px;
-}
+@media (max-width: 1024px) { .dash-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px)  { .dash-grid { grid-template-columns: 1fr; } }
 
-.dashboard-desc {
-  color: var(--text-2);
-  font-size: 0.875rem;
-  line-height: 1.65;
-  margin-bottom: 1.5rem;
-  flex: 1;
-}
-
-.dashboard-features {
-  list-style: none;
-  margin-bottom: 1.75rem;
-}
-
-.dashboard-features li {
-  padding: 0.35rem 0;
-  padding-left: 1.2rem;
+/* ════════ CTA ══════════════════════════════════════════════════ */
+.cta {
   position: relative;
-  font-size: 0.82rem;
-  color: var(--text-2);
+  margin: 5rem 0 0;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, rgba(255,100,3,0.10) 0%, rgba(155,110,243,0.06) 100%), var(--bg-card);
+  border: 1px solid var(--border-2);
+  border-radius: var(--radius-xl);
+  text-align: center;
+  overflow: hidden;
+  isolation: isolate;
 }
 
-.dashboard-features li::before {
-  content: '—';
-  position: absolute;
-  left: 0;
-  color: var(--accent);
-  font-weight: 700;
-  font-size: 0.7rem;
-  top: 0.42rem;
-}
+.cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 20% 30%, rgba(255,100,3,0.18), transparent 60%), radial-gradient(ellipse 60% 50% at 80% 70%, rgba(79,133,246,0.14), transparent 60%); z-index: -1; }
+.cta::after  { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--accent), var(--purple), transparent); }
 
-.dashboard-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-  padding: 0.7rem 1.2rem;
-  background: rgba(255, 100, 3, 0.1);
-  border: 1px solid rgba(255, 100, 3, 0.3);
-  color: var(--accent);
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 0.85rem;
-  transition: background 0.2s, border-color 0.2s;
-}
-
-.dashboard-link:hover {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #000;
-}
-
-.dashboard-link svg {
-  width: 14px;
-  height: 14px;
-  stroke: currentColor;
-  fill: none;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  transition: transform 0.2s;
-}
-
-.dashboard-link:hover svg {
-  transform: translateX(2px);
-}
-
-/* ── Sources strip ──────────────────────────────── */
-.sources-strip {
-  padding: 2.5rem 0;
-  border-top: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-
-.sources-label {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--text-2);
-  white-space: nowrap;
-  font-weight: 500;
-}
-
-.sources-list {
-  display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.source-tag {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.4rem 0.9rem;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--text-2);
-  letter-spacing: 0.3px;
-}
-
-/* ── Responsive ─────────────────────────────────── */
-@media (max-width: 1024px) {
-  .features-grid { grid-template-columns: repeat(2, 1fr); }
-  .dashboards-grid { grid-template-columns: repeat(2, 1fr); }
-  .how-grid { grid-template-columns: repeat(2, 1fr); }
-  .how-step:not(:last-child)::after { display: none; }
-}
-
-@media (max-width: 768px) {
-  main { padding: 0 1.25rem; }
-  .hero { padding: 3rem 0 2.5rem; }
-  .hero-sub { font-size: 0.95rem; }
-  .stats-strip { grid-template-columns: repeat(2, 1fr); border-radius: 12px; }
-  .stat-item:nth-child(2)::after { display: none; }
-  .stat-item:nth-child(1),
-  .stat-item:nth-child(2) { border-bottom: 1px solid var(--border); }
-  .section { padding: 3.5rem 0; }
-  .features-grid { grid-template-columns: 1fr; }
-  .dashboards-grid { grid-template-columns: 1fr; }
-  .how-grid { grid-template-columns: 1fr 1fr; }
-  .sources-strip { flex-direction: column; align-items: flex-start; gap: 1rem; }
-}
-
-@media (max-width: 480px) {
-  .hero h1 { letter-spacing: -1px; }
-  .how-grid { grid-template-columns: 1fr; }
-  .hero-buttons .btn { width: 100%; justify-content: center; }
-}
-
-/* ── Fade-in animation ──────────────────────────── */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-.feature-card, .dashboard-card {
-  opacity: 0;
-  animation: fadeUp 0.5s ease-out forwards;
-}
-.feature-card:nth-child(1) { animation-delay: 0.05s; }
-.feature-card:nth-child(2) { animation-delay: 0.1s; }
-.feature-card:nth-child(3) { animation-delay: 0.15s; }
-.feature-card:nth-child(4) { animation-delay: 0.2s; }
-.feature-card:nth-child(5) { animation-delay: 0.25s; }
-.feature-card:nth-child(6) { animation-delay: 0.3s; }
-.dashboard-card:nth-child(1) { animation-delay: 0.1s; }
-.dashboard-card:nth-child(2) { animation-delay: 0.2s; }
-.dashboard-card:nth-child(3) { animation-delay: 0.3s; }
+.cta h2 { font-family: var(--display); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; letter-spacing: -2px; line-height: 1.05; margin-bottom: 1rem; max-width: 20ch; margin-left: auto; margin-right: auto; }
+.cta h2 .grad { background: var(--grad-fire); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-style: italic; }
+.cta p { color: var(--text-2); font-size: 1rem; max-width: 540px; margin: 0 auto 2rem; line-height: 1.7; }
+.cta-buttons { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; }
 
 </style>
 </head>
@@ -540,20 +524,65 @@ main {
 
 {% include 'header.html' %}
 
-<main>
+<!-- ════════ HERO ════════════════════════════════════════════════ -->
+<section class="hero">
+  <canvas id="heroCanvas"></canvas>
 
-  <!-- ── Hero ──────────────────────────────────────── -->
-  <section class="hero">
+  <div class="float-stat fs-1">
+    <div class="float-stat-icon" style="background: rgba(34,211,160,0.15); color: var(--green);">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+    </div>
+    <div>
+      <div class="float-stat-val">+14.2%</div>
+      <div class="float-stat-lbl">IT postings · MoM</div>
+    </div>
+  </div>
+
+  <div class="float-stat fs-2">
+    <div class="float-stat-icon" style="background: rgba(255,100,3,0.15); color: var(--accent);">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="9"/></svg>
+    </div>
+    <div>
+      <div class="float-stat-val" id="hero-top-salary">$124K</div>
+      <div class="float-stat-lbl">ML avg · top ROI</div>
+    </div>
+  </div>
+
+  <div class="float-stat fs-3">
+    <div class="float-stat-icon" style="background: rgba(79,133,246,0.15); color: var(--blue);">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M2 12h20"/></svg>
+    </div>
+    <div>
+      <div class="float-stat-val">12 countries</div>
+      <div class="float-stat-lbl">tracked live</div>
+    </div>
+  </div>
+
+  <div class="float-stat fs-4">
+    <div class="float-stat-icon" style="background: rgba(155,110,243,0.15); color: var(--purple);">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5z"/><path d="M2 17l10 5 10-5"/></svg>
+    </div>
+    <div>
+      <div class="float-stat-val" id="hero-skills">—</div>
+      <div class="float-stat-lbl">ESCO-mapped skills</div>
+    </div>
+  </div>
+
+  <div class="hero-inner">
     <div class="hero-badge">
       <span class="hero-badge-dot"></span>
-      Live Federal Job Market Data
+      Federal market · synced every 2 hours
     </div>
 
-    <h1>Understand the Labor Market.<br>Before Everyone Else.</h1>
+    <h1>
+      Understand the<br>
+      labor market <span class="grad">before</span><br>
+      everyone else.
+    </h1>
 
     <p class="hero-sub">
-      VakansioGraph analyzes federal job postings from USAJOBS, maps skills to ESCO standards,
-      and surfaces salary trends, demand signals, and geographic insights — updated every 2 hours.
+      VakansioGraph mines federal postings, maps every skill to ESCO standards,
+      and surfaces salary trends, demand signals and geographic insights — refreshed continuously.
     </p>
 
     <div class="hero-buttons">
@@ -561,232 +590,402 @@ main {
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
         Explore Trends
       </a>
-      <a href="#dashboards" class="btn btn-secondary">View Dashboards</a>
+      <a href="#capabilities" class="btn btn-secondary">See Capabilities</a>
     </div>
 
-    <div class="stats-strip">
-      <div class="stat-item">
-        <div class="stat-num" id="stat-jobs">—</div>
-        <div class="stat-label">Job Postings</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num" id="stat-skills">—</div>
-        <div class="stat-label">Unique Skills</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num" id="stat-orgs">—</div>
-        <div class="stat-label">Organizations</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num" id="stat-salary">—</div>
-        <div class="stat-label">Avg Salary</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── How It Works ─────────────────────────────── -->
-  <section class="section">
-    <div class="section-header">
-      <div class="section-label">How It Works</div>
-      <div class="section-title">From raw postings to actionable intelligence</div>
-    </div>
-    <div class="how-grid">
-      <div class="how-step">
-        <div class="step-num">01</div>
-        <h4>Collect</h4>
-        <p>Fetch federal job postings from USAJOBS API and Adzuna every 2 hours, storing structured data in SQLite.</p>
-      </div>
-      <div class="how-step">
-        <div class="step-num">02</div>
-        <h4>Normalize</h4>
-        <p>Parse and clean salary ranges, locations, departments, series codes, and grade levels.</p>
-      </div>
-      <div class="how-step">
-        <div class="step-num">03</div>
-        <h4>Enrich</h4>
-        <p>Map extracted skills to ESCO classification — linking each skill to a type, category, and URI.</p>
-      </div>
-      <div class="how-step">
-        <div class="step-num">04</div>
-        <h4>Visualize</h4>
-        <p>Pre-compute analytics and serve interactive dashboards with charts, tables, and trends.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Features ─────────────────────────────────── -->
-  <section class="section" id="features">
-    <div class="section-header">
-      <div class="section-label">Capabilities</div>
-      <div class="section-title">Everything you need to<br>navigate the federal job market</div>
-    </div>
-    <div class="features-grid">
-
-      <div class="feature-card">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24"><rect x="3" y="12" width="4" height="8"/><rect x="10" y="8" width="4" height="12"/><rect x="17" y="4" width="4" height="16"/></svg>
-        </div>
-        <h3>Real-Time Analytics</h3>
-        <p>Live tracking of federal job postings with automatic updates every 2 hours. Monitor market trends as they happen.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
-        </div>
-        <h3>Career Intelligence</h3>
-        <p>Discover which skills command the highest salaries. Compare pay ranges across grades, departments, and locations.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        </div>
-        <h3>Geographic Insights</h3>
-        <p>See job distribution and remote work opportunities by state. Identify hotspots for federal employment.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-        </div>
-        <h3>ESCO Skills Mapping</h3>
-        <p>Skills classified by European Skills/Competences standard. Understand competence vs knowledge vs transversal requirements.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-        </div>
-        <h3>Salary Analysis</h3>
-        <p>Comprehensive federal pay grade breakdown from GS-5 to SES. Min/max salary distributions by department and skill.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-        </div>
-        <h3>Trend Forecasting</h3>
-        <p>Monthly posting volume timelines by category. Identify emerging opportunities in your field before the market catches on.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ── Dashboards ─────────────────────────────────── -->
-  <section class="section" id="dashboards">
-    <div class="section-header">
-      <div class="section-label">Dashboards</div>
-      <div class="section-title">Interactive views of the<br>federal employment landscape</div>
-    </div>
-    <div class="dashboards-grid">
-
-      <div class="dashboard-card">
-        <div class="dashboard-card-icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        </div>
-        <div class="dashboard-title">Geography</div>
-        <p class="dashboard-desc">
-          Explore job opportunities across the United States with state-level breakdowns and remote work data.
-        </p>
-        <ul class="dashboard-features">
-          <li>Job distribution by state</li>
-          <li>Remote vs on-site percentage</li>
-          <li>State-level salary analysis</li>
-          <li>Regional opportunity comparison</li>
-        </ul>
-        <a href="/countries" class="dashboard-link">
-          Explore Geography
-          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-      </div>
-
-      <div class="dashboard-card">
-        <div class="dashboard-card-icon">
-          <svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-        </div>
-        <div class="dashboard-title">Market Trends</div>
-        <p class="dashboard-desc">
-          Track how the labor market evolves — posting volumes, category shifts, and salary-demand relationships.
-        </p>
-        <ul class="dashboard-features">
-          <li>Monthly posting volume timeline</li>
-          <li>Skill category demand over time</li>
-          <li>Top 20 most demanded skills</li>
-          <li>Salary × demand bubble chart</li>
-        </ul>
-        <a href="/trends" class="dashboard-link">
-          View Trends
-          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-      </div>
-
-      <div class="dashboard-card">
-        <div class="dashboard-card-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-        </div>
-        <div class="dashboard-title">Skills Intelligence</div>
-        <p class="dashboard-desc">
-          Deep-dive into skill demand, salary ROI per skill, category comparisons, and ESCO type distributions.
-        </p>
-        <ul class="dashboard-features">
-          <li>Top skills by salary ROI</li>
-          <li>Category salary comparison</li>
-          <li>Skill demand by category</li>
-          <li>ESCO type distribution</li>
-        </ul>
-        <a href="/skills-intelligence" class="dashboard-link">
-          Explore Skills
-          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ── Data Sources ───────────────────────────────── -->
-  <div class="sources-strip">
-    <span class="sources-label">Data Sources</span>
-    <div class="sources-list">
-      <span class="source-tag">USAJOBS API</span>
-      <span class="source-tag">Adzuna API</span>
-      <span class="source-tag">ESCO v1.2</span>
+    <div class="ticker">
+      <div class="ticker-label">Live feed</div>
+      <div class="ticker-track" id="ticker"></div>
     </div>
   </div>
+</section>
+
+<main>
+
+  <!-- ════════ STATS STRIP ════════ -->
+  <div class="stats-strip reveal-scale">
+    <div class="stat-item">
+      <div class="stat-num" id="stat-jobs">—</div>
+      <div class="stat-label">Job Postings</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" id="stat-skills">—</div>
+      <div class="stat-label">ESCO Skills</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" id="stat-orgs">—</div>
+      <div class="stat-label">Organizations</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" id="stat-salary">—</div>
+      <div class="stat-label">Avg Salary Range</div>
+    </div>
+  </div>
+
+  <!-- ════════ MARQUEE ════════ -->
+  <div class="marquee-section reveal">
+    <div class="marquee">
+      <div class="marquee-track" id="marquee-track"></div>
+    </div>
+  </div>
+
+  <!-- ════════ CAPABILITIES — BENTO ════════ -->
+  <section class="section" id="capabilities">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-eyebrow">// Capabilities</div>
+        <h2 class="section-title">Everything you need to <span class="grad">navigate</span> the federal job market.</h2>
+      </div>
+      <div class="section-header-side">
+        <span>06 modules</span>
+        <span>updated every 2h</span>
+      </div>
+    </div>
+
+    <div class="bento">
+      <div class="bento-cell bento-feature b-tall reveal" style="--reveal-delay: 0.05s">
+        <div class="icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="12" width="4" height="8"/><rect x="10" y="8" width="4" height="12"/><rect x="17" y="4" width="4" height="16"/></svg>
+        </div>
+        <h3>Real-time analytics</h3>
+        <p>Live tracking of postings. New roles surface within hours of publication, normalized and enriched.</p>
+        <div class="mini-chart" id="miniChart"></div>
+        <div class="type-viz">
+          <div class="type-chip knowledge"><div class="pct">42%</div><div class="lbl">Knowledge</div></div>
+          <div class="type-chip competence"><div class="pct">33%</div><div class="lbl">Competence</div></div>
+          <div class="type-chip skill"><div class="pct">25%</div><div class="lbl">Skill</div></div>
+        </div>
+        <div class="meta"><span>Updated 2h ago</span><span>● Live</span></div>
+      </div>
+
+      <div class="bento-cell bento-callout b-wide reveal" style="--reveal-delay: 0.1s">
+        <div class="big-num">2h</div>
+        <div class="sub">Median sync cycle. New federal postings flow in twice every business hour.</div>
+        <div class="meta"><span>Adzuna · USAJOBS</span><span>03 sources</span></div>
+      </div>
+
+      <div class="bento-cell bento-blue b-1 reveal" style="--reveal-delay: 0.15s">
+        <div class="icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+        </div>
+        <h3>Career intel</h3>
+        <p>Which skills command the highest salary — by grade and dept.</p>
+      </div>
+
+      <div class="bento-cell bento-purple b-1 reveal" style="--reveal-delay: 0.2s">
+        <div class="icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>ESCO mapping</h3>
+        <p>Skills classified — knowledge vs competence vs skill.</p>
+      </div>
+
+      <div class="bento-cell bento-green b-half reveal-left" style="--reveal-delay: 0.1s">
+        <div class="icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <h3>Geographic insights</h3>
+        <p>Distribution and remote percentages by state and country. Spot hotspots before consensus.</p>
+        <div class="mini-map" id="miniMap"></div>
+        <div class="meta"><span>12 countries · 50 states</span><span>↗ explore</span></div>
+      </div>
+
+      <div class="bento-cell b-half reveal-right" style="--reveal-delay: 0.15s">
+        <div class="icon">
+          <svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+        </div>
+        <h3>Trend forecasting</h3>
+        <p>Monthly volume by category. Identify emerging fields before the market catches on.</p>
+        <div class="mini-bars" id="miniBars"></div>
+        <div class="meta"><span>25 months tracked</span><span>+14% YoY</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ HOW IT WORKS ════════ -->
+  <section class="section" id="how-it-works">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-eyebrow">// Pipeline</div>
+        <h2 class="section-title">From raw postings to <span class="grad">actionable</span> intelligence.</h2>
+      </div>
+      <div class="section-header-side">
+        <span>04 stages</span>
+        <span>fully automated</span>
+      </div>
+    </div>
+
+    <div class="how">
+      <div class="how-track"></div>
+
+      <div class="how-step reveal" style="--reveal-delay: 0.05s">
+        <div class="step-num" style="--delay: 0s">01</div>
+        <h4>Collect</h4>
+        <p>Pull federal postings from USAJOBS &amp; Adzuna every 2 hours. Persisted to SQLite.</p>
+      </div>
+
+      <div class="how-step reveal" style="--reveal-delay: 0.15s">
+        <div class="step-num" style="--delay: 0.8s">02</div>
+        <h4>Normalize</h4>
+        <p>Clean salary ranges, locations, departments, series codes, grade levels.</p>
+      </div>
+
+      <div class="how-step reveal" style="--reveal-delay: 0.25s">
+        <div class="step-num" style="--delay: 1.6s">03</div>
+        <h4>Enrich</h4>
+        <p>Map extracted skills to ESCO — type, category, URI per skill.</p>
+      </div>
+
+      <div class="how-step reveal" style="--reveal-delay: 0.35s">
+        <div class="step-num" style="--delay: 2.4s">04</div>
+        <h4>Visualize</h4>
+        <p>Pre-compute analytics; serve interactive charts, tables, trends.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ DASHBOARDS ════════ -->
+  <section class="section" id="dashboards">
+    <div class="section-header reveal">
+      <div>
+        <div class="section-eyebrow">// Dashboards</div>
+        <h2 class="section-title">Interactive views of the <span class="grad">federal</span> employment landscape.</h2>
+      </div>
+      <div class="section-header-side">
+        <span>03 dashboards</span>
+        <span>updated continuously</span>
+      </div>
+    </div>
+
+    <div class="dash-grid">
+
+      <div class="dash-card reveal" style="--reveal-delay: 0.05s">
+        <div class="dash-preview" id="dashPrev1"></div>
+        <h3>Geography</h3>
+        <p class="dash-desc">Explore opportunities by country with state-level breakdowns and remote-work shares.</p>
+        <ul class="dash-feats">
+          <li>Job distribution by region</li>
+          <li>Remote vs on-site %</li>
+          <li>Regional comparison</li>
+        </ul>
+        <a href="/countries" class="dash-link">
+          Explore Geography
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+      <div class="dash-card reveal" style="--reveal-delay: 0.15s">
+        <div class="dash-preview" id="dashPrev2"></div>
+        <h3>Market Trends</h3>
+        <p class="dash-desc">Track posting volumes, category shifts, and the salary-demand relationship.</p>
+        <ul class="dash-feats">
+          <li>Monthly volume timeline</li>
+          <li>Category demand over time</li>
+          <li>Salary × demand bubbles</li>
+        </ul>
+        <a href="/trends" class="dash-link">
+          View Trends
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+      <div class="dash-card reveal" style="--reveal-delay: 0.25s">
+        <div class="dash-preview" id="dashPrev3"></div>
+        <h3>Skills Intelligence</h3>
+        <p class="dash-desc">Deep-dive into skill demand, salary ROI per skill, and ESCO type distributions.</p>
+        <ul class="dash-feats">
+          <li>Top skills by ROI</li>
+          <li>Category comparison</li>
+          <li>ESCO type distribution</li>
+        </ul>
+        <a href="/skills-intelligence" class="dash-link">
+          Explore Skills
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════ CTA ════════ -->
+  <section class="cta reveal-scale">
+    <h2>Ready to see the <span class="grad">market</span> from above?</h2>
+    <p>Three dashboards. Live postings. Skills mapped to ESCO. Pick a view and start exploring.</p>
+    <div class="cta-buttons">
+      <a href="/trends" class="btn btn-primary">
+        Open Trends
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="/skills-intelligence" class="btn btn-secondary">Explore Skills</a>
+    </div>
+  </section>
 
 </main>
 
 {% include 'footer.html' %}
 
-<script>
-// Live stats
-fetch('/api/overview')
-  .then(r => r.json())
-  .then(d => {
-    const fmt = n => n >= 1000 ? (n / 1000).toFixed(0) + 'K+' : n;
-    document.getElementById('stat-jobs').textContent   = fmt(d.total_jobs);
-    document.getElementById('stat-skills').textContent = d.unique_skills;
-    document.getElementById('stat-orgs').textContent   = fmt(d.total_organizations);
-    const minK = Math.round(d.avg_salary.min / 1000);
-    const maxK = Math.round(d.avg_salary.max / 1000);
-    document.getElementById('stat-salary').textContent =
-      (minK && maxK) ? `$${minK}K–$${maxK}K` : '—';
-  })
-  .catch(() => {
-    document.getElementById('stat-jobs').textContent   = '120K+';
-    document.getElementById('stat-skills').textContent = '226';
-    document.getElementById('stat-orgs').textContent   = '435+';
-    document.getElementById('stat-salary').textContent = '$67K–$98K';
-  });
+<!-- SVG defs for mini-chart gradients -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="fireGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#ff6403"/>
+      <stop offset="50%"  stop-color="#ff9a00"/>
+      <stop offset="100%" stop-color="#ffce4d"/>
+    </linearGradient>
+    <linearGradient id="fireFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#ff6403" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#ff6403" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+</svg>
 
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    e.preventDefault();
-    const t = document.querySelector(a.getAttribute('href'));
-    if (t) t.scrollIntoView({ behavior: 'smooth' });
-  });
+<script src="/static/js/site-utils.js"></script>
+<script src="/static/js/hero-canvas.js"></script>
+
+<script>
+/* ════════ Stats from API ════════ */
+fetch('/api/overview').then(r => r.json()).then(d => {
+  animateCounter(document.getElementById('stat-jobs'),
+    Math.round(d.total_jobs / 1000), { suffix: 'K+', formatter: v => Math.round(v) });
+  animateCounter(document.getElementById('stat-skills'), d.unique_skills, { formatter: v => Math.round(v) });
+  animateCounter(document.getElementById('stat-orgs'), d.total_organizations, { suffix: '+', formatter: v => Math.round(v) });
+
+  const minK = Math.round(d.avg_salary.min / 1000);
+  const maxK = Math.round(d.avg_salary.max / 1000);
+  document.getElementById('stat-salary').textContent = `$${minK}K–$${maxK}K`;
+
+  const heroSkills = document.getElementById('hero-skills');
+  if (heroSkills) heroSkills.textContent = d.unique_skills + ' skills';
+}).catch(() => {
+  document.getElementById('stat-jobs').textContent   = '120K+';
+  document.getElementById('stat-skills').textContent = '226';
+  document.getElementById('stat-orgs').textContent   = '435+';
+  document.getElementById('stat-salary').textContent = '$67K–$98K';
 });
+
+/* ════════ Live ticker ════════ */
+const tickerItems = [
+  '<span class="t-cat">[USAJOBS]</span> Senior Data Scientist · Dept. of Energy <span class="t-sep">·</span> <span class="t-val">GS-14 · $128K–$165K</span>',
+  '<span class="t-cat">[NEW]</span> Cybersecurity Specialist · DHS <span class="t-sep">·</span> <span class="t-val">+12% MoM demand</span>',
+  '<span class="t-cat">[ESCO]</span> machine learning mapped to Knowledge type <span class="t-sep">·</span> <span class="t-val">1,830 jobs</span>',
+  '<span class="t-cat">[TREND]</span> IT &amp; Technology category <span class="t-sep">·</span> <span class="t-val">+14.2% this quarter</span>',
+  '<span class="t-cat">[USAJOBS]</span> Program Manager · NASA <span class="t-sep">·</span> <span class="t-val">GS-15 · $142K–$183K</span>',
+  '<span class="t-cat">[ADZUNA]</span> 2,840 new postings ingested <span class="t-sep">·</span> <span class="t-val">last 24h</span>',
+];
+startTicker('ticker', tickerItems);
+
+/* ════════ Marquee chips ════════ */
+const marqueeSkills = [
+  { skill: 'machine learning', count: '$124K', color: 'blue' },
+  { skill: 'cybersecurity', count: '$116K' },
+  { skill: 'project management', count: '8.4K jobs', color: 'green' },
+  { skill: 'python', count: '$102K', color: 'purple' },
+  { skill: 'data analysis', count: '5.2K jobs' },
+  { skill: 'leadership', count: '6.9K jobs', color: 'pink' },
+  { skill: 'cloud architecture', count: '$112K', color: 'blue' },
+  { skill: 'risk management', count: '$96K' },
+  { skill: 'sql', count: '3.0K jobs', color: 'green' },
+  { skill: 'aws', count: '$102K', color: 'purple' },
+  { skill: 'regulatory compliance', count: '4.8K jobs' },
+  { skill: 'kubernetes', count: '$98K', color: 'blue' },
+  { skill: 'budgeting', count: '$84K' },
+  { skill: 'auditing', count: '2.3K jobs', color: 'green' },
+];
+const trackEl = document.getElementById('marquee-track');
+const buildChip = s => `<div class="marquee-chip ${s.color || ''}"><span class="dot"></span>${s.skill} <strong>${s.count}</strong></div>`;
+trackEl.innerHTML = marqueeSkills.concat(marqueeSkills).map(buildChip).join('');
+
+/* ════════ Mini live chart ════════ */
+(function () {
+  const data = [12, 28, 22, 38, 32, 48, 42, 58, 52, 68, 64, 78, 72, 88];
+  const w = 280, h = 70;
+  const max = Math.max(...data);
+  const step = w / (data.length - 1);
+  const points = data.map((v, i) => [i * step, h - (v / max) * h * 0.85 - 5]);
+  const path = points.map((p, i) => (i === 0 ? `M ${p[0]} ${p[1]}` : `L ${p[0]} ${p[1]}`)).join(' ');
+  const area = `${path} L ${w} ${h} L 0 ${h} Z`;
+  const last = points[points.length - 1];
+  document.getElementById('miniChart').innerHTML = `
+    <svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">
+      <path class="area" d="${area}"/>
+      <path class="line" d="${path}"/>
+      <circle class="dot" cx="${last[0]}" cy="${last[1]}" r="4"/>
+    </svg>`;
+})();
+
+/* ════════ Mini bars ════════ */
+(function () {
+  const heights = [25, 38, 32, 48, 42, 55, 50, 62, 58, 72, 68, 82, 78, 88, 85, 95];
+  document.getElementById('miniBars').innerHTML = heights.map((h, i) =>
+    `<div class="bar" style="height:${h}%; animation-delay:${i * 0.04}s"></div>`
+  ).join('');
+})();
+
+/* ════════ Mini world map ════════ */
+(function () {
+  const w = 360, h = 200;
+  const positions = [
+    [22,34,1],[18,40,0],[20,46,0],[24,40,0],[26,46,0],[16,38,0],[28,52,0],
+    [44,34,1],[46,38,0],[48,32,0],[42,40,0],
+    [62,38,1],[58,42,0],[66,44,0],[60,48,0],[70,40,0],[66,50,0],[58,36,0],
+    [50,50,0],[52,54,0],[48,56,0],[54,60,0],[46,58,0],
+    [78,68,1],[80,72,0],[76,70,0],
+    [26,62,0],[28,68,0],[30,72,0],
+  ];
+  const inner = positions.map(([x, y, hot]) => {
+    const cx = (x / 100) * w, cy = (y / 100) * h;
+    if (hot) {
+      return `<circle cx="${cx}" cy="${cy}" r="3" fill="#ff9a00" filter="url(#mapGlow)"/>
+              <circle cx="${cx}" cy="${cy}" r="9" fill="none" stroke="#ff6403" stroke-width="1" opacity="0.4">
+                <animate attributeName="r" values="3;14;3" dur="2.4s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0.6;0;0.6" dur="2.4s" repeatCount="indefinite"/>
+              </circle>`;
+    }
+    return `<circle cx="${cx}" cy="${cy}" r="1.6" fill="rgba(120,130,210,0.4)"/>`;
+  }).join('');
+  document.getElementById('miniMap').innerHTML = `
+    <svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="xMidYMid meet">
+      <defs><filter id="mapGlow"><feGaussianBlur stdDeviation="1.5"/></filter></defs>
+      ${inner}
+    </svg>`;
+})();
+
+/* ════════ Dashboard previews ════════ */
+(function () {
+  document.getElementById('dashPrev1').innerHTML = `
+    <svg viewBox="0 0 360 140" preserveAspectRatio="xMidYMid meet">
+      <defs><radialGradient id="dpG1"><stop offset="0%" stop-color="#ff6403" stop-opacity="0.4"/><stop offset="100%" stop-color="#ff6403" stop-opacity="0"/></radialGradient></defs>
+      ${Array.from({length: 80}, () => {
+        const x = 30 + Math.random() * 300;
+        const y = 25 + Math.random() * 90;
+        return Math.random() < 0.12
+          ? `<circle cx="${x}" cy="${y}" r="3" fill="#ff9a00"/><circle cx="${x}" cy="${y}" r="8" fill="url(#dpG1)"/>`
+          : `<circle cx="${x}" cy="${y}" r="1.4" fill="rgba(120,130,210,0.4)"/>`;
+      }).join('')}
+    </svg>`;
+
+  const pts = [10,28,18,38,30,52,42,62,55,75,68,85];
+  const w2 = 360, h2 = 140, max2 = Math.max(...pts), step2 = w2 / (pts.length - 1);
+  const pathPts = pts.map((v, i) => [i * step2, h2 - (v / max2) * (h2 - 30) - 15]);
+  const p2 = pathPts.map((p, i) => (i === 0 ? `M ${p[0]} ${p[1]}` : `L ${p[0]} ${p[1]}`)).join(' ');
+  document.getElementById('dashPrev2').innerHTML = `
+    <svg viewBox="0 0 ${w2} ${h2}" preserveAspectRatio="none" style="width:100%; height:100%">
+      <path d="${p2} L ${w2} ${h2} L 0 ${h2} Z" fill="url(#fireFill)"/>
+      <path d="${p2}" fill="none" stroke="url(#fireGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>`;
+
+  const bars = [85, 72, 64, 58, 50, 42, 36, 30];
+  document.getElementById('dashPrev3').innerHTML = `
+    <svg viewBox="0 0 360 140" preserveAspectRatio="xMidYMid meet">
+      ${bars.map((v, i) => {
+        const y = 12 + i * 15;
+        const bw = (v / 100) * 290;
+        const color = ['#ff6403','#ff9a00','#facc15','#4ade80','#60a5fa','#c084fc','#f472b6','#9b6ef3'][i];
+        return `<rect x="60" y="${y}" width="${bw}" height="9" rx="3" fill="${color}" opacity="0.85"/>
+                <text x="55" y="${y + 7.5}" text-anchor="end" fill="#7a7ab8" font-size="8" font-family="JetBrains Mono">SK${i+1}</text>`;
+      }).join('')}
+    </svg>`;
+})();
 </script>
 
 </body>
