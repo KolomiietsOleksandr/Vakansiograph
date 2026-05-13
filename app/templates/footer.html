@@ -32,3 +32,28 @@
     </p>
   </div>
 </footer>
+
+<script>
+(function () {
+  var toggle = document.getElementById('nav-toggle');
+  var nav    = document.getElementById('main-nav');
+  if (!toggle || !nav) return;
+
+  var menuIcon = '<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
+  var closeIcon = '<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
+
+  toggle.addEventListener('click', function () {
+    var open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+    toggle.innerHTML = open ? closeIcon : menuIcon;
+  });
+
+  document.addEventListener('click', function (e) {
+    if (!toggle.contains(e.target) && !nav.contains(e.target) && nav.classList.contains('open')) {
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.innerHTML = menuIcon;
+    }
+  });
+}());
+</script>
