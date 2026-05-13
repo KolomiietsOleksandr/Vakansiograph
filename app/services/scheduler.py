@@ -104,6 +104,15 @@ def build_analytics():
         logger.exception("[ANALYTICS] Failed")
 
 
+def pipeline():
+    logger.info("=== [PIPELINE] Starting full pipeline ===")
+    collect_jobs()
+    collect_adzuna()
+    enrich_skills()
+    build_analytics()
+    logger.info("=== [PIPELINE] Done ===")
+
+
 def cleanup():
     logger.info("=== [CLEANUP] Starting weekly cleanup ===")
     try:
@@ -128,35 +137,11 @@ def start_scheduler():
     scheduler = BlockingScheduler(timezone="UTC")
 
     scheduler.add_job(
-        build_analytics,
-        trigger=IntervalTrigger(hours=6),
-        id="build_analytics",
-        name="Analytics Cache Build (every 6h)",
+        pipeline,
+        trigger=IntervalTrigger(hours=2),
+        id="pipeline",
+        name="Full Pipeline: collect → enrich → analytics (every 2h)",
         next_run_time=datetime.now(timezone.utc),
-        max_instances=1,
-        coalesce=True,
-    )
-    scheduler.add_job(
-        collect_jobs,
-        trigger=IntervalTrigger(hours=6),
-        id="collect_jobs",
-        name="USAJOBS Collection (every 6h)",
-        max_instances=1,
-        coalesce=True,
-    )
-    scheduler.add_job(
-        collect_adzuna,
-        trigger=IntervalTrigger(hours=6, start_date=datetime.now(timezone.utc) + timedelta(hours=3)),
-        id="collect_adzuna",
-        name="Adzuna Collection (every 6h, offset +3h)",
-        max_instances=1,
-        coalesce=True,
-    )
-    scheduler.add_job(
-        enrich_skills,
-        trigger=CronTrigger(hour=3, minute=0),
-        id="enrich_skills",
-        name="ESCO Skill Enrichment (daily 03:00 UTC)",
         max_instances=1,
         coalesce=True,
     )
@@ -182,7 +167,4 @@ def start_scheduler():
 
 
 if __name__ == "__main__":
-    collect_jobs()
-    collect_adzuna()
-    enrich_skills()
     start_scheduler()
