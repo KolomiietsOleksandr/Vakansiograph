@@ -249,6 +249,13 @@ canvas { display: block; width: 100% !important; }
 <script src="/static/js/site-utils.js"></script>
 
 <script>
+const CHART_COLORS = [
+  '#ff6403','#ff9a00','#facc15','#4ade80','#60a5fa',
+  '#c084fc','#f472b6','#34d399','#fb923c','#a78bfa',
+  '#38bdf8','#e879f9','#4a4a7a','#ff6403bb','#60a5fabb',
+  '#4ade80bb','#facc15bb','#c084fcbb','#f472b6bb','#fb923cbb'
+];
+
 /* ── Category colours ── */
 const CAT = {
   'Management & Leadership':    '#ff6403',
@@ -385,7 +392,7 @@ fetch('/api/skills/top?limit=20').then(r => r.json()).then(skills => {
       labels: skills.map(s => s.skill.length > 28 ? s.skill.slice(0, 26) + '…' : s.skill),
       datasets: [{
         data: skills.map(s => s.count),
-        backgroundColor: skills.map(s => CAT[s.category] || '#ff6403'),
+        backgroundColor: skills.map((_, i) => CHART_COLORS[i % CHART_COLORS.length]),
         borderRadius: 6,
         borderSkipped: false,
         barPercentage: 0.85

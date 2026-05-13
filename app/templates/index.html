@@ -129,7 +129,8 @@
 }
 
 /* ── Floating stat callouts ─────────────────────────────────── */
-.hero .ticker { width: 100%; max-width: 580px; }
+.hero .ticker { width: 100%; max-width: 640px; }
+.hero .ticker-item { font-size: 0.8rem; }
 
 .float-stat {
   position: absolute;
@@ -303,7 +304,7 @@
 /* ════════ BENTO GRID ═══════════════════════════════════════════ */
 .bento {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: minmax(220px, auto);
   gap: 1rem;
 }
@@ -375,11 +376,11 @@
   align-items: center;
 }
 
-.b-wide { grid-column: span 3; }
-.b-tall { grid-row: span 2; grid-column: span 3; }
-.b-1    { grid-column: span 2; }
-.b-full { grid-column: span 6; }
-.b-half { grid-column: span 3; }
+.b-wide { grid-column: span 2; }
+.b-tall { grid-row: span 2; grid-column: span 2; }
+.b-1    { grid-column: span 1; }
+.b-full { grid-column: span 4; }
+.b-half { grid-column: span 2; }
 
 .bento-feature {
   background: linear-gradient(135deg, rgba(255,100,3,0.12) 0%, rgba(155,110,243,0.08) 100%), var(--bg-card);
@@ -428,12 +429,9 @@
 .bento-callout .big-num { font-family: var(--mono); font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 700; line-height: 0.9; letter-spacing: -3px; background: var(--grad-fire); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.4rem; }
 .bento-callout .sub { font-size: 0.85rem; color: var(--text-2); max-width: 200px; line-height: 1.5; }
 
-@media (max-width: 1024px) {
-  .bento { grid-template-columns: repeat(4, 1fr); }
-  .b-wide { grid-column: span 4; }
-  .b-tall { grid-column: span 4; grid-row: span 1; }
-  .b-1, .b-half { grid-column: span 2; }
-  .b-full { grid-column: span 4; }
+@media (max-width: 900px) {
+  .bento { grid-template-columns: repeat(2, 1fr); }
+  .b-wide, .b-tall, .b-1, .b-half, .b-full { grid-column: span 2; grid-row: span 1; }
 }
 @media (max-width: 600px) {
   .bento { grid-template-columns: 1fr; }
@@ -865,10 +863,10 @@ fetch('/api/overview').then(r => r.json()).then(d => {
 
 /* ════════ Live ticker ════════ */
 const tickerItems = [
-  '<span class="t-cat">[USAJOBS]</span> Senior Data Scientist · Dept. of Energy <span class="t-sep">·</span> <span class="t-val">GS-14 · $128K–$165K</span>',
+  '<span class="t-cat">[USAJOBS]</span> Senior Data Scientist · DoE <span class="t-sep">·</span> <span class="t-val">GS-14 · $128K–$165K</span>',
   '<span class="t-cat">[NEW]</span> Cybersecurity Specialist · DHS <span class="t-sep">·</span> <span class="t-val">+12% MoM demand</span>',
-  '<span class="t-cat">[ESCO]</span> machine learning mapped to Knowledge type <span class="t-sep">·</span> <span class="t-val">1,830 jobs</span>',
-  '<span class="t-cat">[TREND]</span> IT &amp; Technology category <span class="t-sep">·</span> <span class="t-val">+14.2% this quarter</span>',
+  '<span class="t-cat">[ESCO]</span> machine learning → Knowledge <span class="t-sep">·</span> <span class="t-val">1,830 jobs</span>',
+  '<span class="t-cat">[TREND]</span> IT &amp; Technology <span class="t-sep">·</span> <span class="t-val">+14.2% this quarter</span>',
   '<span class="t-cat">[USAJOBS]</span> Program Manager · NASA <span class="t-sep">·</span> <span class="t-val">GS-15 · $142K–$183K</span>',
   '<span class="t-cat">[ADZUNA]</span> 2,840 new postings ingested <span class="t-sep">·</span> <span class="t-val">last 24h</span>',
 ];
