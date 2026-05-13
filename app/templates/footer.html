@@ -1,58 +1,81 @@
-<footer id="main-footer">
-  <div class="footer-content">
-    <div class="footer-section">
-      <h4>Platform</h4>
-      <a href="/">Home</a>
-      <a href="/#features">Features</a>
-      <a href="/#dashboards">Dashboards</a>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="logo" style="margin-bottom:0.9rem; display:inline-flex;">
+          <span class="logo-mark">
+            <svg viewBox="0 0 16 16" fill="none">
+              <rect x="1" y="9"  width="3" height="6" rx="1" fill="#000"/>
+              <rect x="6" y="5"  width="3" height="10" rx="1" fill="#000"/>
+              <rect x="11" y="2" width="3" height="13" rx="1" fill="#000"/>
+            </svg>
+          </span>
+          <span class="logo-name">VakansioGraph</span>
+        </a>
+        <p class="footer-tagline">
+          Labor market intelligence powered by USAJOBS, Adzuna, and ESCO skill classification.
+        </p>
+      </div>
+      <div class="footer-section">
+        <h4>Platform</h4>
+        <a href="/">Home</a>
+        <a href="/trends">Market Trends</a>
+        <a href="/countries">Geography</a>
+        <a href="/skills-intelligence">Skills Intelligence</a>
+      </div>
+      <div class="footer-section">
+        <h4>Data Sources</h4>
+        <a href="https://www.usajobs.gov/api" target="_blank" rel="noopener">USAJOBS API</a>
+        <a href="https://ec.europa.eu/esco" target="_blank" rel="noopener">ESCO Skills</a>
+        <a href="https://developer.adzuna.com" target="_blank" rel="noopener">Adzuna API</a>
+      </div>
+      <div class="footer-section">
+        <h4>Connect</h4>
+        <a href="https://github.com/KolomiietsOleksandr/Vakansiograph" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/okolomiietskolomiiets/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:alexcrimson0818@gmail.com">Email</a>
+      </div>
     </div>
-    <div class="footer-section">
-      <h4>Data Sources</h4>
-      <a href="https://www.usajobs.gov/api">USAJOBS API</a>
-      <a href="https://ec.europa.eu/esco">ESCO Skills</a>
-      <a href="https://www.opm.gov/">OPM</a>
-      <a href="https://www.gsa.gov/">GSA</a>
+    <div class="footer-bottom">
+      <p>© 2026 VakansioGraph. Aggregates publicly available job data. No personal information collected.</p>
+      <div class="footer-badges">
+        <span class="footer-badge">USAJOBS</span>
+        <span class="footer-badge">Adzuna</span>
+        <span class="footer-badge">ESCO v1.2</span>
+        <span class="footer-badge">SQLite</span>
+      </div>
     </div>
-    <div class="footer-section">
-      <h4>Resources</h4>
-      <a href="https://github.com/KolomiietsOleksandr/Vakansiograph">Documentation</a>
-    </div>
-    <div class="footer-section">
-      <h4>Follow</h4>
-      <a href="https://github.com/KolomiietsOleksandr">GitHub</a>
-      <a href="https://www.linkedin.com/in/okolomiietskolomiiets/">LinkedIn</a>
-      <a href="mailto:alexcrimson0818@gmail.com">Email</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2026 VakansioGraph. All rights reserved.</p>
-    <p><strong>Data Source:</strong> USAJOBS, Adzuna, Jobble | <strong>Skills Standard:</strong> ESCO</p>
-    <p style="margin-top: 1rem; font-size: 0.75rem;">
-      This platform aggregates publicly available job data. No personal information is collected.
-    </p>
   </div>
 </footer>
 
 <script>
 (function () {
+  /* ── Mobile nav toggle ── */
   var toggle = document.getElementById('nav-toggle');
   var nav    = document.getElementById('main-nav');
-  if (!toggle || !nav) return;
+  if (toggle && nav) {
+    var menuSVG  = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
+    var closeSVG = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
+    toggle.addEventListener('click', function () {
+      var open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+      toggle.innerHTML = open ? closeSVG : menuSVG;
+    });
+    document.addEventListener('click', function (e) {
+      if (!toggle.contains(e.target) && !nav.contains(e.target) && nav.classList.contains('open')) {
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.innerHTML = menuSVG;
+      }
+    });
+  }
 
-  var menuIcon = '<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>';
-  var closeIcon = '<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
-
-  toggle.addEventListener('click', function () {
-    var open = nav.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open);
-    toggle.innerHTML = open ? closeIcon : menuIcon;
-  });
-
-  document.addEventListener('click', function (e) {
-    if (!toggle.contains(e.target) && !nav.contains(e.target) && nav.classList.contains('open')) {
-      nav.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.innerHTML = menuIcon;
+  /* ── Active nav link ── */
+  var path = window.location.pathname;
+  document.querySelectorAll('#main-nav a').forEach(function (a) {
+    var href = a.getAttribute('href');
+    if (href === path || (href !== '/' && path.startsWith(href))) {
+      a.classList.add('active');
     }
   });
 }());
