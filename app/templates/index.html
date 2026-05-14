@@ -131,6 +131,10 @@
 /* ── Floating stat callouts ─────────────────────────────────── */
 .hero .ticker { width: 100%; max-width: 640px; }
 .hero .ticker-item { font-size: 0.8rem; }
+.hero .ticker-track {
+  -webkit-mask-image: linear-gradient(90deg, #000 80%, transparent);
+  mask-image: linear-gradient(90deg, #000 80%, transparent);
+}
 
 .float-stat {
   position: absolute;
@@ -407,13 +411,13 @@
 @keyframes dotPulse { 0%,100% { opacity: 1; r: 4; } 50% { opacity: 0.7; r: 5; } }
 
 /* ── Mini bars ─────────────────────────────────────── */
-.mini-bars { display: flex; align-items: flex-end; gap: 4px; height: 80px; margin-bottom: 1rem; }
+.mini-bars { display: flex; align-items: flex-end; gap: 4px; height: 110px; margin: 1rem 0; }
 .mini-bars .bar { flex: 1; background: var(--grad-fire); border-radius: 3px 3px 0 0; min-height: 8px; opacity: 0.85; transition: opacity 0.3s; animation: barRise 1.2s cubic-bezier(.34,1.56,.64,1) both; }
 .mini-bars .bar:hover { opacity: 1; }
 @keyframes barRise { from { transform: scaleY(0); transform-origin: bottom; } to { transform: scaleY(1); transform-origin: bottom; } }
 
 /* ── Mini world map ─────────────────────────────────── */
-.mini-map { position: relative; height: 200px; margin-top: auto; display: flex; align-items: center; justify-content: center; }
+.mini-map { position: relative; height: 160px; margin: 1rem 0; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
 .mini-map svg { width: 100%; height: 100%; }
 
 /* ── Type breakdown chips ───────────────────────────── */
@@ -569,17 +573,17 @@
   <div class="hero-inner">
     <div class="hero-badge">
       <span class="hero-badge-dot"></span>
-      Federal market · synced every 2 hours
+      Synced every 2 hours
     </div>
 
     <h1>
       Understand the<br>
-      labor market <span class="grad">before</span><br>
+      labor market <span class="grad">before </span><br>
       everyone else.
     </h1>
 
     <p class="hero-sub">
-      VakansioGraph mines federal postings, maps every skill to ESCO standards,
+      VakansioGraph mines postings, maps every skill to ESCO standards,
       and surfaces salary trends, demand signals and geographic insights — refreshed continuously.
     </p>
 
@@ -632,12 +636,12 @@
     <div class="section-header reveal">
       <div>
         <div class="section-eyebrow">// Capabilities</div>
-        <h2 class="section-title">Everything you need to <span class="grad">navigate</span> the federal job market.</h2>
+        <h2 class="section-title">Everything you need to <span class="grad">navigate </span> the federal job market.</h2>
       </div>
-      <div class="section-header-side">
+      <!-- <div class="section-header-side">
         <span>06 modules</span>
         <span>updated every 2h</span>
-      </div>
+      </div> -->
     </div>
 
     <div class="bento">
@@ -658,8 +662,8 @@
 
       <div class="bento-cell bento-callout b-wide reveal" style="--reveal-delay: 0.1s">
         <div class="big-num">2h</div>
-        <div class="sub">Median sync cycle. New federal postings flow in twice every business hour.</div>
-        <div class="meta"><span>Adzuna · USAJOBS</span><span>03 sources</span></div>
+        <div class="sub">Median sync cycle. New postings flow in twice every business hour.</div>
+        <div class="meta"><span>Adzuna · USAJOBS</span><span>02 sources</span></div>
       </div>
 
       <div class="bento-cell bento-blue b-1 reveal" style="--reveal-delay: 0.15s">
@@ -685,7 +689,7 @@
         <h3>Geographic insights</h3>
         <p>Distribution and remote percentages by state and country. Spot hotspots before consensus.</p>
         <div class="mini-map" id="miniMap"></div>
-        <div class="meta"><span>12 countries · 50 states</span><span>↗ explore</span></div>
+        <div class="meta"><span>20+ countries</span><span>explore</span></div>
       </div>
 
       <div class="bento-cell b-half reveal-right" style="--reveal-delay: 0.15s">
@@ -695,7 +699,7 @@
         <h3>Trend forecasting</h3>
         <p>Monthly volume by category. Identify emerging fields before the market catches on.</p>
         <div class="mini-bars" id="miniBars"></div>
-        <div class="meta"><span>25 months tracked</span><span>+14% YoY</span></div>
+        <div class="meta"><span>5 months tracked</span><span>+14% YoY</span></div>
       </div>
     </div>
   </section>
@@ -705,7 +709,7 @@
     <div class="section-header reveal">
       <div>
         <div class="section-eyebrow">// Pipeline</div>
-        <h2 class="section-title">From raw postings to <span class="grad">actionable</span> intelligence.</h2>
+        <h2 class="section-title">From raw postings to <span class="grad">actionable </span> intelligence.</h2>
       </div>
       <div class="section-header-side">
         <span>04 stages</span>
@@ -747,7 +751,7 @@
     <div class="section-header reveal">
       <div>
         <div class="section-eyebrow">// Dashboards</div>
-        <h2 class="section-title">Interactive views of the <span class="grad">federal</span> employment landscape.</h2>
+        <h2 class="section-title">Interactive views of the <span class="grad">federal </span> employment landscape.</h2>
       </div>
       <div class="section-header-side">
         <span>03 dashboards</span>

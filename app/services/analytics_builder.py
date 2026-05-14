@@ -55,7 +55,9 @@ def refresh(db_path: str):
     try:
         rows = conn.execute("""
             SELECT COALESCE(skill_esco_label, skill_raw) AS skill,
-                   skill_esco_type AS type, COUNT(*) AS count
+                   skill_esco_type AS type,
+                   skill_category AS category,
+                   COUNT(*) AS count
             FROM job_skills WHERE skill_esco_label IS NOT NULL
             GROUP BY COALESCE(skill_esco_label, skill_raw)
             ORDER BY count DESC LIMIT 20

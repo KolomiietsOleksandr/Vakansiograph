@@ -21,7 +21,6 @@ canvas { display: block; width: 100% !important; }
   border-radius: var(--radius-xl);
   margin-bottom: 2rem;
   position: relative;
-  overflow: hidden;
   isolation: isolate;
 }
 .page-header::before {
@@ -732,8 +731,8 @@ fetch('/api/skills/top?limit=100').then(r => r.json()).then(skills => {
   skills.forEach(s => {
     const t = (s.type || '').toLowerCase();
     if      (t.includes('knowledge'))  counts.knowledge  += s.count;
-    else if (t.includes('competence')) counts.competence += s.count;
     else if (t.includes('skill'))      counts.skill      += s.count;
+    else if (t.includes('competence')) counts.competence += s.count;
     else                               counts.other      += s.count;
   });
   new Chart(document.getElementById('typeChart'), {
