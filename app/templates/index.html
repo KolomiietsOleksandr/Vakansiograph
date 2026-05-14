@@ -104,6 +104,8 @@
 }
 
 .hero h1 .grad {
+  display: inline-block;
+  padding-right: 0.1em;
   background: var(--grad-fire);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1004,11 +1006,11 @@ trackEl.innerHTML = marqueeSkills.concat(marqueeSkills).map(buildChip).join('');
     drawDots();
   }
 
-  fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
+  fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/land-110m.json')
     .then(r => r.json())
     .then(topo => {
       if (typeof topojson === 'undefined') throw new Error('no topojson');
-      drawFeatures(topojson.feature(topo, topo.objects.countries).features);
+      drawFeatures(topojson.feature(topo, topo.objects.land).features);
     })
     .catch(() => {
       ctx.clearRect(0, 0, W, H);
