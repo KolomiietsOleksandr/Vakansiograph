@@ -933,11 +933,12 @@ trackEl.innerHTML = marqueeSkills.concat(marqueeSkills).map(buildChip).join('');
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
 
   const canvas = document.createElement('canvas');
-  Object.assign(canvas.style, { width: '100%', height: H + 'px', display: 'block' });
+  Object.assign(canvas.style, { display: 'block', margin: '0 auto', height: H + 'px' });
   container.appendChild(canvas);
 
   function resize() {
-    const W = container.clientWidth || 340;
+    const W = Math.min(container.clientWidth || 340, H * 2);
+    canvas.style.width = W + 'px';
     canvas.width  = W * dpr;
     canvas.height = H * dpr;
     return W;
