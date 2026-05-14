@@ -6,6 +6,8 @@ from app.services.location_service import LocationService
 from app.services.category_service import CategoryService
 from app.services.trends_service import TrendsService
 from app import cache
+from app.services import analytics_builder
+from app.config import Config
 
 jobs_bp = Blueprint('jobs', __name__, url_prefix='/api/jobs')
 skills_bp = Blueprint('skills', __name__, url_prefix='/api/skills')
@@ -19,6 +21,15 @@ health_bp = Blueprint('health', __name__, url_prefix='/api')
 @health_bp.route('/health', methods=['GET'])
 def health_check():
     return jsonify({"status": "healthy", "service": "LABO API"}), 200
+
+
+@health_bp.route('/admin/rebuild-cache', methods=['POST'])
+def rebuild_cache():
+    try:
+        analytics_builder.refresh(Config.DATABASE_PATH)
+        return jsonify({"status": "ok", "message": "Analytics cache rebuilt"}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 
 @health_bp.route('/overview', methods=['GET'])

@@ -945,9 +945,23 @@ trackEl.innerHTML = marqueeSkills.concat(marqueeSkills).map(buildChip).join('');
     }
     return `<circle cx="${cx}" cy="${cy}" r="1.6" fill="rgba(120,130,210,0.4)"/>`;
   }).join('');
+  const continents = `
+    <path d="M 42,38 L 88,28 L 102,42 L 100,80 L 82,98 L 65,102 L 52,92 L 42,68 Z"
+      fill="none" stroke="rgba(100,120,210,0.22)" stroke-width="0.9" stroke-linejoin="round"/>
+    <path d="M 72,98 L 104,90 L 110,118 L 106,150 L 88,162 L 70,156 L 62,134 L 66,112 Z"
+      fill="none" stroke="rgba(100,120,210,0.22)" stroke-width="0.9" stroke-linejoin="round"/>
+    <path d="M 143,34 L 162,28 L 176,34 L 182,48 L 174,64 L 158,68 L 146,62 L 140,48 Z"
+      fill="none" stroke="rgba(100,120,210,0.22)" stroke-width="0.9" stroke-linejoin="round"/>
+    <path d="M 142,68 L 164,62 L 186,72 L 192,102 L 188,140 L 168,152 L 148,136 L 136,102 Z"
+      fill="none" stroke="rgba(100,120,210,0.22)" stroke-width="0.9" stroke-linejoin="round"/>
+    <path d="M 178,44 L 252,22 L 322,42 L 320,72 L 296,88 L 252,92 L 210,80 L 186,64 L 178,54 Z"
+      fill="none" stroke="rgba(100,120,210,0.22)" stroke-width="0.9" stroke-linejoin="round"/>
+    <path d="M 258,122 L 310,114 L 322,134 L 300,150 L 264,146 L 255,132 Z"
+      fill="none" stroke="rgba(100,120,210,0.22)" stroke-width="0.9" stroke-linejoin="round"/>`;
   document.getElementById('miniMap').innerHTML = `
     <svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="xMidYMid meet">
       <defs><filter id="mapGlow"><feGaussianBlur stdDeviation="1.5"/></filter></defs>
+      ${continents}
       ${inner}
     </svg>`;
 })();
