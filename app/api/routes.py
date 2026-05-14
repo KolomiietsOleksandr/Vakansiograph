@@ -32,6 +32,30 @@ def rebuild_cache():
         return jsonify({"error": str(e)}), 500
 
 
+@health_bp.route('/insights/hero-stats', methods=['GET'])
+@cache.cached(timeout=7200)
+def hero_stats():
+    try:
+        data = analytics_builder.get_cached(Config.DATABASE_PATH, 'hero_stats')
+        if data:
+            return jsonify(data), 200
+        overview = analytics_builder.get_cached(Config.DATABASE_PATH, 'overview')
+        if not overview:
+            return jsonify([]), 200
+        avg = overview.get('avg_salary', {})
+        fallback = [
+            {"val": f"{overview.get('total_jobs', 0) // 1000}K+",           "label": "JOB POSTINGS",    "icon": "layers",   "color": "orange"},
+            {"val": str(overview.get('unique_skills', 0)),                   "label": "ESCO SKILLS",     "icon": "star",     "color": "blue"},
+            {"val": str(overview.get('total_organizations', 0)),             "label": "ORGANIZATIONS",   "icon": "users",    "color": "purple"},
+            {"val": f"{round(overview.get('remote_percentage') or 0)}%",     "label": "REMOTE ELIGIBLE", "icon": "globe",    "color": "green"},
+            {"val": f"${round(avg.get('min', 0)/1000)}K–${round(avg.get('max', 0)/1000)}K", "label": "AVG SALARY RANGE", "icon": "dollar", "color": "cyan"},
+            {"val": str(overview.get('new_this_week', 0)),                   "label": "NEW THIS WEEK",   "icon": "trending", "color": "pink"},
+        ]
+        return jsonify(fallback), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
 @health_bp.route('/overview', methods=['GET'])
 @cache.cached(timeout=600)
 def overview():
@@ -122,6 +146,42 @@ def category_salary():
     try:
         data = TrendsService.get_category_salary()
         return jsonify(data), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@trends_bp.route('/insights', methods=['GET'])
+@cache.cached(timeout=7200)
+def market_insights():
+    try:
+        data = analytics_builder.get_cached(Config.DATABASE_PATH, 'market_insights')
+        if data:
+            return jsonify(data), 200
+        # Fallback: build basic insights from skill_demand cache without Gemini
+        skill_demand = analytics_builder.get_cached(Config.DATABASE_PATH, 'skill_demand')
+        if not skill_demand:
+            return jsonify([]), 200
+        total = sum(d['total_occurrences'] for d in skill_demand) or 1
+        pct = lambda d: round(d['total_occurrences'] * 100 / total)
+        it = next((d for d in skill_demand if 'IT' in d['category'] or 'Tech' in d['category']), None)
+        fallback = [
+            {
+                "num": f"{pct(skill_demand[0])}%",
+                "label": "DOMINANT CATEGORY",
+                "note": f"<strong>{skill_demand[0]['category']}</strong> leads skill requirements across all postings."
+            },
+            {
+                "num": str(len(skill_demand)),
+                "label": "SKILL CATEGORIES",
+                "note": f"<strong>{len(skill_demand)} distinct ESCO categories</strong> mapped across all job postings in the database."
+            },
+            {
+                "num": f"{pct(it)}%" if it else "—",
+                "label": "IT & TECH SHARE",
+                "note": f"<strong>Technology skills</strong> represent {pct(it)}% of all skill occurrences — signalling demand for tech-adjacent roles." if it else "IT & Technology data unavailable."
+            },
+        ]
+        return jsonify(fallback), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 

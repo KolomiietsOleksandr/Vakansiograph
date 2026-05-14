@@ -361,18 +361,11 @@ fetch('/api/trends/skill-demand').then(r => r.json()).then(data => {
     }
   });
 
-  const total = data.reduce((s, d) => s + d.total_occurrences, 0);
-  const pct = d => Math.round(d.total_occurrences * 100 / total);
-  const itTech = data.find(d => d.category === 'IT & Technology');
+});
 
-  document.getElementById('insightRow').innerHTML = [
-    { num: pct(data[0]) + '%', label: 'Dominant Category',
-      note: `<strong>${data[0]?.category}</strong> leads skill requirements — driven by federal management and administrative roles.` },
-    { num: data.length + '', label: 'Skill Categories',
-      note: `${data.length} distinct ESCO skill categories mapped across all federal job postings in the database.` },
-    { num: (itTech ? pct(itTech) : 0) + '%', label: 'IT & Tech Share',
-      note: `Technology skills represent a relatively small share — signalling a gap in tech-adjacent federal role requirements.` }
-  ].map(i => `
+fetch('/api/trends/insights').then(r => r.json()).then(insights => {
+  if (!insights.length) return;
+  document.getElementById('insightRow').innerHTML = insights.map(i => `
     <div class="insight">
       <div class="insight-num">${i.num}</div>
       <div class="insight-label">${i.label}</div>

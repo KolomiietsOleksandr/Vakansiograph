@@ -1,8 +1,147 @@
 import json
+import os
 import sqlite3
 import logging
 
 logger = logging.getLogger(__name__)
+
+
+def _build_insights(conn):
+    """Generate 3 market insight cards via Gemini and store in analytics_cache."""
+    try:
+        rows = {k: conn.execute(
+            "SELECT data FROM analytics_cache WHERE key = ?", (k,)
+        ).fetchone() for k in ('skill_demand', 'top_skills_20', 'overview')}
+
+        if not all(rows.values()):
+            logger.warning("[ANALYTICS] insights: missing cache data, skipping")
+            return
+
+        skill_demand = json.loads(rows['skill_demand'][0])
+        top_skills   = json.loads(rows['top_skills_20'][0])
+        overview     = json.loads(rows['overview'][0])
+
+        total = sum(d['total_occurrences'] for d in skill_demand) or 1
+        top_cats = [
+            {
+                'category': d['category'],
+                'pct': round(d['total_occurrences'] * 100 / total),
+                'top_skills': [s['skill'] for s in d.get('top_skills', [])[:3]],
+            }
+            for d in skill_demand[:6]
+        ]
+        top5 = [s['skill'] for s in top_skills[:5]]
+
+        prompt = (
+            "You are a labor market analyst. Based on real job posting data below, "
+            "return a JSON array of exactly 3 insight cards.\n\n"
+            f"Total postings: {overview.get('total_jobs', 0):,}\n"
+            f"Organizations: {overview.get('total_organizations', 0)}\n"
+            f"Unique ESCO skills: {overview.get('unique_skills', 0)}\n"
+            f"Remote-eligible: {round(overview.get('remote_percentage') or 0)}%\n"
+            f"Skill category breakdown: {json.dumps(top_cats)}\n"
+            f"Top 5 skills by demand: {', '.join(top5)}\n\n"
+            "Each card object must have:\n"
+            '  "num"   — short metric derived from the data above (e.g. "38%", "12", "$94K")\n'
+            '  "label" — 2-4 word title, ALL CAPS\n'
+            '  "note"  — 1-2 sentences, max 25 words total, wrap one key term in <strong>…</strong>\n\n'
+            "Return ONLY the JSON array, no markdown fences, no explanation."
+        )
+
+        api_key = os.getenv("GEMINI_API_KEY", "")
+        if not api_key:
+            logger.warning("[ANALYTICS] GEMINI_API_KEY not set — skipping insights")
+            return
+
+        from google import genai as _genai
+        client = _genai.Client(api_key=api_key)
+        resp = client.models.generate_content(
+            model=os.getenv("GEMINI_MODEL", "gemini-2.0-flash"),
+            contents=prompt,
+        )
+        text = resp.text.strip()
+        if text.startswith("```"):
+            text = text.split("```")[1].lstrip("json").strip()
+        insights = json.loads(text)
+        _store(conn, 'market_insights', insights)
+        logger.info("[ANALYTICS] market_insights cached via Gemini")
+    except Exception:
+        logger.exception("[ANALYTICS] insights build failed")
+
+
+def _build_hero_stats(conn):
+    """Generate 6 hero float stat cards via Gemini and store in analytics_cache."""
+    try:
+        keys = ('overview', 'skill_demand', 'skill_roi_20', 'locations')
+        rows = {k: conn.execute(
+            "SELECT data FROM analytics_cache WHERE key = ?", (k,)
+        ).fetchone() for k in keys}
+
+        if not rows['overview']:
+            logger.warning("[ANALYTICS] hero_stats: missing overview, skipping")
+            return
+
+        overview     = json.loads(rows['overview'][0])
+        skill_demand = json.loads(rows['skill_demand'][0]) if rows['skill_demand'] else []
+        roi          = json.loads(rows['skill_roi_20'][0]) if rows['skill_roi_20'] else []
+        locations    = json.loads(rows['locations'][0])    if rows['locations']    else []
+
+        total_occ = sum(d['total_occurrences'] for d in skill_demand) or 1
+        it_cat = next(
+            (d for d in skill_demand if 'IT' in d.get('category', '') or 'Tech' in d.get('category', '')),
+            None
+        )
+        it_pct       = round(it_cat['total_occurrences'] * 100 / total_occ) if it_cat else 0
+        top_roi_skill = roi[0]['skill'] if roi else 'N/A'
+        top_roi_sal   = round((roi[0].get('avg_min_salary') or 0) / 1000) if roi else 0
+        avg_min       = round(overview.get('avg_salary', {}).get('min', 0) / 1000)
+        avg_max       = round(overview.get('avg_salary', {}).get('max', 0) / 1000)
+
+        data_summary = (
+            f"Total postings: {overview.get('total_jobs', 0):,}\n"
+            f"New this week: {overview.get('new_this_week', 0)}\n"
+            f"Organizations: {overview.get('total_organizations', 0)}\n"
+            f"Unique ESCO skills: {overview.get('unique_skills', 0)}\n"
+            f"Remote-eligible: {round(overview.get('remote_percentage') or 0)}%\n"
+            f"IT & Tech skill share: {it_pct}%\n"
+            f"Avg annual salary: ${avg_min}K–${avg_max}K\n"
+            f"Top ROI skill: {top_roi_skill} at avg ${top_roi_sal}K/yr\n"
+            f"Countries tracked: {len(locations)}\n"
+        )
+
+        prompt = (
+            "You are a labor market analyst. Based on real job posting data below, "
+            "return a JSON array of exactly 6 hero stat cards.\n\n"
+            f"{data_summary}\n"
+            "Each card must have exactly these fields:\n"
+            '  "val"   — short metric string derived from the data (e.g. "38%", "$94K", "12", "2.4K+")\n'
+            '  "label" — 2–4 word label, ALL CAPS\n'
+            '  "icon"  — one of exactly: trending, globe, dollar, layers, users, star\n'
+            '  "color" — one of exactly: green, orange, blue, purple, cyan, pink\n\n'
+            "Each stat must be unique and directly derived from the numbers above. "
+            "Return ONLY the JSON array, no markdown fences, no explanation."
+        )
+
+        api_key = os.getenv("GEMINI_API_KEY", "")
+        if not api_key:
+            logger.warning("[ANALYTICS] GEMINI_API_KEY not set — skipping hero_stats")
+            return
+
+        from google import genai as _genai
+        client = _genai.Client(api_key=api_key)
+        resp = client.models.generate_content(
+            model=os.getenv("GEMINI_MODEL", "gemini-2.0-flash"),
+            contents=prompt,
+        )
+        text = resp.text.strip()
+        if text.startswith("```"):
+            text = text.split("```")[1].lstrip("json").strip()
+        stats = json.loads(text)
+        _store(conn, 'hero_stats', stats)
+        logger.info("[ANALYTICS] hero_stats cached via Gemini")
+    except Exception:
+        logger.exception("[ANALYTICS] hero_stats build failed")
+
 
 CACHE_TABLE = """
     CREATE TABLE IF NOT EXISTS analytics_cache (
@@ -153,6 +292,8 @@ def refresh(db_path: str):
     except Exception:
         logger.exception("[ANALYTICS] locations failed")
 
+    _build_insights(conn)
+    _build_hero_stats(conn)
     conn.close()
     logger.info("[ANALYTICS] Refresh complete")
 

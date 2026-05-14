@@ -169,10 +169,12 @@
 .float-stat-val { font-size: 1.1rem; font-weight: 700; color: var(--text); line-height: 1; margin-bottom: 0.2rem; }
 .float-stat-lbl { font-size: 0.65rem; color: var(--text-2); text-transform: uppercase; letter-spacing: 0.5px; }
 
-.fs-1 { top: 15%; left: 5%;  animation-delay: 1.2s; }
-.fs-2 { top: 28%; right: 6%; animation-delay: 1.5s; }
-.fs-3 { bottom: 22%; left: 8%; animation-delay: 1.8s; }
-.fs-4 { bottom: 16%; right: 4%; animation-delay: 2.1s; }
+.fs-1 { top: 12%;    left: 5%;  animation-delay: 1.2s; }
+.fs-2 { top: 22%;    right: 6%; animation-delay: 1.5s; }
+.fs-3 { top: 48%;    left: 3%;  animation-delay: 1.8s; }
+.fs-4 { top: 38%;    right: 5%; animation-delay: 2.1s; }
+.fs-5 { bottom: 20%; left: 7%;  animation-delay: 2.4s; }
+.fs-6 { bottom: 14%; right: 4%; animation-delay: 2.7s; }
 
 @keyframes floatStat {
   0%   { opacity: 0; transform: translateY(20px); }
@@ -533,45 +535,12 @@
 <section class="hero">
   <canvas id="heroCanvas"></canvas>
 
-  <div class="float-stat fs-1">
-    <div class="float-stat-icon" style="background: rgba(34,211,160,0.15); color: var(--green);">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-    </div>
-    <div>
-      <div class="float-stat-val">+14.2%</div>
-      <div class="float-stat-lbl">IT postings · MoM</div>
-    </div>
-  </div>
-
-  <div class="float-stat fs-2">
-    <div class="float-stat-icon" style="background: rgba(255,100,3,0.15); color: var(--accent);">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="9"/></svg>
-    </div>
-    <div>
-      <div class="float-stat-val" id="hero-top-salary">$124K</div>
-      <div class="float-stat-lbl">ML avg · top ROI</div>
-    </div>
-  </div>
-
-  <div class="float-stat fs-3">
-    <div class="float-stat-icon" style="background: rgba(79,133,246,0.15); color: var(--blue);">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M2 12h20"/></svg>
-    </div>
-    <div>
-      <div class="float-stat-val">12 countries</div>
-      <div class="float-stat-lbl">tracked live</div>
-    </div>
-  </div>
-
-  <div class="float-stat fs-4">
-    <div class="float-stat-icon" style="background: rgba(155,110,243,0.15); color: var(--purple);">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5z"/><path d="M2 17l10 5 10-5"/></svg>
-    </div>
-    <div>
-      <div class="float-stat-val" id="hero-skills">—</div>
-      <div class="float-stat-lbl">ESCO-mapped skills</div>
-    </div>
-  </div>
+  <div class="float-stat fs-1" id="fs-1"></div>
+  <div class="float-stat fs-2" id="fs-2"></div>
+  <div class="float-stat fs-3" id="fs-3"></div>
+  <div class="float-stat fs-4" id="fs-4"></div>
+  <div class="float-stat fs-5" id="fs-5"></div>
+  <div class="float-stat fs-6" id="fs-6"></div>
 
   <div class="hero-inner">
     <div class="hero-badge">
@@ -848,6 +817,42 @@
 <script src="/static/js/hero-canvas.js"></script>
 
 <script>
+/* ════════ Float stats (Gemini-computed) ════════ */
+(function () {
+  const ICONS = {
+    trending: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>',
+    globe:    '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M2 12h20"/></svg>',
+    dollar:   '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>',
+    layers:   '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>',
+    users:    '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+    star:     '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>',
+  };
+  const COLORS = {
+    green:  { bg: 'rgba(34,211,160,0.15)',  fg: 'var(--green)' },
+    orange: { bg: 'rgba(255,100,3,0.15)',   fg: 'var(--accent)' },
+    blue:   { bg: 'rgba(79,133,246,0.15)',  fg: 'var(--blue)' },
+    purple: { bg: 'rgba(155,110,243,0.15)', fg: 'var(--purple)' },
+    cyan:   { bg: 'rgba(34,211,200,0.15)',  fg: '#22d3c8' },
+    pink:   { bg: 'rgba(236,72,153,0.15)',  fg: '#ec4899' },
+  };
+  fetch('/api/insights/hero-stats').then(r => r.json()).then(stats => {
+    if (!Array.isArray(stats)) return;
+    stats.slice(0, 6).forEach((s, i) => {
+      const el = document.getElementById('fs-' + (i + 1));
+      if (!el) return;
+      const c = COLORS[s.color] || COLORS.orange;
+      el.innerHTML =
+        '<div class="float-stat-icon" style="background:' + c.bg + '; color:' + c.fg + ';">' +
+          (ICONS[s.icon] || ICONS.trending) +
+        '</div>' +
+        '<div>' +
+          '<div class="float-stat-val">' + s.val + '</div>' +
+          '<div class="float-stat-lbl">' + s.label + '</div>' +
+        '</div>';
+    });
+  }).catch(() => {});
+}());
+
 /* ════════ Stats from API ════════ */
 fetch('/api/overview').then(r => r.json()).then(d => {
   animateCounter(document.getElementById('stat-jobs'),
@@ -859,8 +864,7 @@ fetch('/api/overview').then(r => r.json()).then(d => {
   const maxK = Math.round(d.avg_salary.max / 1000);
   document.getElementById('stat-salary').textContent = `$${minK}K–$${maxK}K`;
 
-  const heroSkills = document.getElementById('hero-skills');
-  if (heroSkills) heroSkills.textContent = d.unique_skills + ' skills';
+
 }).catch(() => {
   document.getElementById('stat-jobs').textContent   = '120K+';
   document.getElementById('stat-skills').textContent = '226';
@@ -869,36 +873,65 @@ fetch('/api/overview').then(r => r.json()).then(d => {
 });
 
 /* ════════ Live ticker ════════ */
-const tickerItems = [
-  '<span class="t-cat">[USAJOBS]</span> Senior Data Scientist · DoE <span class="t-sep">·</span> <span class="t-val">GS-14 · $128K–$165K</span>',
-  '<span class="t-cat">[NEW]</span> Cybersecurity Specialist · DHS <span class="t-sep">·</span> <span class="t-val">+12% MoM demand</span>',
-  '<span class="t-cat">[ESCO]</span> machine learning → Knowledge <span class="t-sep">·</span> <span class="t-val">1,830 jobs</span>',
-  '<span class="t-cat">[TREND]</span> IT &amp; Technology <span class="t-sep">·</span> <span class="t-val">+14.2% this quarter</span>',
-  '<span class="t-cat">[USAJOBS]</span> Program Manager · NASA <span class="t-sep">·</span> <span class="t-val">GS-15 · $142K–$183K</span>',
-  '<span class="t-cat">[ADZUNA]</span> 2,840 new postings ingested <span class="t-sep">·</span> <span class="t-val">last 24h</span>',
-];
-startTicker('ticker', tickerItems);
+(function () {
+  const fmtSal = (mn, mx) => mn && mx
+    ? `$${Math.round(mn/1000)}K–$${Math.round(mx/1000)}K`
+    : mn ? `$${Math.round(mn/1000)}K+` : null;
+  const fmtN = n => n >= 1000 ? (n/1000).toFixed(1) + 'K' : n;
+  const sep = '<span class="t-sep">·</span>';
+
+  Promise.all([
+    fetch('/api/jobs/recent?limit=8').then(r => r.json()),
+    fetch('/api/skills/top?limit=8').then(r => r.json()),
+  ]).then(([jobs, skills]) => {
+    const items = [];
+    jobs.forEach(j => {
+      const sal = fmtSal(j.min_salary, j.max_salary);
+      const grade = j.job_grade ? j.job_grade + ' · ' : '';
+      items.push(
+        `<span class="t-cat">[USAJOBS]</span> ${j.title} · ${j.organization || ''} ${sep}` +
+        ` <span class="t-val">${grade}${sal || 'see posting'}</span>`
+      );
+    });
+    skills.forEach(s => {
+      items.push(
+        `<span class="t-cat">[ESCO]</span> ${s.skill} → ${s.type || 'skill'} ${sep}` +
+        ` <span class="t-val">${fmtN(s.count)} jobs</span>`
+      );
+    });
+    startTicker('ticker', items);
+  }).catch(() => {
+    startTicker('ticker', [
+      `<span class="t-cat">[USAJOBS]</span> Fetching live postings… ${sep} <span class="t-val">loading</span>`,
+    ]);
+  });
+}());
 
 /* ════════ Marquee chips ════════ */
-const marqueeSkills = [
-  { skill: 'machine learning', count: '$124K', color: 'blue' },
-  { skill: 'cybersecurity', count: '$116K' },
-  { skill: 'project management', count: '8.4K jobs', color: 'green' },
-  { skill: 'python', count: '$102K', color: 'purple' },
-  { skill: 'data analysis', count: '5.2K jobs' },
-  { skill: 'leadership', count: '6.9K jobs', color: 'pink' },
-  { skill: 'cloud architecture', count: '$112K', color: 'blue' },
-  { skill: 'risk management', count: '$96K' },
-  { skill: 'sql', count: '3.0K jobs', color: 'green' },
-  { skill: 'aws', count: '$102K', color: 'purple' },
-  { skill: 'regulatory compliance', count: '4.8K jobs' },
-  { skill: 'kubernetes', count: '$98K', color: 'blue' },
-  { skill: 'budgeting', count: '$84K' },
-  { skill: 'auditing', count: '2.3K jobs', color: 'green' },
-];
-const trackEl = document.getElementById('marquee-track');
-const buildChip = s => `<div class="marquee-chip ${s.color || ''}"><span class="dot"></span>${s.skill} <strong>${s.count}</strong></div>`;
-trackEl.innerHTML = marqueeSkills.concat(marqueeSkills).map(buildChip).join('');
+(function () {
+  const COLORS = ['', 'blue', 'green', 'purple', 'pink', '', 'blue', 'green', 'purple', 'pink', '', 'blue', 'green', 'green'];
+  const trackEl = document.getElementById('marquee-track');
+  const buildChip = (s, color) =>
+    `<div class="marquee-chip ${color}"><span class="dot"></span>${s.skill} <strong>${s.count}</strong></div>`;
+
+  Promise.all([
+    fetch('/api/skills/top?limit=14').then(r => r.json()),
+    fetch('/api/trends/skill-roi').then(r => r.json()),
+  ]).then(([skills, roi]) => {
+    const roiMap = {};
+    roi.forEach(r => { roiMap[(r.skill || '').toLowerCase()] = r.avg_min_salary; });
+    const fmtN = n => n >= 1000 ? Math.round(n / 1000) + 'K' : n;
+    const chips = skills.map((s, i) => {
+      const sal = roiMap[s.skill.toLowerCase()];
+      return {
+        skill: s.skill,
+        count: sal ? '$' + Math.round(sal / 1000) + 'K' : fmtN(s.count) + ' jobs',
+        color: COLORS[i] || '',
+      };
+    });
+    trackEl.innerHTML = chips.concat(chips).map((s, i) => buildChip(s, s.color)).join('');
+  }).catch(() => {});
+}());
 
 /* ════════ Mini live chart ════════ */
 (function () {
