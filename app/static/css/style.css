@@ -32,7 +32,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: 
+  background:
     radial-gradient(circle at 20% 50%, rgba(0, 255, 65, 0.05) 0%, transparent 50%),
     radial-gradient(circle at 80% 80%, rgba(255, 0, 110, 0.05) 0%, transparent 50%);
   pointer-events: none;
@@ -46,6 +46,7 @@ header {
   z-index: 100;
   background: rgba(10, 10, 10, 0.95);
   border-bottom: 1px solid var(--border);
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   transition: all 0.3s;
 }

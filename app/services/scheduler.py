@@ -104,10 +104,24 @@ def build_analytics():
         logger.exception("[ANALYTICS] Failed")
 
 
+def collect_jooble():
+    logger.info("=== [JOOBLE] Starting Jooble data collection ===")
+    if not os.environ.get("JOOBLE_API_KEY"):
+        logger.warning("[JOOBLE] JOOBLE_API_KEY not set — skipping")
+        return
+    try:
+        from app.services.parser_jooble import JoobleParser
+        saved = JoobleParser().run()
+        logger.info("[JOOBLE] Done: %d new jobs saved", saved)
+    except Exception:
+        logger.exception("[JOOBLE] Failed")
+
+
 def pipeline():
     logger.info("=== [PIPELINE] Starting full pipeline ===")
     collect_jobs()
     collect_adzuna()
+    collect_jooble()
     enrich_skills()
     build_analytics()
     logger.info("=== [PIPELINE] Done ===")

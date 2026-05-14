@@ -298,6 +298,7 @@ footer::before {
   background-clip: text;
   pointer-events: none;
   user-select: none;
+  -webkit-user-select: none;
   position: absolute;
   bottom: -0.15em;
   left: 0;
