@@ -10,7 +10,7 @@ import requests
 
 log = logging.getLogger(__name__)
 
-JOOBLE_BASE_URL = "https://jooble.org/api/"
+JOOBLE_BASE_URL = "http://ua.jooble.org/api/"
 RESULTS_PER_PAGE = 20
 
 # Broad categories to get diverse Ukrainian vacancies.

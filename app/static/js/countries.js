@@ -41,6 +41,7 @@ window.COUNTRY_META = {
   TU:  { name: 'Turkey',                 flag: '🇹🇷' },
   BA:  { name: 'Bosnia & Herzegovina',   flag: '🇧🇦' },
   SO:  { name: 'South Africa',           flag: '🇿🇦' },
+  UA:  { name: 'Ukraine',                flag: '🇺🇦' },
   UN:  { name: 'Unknown',                flag: '🏳️'  },
 };
 
