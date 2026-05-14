@@ -9,6 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/static/css/design-system.css">
 <link rel="icon" type="image/png" href="/static/images/favicon.png">
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
 <style>
 
 /* ════════ INDEX-SPECIFIC LAYOUT ════════════════════════════════ */
@@ -689,7 +690,7 @@
         <h3>Geographic insights</h3>
         <p>Distribution and remote percentages by state and country. Spot hotspots before consensus.</p>
         <div class="mini-map" id="miniMap"></div>
-        <div class="meta"><span>20+ countries</span><span>explore</span></div>
+        <div class="meta"><span>20+ countries</span><span>explore </span></div>
       </div>
 
       <div class="bento-cell b-half reveal-right" style="--reveal-delay: 0.15s">
@@ -811,7 +812,7 @@
 
   <!-- ════════ CTA ════════ -->
   <section class="cta reveal-scale">
-    <h2>Ready to see the <span class="grad">market</span> from above?</h2>
+    <h2>Ready to see the <span class="grad">market </span> from above?</h2>
     <p>Three dashboards. Live postings. Skills mapped to ESCO. Pick a view and start exploring.</p>
     <div class="cta-buttons">
       <a href="/trends" class="btn btn-primary">
@@ -925,45 +926,94 @@ trackEl.innerHTML = marqueeSkills.concat(marqueeSkills).map(buildChip).join('');
 
 /* ════════ Mini world map ════════ */
 (function () {
-  const w = 360, h = 200;
-  const positions = [
-    [22,34,1],[18,40,0],[20,46,0],[24,40,0],[26,46,0],[16,38,0],[28,52,0],
-    [44,34,1],[46,38,0],[48,32,0],[42,40,0],
-    [62,38,1],[58,42,0],[66,44,0],[60,48,0],[70,40,0],[66,50,0],[58,36,0],
-    [50,50,0],[52,54,0],[48,56,0],[54,60,0],[46,58,0],
-    [78,68,1],[80,72,0],[76,70,0],
-    [26,62,0],[28,68,0],[30,72,0],
+  const container = document.getElementById('miniMap');
+  const H = 160;
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+  const canvas = document.createElement('canvas');
+  Object.assign(canvas.style, { width: '100%', height: H + 'px', display: 'block' });
+  container.appendChild(canvas);
+
+  function resize() {
+    const W = container.clientWidth || 340;
+    canvas.width  = W * dpr;
+    canvas.height = H * dpr;
+    return W;
+  }
+  const W = resize();
+
+  const ctx = canvas.getContext('2d');
+  ctx.scale(dpr, dpr);
+
+  const project = ([lon, lat]) => [
+    (lon + 180) / 360 * W,
+    (90  - lat) / 180 * H
   ];
-  const inner = positions.map(([x, y, hot]) => {
-    const cx = (x / 100) * w, cy = (y / 100) * h;
-    if (hot) {
-      return `<circle cx="${cx}" cy="${cy}" r="3" fill="#ff9a00" filter="url(#mapGlow)"/>
-              <circle cx="${cx}" cy="${cy}" r="9" fill="none" stroke="#ff6403" stroke-width="1" opacity="0.4">
-                <animate attributeName="r" values="3;14;3" dur="2.4s" repeatCount="indefinite"/>
-                <animate attributeName="opacity" values="0.6;0;0.6" dur="2.4s" repeatCount="indefinite"/>
-              </circle>`;
-    }
-    return `<circle cx="${cx}" cy="${cy}" r="1.6" fill="rgba(120,130,210,0.4)"/>`;
-  }).join('');
-  const continents = `
-    <path d="M 42,38 L 88,28 L 102,42 L 100,80 L 82,98 L 65,102 L 52,92 L 42,68 Z"
-      fill="none" stroke="rgba(100,120,210,0.22)" stroke-width="0.9" stroke-linejoin="round"/>
-    <path d="M 72,98 L 104,90 L 110,118 L 106,150 L 88,162 L 70,156 L 62,134 L 66,112 Z"
-      fill="none" stroke="rgba(100,120,210,0.22)" stroke-width="0.9" stroke-linejoin="round"/>
-    <path d="M 143,34 L 162,28 L 176,34 L 182,48 L 174,64 L 158,68 L 146,62 L 140,48 Z"
-      fill="none" stroke="rgba(100,120,210,0.22)" stroke-width="0.9" stroke-linejoin="round"/>
-    <path d="M 142,68 L 164,62 L 186,72 L 192,102 L 188,140 L 168,152 L 148,136 L 136,102 Z"
-      fill="none" stroke="rgba(100,120,210,0.22)" stroke-width="0.9" stroke-linejoin="round"/>
-    <path d="M 178,44 L 252,22 L 322,42 L 320,72 L 296,88 L 252,92 L 210,80 L 186,64 L 178,54 Z"
-      fill="none" stroke="rgba(100,120,210,0.22)" stroke-width="0.9" stroke-linejoin="round"/>
-    <path d="M 258,122 L 310,114 L 322,134 L 300,150 L 264,146 L 255,132 Z"
-      fill="none" stroke="rgba(100,120,210,0.22)" stroke-width="0.9" stroke-linejoin="round"/>`;
-  document.getElementById('miniMap').innerHTML = `
-    <svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="xMidYMid meet">
-      <defs><filter id="mapGlow"><feGaussianBlur stdDeviation="1.5"/></filter></defs>
-      ${continents}
-      ${inner}
-    </svg>`;
+
+  const HOTSPOTS = [
+    [-100, 42], [15, 50], [80, 22], [115, 30], [26, -28]
+  ];
+  const DOTS = [
+    [-87,15],[-58,6],[-40,-12],[35,30],[50,25],
+    [138,35],[145,-38],[131,-12],[103,3]
+  ];
+
+  function drawDots() {
+    DOTS.forEach(([lon, lat]) => {
+      const [x, y] = project([lon, lat]);
+      ctx.fillStyle = 'rgba(120,130,210,0.55)';
+      ctx.beginPath(); ctx.arc(x, y, 1.4, 0, Math.PI * 2); ctx.fill();
+    });
+    HOTSPOTS.forEach(([lon, lat]) => {
+      const [x, y] = project([lon, lat]);
+      const g = ctx.createRadialGradient(x, y, 0, x, y, 14);
+      g.addColorStop(0, 'rgba(255,100,3,0.45)');
+      g.addColorStop(1, 'rgba(255,100,3,0)');
+      ctx.fillStyle = g;
+      ctx.beginPath(); ctx.arc(x, y, 14, 0, Math.PI * 2); ctx.fill();
+      ctx.fillStyle = '#ff9a00';
+      ctx.beginPath(); ctx.arc(x, y, 2.5, 0, Math.PI * 2); ctx.fill();
+    });
+  }
+
+  function drawFeatures(features) {
+    ctx.clearRect(0, 0, W, H);
+    ctx.strokeStyle = 'rgba(110,130,200,0.38)';
+    ctx.fillStyle   = 'rgba(70,82,130,0.16)';
+    ctx.lineWidth   = 0.55;
+
+    features.forEach(f => {
+      const polys = f.geometry.type === 'Polygon'
+        ? [f.geometry.coordinates]
+        : f.geometry.coordinates;
+      polys.forEach(poly => {
+        poly.forEach(ring => {
+          if (ring.length < 3) return;
+          ctx.beginPath();
+          let prev = null;
+          ring.forEach(([lon, lat], i) => {
+            if (prev && Math.abs(lon - prev[0]) > 180) { ctx.closePath(); ctx.fill(); ctx.stroke(); ctx.beginPath(); }
+            const [x, y] = project([lon, lat]);
+            i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+            prev = [lon, lat];
+          });
+          ctx.closePath(); ctx.fill(); ctx.stroke();
+        });
+      });
+    });
+    drawDots();
+  }
+
+  fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
+    .then(r => r.json())
+    .then(topo => {
+      if (typeof topojson === 'undefined') throw new Error('no topojson');
+      drawFeatures(topojson.feature(topo, topo.objects.countries).features);
+    })
+    .catch(() => {
+      ctx.clearRect(0, 0, W, H);
+      drawDots();
+    });
 })();
 
 /* ════════ Dashboard previews ════════ */
