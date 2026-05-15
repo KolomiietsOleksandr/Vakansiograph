@@ -285,6 +285,8 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   font-style: italic;
+  display: inline-block;
+  padding-right: 0.1em;
 }
 
 .section-desc { color: var(--text-2); font-size: 1rem; line-height: 1.7; max-width: 560px; }
@@ -521,7 +523,7 @@
 .cta::after  { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--accent), var(--purple), transparent); }
 
 .cta h2 { font-family: var(--display); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; letter-spacing: -2px; line-height: 1.05; margin-bottom: 1rem; max-width: 20ch; margin-left: auto; margin-right: auto; }
-.cta h2 .grad { background: var(--grad-fire); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-style: italic; }
+.cta h2 .grad { background: var(--grad-fire); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-style: italic; display: inline-block; padding-right: 0.1em;}
 .cta p { color: var(--text-2); font-size: 1rem; max-width: 540px; margin: 0 auto 2rem; line-height: 1.7; }
 .cta-buttons { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; }
 

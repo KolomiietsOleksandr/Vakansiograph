@@ -202,7 +202,6 @@ canvas { display: block; width: 100% !important; }
   padding: 2rem;
   margin-bottom: 1rem;
   position: relative;
-  overflow: hidden;
 }
 
 .search-panel::before {
@@ -305,7 +304,7 @@ canvas { display: block; width: 100% !important; }
 }
 .ac-item:last-child { border-bottom: none; }
 .ac-item:hover, .ac-item.selected { background: rgba(255, 100, 3, 0.15); color: #fff; }
-.ac-skill { font-weight: 600; }
+.ac-skill { font-weight: 600; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .ac-count { font-size: 0.72rem; font-family: var(--mono); color: #7a7ab8; white-space: nowrap; }
 .ac-cat   { font-size: 0.72rem; color: var(--accent); }
 .ac-none  { padding: 1rem; font-size: 0.85rem; color: #7a7ab8; text-align: center; }
