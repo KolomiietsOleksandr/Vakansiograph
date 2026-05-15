@@ -1,4 +1,3 @@
-import json
 import logging
 import os
 import re
@@ -130,48 +129,10 @@ class JoobleParser:
             "_snippet": snippet,  # not stored in DB, used for skill extraction
         }
 
-    # ── Skill extraction via Gemini ───────────────────────────────────────────
-
-    def _extract_skills(self, jobs: list[dict]) -> dict[str, list[str]]:
-        """Extract skills from Ukrainian job postings, return English skill names."""
-        if not self.gemini_key or not jobs:
-            return {}
-        try:
-            from google import genai as _genai
-
-            client = _genai.Client(api_key=self.gemini_key)
-            postings = [
-                {
-                    "id": j["position_id"],
-                    "title": j["title"],
-                    "text": j.get("_snippet", ""),
-                }
-                for j in jobs
-            ]
-            prompt = (
-                "You are a skill extraction expert. "
-                "Extract professional skills from Ukrainian job postings. "
-                "Return skill names in English (translate from Ukrainian when needed). "
-                "Include: programming languages, tools, frameworks, methodologies, "
-                "domain skills, soft skills, certifications.\n\n"
-                f"Job postings: {json.dumps(postings, ensure_ascii=False)}\n\n"
-                'Return ONLY valid JSON: '
-                '{"results": [{"id": "<position_id>", "skills": ["skill1", "skill2"]}]}'
-            )
-            resp = client.models.generate_content(model=self.gemini_model, contents=prompt)
-            text = resp.text.strip()
-            if text.startswith("```"):
-                text = text.split("```")[1].lstrip("json").strip()
-            data = json.loads(text)
-            return {r["id"]: r.get("skills", []) for r in data.get("results", [])}
-        except Exception:
-            log.exception("[JOOBLE] Gemini skill extraction failed")
-            return {}
-
     # ── DB ────────────────────────────────────────────────────────────────────
 
-    def _save_page(self, conn: sqlite3.Connection, jobs: list[dict]) -> int:
-        """Upsert jobs; extract and store skills only for brand-new rows."""
+    def _upsert_jobs(self, conn: sqlite3.Connection, jobs: list[dict]) -> list[dict]:
+        """Save new jobs to job_postings. Returns only brand-new rows (with _snippet)."""
         cur = conn.cursor()
         new_jobs: list[dict] = []
 
@@ -209,32 +170,8 @@ class JoobleParser:
                 new_jobs.append(job)
 
         conn.commit()
+        return new_jobs
 
-        if not new_jobs:
-            return 0
-
-        skills_map = self._extract_skills(new_jobs)
-
-        for job in new_jobs:
-            for skill in skills_map.get(job["position_id"], []):
-                skill = skill.strip()
-                if not skill:
-                    continue
-                try:
-                    cur.execute(
-                        "INSERT INTO job_skills (position_id, skill_raw) VALUES (?,?)",
-                        (job["position_id"], skill),
-                    )
-                except Exception:
-                    pass
-
-        conn.commit()
-        if not self.gemini_key:
-            log.warning(
-                "[JOOBLE] GEMINI_API_KEY not set — %d jobs saved without skills",
-                len(new_jobs),
-            )
-        return len(new_jobs)
 
     # ── Runner ────────────────────────────────────────────────────────────────
 
@@ -243,10 +180,11 @@ class JoobleParser:
             "[JOOBLE] Parser started | max_requests=%d | db=%s",
             self.max_requests, self.db_path,
         )
-        total_saved = 0
         conn = sqlite3.connect(self.db_path, timeout=60)
         conn.execute("PRAGMA journal_mode=WAL")
         conn.execute("PRAGMA synchronous=NORMAL")
+
+        all_new_jobs: list[dict] = []
 
         try:
             for keyword in SEARCH_KEYWORDS:
@@ -273,12 +211,13 @@ class JoobleParser:
                         break
 
                     jobs = [j for j in (self._parse_job(r) for r in raw_jobs) if j]
-                    saved = self._save_page(conn, jobs)
-                    total_saved += saved
+                    new_jobs = self._upsert_jobs(conn, jobs)
+                    all_new_jobs.extend(new_jobs)
 
                     log.info(
-                        "[JOOBLE]   page=%d fetched=%d new=%d requests=%d/%d",
-                        page, len(jobs), saved, self._request_count, self.max_requests,
+                        "[JOOBLE]   page=%d fetched=%d new=%d total_new=%d requests=%d/%d",
+                        page, len(jobs), len(new_jobs), len(all_new_jobs),
+                        self._request_count, self.max_requests,
                     )
 
                     total_count = data.get("totalCount", 0)
@@ -286,11 +225,12 @@ class JoobleParser:
                         break
                     page += 1
 
+
         finally:
             conn.close()
 
         log.info(
             "[JOOBLE] Done | new_jobs=%d requests=%d/%d",
-            total_saved, self._request_count, self.max_requests,
+            len(all_new_jobs), self._request_count, self.max_requests,
         )
-        return total_saved
+        return len(all_new_jobs)

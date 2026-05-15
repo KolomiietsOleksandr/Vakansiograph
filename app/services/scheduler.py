@@ -117,11 +117,96 @@ def collect_jooble():
         logger.exception("[JOOBLE] Failed")
 
 
+def extract_jooble_skills():
+    logger.info("=== [JOOBLE-SKILLS] Extracting skills from Jooble jobs via Gemini ===")
+    gemini_key = os.environ.get("GEMINI_API_KEY", "")
+    if not gemini_key:
+        logger.warning("[JOOBLE-SKILLS] GEMINI_API_KEY not set — skipping")
+        return
+    try:
+        import json
+        import sqlite3 as _sqlite3
+        from google import genai as _genai
+
+        gemini_model = os.environ.get("GEMINI_MODEL", "gemini-2.0-flash")
+        batch_size = 100
+
+        conn = _sqlite3.connect(DB_PATH, timeout=60)
+        conn.execute("PRAGMA journal_mode=WAL")
+        conn.row_factory = _sqlite3.Row
+
+        # Jooble jobs that have no skill_raw entries yet
+        rows = conn.execute("""
+            SELECT jp.position_id, jp.title, jp.qualification_summary
+            FROM job_postings jp
+            WHERE jp.job_type = 'Jooble'
+              AND jp.position_id NOT IN (SELECT DISTINCT position_id FROM job_skills)
+        """).fetchall()
+
+        if not rows:
+            logger.info("[JOOBLE-SKILLS] No unprocessed Jooble jobs — nothing to do")
+            conn.close()
+            return
+
+        logger.info("[JOOBLE-SKILLS] Processing %d jobs in batches of %d", len(rows), batch_size)
+        client = _genai.Client(api_key=gemini_key)
+        total_skills = 0
+
+        for i in range(0, len(rows), batch_size):
+            batch = rows[i: i + batch_size]
+            postings = [
+                {"id": r["position_id"], "title": r["title"], "text": r["qualification_summary"] or ""}
+                for r in batch
+            ]
+            prompt = (
+                "You are a skill extraction expert. "
+                "Extract professional skills from Ukrainian job postings. "
+                "Return skill names in English (translate from Ukrainian when needed). "
+                "Include: programming languages, tools, frameworks, methodologies, "
+                "domain skills, soft skills, certifications.\n\n"
+                f"Job postings: {json.dumps(postings, ensure_ascii=False)}\n\n"
+                'Return ONLY valid JSON: '
+                '{"results": [{"id": "<position_id>", "skills": ["skill1", "skill2"]}]}'
+            )
+            try:
+                resp = client.models.generate_content(model=gemini_model, contents=prompt)
+                text = resp.text.strip()
+                if text.startswith("```"):
+                    text = text.split("```")[1].lstrip("json").strip()
+                data = json.loads(text)
+                for r in data.get("results", []):
+                    for skill in r.get("skills", []):
+                        skill = skill.strip()
+                        if not skill:
+                            continue
+                        try:
+                            conn.execute(
+                                "INSERT INTO job_skills (position_id, skill_raw) VALUES (?,?)",
+                                (r["id"], skill),
+                            )
+                            total_skills += 1
+                        except Exception:
+                            pass
+                conn.commit()
+                logger.info(
+                    "[JOOBLE-SKILLS] batch %d/%d done",
+                    min(i + batch_size, len(rows)), len(rows),
+                )
+            except Exception:
+                logger.exception("[JOOBLE-SKILLS] Gemini batch failed, continuing")
+
+        conn.close()
+        logger.info("[JOOBLE-SKILLS] Done: %d skills extracted", total_skills)
+    except Exception:
+        logger.exception("[JOOBLE-SKILLS] Failed")
+
+
 def pipeline():
     logger.info("=== [PIPELINE] Starting full pipeline ===")
     collect_jobs()
     collect_adzuna()
     collect_jooble()
+    extract_jooble_skills()
     enrich_skills()
     build_analytics()
     logger.info("=== [PIPELINE] Done ===")
