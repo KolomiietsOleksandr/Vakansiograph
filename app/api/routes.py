@@ -67,6 +67,7 @@ def overview():
 
 
 @jobs_bp.route('/recent', methods=['GET'])
+@cache.cached(timeout=300, query_string=True)
 def recent_jobs():
     try:
         limit = request.args.get('limit', 20, type=int)
@@ -253,6 +254,7 @@ def posting_volume_by_country():
 
 
 @trends_bp.route('/skill-country-breakdown', methods=['GET'])
+@cache.cached(timeout=600, query_string=True)
 def skill_country_breakdown():
     try:
         skill = request.args.get('skill', '')
@@ -265,6 +267,7 @@ def skill_country_breakdown():
 
 
 @trends_bp.route('/skill-detail', methods=['GET'])
+@cache.cached(timeout=600, query_string=True)
 def skill_detail():
     try:
         skill = request.args.get('skill', '')
@@ -279,6 +282,7 @@ def skill_detail():
 
 
 @trends_bp.route('/skill-timeline', methods=['GET'])
+@cache.cached(timeout=600, query_string=True)
 def skill_timeline():
     try:
         skill = request.args.get('skill', '')
