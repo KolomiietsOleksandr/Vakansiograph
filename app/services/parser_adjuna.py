@@ -15,7 +15,6 @@ logging.basicConfig(
 )
 log = logging.getLogger(__name__)
 
-# ── Adzuna supported country codes ───────────────────────────────────────────
 COUNTRIES = [
     "gb", "au", "at", "be", "br", "ca", "de",
     "fr", "in", "it", "mx", "nl", "nz", "pl",
@@ -40,7 +39,6 @@ class AdzunaParser:
         self.delay            = float(os.getenv("REQUEST_DELAY", 1.0))
         self.countries        = os.getenv("COUNTRIES", ",".join(COUNTRIES)).split(",")
 
-        # Resolve DB path the same way the rest of the project does
         base_dir = Path(__file__).resolve().parent.parent.parent
         self.db_path = os.getenv(
             "DATABASE_PATH",
@@ -49,8 +47,6 @@ class AdzunaParser:
 
         self.session = requests.Session()
         self.session.headers.update({"Content-Type": "application/json"})
-
-    # ── HTTP ──────────────────────────────────────────────────────────────────
 
     def _get(self, url: str, params: dict) -> dict | None:
         try:
@@ -62,8 +58,6 @@ class AdzunaParser:
         except requests.exceptions.RequestException as e:
             log.error("Request failed: %s", e)
         return None
-
-    # ── Parsing ───────────────────────────────────────────────────────────────
 
     def _parse_job(self, raw: dict, country: str) -> dict:
         """Map Adzuna fields to the job_postings table schema."""
@@ -123,8 +117,6 @@ class AdzunaParser:
         jobs    = [self._parse_job(r, country) for r in results]
         return jobs, total
 
-    # ── DB helpers ────────────────────────────────────────────────────────────
-
     def _upsert_jobs(self, conn: sqlite3.Connection, jobs: list[dict]) -> int:
         cur = conn.cursor()
         saved = 0
@@ -159,8 +151,6 @@ class AdzunaParser:
             saved += 1
         conn.commit()
         return saved
-
-    # ── Runner ────────────────────────────────────────────────────────────────
 
     def run(self):
         log.info("Adzuna parser started")

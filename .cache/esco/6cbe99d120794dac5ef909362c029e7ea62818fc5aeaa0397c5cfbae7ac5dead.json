@@ -1,1 +1,0 @@
-{"mappings": [{"raw_skill": "azure", "esco_id": null, "esco_label": null, "confidence": 0.0, "reasoning": "No ESCO candidates were provided for mapping."}, {"raw_skill": "autocad", "esco_id": null, "esco_label": null, "confidence": 0.0, "reasoning": "No ESCO candidates were provided for mapping."}], "unmapped": ["azure", "autocad"]}

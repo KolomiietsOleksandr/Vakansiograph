@@ -1,5 +1,0 @@
-mapper,unmapped_rate_macro,confidence_mean,confidence_median,esco_coverage_breadth,mappings_per_doc_mean,graph_enrichment_yield,consistency_rate
-fuzzy,0.8999,0.9131,0.8947,33,1.0889,0.0,1.0
-embedding,0.0639,0.8081,0.8061,731,31.7778,0.0,1.0
-llm_direct,0.2696,0.9237,0.9,200,7.0889,0.3197,0.8052
-llm_two_stage,0.2963,0.8934,0.9,95,24.6889,0.0918,0.9135

@@ -69,8 +69,6 @@ class JoobleParser:
         self.session.headers.update({"Content-Type": "application/json"})
         self._request_count = 0
 
-    # ── Jooble HTTP ───────────────────────────────────────────────────────────
-
     def _post(self, payload: dict) -> dict | None:
         if self._request_count >= self.max_requests:
             return None
@@ -84,8 +82,6 @@ class JoobleParser:
         except requests.exceptions.RequestException as e:
             log.error("[JOOBLE] Request failed: %s", e)
             return None
-
-    # ── Parsing ───────────────────────────────────────────────────────────────
 
     def _parse_job(self, raw: dict) -> dict | None:
         job_id = str(raw.get("id", "")).strip()
@@ -129,8 +125,6 @@ class JoobleParser:
             "_snippet": snippet,  # not stored in DB, used for skill extraction
         }
 
-    # ── DB ────────────────────────────────────────────────────────────────────
-
     def _upsert_jobs(self, conn: sqlite3.Connection, jobs: list[dict]) -> list[dict]:
         """Save new jobs to job_postings. Returns only brand-new rows (with _snippet)."""
         cur = conn.cursor()
@@ -172,8 +166,6 @@ class JoobleParser:
         conn.commit()
         return new_jobs
 
-
-    # ── Runner ────────────────────────────────────────────────────────────────
 
     def run(self) -> int:
         log.info(

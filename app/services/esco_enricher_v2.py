@@ -1,14 +1,10 @@
 import logging
 import os
-import sys
 from pathlib import Path
 
 logger = logging.getLogger(__name__)
 
 _BASE_DIR = Path(__file__).resolve().parent.parent.parent
-_SKILLS2_DIR = _BASE_DIR / "skills2-main"
-if str(_SKILLS2_DIR) not in sys.path:
-    sys.path.insert(0, str(_SKILLS2_DIR))
 
 _esco_index = None
 _fuzzy_mapper = None

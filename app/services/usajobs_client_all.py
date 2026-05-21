@@ -31,11 +31,8 @@ def load_config() -> dict:
     return config
 
 
-# ─── Data Models ────────────────────────────────────────────────────────────────
-
 @dataclass
 class JobPosting:
-    """Нормалізована структура вакансії."""
     position_id: str
     title: str
     organization: str
@@ -61,7 +58,7 @@ class JobPosting:
     who_may_apply: str = ""
     hiring_path: str = ""
     total_openings: int = 1
-    job_type: str = ""  # NEW: Federal, Private, Non-Profit, etc.
+    job_type: str = ""
     raw_data: dict = field(default_factory=dict, repr=False)
 
     def to_dict(self) -> dict:
@@ -70,10 +67,7 @@ class JobPosting:
         return d
 
 
-# ─── USAJOBS API Client ────────────────────────────────────────────────────────
-
 class USAJobsClient:
-    """Клієнт для USAJOBS API - ВСІ вакансії (не тільки федеральні)."""
 
     BASE_URL = "https://data.usajobs.gov/api/search"
     REQUEST_DELAY = 0.5
@@ -221,7 +215,6 @@ class USAJobsClient:
             city = loc.get("CityName", "")
             state = loc.get("CountrySubDivisionCode", "")
             raw_country = loc.get("CountryCode", "US") or "US"
-            # Normalize full names to ISO-2 codes
             country = _COUNTRY_NAME_TO_ISO.get(raw_country.lower(), raw_country.upper())[:2]
 
         remuneration = matched.get("PositionRemuneration", [{}])
@@ -261,7 +254,6 @@ class USAJobsClient:
         except (ValueError, TypeError):
             total_openings = 1
 
-        # Визначаємо тип посади
         job_type = self._determine_job_type(matched.get("OrganizationName", ""), who_may)
 
         skills = self._extract_skills_from_text(f"{quality} {duties} {matched.get('PositionTitle', '')}")
@@ -290,10 +282,8 @@ class USAJobsClient:
 
     @staticmethod
     def _determine_job_type(org_name: str, who_may_apply: str) -> str:
-        """Визначає тип організації по назві та умовам."""
         org_lower = org_name.lower()
-        
-        # Федеральні установи
+
         if any(dept in org_lower for dept in [
             "department of", "agency", "federal", "usda", "hhs", "dod", "va",
             "social security", "national", "office of", "administration",
@@ -301,19 +291,16 @@ class USAJobsClient:
         ]):
             return "Federal"
         
-        # Державні установи
         if any(state in org_lower for state in [
             "state of", "department of state", "legislature", "university of"
         ]):
             return "State"
         
-        # Приватні компанії
         if any(corp in org_lower for corp in [
             "inc", "llc", "corp", "company", "ltd", "group", "solutions"
         ]):
             return "Private"
         
-        # Не-профітні організації
         if any(nonprofit in org_lower for nonprofit in [
             "foundation", "non-profit", "nonprofit", "charity", "association"
         ]):
@@ -323,9 +310,7 @@ class USAJobsClient:
 
     @staticmethod
     def _extract_skills_from_text(text: str) -> list:
-        """Витягування навичок з тексту."""
         skill_patterns = [
-            # IT & Software
             "python", "java", "javascript", "typescript", "sql", "c++", "c#",
             "machine learning", "deep learning", "nlp", "data analysis",
             "data science", "cloud computing", "aws", "azure", "gcp",
@@ -333,52 +318,38 @@ class USAJobsClient:
             "react", "angular", "node.js", "postgresql", "mongodb",
             "cybersecurity", "network security", "information security",
             "artificial intelligence", "computer vision",
-            # Engineering
             "civil engineering", "mechanical engineering", "electrical engineering",
             "structural analysis", "autocad", "solidworks",
             "construction management", "surveying", "geotechnical",
-            # Medical & Health
             "patient care", "clinical", "nursing", "pharmacy", "diagnostics",
             "healthcare", "public health", "epidemiology",
             "mental health", "rehabilitation", "occupational therapy",
-            # Finance & Accounting
             "financial analysis", "accounting", "auditing", "budgeting",
             "procurement", "contracting", "cost analysis", "financial reporting",
-            # Administration & Management
             "project management", "program management", "strategic planning",
             "policy analysis", "regulatory compliance", "stakeholder engagement",
             "change management", "risk management", "quality assurance",
-            # HR
             "recruitment", "training", "employee relations", "labor relations",
             "performance management", "workforce planning",
-            # Legal
             "legal research", "litigation", "regulatory analysis",
             "contract law", "administrative law", "compliance",
-            # Science & Research
             "research methodology", "laboratory", "field research",
             "statistical analysis", "data collection", "scientific writing",
             "environmental assessment", "chemistry", "biology",
-            # Logistics & Supply Chain
             "supply chain", "logistics", "inventory management",
             "warehouse management", "distribution",
-            # Investigation & Security
             "investigation", "law enforcement", "intelligence analysis",
             "surveillance", "forensics", "security clearance",
-            # Soft Skills
             "communication", "leadership", "problem solving",
             "critical thinking", "teamwork", "writing",
             "public speaking", "negotiation", "analytical thinking",
-            # Tools
             "excel", "powerpoint", "tableau", "power bi", "sap",
             "sharepoint", "microsoft office",
-            # Methodologies
             "agile", "scrum", "lean", "six sigma",
         ]
         text_lower = text.lower()
         return list(set(skill for skill in skill_patterns if skill in text_lower))
 
-
-# ─── Data Collector ─────────────────────────────────────────────────────────────
 
 class DataCollector:
     def __init__(self, client: USAJobsClient, db_path: str = "labor_market.db"):
@@ -500,7 +471,6 @@ class DataCollector:
         cur = conn.cursor()
         today = datetime.now().strftime("%Y-%m-%d")
         
-        # Загальна статистика
         cur.execute("""
             SELECT COUNT(*), AVG(min_salary), AVG(max_salary),
                 SUM(CASE WHEN telework_eligible THEN 1 ELSE 0 END)*100.0/MAX(COUNT(*),1),
@@ -520,7 +490,6 @@ class DataCollector:
             """)
             top_locs = json.dumps([{"state": r[0], "count": r[1]} for r in cur.fetchall()])
             
-            # По типам посад
             cur.execute("SELECT DISTINCT job_type FROM job_postings")
             for (job_type,) in cur.fetchall():
                 cur.execute("""
