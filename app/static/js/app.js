@@ -62,16 +62,24 @@ const baseScalesOptions = {
 // HELPER FUNCTIONS
 // ============================================================================
 
-/**
- * Fetch data from API with error handling
- */
+const CACHE_TTL = 10 * 60 * 1000; // 10 minutes
+
 async function fetchAPI(endpoint) {
+  const key = 'vkg_' + endpoint;
+  try {
+    const cached = localStorage.getItem(key);
+    if (cached) {
+      const { ts, data } = JSON.parse(cached);
+      if (Date.now() - ts < CACHE_TTL) return data;
+    }
+  } catch (_) {}
+
   try {
     const response = await fetch(endpoint);
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}`);
-    }
-    return await response.json();
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const data = await response.json();
+    try { localStorage.setItem(key, JSON.stringify({ ts: Date.now(), data })); } catch (_) {}
+    return data;
   } catch (error) {
     console.error(`API Error (${endpoint}):`, error);
     throw error;

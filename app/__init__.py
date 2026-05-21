@@ -3,11 +3,29 @@ from flask_cors import CORS
 from flask_caching import Cache
 from app.config import DevelopmentConfig, ProductionConfig
 import logging
+import os
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 cache = Cache()
+
+
+def _init_cache(app):
+    redis_url = os.environ.get("REDIS_URL", "redis://localhost:6379/0")
+    try:
+        import redis as _redis
+        _redis.from_url(redis_url).ping()
+        app.config["CACHE_TYPE"] = "RedisCache"
+        app.config["CACHE_REDIS_URL"] = redis_url
+        app.config["CACHE_KEY_PREFIX"] = "vkg_"
+        logger.info("Cache: Redis → %s", redis_url)
+    except Exception:
+        app.config["CACHE_TYPE"] = "FileSystemCache"
+        app.config["CACHE_DIR"] = "/tmp/flask_cache"
+        logger.warning("Cache: Redis недоступний, використовується FileSystemCache")
+    app.config["CACHE_DEFAULT_TIMEOUT"] = 600
+    cache.init_app(app)
 
 
 def create_app(config_name: str = "development"):
@@ -18,10 +36,7 @@ def create_app(config_name: str = "development"):
     else:
         app.config.from_object(DevelopmentConfig)
 
-    app.config["CACHE_TYPE"] = "FileSystemCache"
-    app.config["CACHE_DIR"] = "/tmp/flask_cache"
-    app.config["CACHE_DEFAULT_TIMEOUT"] = 600
-    cache.init_app(app)
+    _init_cache(app)
 
     CORS(app, resources={r"/api/*": {"origins": "*"}})
 

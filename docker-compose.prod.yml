@@ -2,6 +2,16 @@ version: '3.8'
 
 services:
 
+  redis:
+    image: redis:7-alpine
+    container_name: labo-redis
+    restart: unless-stopped
+    networks:
+      - labo-network
+    volumes:
+      - redis_data:/data
+    command: redis-server --save 60 1 --loglevel warning
+
   web:
     image: ghcr.io/kolomiietsoleksandr/vakansiograph:latest
     container_name: labo-web
@@ -10,10 +20,13 @@ services:
     environment:
       - FLASK_ENV=production
       - DATABASE_PATH=/data/labor_market.db
+      - REDIS_URL=redis://redis:6379/0
     volumes:
       - db_data:/data
     networks:
       - labo-network
+    depends_on:
+      - redis
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:5001/api/health"]
       interval: 30s
@@ -37,6 +50,7 @@ services:
     env_file: .env
     environment:
       - DATABASE_PATH=/data/labor_market.db
+      - REDIS_URL=redis://redis:6379/0
     volumes:
       - db_data:/data
     networks:
@@ -61,6 +75,8 @@ services:
 
 volumes:
   db_data:
+    driver: local
+  redis_data:
     driver: local
 
 networks:
