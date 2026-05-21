@@ -70,5 +70,8 @@ def create_app(config_name: str = "development"):
         return render_template('skills_intelligence.html')
 
 
+    from app.services.cache_warmer import start_cache_warmer
+    start_cache_warmer(app, delay=15)
+
     logger.info(f"Flask app created with config: {config_name}")
     return app

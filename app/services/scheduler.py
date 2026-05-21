@@ -201,6 +201,26 @@ def extract_jooble_skills():
         logger.exception("[JOOBLE-SKILLS] Failed")
 
 
+def flush_and_warm_cache():
+    redis_url = os.environ.get("REDIS_URL", "redis://localhost:6379/0")
+    web_url = os.environ.get("WEB_INTERNAL_URL", "http://web:5001")
+    try:
+        import redis as _redis
+        r = _redis.from_url(redis_url)
+        keys = r.keys("vkg_*")
+        if keys:
+            r.delete(*keys)
+        logger.info("[PIPELINE] Flushed %d Redis cache keys", len(keys))
+    except Exception:
+        logger.warning("[PIPELINE] Could not flush Redis cache")
+    try:
+        import requests as _requests
+        _requests.post(f"{web_url}/api/admin/warm-cache", timeout=5)
+        logger.info("[PIPELINE] Cache warm-up triggered")
+    except Exception:
+        logger.warning("[PIPELINE] Could not trigger cache warm-up")
+
+
 def pipeline():
     logger.info("=== [PIPELINE] Starting full pipeline ===")
     collect_jobs()
@@ -209,6 +229,7 @@ def pipeline():
     extract_jooble_skills()
     enrich_skills()
     build_analytics()
+    flush_and_warm_cache()
     logger.info("=== [PIPELINE] Done ===")
 
 
