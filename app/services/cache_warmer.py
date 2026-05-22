@@ -7,7 +7,7 @@ import requests
 
 logger = logging.getLogger(__name__)
 
-_TIMEOUT = 10
+_TIMEOUT = 30
 
 _STATIC_ENDPOINTS = [
     "/api/overview",
@@ -38,7 +38,8 @@ def _get(base_url: str, path: str) -> dict | None:
     try:
         r = requests.get(f"{base_url}{path}", timeout=_TIMEOUT)
         return r.json() if r.ok else None
-    except Exception:
+    except Exception as e:
+        logger.warning("[warmer] %s → %s", path, e)
         return None
 
 
@@ -50,6 +51,7 @@ def _warm(base_url: str):
         hit += 1
 
     countries_data = _get(base_url, "/api/trends/countries") or []
+    logger.info("[warmer] countries to warm: %d", len(countries_data))
     for item in countries_data:
         code = item.get("country", "")
         if not code:
@@ -59,6 +61,7 @@ def _warm(base_url: str):
         hit += 2
 
     skills_data = _get(base_url, "/api/skills/top?limit=50") or []
+    logger.info("[warmer] skills to warm: %d", len(skills_data))
     for item in skills_data:
         name = item.get("skill", "")
         if not name:

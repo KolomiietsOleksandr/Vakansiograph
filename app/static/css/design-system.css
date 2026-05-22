@@ -300,7 +300,7 @@ footer::before {
   user-select: none;
   -webkit-user-select: none;
   position: absolute;
-  bottom: -0.17оem;
+  bottom: -0.17em;
   left: 0;
   right: 0;
   text-align: center;
