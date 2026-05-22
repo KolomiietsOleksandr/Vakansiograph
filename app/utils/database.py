@@ -21,6 +21,9 @@ def ensure_indexes():
         CREATE INDEX IF NOT EXISTS idx_jobs_series       ON job_postings(series_code);
         CREATE INDEX IF NOT EXISTS idx_jobs_department   ON job_postings(department);
         CREATE INDEX IF NOT EXISTS idx_jobs_grade        ON job_postings(job_grade);
+        CREATE INDEX IF NOT EXISTS idx_jobs_country      ON job_postings(location_country);
+        CREATE INDEX IF NOT EXISTS idx_jobs_date         ON job_postings(date_posted);
+        CREATE INDEX IF NOT EXISTS idx_jobs_country_date ON job_postings(location_country, date_posted);
     """)
     conn.commit()
     conn.close()
