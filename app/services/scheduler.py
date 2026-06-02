@@ -201,9 +201,23 @@ def extract_jooble_skills():
         logger.exception("[JOOBLE-SKILLS] Failed")
 
 
+def _trigger_warm():
+    web_url = os.environ.get("WEB_INTERNAL_URL", "http://web:5001")
+    try:
+        import requests as _requests
+        _requests.post(f"{web_url}/api/admin/warm-cache", timeout=10)
+        logger.info("[WARMER] Cache warm-up triggered")
+    except Exception:
+        logger.warning("[WARMER] Could not trigger cache warm-up")
+
+
+def warm_cache_only():
+    logger.info("=== [WARMER] Periodic cache warm ===")
+    _trigger_warm()
+
+
 def flush_and_warm_cache():
     redis_url = os.environ.get("REDIS_URL", "redis://localhost:6379/0")
-    web_url = os.environ.get("WEB_INTERNAL_URL", "http://web:5001")
     try:
         import redis as _redis
         r = _redis.from_url(redis_url)
@@ -213,12 +227,7 @@ def flush_and_warm_cache():
         logger.info("[PIPELINE] Flushed %d Redis cache keys", len(keys))
     except Exception:
         logger.warning("[PIPELINE] Could not flush Redis cache")
-    try:
-        import requests as _requests
-        _requests.post(f"{web_url}/api/admin/warm-cache", timeout=5)
-        logger.info("[PIPELINE] Cache warm-up triggered")
-    except Exception:
-        logger.warning("[PIPELINE] Could not trigger cache warm-up")
+    _trigger_warm()
 
 
 def pipeline():
@@ -271,6 +280,15 @@ def start_scheduler():
         id="cleanup",
         name="Weekly Cleanup (Sun 02:00 UTC)",
         max_instances=1,
+    )
+    scheduler.add_job(
+        warm_cache_only,
+        trigger=IntervalTrigger(seconds=540),
+        id="cache-warmer",
+        name="Periodic Cache Warmer (every 540s)",
+        next_run_time=datetime.now(timezone.utc) + timedelta(seconds=30),
+        max_instances=1,
+        coalesce=True,
     )
 
     logger.info("=" * 55)

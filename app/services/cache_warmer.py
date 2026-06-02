@@ -3,13 +3,9 @@ import threading
 import time
 from urllib.parse import urlencode
 
-import requests
-
 logger = logging.getLogger(__name__)
 
-_TIMEOUT = 30
-
-_STATIC_ENDPOINTS = [
+_STATIC_PATHS = [
     "/api/overview",
     "/api/insights/hero-stats",
     "/api/trends/insights",
@@ -34,54 +30,70 @@ _STATIC_ENDPOINTS = [
 ]
 
 
-def _get(base_url: str, path: str) -> dict | None:
-    try:
-        r = requests.get(f"{base_url}{path}", timeout=_TIMEOUT)
-        return r.json() if r.ok else None
-    except Exception as e:
-        logger.warning("[warmer] %s → %s", path, e)
-        return None
-
-
-def _warm(base_url: str):
+def _warm(app):
     hit = 0
+    with app.test_client() as client:
+        for path in _STATIC_PATHS:
+            try:
+                client.get(path)
+                hit += 1
+            except Exception as e:
+                logger.warning("[warmer] %s → %s", path, e)
 
-    for path in _STATIC_ENDPOINTS:
-        _get(base_url, path)
-        hit += 1
+        countries_data = []
+        try:
+            r = client.get("/api/trends/countries")
+            if r.status_code == 200:
+                countries_data = r.get_json() or []
+        except Exception as e:
+            logger.warning("[warmer] /api/trends/countries → %s", e)
 
-    countries_data = _get(base_url, "/api/trends/countries") or []
-    logger.info("[warmer] countries to warm: %d", len(countries_data))
-    for item in countries_data:
-        code = item.get("country", "")
-        if not code:
-            continue
-        _get(base_url, f"/api/trends/country-stats?country={code}")
-        _get(base_url, f"/api/trends/posting-volume-by-country?country={code}")
-        hit += 2
+        logger.info("[warmer] countries to warm: %d", len(countries_data))
+        for item in countries_data:
+            code = item.get("country", "")
+            if not code:
+                continue
+            try:
+                client.get(f"/api/trends/country-stats?country={code}")
+                client.get(f"/api/trends/posting-volume-by-country?country={code}")
+                hit += 2
+            except Exception as e:
+                logger.warning("[warmer] country %s → %s", code, e)
 
-    skills_data = _get(base_url, "/api/skills/top?limit=50") or []
-    logger.info("[warmer] skills to warm: %d", len(skills_data))
-    for item in skills_data:
-        name = item.get("skill", "")
-        if not name:
-            continue
-        q = urlencode({"skill": name})
-        _get(base_url, f"/api/trends/skill-detail?{q}")
-        _get(base_url, f"/api/trends/skill-country-breakdown?{q}")
-        _get(base_url, f"/api/trends/skill-timeline?{q}&country=ALL")
-        hit += 3
+        skills_data = []
+        try:
+            r = client.get("/api/skills/top?limit=50")
+            if r.status_code == 200:
+                skills_data = r.get_json() or []
+        except Exception as e:
+            logger.warning("[warmer] /api/skills/top?limit=50 → %s", e)
+
+        logger.info("[warmer] skills to warm: %d", len(skills_data))
+        for item in skills_data:
+            name = item.get("skill", "")
+            if not name:
+                continue
+            q = urlencode({"skill": name})
+            try:
+                client.get(f"/api/trends/skill-detail?{q}")
+                client.get(f"/api/trends/skill-country-breakdown?{q}")
+                client.get(f"/api/trends/skill-timeline?{q}&country=ALL")
+                hit += 3
+            except Exception as e:
+                logger.warning("[warmer] skill %s → %s", name, e)
 
     logger.info("[warmer] done — %d endpoints warmed", hit)
 
 
-def start_cache_warmer(delay: int = 15):
-    base_url = "http://localhost:5001"
-
+def start_cache_warmer(app, delay: int = 0):
     def _run():
-        time.sleep(delay)
+        if delay:
+            time.sleep(delay)
         logger.info("[warmer] starting cache warm-up…")
-        _warm(base_url)
+        try:
+            _warm(app)
+        except Exception:
+            logger.exception("[warmer] warm-up failed")
 
     t = threading.Thread(target=_run, daemon=True, name="cache-warmer")
     t.start()

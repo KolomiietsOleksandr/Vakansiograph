@@ -32,13 +32,13 @@ services:
       interval: 30s
       timeout: 10s
       retries: 3
-      start_period: 15s
+      start_period: 90s
     command: >
       gunicorn
       --bind 0.0.0.0:5001
-      --workers 2
-      --threads 2
-      --timeout 300
+      --workers 3
+      --threads 4
+      --timeout 60
       --access-logfile -
       --error-logfile -
       wsgi:app

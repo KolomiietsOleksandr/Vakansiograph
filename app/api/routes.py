@@ -35,8 +35,9 @@ def rebuild_cache():
 @health_bp.route('/admin/warm-cache', methods=['POST'])
 def warm_cache():
     try:
+        from flask import current_app
         from app.services.cache_warmer import start_cache_warmer
-        start_cache_warmer(None, delay=0)
+        start_cache_warmer(current_app._get_current_object(), delay=0)
         return jsonify({"status": "ok", "message": "Cache warming started"}), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500

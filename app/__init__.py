@@ -73,8 +73,5 @@ def create_app(config_name: str = "development"):
     from app.utils.database import ensure_indexes
     ensure_indexes()
 
-    from app.services.cache_warmer import start_cache_warmer
-    start_cache_warmer(delay=15)
-
     logger.info(f"Flask app created with config: {config_name}")
     return app
