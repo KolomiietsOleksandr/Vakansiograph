@@ -90,7 +90,6 @@ def main():
             "_action": action,
         })
 
-    # Print summary table
     print(f"\n{'ID':<12} {'Raw skill':<40} {'Expected label':<35} {'Proposed label':<35} {'Match':>6} {'Action':<10}")
     print("-" * 145)
     for p in proposals:

@@ -28,7 +28,7 @@ def _init():
 
     gemini_key = os.getenv("GEMINI_API_KEY", "")
 
-    # _env_file=None prevents pydantic-settings from reading our .env
+    # _env_file=None prevents pydantic-settings from reading .env
     _settings = Settings(
         _env_file=None,
         gemini_api_key=gemini_key,

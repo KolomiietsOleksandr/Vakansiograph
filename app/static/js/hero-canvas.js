@@ -1,7 +1,3 @@
-/* ──────────────────────────────────────────────────────────────────
-   Hero canvas — animated particle network + globe/world-map dots.
-   Renders into <canvas id="heroCanvas">. Resizes to its parent.
-   ────────────────────────────────────────────────────────────────── */
 (function () {
   const canvas = document.getElementById('heroCanvas');
   if (!canvas) return;

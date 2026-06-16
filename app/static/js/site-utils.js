@@ -1,11 +1,3 @@
-/* ──────────────────────────────────────────────────────────────────
-   VakansioGraph — site utilities (Flask edition)
-   - Scrolled header state
-   - Scroll reveal (IntersectionObserver)
-   - Animated number counter  (window.animateCounter)
-   - Live ticker               (window.startTicker)
-   ────────────────────────────────────────────────────────────────── */
-
 /* ════════ Scrolled header state ═════════════════════════════════ */
 (function scrolledHeader() {
   const h = document.getElementById('main-header');

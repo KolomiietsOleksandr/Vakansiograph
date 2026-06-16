@@ -1,244 +1,137 @@
-# LABO — Labor Market Intelligence API
+# Vakansiograph
 
-A production-ready REST API service for analyzing federal job market data, skills demand, salary trends, and geographic distribution. Built with Flask, SQLite, and modern DevOps practices.
+Labor market intelligence dashboard that aggregates job postings from USAJOBS, Adzuna, and Jooble, maps extracted skills to the ESCO taxonomy via LLM, and surfaces salary, skills, and geographic trends through a REST API + web UI.
 
-## 🚀 Features
+## Stack
 
-- **Real-time Job Analytics** — Access 23K+ federal job postings
-- **Skills Analysis** — ESCO normalization with skill classification (knowledge, competence, skill)
-- **Salary Intelligence** — Trends by grade, department, location, and series code
-- **Geographic Insights** — Job distribution by state with remote work analysis
-- **RESTful API** — Clean, well-documented endpoints
-- **Production-Ready** — Docker, CORS support, health checks, error handling
+- **Backend:** Flask 3, SQLite (WAL), APScheduler, Gunicorn
+- **Caching:** Redis (production) / FileSystemCache (dev fallback) + `analytics_cache` DB table
+- **Skill Enrichment:** Google Gemini 2.5 Flash — skill extraction, ESCO fuzzy/embedding/LLM mapping
+- **Frontend:** Jinja2 templates, Chart.js 4.5
+- **Infrastructure:** Docker Compose, Nginx
 
-## 📋 Prerequisites
+## Prerequisites
 
 - Python 3.11+
-- Docker & Docker Compose (optional)
-- SQLite (included)
+- Docker & Docker Compose (for containerized runs)
+- API keys (see below)
 
-## 🔧 Quick Start
+## Environment Variables
 
-### Local Development
+Copy `.env.example` and fill in your keys:
 
-1. **Clone and setup:**
 ```bash
-git clone <repo>
-cd labo
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-pip install -r requirements.txt
+cp .env.example .env
 ```
 
-2. **Run the development server:**
+| Variable | Description |
+|---|---|
+| `USAJOBS_API_KEY` | USAJOBS API key |
+| `USAJOBS_EMAIL` | Email registered with USAJOBS |
+| `ADZUNA_APP_ID` / `ADZUNA_APP_KEY` | Adzuna API credentials |
+| `GEMINI_API_KEY` | Google Gemini API key |
+| `GEMINI_MODEL` | Model ID (default: `gemini-2.5-flash`) |
+| `DATABASE_PATH` | SQLite path (default: `./app/labor_market.db`) |
+| `FLASK_ENV` | `development` or `production` |
+| `REDIS_URL` | Redis URL (production only, e.g. `redis://redis:6379/0`) |
+
+## Deployment
+
+### Local development
+
 ```bash
+python -m venv venv
+source venv/bin/activate   # Windows: venv\Scripts\activate
+pip install -r requirements.txt
 python main.py
 ```
 
-Server runs on `http://localhost:5000`
+App runs at `http://localhost:5001`. The scheduler thread starts automatically and begins collecting jobs in the background.
 
-### Docker Setup
+### Docker (development)
 
 ```bash
 docker-compose up --build
 ```
 
-Access at `http://localhost` (via Nginx)
+Uses `docker-compose.override.yml` for live reload. Access at `http://localhost` (Nginx on port 80).
 
-## 📁 Project Structure
-
-```
-labo/
-├── app/
-│   ├── __init__.py              # Flask app factory
-│   ├── config.py                # Configuration (dev, prod, test)
-│   ├── main.py                  # Development entry point
-│   │
-│   ├── api/
-│   │   ├── __init__.py
-│   │   └── routes.py            # All API endpoints (blueprints)
-│   │
-│   ├── services/
-│   │   ├── job_service.py       # Job queries
-│   │   ├── skill_service.py     # Skill analytics
-│   │   ├── salary_service.py    # Salary statistics
-│   │   ├── location_service.py  # Geographic data
-│   │   └── category_service.py  # Job categories
-│   │
-│   ├── models/
-│   │   └── (Future: SQLAlchemy models)
-│   │
-│   ├── utils/
-│   │   ├── database.py          # DB connection & queries
-│   │   └── classifiers.py       # Skill classification, OPM series mapping
-│   │
-│   ├── static/
-│   │   ├── css/
-│   │   │   └── style.css        # Main stylesheet
-│   │   ├── js/
-│   │   │   └── app.js           # Frontend JavaScript
-│   │   └── images/
-│   │
-│   ├── templates/
-│   │   └── index.html           # Main HTML (Flask template)
-│   │
-│   └── labor_market.db          # SQLite database
-│
-├── tests/
-│   ├── test_api.py
-│   ├── test_services.py
-│   └── conftest.py
-│
-├── docker/
-│   ├── Dockerfile
-│   └── nginx.conf
-│
-├── docs/
-│   ├── API.md
-│   ├── SETUP.md
-│   └── ARCHITECTURE.md
-│
-├── main.py                      # Development entry point
-├── wsgi.py                      # Production WSGI entry point
-├── docker-compose.yml
-├── requirements.txt
-├── .env.example
-├── .gitignore
-├── README.md
-└── QUICKSTART.md
-```
-
-## 🔌 API Endpoints
-
-### Health & Overview
-- `GET /api/health` — Service health check
-- `GET /api/overview` — Market overview statistics
-
-### Jobs
-- `GET /api/jobs/recent?limit=20&keyword=python` — Recent job postings
-
-### Skills
-- `GET /api/skills/top?limit=20` — Top in-demand skills
-
-### Salaries
-- `GET /api/salaries?group_by=department` — Salary stats (group_by: department, series, state, grade)
-
-### Locations
-- `GET /api/locations` — Jobs by state with remote info
-
-### Categories
-- `GET /api/categories/summary` — Job categories overview
-- `GET /api/categories/collection-status` — Data collection logs
-
-## 📊 Example Request
+### Docker (production)
 
 ```bash
-curl http://localhost:5000/api/overview
-
-# Response:
-{
-  "total_jobs": 23847,
-  "total_organizations": 487,
-  "avg_salary": {"min": 64200, "max": 118500},
-  "remote_percentage": 31.4,
-  "unique_skills": 612,
-  "new_this_week": 3892
-}
+docker-compose -f docker-compose.prod.yml up --build -d
 ```
 
-## 🧪 Testing
+Adds a Redis service, disables debug mode, and runs Gunicorn with multiple workers.
+
+### Bare-metal production (Gunicorn)
+
+```bash
+pip install -r requirements.txt
+gunicorn --bind 0.0.0.0:5001 --workers 4 --threads 2 --timeout 60 wsgi:app
+```
+
+Run the scheduler as a separate process alongside Gunicorn (it's started by `main.py`; for production, wrap it in a systemd unit or supervisor).
+
+## Project Structure
+
+```
+app/
+  api/routes.py           # 25+ API endpoints
+  services/               # Business logic + APScheduler jobs
+    scheduler.py          # collect → extract skills → ESCO enrich → build analytics
+    analytics_builder.py  # cache layer for expensive aggregations
+    esco_enricher_v2.py   # ESCO hybrid mapper orchestrator
+  utils/database.py       # SQLite connection, indexes, pragmas
+  templates/              # Jinja2 HTML (index, countries, trends, skills_intelligence)
+  static/js/app.js        # Chart.js data fetching + rendering
+esco_pipeline/            # Standalone ESCO enrichment pipeline
+  mappers/                # fuzzy_mapper, embedding_mapper, llm_mapper
+scripts/
+  create_golden_dataset.py
+  eval_llm.py             # Precision/recall evaluation against golden dataset
+docker/
+  Dockerfile
+  nginx.conf
+docker-compose.yml
+docker-compose.prod.yml
+wsgi.py                   # Gunicorn entry point
+main.py                   # Dev entry point (with scheduler thread)
+```
+
+## Key API Endpoints
+
+| Method | Path | Description |
+|---|---|---|
+| GET | `/api/health` | Health check |
+| GET | `/api/overview` | Market overview (totals, avg salary, remote %) |
+| GET | `/api/jobs/recent` | Recent postings (`?limit=20&keyword=python`) |
+| GET | `/api/skills/top` | Top skills (`?limit=20&country=US`) |
+| GET | `/api/salaries` | Salary stats (`?group_by=department\|series\|state\|grade`) |
+| GET | `/api/locations` | Jobs by state/country |
+| GET | `/api/trends/skill-roi` | Skills ranked by avg salary |
+| GET | `/api/trends/posting-volume` | Monthly posting trends |
+| GET | `/api/trends/country-stats` | Country-level breakdown (`?country=US`) |
+| GET | `/api/insights/hero-stats` | 6 AI-generated market stat cards |
+| POST | `/api/admin/rebuild-cache` | Force rebuild analytics cache |
+
+## Testing
 
 ```bash
 pytest
-pytest --cov  # With coverage
+pytest --cov   # with coverage report
 ```
 
-## 🐳 Docker Commands
+LLM evaluation against the golden dataset:
 
 ```bash
-# Build and start
-docker-compose up --build
-
-# Run with hot-reload (development)
-docker-compose up
-
-# Stop services
-docker-compose down
-
-# View logs
-docker-compose logs -f api
+python scripts/eval_llm.py
+# or via API: POST /api/admin/eval-llm
 ```
 
-## 🔐 Environment Variables
+## Code Quality
 
-See `.env.example`:
-```
-FLASK_ENV=development
-DATABASE_PATH=app/labor_market.db
-PORT=5000
-CORS_ORIGINS=*
-```
-
-## 📖 Documentation
-
-- **API Documentation** → `docs/API.md`
-- **Setup Guide** → `docs/SETUP.md`
-- **Architecture** → `docs/ARCHITECTURE.md`
-- **Quick Start** → `QUICKSTART.md`
-
-## 🛠️ Development
-
-### Code Style
 ```bash
-black app/  # Format code
-flake8 app/ # Lint
+black app/
+flake8 app/
 ```
-
-### Adding New Endpoints
-
-1. Create service in `app/services/`
-2. Add route in `app/api/routes.py`
-3. Write tests in `tests/`
-
-Example:
-```python
-# app/services/my_service.py
-class MyService:
-    @staticmethod
-    def get_data():
-        return {"data": "value"}
-
-# app/api/routes.py
-@my_bp.route('/endpoint', methods=['GET'])
-def my_endpoint():
-    data = MyService.get_data()
-    return jsonify(data), 200
-```
-
-## 📈 Performance
-
-- SQLite queries optimized with proper indexing
-- CORS enabled for cross-origin requests
-- Health checks for monitoring
-- Gunicorn with 4 workers for production
-
-## 🚢 Deployment
-
-### Production with Gunicorn
-```bash
-gunicorn --bind 0.0.0.0:5000 --workers 4 --timeout 60 wsgi:app
-```
-
-### Production with Docker
-```bash
-docker build -f docker/Dockerfile -t labo-api .
-docker run -d -p 5000:5000 -e FLASK_ENV=production labo-api
-```
-
-## 📝 License
-
-MIT
-
-## 📧 Contact
-
-For questions or issues, please contact the development team.

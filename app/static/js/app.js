@@ -1,8 +1,3 @@
-/**
- * LABO Dashboard - JavaScript (API-Integrated Version)
- * Compatible with dashboard.html structure
- */
-
 // ============================================================================
 // CONFIGURATION & CONSTANTS
 // ============================================================================

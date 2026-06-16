@@ -110,7 +110,7 @@ def eval_llm_run():
 
             dataset = _load_dataset(dataset_path)
             entries = _filter_entries(dataset["entries"], category=None, skip_edges=False)
-            map_skills_fn, esco_index = _init_mapper()  # raises RuntimeError if ESCO missing
+            map_skills_fn, esco_index = _init_mapper()
             model = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
             label_thr = dataset.get("thresholds", {}).get("label_match_ratio", 80) / 100.0
 
@@ -266,7 +266,6 @@ def market_insights():
         data = analytics_builder.get_cached(Config.DATABASE_PATH, 'market_insights')
         if data:
             return jsonify(data), 200
-        # Fallback: build basic insights from skill_demand cache without Gemini
         skill_demand = analytics_builder.get_cached(Config.DATABASE_PATH, 'skill_demand')
         if not skill_demand:
             return jsonify([]), 200

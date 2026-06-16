@@ -509,7 +509,7 @@ class DataCollector:
         
         conn.commit()
         conn.close()
-        logger.info(f"📊 Снімок ринку створений для {today}")
+        logger.info(f"Снімок ринку створений для {today}")
 
     def get_stats(self):
         """Статистика збору."""
