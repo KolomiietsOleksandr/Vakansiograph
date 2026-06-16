@@ -1,0 +1,391 @@
+{
+  "version": "1.0",
+  "created": "2026-06-15",
+  "esco_version": "1.2.1",
+  "description": "Golden dataset for ESCO skill-mapping regression testing. expected_uri is populated by scripts/create_golden_dataset.py after human review. Until then eval runs in label-fuzzy mode (rapidfuzz token_sort_ratio >= 80).",
+  "thresholds": {
+    "min_precision_at_1": 0.70,
+    "min_mapping_rate": 0.75,
+    "max_hallucination_rate": 0.05,
+    "min_avg_confidence": 0.55,
+    "label_match_ratio": 80
+  },
+  "entries": [
+    {
+      "id": "en-001", "raw_skill": "Python",
+      "expected_uri": null, "expected_label": "use Python",
+      "language": "en", "category": "programming", "difficulty": "easy"
+    },
+    {
+      "id": "en-002", "raw_skill": "Java",
+      "expected_uri": null, "expected_label": "use Java",
+      "language": "en", "category": "programming", "difficulty": "easy"
+    },
+    {
+      "id": "en-003", "raw_skill": "JavaScript",
+      "expected_uri": null, "expected_label": "use JavaScript",
+      "language": "en", "category": "programming", "difficulty": "easy"
+    },
+    {
+      "id": "en-004", "raw_skill": "TypeScript",
+      "expected_uri": null, "expected_label": "use JavaScript",
+      "language": "en", "category": "programming", "difficulty": "medium",
+      "notes": "ESCO may not have a separate TypeScript entry; JavaScript is acceptable"
+    },
+    {
+      "id": "en-005", "raw_skill": "SQL",
+      "expected_uri": null, "expected_label": "use SQL",
+      "language": "en", "category": "programming", "difficulty": "easy"
+    },
+    {
+      "id": "en-006", "raw_skill": "C++",
+      "expected_uri": null, "expected_label": "use C++",
+      "language": "en", "category": "programming", "difficulty": "easy"
+    },
+    {
+      "id": "en-007", "raw_skill": "Go programming language",
+      "expected_uri": null, "expected_label": "use Go",
+      "language": "en", "category": "programming", "difficulty": "medium"
+    },
+    {
+      "id": "en-008", "raw_skill": "Docker",
+      "expected_uri": null, "expected_label": "use Docker",
+      "language": "en", "category": "devops", "difficulty": "easy"
+    },
+    {
+      "id": "en-009", "raw_skill": "Kubernetes",
+      "expected_uri": null, "expected_label": "use Kubernetes",
+      "language": "en", "category": "devops", "difficulty": "easy"
+    },
+    {
+      "id": "en-010", "raw_skill": "Git",
+      "expected_uri": null, "expected_label": "use version control systems",
+      "language": "en", "category": "devops", "difficulty": "medium",
+      "notes": "ESCO does not have a dedicated Git entry; version control is the canonical mapping"
+    },
+    {
+      "id": "en-011", "raw_skill": "Linux",
+      "expected_uri": null, "expected_label": "use Linux",
+      "language": "en", "category": "devops", "difficulty": "easy"
+    },
+    {
+      "id": "en-012", "raw_skill": "AWS",
+      "expected_uri": null, "expected_label": "use cloud computing services",
+      "language": "en", "category": "devops", "difficulty": "medium",
+      "notes": "ESCO uses generic cloud label; AWS-specific entry may not exist"
+    },
+    {
+      "id": "en-013", "raw_skill": "machine learning",
+      "expected_uri": null, "expected_label": "apply machine learning",
+      "language": "en", "category": "data", "difficulty": "easy"
+    },
+    {
+      "id": "en-014", "raw_skill": "data analysis",
+      "expected_uri": null, "expected_label": "analyse data",
+      "language": "en", "category": "data", "difficulty": "easy"
+    },
+    {
+      "id": "en-015", "raw_skill": "data visualization",
+      "expected_uri": null, "expected_label": "visualise data",
+      "language": "en", "category": "data", "difficulty": "easy"
+    },
+    {
+      "id": "en-016", "raw_skill": "TensorFlow",
+      "expected_uri": null, "expected_label": "use machine learning",
+      "language": "en", "category": "data", "difficulty": "medium",
+      "notes": "TensorFlow-specific ESCO entry unlikely; machine learning is acceptable"
+    },
+    {
+      "id": "en-017", "raw_skill": "Excel",
+      "expected_uri": null, "expected_label": "use spreadsheet software",
+      "language": "en", "category": "office", "difficulty": "easy"
+    },
+    {
+      "id": "en-018", "raw_skill": "project management",
+      "expected_uri": null, "expected_label": "manage projects",
+      "language": "en", "category": "management", "difficulty": "easy"
+    },
+    {
+      "id": "en-019", "raw_skill": "agile",
+      "expected_uri": null, "expected_label": "apply agile project management",
+      "language": "en", "category": "management", "difficulty": "easy"
+    },
+    {
+      "id": "en-020", "raw_skill": "Scrum",
+      "expected_uri": null, "expected_label": "apply agile project management",
+      "language": "en", "category": "management", "difficulty": "medium"
+    },
+    {
+      "id": "en-021", "raw_skill": "communication",
+      "expected_uri": null, "expected_label": "communicate with customers",
+      "language": "en", "category": "soft", "difficulty": "medium",
+      "notes": "Multiple ESCO communication skills exist; any communication mapping is acceptable"
+    },
+    {
+      "id": "en-022", "raw_skill": "teamwork",
+      "expected_uri": null, "expected_label": "work in teams",
+      "language": "en", "category": "soft", "difficulty": "easy"
+    },
+    {
+      "id": "en-023", "raw_skill": "leadership",
+      "expected_uri": null, "expected_label": "manage a team",
+      "language": "en", "category": "soft", "difficulty": "medium"
+    },
+    {
+      "id": "en-024", "raw_skill": "REST API",
+      "expected_uri": null, "expected_label": "use application programming interfaces",
+      "language": "en", "category": "programming", "difficulty": "medium"
+    },
+    {
+      "id": "en-025", "raw_skill": "CI/CD",
+      "expected_uri": null, "expected_label": "apply continuous integration",
+      "language": "en", "category": "devops", "difficulty": "medium"
+    },
+    {
+      "id": "uk-001", "raw_skill": "управління проєктами",
+      "expected_uri": null, "expected_label": "manage projects",
+      "language": "uk", "category": "management", "difficulty": "easy"
+    },
+    {
+      "id": "uk-002", "raw_skill": "аналіз даних",
+      "expected_uri": null, "expected_label": "analyse data",
+      "language": "uk", "category": "data", "difficulty": "easy"
+    },
+    {
+      "id": "uk-003", "raw_skill": "машинне навчання",
+      "expected_uri": null, "expected_label": "apply machine learning",
+      "language": "uk", "category": "data", "difficulty": "easy"
+    },
+    {
+      "id": "uk-004", "raw_skill": "комунікація",
+      "expected_uri": null, "expected_label": "communicate with customers",
+      "language": "uk", "category": "soft", "difficulty": "medium"
+    },
+    {
+      "id": "uk-005", "raw_skill": "командна робота",
+      "expected_uri": null, "expected_label": "work in teams",
+      "language": "uk", "category": "soft", "difficulty": "easy"
+    },
+    {
+      "id": "uk-006", "raw_skill": "Python",
+      "expected_uri": null, "expected_label": "use Python",
+      "language": "uk", "category": "programming", "difficulty": "easy",
+      "notes": "Skill name same as English; verifies pipeline handles mixed-language batches"
+    },
+    {
+      "id": "uk-007", "raw_skill": "SQL",
+      "expected_uri": null, "expected_label": "use SQL",
+      "language": "uk", "category": "programming", "difficulty": "easy"
+    },
+    {
+      "id": "uk-008", "raw_skill": "JavaScript",
+      "expected_uri": null, "expected_label": "use JavaScript",
+      "language": "uk", "category": "programming", "difficulty": "easy"
+    },
+    {
+      "id": "uk-009", "raw_skill": "Docker",
+      "expected_uri": null, "expected_label": "use Docker",
+      "language": "uk", "category": "devops", "difficulty": "easy"
+    },
+    {
+      "id": "uk-010", "raw_skill": "розробка програмного забезпечення",
+      "expected_uri": null, "expected_label": "develop software",
+      "language": "uk", "category": "programming", "difficulty": "medium"
+    },
+    {
+      "id": "uk-011", "raw_skill": "бази даних",
+      "expected_uri": null, "expected_label": "manage databases",
+      "language": "uk", "category": "data", "difficulty": "medium"
+    },
+    {
+      "id": "uk-012", "raw_skill": "хмарні технології",
+      "expected_uri": null, "expected_label": "use cloud computing services",
+      "language": "uk", "category": "devops", "difficulty": "medium"
+    },
+    {
+      "id": "uk-013", "raw_skill": "кібербезпека",
+      "expected_uri": null, "expected_label": "ensure cybersecurity",
+      "language": "uk", "category": "security", "difficulty": "medium"
+    },
+    {
+      "id": "uk-014", "raw_skill": "тестування програмного забезпечення",
+      "expected_uri": null, "expected_label": "perform software tests",
+      "language": "uk", "category": "programming", "difficulty": "easy"
+    },
+    {
+      "id": "uk-015", "raw_skill": "лідерство",
+      "expected_uri": null, "expected_label": "manage a team",
+      "language": "uk", "category": "soft", "difficulty": "medium"
+    },
+    {
+      "id": "edge-001", "raw_skill": "3 years of experience",
+      "expected_uri": null, "expected_label": null,
+      "language": "en", "category": "edge", "difficulty": "hard",
+      "notes": "Should NOT map — experience requirement is not a skill. Correct answer: unmapped."
+    },
+    {
+      "id": "edge-002", "raw_skill": "good",
+      "expected_uri": null, "expected_label": null,
+      "language": "en", "category": "edge", "difficulty": "hard",
+      "notes": "Too vague to map. Correct answer: unmapped."
+    },
+    {
+      "id": "edge-003", "raw_skill": "Microsoft Excel",
+      "expected_uri": null, "expected_label": "use spreadsheet software",
+      "language": "en", "category": "office", "difficulty": "easy",
+      "notes": "Full product name vs generic ESCO label"
+    },
+    {
+      "id": "edge-004", "raw_skill": "Git version control",
+      "expected_uri": null, "expected_label": "use version control systems",
+      "language": "en", "category": "devops", "difficulty": "easy",
+      "notes": "Paraphrase of en-010"
+    },
+    {
+      "id": "edge-005", "raw_skill": "Python programming",
+      "expected_uri": null, "expected_label": "use Python",
+      "language": "en", "category": "programming", "difficulty": "easy",
+      "notes": "Synonym of en-001 with extra word"
+    },
+    {
+      "id": "edge-006", "raw_skill": "ml",
+      "expected_uri": null, "expected_label": "apply machine learning",
+      "language": "en", "category": "data", "difficulty": "hard",
+      "notes": "Abbreviation; tests whether LLM expands abbreviations correctly"
+    },
+    {
+      "id": "edge-007", "raw_skill": "Agile/Scrum methodologies",
+      "expected_uri": null, "expected_label": "apply agile project management",
+      "language": "en", "category": "management", "difficulty": "medium"
+    },
+    {
+      "id": "edge-008", "raw_skill": "написання коду",
+      "expected_uri": null, "expected_label": "develop software",
+      "language": "uk", "category": "programming", "difficulty": "medium",
+      "notes": "Very generic Ukrainian skill; any programming/software development mapping acceptable"
+    },
+    {
+      "id": "edge-009", "raw_skill": "Kubernetes (K8s)",
+      "expected_uri": null, "expected_label": "use Kubernetes",
+      "language": "en", "category": "devops", "difficulty": "easy",
+      "notes": "Common abbreviation suffix in parentheses"
+    },
+    {
+      "id": "edge-010", "raw_skill": "strong interpersonal skills",
+      "expected_uri": null, "expected_label": "demonstrate interpersonal skills",
+      "language": "en", "category": "soft", "difficulty": "medium",
+      "notes": "Adjective-laden phrasing common in job postings"
+    },
+    {
+      "id": "edge-011", "raw_skill": "Bachelor's degree in Computer Science",
+      "expected_uri": null, "expected_label": null,
+      "language": "en", "category": "edge", "difficulty": "hard",
+      "notes": "Education requirement, not a skill. Correct answer: unmapped."
+    },
+
+    {"id": "llm-001",
+      "raw_skill": "налагодження помилок у коді",
+      "expected_uri": null, "expected_label": "debug software",
+      "language": "uk", "category": "programming", "difficulty": "hard", "llm_only": true,
+      "notes": "Ukrainian paraphrase — fuzzy will not match 'debug software' from this phrase"
+    },
+    {
+      "id": "llm-002",
+      "raw_skill": "відстеження версій та змін у вихідному коді",
+      "expected_uri": null, "expected_label": "use version control systems",
+      "language": "uk", "category": "devops", "difficulty": "hard", "llm_only": true,
+      "notes": "No common tokens with 'version control'; requires semantic understanding"
+    },
+    {
+      "id": "llm-003",
+      "raw_skill": "навчання моделей на великих масивах даних",
+      "expected_uri": null, "expected_label": "apply machine learning",
+      "language": "uk", "category": "data", "difficulty": "hard", "llm_only": true,
+      "notes": "Describes ML workflow without naming it"
+    },
+    {
+      "id": "llm-004",
+      "raw_skill": "підключення застосунків до зовнішніх сервісів",
+      "expected_uri": null, "expected_label": "use application programming interfaces",
+      "language": "uk", "category": "programming", "difficulty": "hard", "llm_only": true,
+      "notes": "API concept described as an action, no common tokens with ESCO label"
+    },
+    {
+      "id": "llm-005",
+      "raw_skill": "розгортання контейнерів у продакшн-середовищі",
+      "expected_uri": null, "expected_label": "use Docker",
+      "language": "uk", "category": "devops", "difficulty": "hard", "llm_only": true,
+      "notes": "Docker usage described without naming Docker"
+    },
+    {
+      "id": "llm-006",
+      "raw_skill": "craft user stories and manage product backlog",
+      "expected_uri": null, "expected_label": "apply agile project management",
+      "language": "en", "category": "management", "difficulty": "hard", "llm_only": true,
+      "notes": "Agile practice described in product-owner terminology"
+    },
+    {
+      "id": "llm-007",
+      "raw_skill": "coordinate cross-functional teams to ship features on time",
+      "expected_uri": null, "expected_label": "manage a team",
+      "language": "en", "category": "management", "difficulty": "hard", "llm_only": true,
+      "notes": "Team leadership described via its outcome, not its name"
+    },
+    {
+      "id": "llm-008",
+      "raw_skill": "troubleshoot and resolve production incidents",
+      "expected_uri": null, "expected_label": "debug software",
+      "language": "en", "category": "programming", "difficulty": "hard", "llm_only": true,
+      "notes": "Incident response phrasing; fuzzy won't link 'troubleshoot incidents' to 'debug software'"
+    },
+    {
+      "id": "llm-009",
+      "raw_skill": "optimise slow SQL queries and add indexes",
+      "expected_uri": null, "expected_label": "optimise database",
+      "language": "en", "category": "data", "difficulty": "hard", "llm_only": true,
+      "notes": "Specific DBA task; requires understanding that this is database optimisation"
+    },
+    {
+      "id": "llm-010",
+      "raw_skill": "write unit and integration tests to ensure code quality",
+      "expected_uri": null, "expected_label": "perform software tests",
+      "language": "en", "category": "programming", "difficulty": "hard", "llm_only": true,
+      "notes": "Testing described via specific techniques; fuzzy-distance to 'perform software tests' is low"
+    },
+    {
+      "id": "llm-011",
+      "raw_skill": "build CI pipelines and automate deployments",
+      "expected_uri": null, "expected_label": "apply continuous integration",
+      "language": "en", "category": "devops", "difficulty": "hard", "llm_only": true,
+      "notes": "DevOps practice described without standard label"
+    },
+    {
+      "id": "llm-012",
+      "raw_skill": "перетворення та очищення сирих даних для аналізу",
+      "expected_uri": null, "expected_label": "perform data quality assessment",
+      "language": "uk", "category": "data", "difficulty": "hard", "llm_only": true,
+      "notes": "ETL/data cleaning described in Ukrainian; no direct label match expected"
+    },
+    {
+      "id": "llm-013",
+      "raw_skill": "conduct structured interviews to evaluate candidates",
+      "expected_uri": null, "expected_label": "interview people",
+      "language": "en", "category": "management", "difficulty": "hard", "llm_only": true,
+      "notes": "HR skill described formally; tests ability to pick correct ESCO among interview-related skills"
+    },
+    {
+      "id": "llm-014",
+      "raw_skill": "забезпечення захисту персональних даних користувачів",
+      "expected_uri": null, "expected_label": "ensure cybersecurity",
+      "language": "uk", "category": "security", "difficulty": "hard", "llm_only": true,
+      "notes": "GDPR/data-protection phrasing; needs LLM to map to cybersecurity umbrella"
+    },
+    {
+      "id": "llm-015",
+      "raw_skill": "create interactive dashboards for business stakeholders",
+      "expected_uri": null, "expected_label": "visualise data",
+      "language": "en", "category": "data", "difficulty": "hard", "llm_only": true,
+      "notes": "BI dashboard creation described by purpose/audience; no direct label match"
+    }
+  ]
+}

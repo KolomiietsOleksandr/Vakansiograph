@@ -43,6 +43,103 @@ def warm_cache():
         return jsonify({"error": str(e)}), 500
 
 
+_eval_running = False
+
+
+def _default_report_path():
+    """Store the eval report next to the DB so it survives on the /data volume in production."""
+    import os
+    from pathlib import Path
+    db = os.environ.get("DATABASE_PATH", "")
+    if db:
+        return Path(db).parent / "eval_report.json"
+    return Path("output/eval_report.json")
+
+
+@health_bp.route('/admin/eval-llm', methods=['GET'])
+def eval_llm_report():
+    """Return the most recent LLM eval report (written by POST to this endpoint or scripts/eval_llm.py)."""
+    import json
+    import os
+    from pathlib import Path
+    report_path = Path(os.environ.get("EVAL_REPORT_PATH", str(_default_report_path())))
+    if not report_path.exists():
+        return jsonify({
+            "status": "no_report",
+            "message": "No eval report found. POST /api/admin/eval-llm to generate one.",
+        }), 404
+    try:
+        with open(report_path) as f:
+            report = json.load(f)
+        return jsonify({"status": "ok", "report": report}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@health_bp.route('/admin/eval-llm', methods=['POST'])
+def eval_llm_run():
+    """Trigger LLM golden-dataset evaluation in a background thread.
+    Results are written to the eval report path and readable via GET."""
+    global _eval_running
+    if _eval_running:
+        return jsonify({"status": "already_running", "message": "Eval is already in progress"}), 409
+
+    import json
+    import logging
+    import os
+    import threading
+    from dataclasses import asdict
+    from pathlib import Path
+
+    dataset_path = Path(os.environ.get("EVAL_DATASET_PATH", "tests/golden/mapping_dataset.json"))
+    report_path = Path(os.environ.get("EVAL_REPORT_PATH", str(_default_report_path())))
+
+    if not dataset_path.exists():
+        return jsonify({"status": "error", "message": f"Dataset not found: {dataset_path}"}), 400
+
+    def _run():
+        global _eval_running
+        _eval_running = True
+        try:
+            _logger = logging.getLogger("eval_llm.endpoint")
+            _logger.info("[eval-llm] Starting background evaluation…")
+
+            from scripts.eval_llm import (
+                _load_dataset, _filter_entries, _init_mapper, evaluate, compute_report,
+            )
+
+            dataset = _load_dataset(dataset_path)
+            entries = _filter_entries(dataset["entries"], category=None, skip_edges=False)
+            map_skills_fn, esco_index = _init_mapper()  # raises RuntimeError if ESCO missing
+            model = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
+            label_thr = dataset.get("thresholds", {}).get("label_match_ratio", 80) / 100.0
+
+            results = evaluate(map_skills_fn, esco_index, entries, label_thr)
+            report = compute_report(results, dataset, model=model)
+
+            report_path.parent.mkdir(parents=True, exist_ok=True)
+            with open(report_path, "w") as f:
+                json.dump(asdict(report), f, indent=2)
+
+            status = "passed" if report.threshold_ok else "failed"
+            _logger.info(
+                "[eval-llm] Done — %s | precision@1=%.0f%% | mapping=%.0f%%",
+                status, 100 * report.precision_at_1, 100 * report.mapping_rate,
+            )
+        except Exception:
+            logging.getLogger("eval_llm.endpoint").exception("[eval-llm] Evaluation failed")
+        finally:
+            _eval_running = False
+
+    threading.Thread(target=_run, daemon=True, name="eval-llm").start()
+    return jsonify({
+        "status": "started",
+        "message": "Evaluation running in background. Poll GET /api/admin/eval-llm for results.",
+        "dataset": str(dataset_path),
+        "report": str(report_path),
+    }), 202
+
+
 @health_bp.route('/insights/hero-stats', methods=['GET'])
 @cache.cached(timeout=7200)
 def hero_stats():

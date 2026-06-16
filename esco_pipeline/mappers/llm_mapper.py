@@ -115,6 +115,31 @@ class LLMMapper(BaseMapper):
             results.update(batch_results)
 
         self._total_token_usage = accumulated
+
+        # ── Quality monitoring ──────────────────────────────────────────
+        total = len(skill_strings)
+        mapped_count = sum(1 for v in results.values() if v is not None)
+        mapping_rate = mapped_count / total if total else 0.0
+
+        mapped_values = [v for v in results.values() if v is not None]
+        avg_conf = sum(v.confidence for v in mapped_values) / len(mapped_values) if mapped_values else 0.0
+
+        logger.info(
+            "[mapper:%s] mapping rate: %d/%d (%.0f%%) | avg confidence: %.3f | tokens: %s",
+            self._mode, mapped_count, total, 100 * mapping_rate, avg_conf, accumulated,
+        )
+        if mapping_rate < 0.60:
+            logger.warning(
+                "[mapper:%s] LOW MAPPING RATE %.0f%% — possible LLM degradation or bad candidate set",
+                self._mode, 100 * mapping_rate,
+            )
+        if mapped_values and avg_conf < 0.50:
+            logger.warning(
+                "[mapper:%s] LOW AVG CONFIDENCE %.3f — possible LLM degradation or ambiguous skill set",
+                self._mode, avg_conf,
+            )
+        # ───────────────────────────────────────────────────────────────
+
         return results
 
     def _process_batch(self, skills: list[str], candidates_text: str, graph_uris: set[str], id_to_uri: dict[int, str]) -> dict[str, ESCOMapping | None]:

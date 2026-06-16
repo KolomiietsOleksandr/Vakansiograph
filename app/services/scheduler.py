@@ -90,7 +90,18 @@ def enrich_skills():
         conn.commit()
         conn.close()
 
-        logger.info("[ENRICH] Done: %d/%d skills mapped", updated, len(unmapped))
+        total = len(unmapped)
+        mapping_rate = updated / total if total else 0.0
+        conf_values = [m["confidence"] for m in mappings.values() if m is not None and "confidence" in m]
+        avg_conf = sum(conf_values) / len(conf_values) if conf_values else 0.0
+        logger.info(
+            "[ENRICH] Done: %d/%d skills mapped (%.0f%%) | avg confidence: %.3f",
+            updated, total, 100 * mapping_rate, avg_conf,
+        )
+        if mapping_rate < 0.60:
+            logger.warning("[ENRICH] LOW MAPPING RATE %.0f%% — consider checking LLM or ESCO index", 100 * mapping_rate)
+        if conf_values and avg_conf < 0.50:
+            logger.warning("[ENRICH] LOW AVG CONFIDENCE %.3f", avg_conf)
     except Exception:
         logger.exception("[ENRICH] Failed")
 
@@ -242,6 +253,22 @@ def pipeline():
     logger.info("=== [PIPELINE] Done ===")
 
 
+def run_llm_eval():
+    logger.info("=== [LLM-EVAL] Starting weekly LLM quality evaluation ===")
+    web_url = os.environ.get("WEB_INTERNAL_URL", "http://web:5001")
+    try:
+        import requests as _requests
+        r = _requests.post(f"{web_url}/api/admin/eval-llm", timeout=15)
+        if r.status_code == 202:
+            logger.info("[LLM-EVAL] Evaluation triggered successfully")
+        elif r.status_code == 409:
+            logger.info("[LLM-EVAL] Evaluation already running, skipping")
+        else:
+            logger.warning("[LLM-EVAL] Unexpected response: %s %s", r.status_code, r.text[:200])
+    except Exception:
+        logger.exception("[LLM-EVAL] Failed to trigger evaluation")
+
+
 def cleanup():
     logger.info("=== [CLEANUP] Starting weekly cleanup ===")
     try:
@@ -279,6 +306,13 @@ def start_scheduler():
         trigger=CronTrigger(day_of_week="sun", hour=2, minute=0),
         id="cleanup",
         name="Weekly Cleanup (Sun 02:00 UTC)",
+        max_instances=1,
+    )
+    scheduler.add_job(
+        run_llm_eval,
+        trigger=CronTrigger(day_of_week="sun", hour=3, minute=0),
+        id="llm-eval",
+        name="Weekly LLM Quality Eval (Sun 03:00 UTC)",
         max_instances=1,
     )
     scheduler.add_job(
